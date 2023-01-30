@@ -92,7 +92,6 @@ export class ShopProvider extends React.Component {
 
   
   render() {
-    console.log('context co', checkout)
     return (
       <ShopContext.Provider
         value={{
