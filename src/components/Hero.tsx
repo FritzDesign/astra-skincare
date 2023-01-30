@@ -5,6 +5,7 @@ import { Stack, Text, Button } from '@chakra-ui/react';
 // import { ShopContext } from '../context/ShopContext';
 // import { useNavigate } from 'react-router';
 import { HeroProps } from '../models/Props';
+import FMC_Component from '../animations/defaults';
 
 const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
   // const navigate = useNavigate();
@@ -12,7 +13,8 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
   //   React.useContext<any>(ShopContext);
 
   return (
-    <Stack
+    <FMC_Component
+      as={Stack}
       paddingX='80px'
       justify='center'
       align='flex-start'
@@ -63,7 +65,7 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
           Shop Now
         </Button>
       </Stack>
-    </Stack>
+    </FMC_Component>
   );
 };
 

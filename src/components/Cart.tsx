@@ -14,6 +14,8 @@ const Cart: React.FC = () => {
     accentColor1
   } = React.useContext<any>(ShopContext);
 
+  console.log(checkout)
+
   return (
     <>
       <Chakra.Drawer isOpen={isCartOpen} placement='right' onClose={closeCart}>
@@ -22,7 +24,8 @@ const Cart: React.FC = () => {
           <Chakra.DrawerCloseButton />
           <Chakra.DrawerHeader>Your Cart</Chakra.DrawerHeader>
           <Chakra.DrawerBody>
-            {checkout.lineItems?.length ? (
+            {Object.keys(checkout).length && checkout.lineItems?.length ? (
+              
               checkout.lineItems.map((item: any) => {
                 console.log(checkout);
                 return (
