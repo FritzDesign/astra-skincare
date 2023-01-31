@@ -20,7 +20,7 @@ const Cart: React.FC = () => {
     <>
       <Chakra.Drawer isOpen={isCartOpen} placement='right' onClose={closeCart}>
         <Chakra.DrawerOverlay />
-        <Chakra.DrawerContent>
+        <Chakra.DrawerContent bgColor='brand.Cream'>
           <Chakra.DrawerCloseButton />
           <Chakra.DrawerHeader>Your Cart</Chakra.DrawerHeader>
           <Chakra.DrawerBody>

@@ -11,7 +11,6 @@ import Announcement from '../Announcement';
 import heroImage from '../../assets/astra-hero.jpg';
 
 const Home: React.FC = () => {
-  const { themeColor1, accentColor1 } = React.useContext<any>(ShopContext);
 
   return (
     <Chakra.Box>

@@ -32,9 +32,10 @@ const Navigation: React.FC = () => {
   const handleSearchToggle = (inputState: boolean) => {
     if (!isSearchOpen) {
       setTimeout(() => {
-        (
-          document.getElementById('nav-search-input')! as HTMLInputElement
-        ).focus();
+        const input = document.getElementById(
+          'nav-search-input'
+        )! as HTMLInputElement;
+        input.focus();
       }, 500);
     }
     setIsSearchOpen(!inputState);
@@ -190,7 +191,6 @@ const Navigation: React.FC = () => {
           >
             <Input
               id='nav-search-input'
-              _focus={{ border: 'none', outline: '0px' }}
               animate={{
                 transform: 'translateX(-24rem)'
               }}
@@ -199,6 +199,8 @@ const Navigation: React.FC = () => {
               placeholder='search'
               borderRadius='0px'
               w='24rem'
+              bgColor='white'
+              focusBorderColor='transparent'
             />
           </FMC_Component>
         )}
