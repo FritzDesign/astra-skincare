@@ -4,6 +4,7 @@ const theme = extendTheme({
   colors: {
     brand: {
       Peri: '#8897AA',
+      Plum: '#313C4E',
       Cream: '#F7F2EE',
       Mint: '#8EC2B9',
       Black: '#2C2C2C'

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { ShopContext } from '../context/ShopContext';
 import { useNavigate } from 'react-router';
 import { ImageWithTextProps } from '../models/Props';
-import { Stack, Text, Button, Image } from '@chakra-ui/react';
+import { Stack, Text, Button, Image, AspectRatio } from '@chakra-ui/react';
 
 import overlayImg from '../assets/image-with-text/astra-iwt-overlay.png';
 import watermarkTR from '../assets/image-with-text/astra-wm-topright.png';
@@ -16,16 +16,23 @@ export const ImageWithText: React.FC<ImageWithTextProps> = ({
   text
 }) => (
   <Stack
-    h='900px'
-    direction='row'
+    h={['845px', '900px']}
+    direction={['column', 'column', 'column', 'row']}
     justify='center'
     align='center'
     spacing='119px'
     pos='relative'
+    p='2rem'
   >
     <Image src={watermarkTR} pos='absolute' top='0px' right='0px' />
-    <Image src={watermarkBL} pos='absolute' bottom='0px' left='-119px' />
+    <Image
+      src={watermarkBL}
+      pos='absolute'
+      bottom={['-120px', '0px']}
+      left={['0px', '-119px']}
+    />
     <Stack
+      alignItems={['flex-start', 'center']}
       width='596px'
       height='623px'
       maxWidth='100%'
@@ -34,35 +41,32 @@ export const ImageWithText: React.FC<ImageWithTextProps> = ({
       pos='relative'
     >
       <Stack
-        align='center'
-        justify='center'
+        alignItems='center'
+        justifyContent='center'
         borderColor='brand.Black'
-        borderStartWidth='1px'
-        borderEndWidth='1px'
-        borderTopWidth='1px'
-        borderBottomWidth='1px'
-        width='494px'
-        height='623px'
+        width={['270.4px', '494px']}
+        height={['341px', '623px']}
         maxWidth='100%'
         zIndex={2}
-        bgImage={image}
-      />
+      >
+        <Image src={image} />
+      </Stack>
       <Stack
         borderRadius='50%'
-        width='220px'
-        height='220px'
+        width={['120px', '220px']}
+        height={['120px', '220px']}
         maxWidth='100%'
         boxShadow='lg'
-        right='-40px'
-        bottom='60px'
+        right={['72px', '-40px']}
+        bottom={['24px', '60px']}
         zIndex='10'
         pos='absolute'
       >
         <Image
           src={overlayImg}
           p='0'
-          w='240px'
-          h='240px'
+          w={['131.3px', '240px']}
+          h={['131.3px', '240px']}
           pos='absolute'
           objectPosition='center center'
           objectFit='cover'
@@ -84,7 +88,7 @@ export const ImageWithText: React.FC<ImageWithTextProps> = ({
           fontSize='16px'
           letterSpacing='0.1em'
           textTransform='uppercase'
-          color='Brand . Peri / Default'
+          color='brand.Peri'
           alignSelf='stretch'
           zIndex={2}
         >
@@ -95,39 +99,35 @@ export const ImageWithText: React.FC<ImageWithTextProps> = ({
           lineHeight='1.4'
           fontWeight='regular'
           fontSize='32px'
-          color='Brand.Black/Default'
+          color='brand.Black'
           alignSelf='stretch'
           zIndex={2}
         >
-          Build Your Ideal Skincare Routine
+          {heading}
         </Text>
       </Stack>
       <Text
         fontFamily='Inter'
         lineHeight='1.5'
-        fontWeight='medium'
+        fontWeight={['semibold', 'medium']}
         fontSize='18px'
-        color='Brand.Plum/Default'
+        color='brand.Plum'
         opacity='0.8'
-        height='166px'
         alignSelf='stretch'
         zIndex={2}
       >
-        Whether you’re dealing with stubborn acne, looking to minimize fine
-        lines and wrinkles, or just wanting to upgrade your regimen, Astra has
-        quality dermatologist trusted products you’ll love. In just a few
-        questions, we’ll determine your skin type and find the right collection
-        for you.
+        {text}
       </Text>
       <Button
         _hover={{ opacity: 0.9 }}
         _active={{ transform: 'scale(0.98)' }}
         size='lg'
-        fontSize='18px'
+        fontSize='16px'
         color='brand.Cream'
-        fontWeight='normal'
+        fontWeight='400'
         bgColor='brand.Black'
         zIndex={2}
+        fontFamily='Poppins'
       >
         Find Solutions
       </Button>
