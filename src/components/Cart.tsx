@@ -14,7 +14,7 @@ const Cart: React.FC = () => {
     accentColor1
   } = React.useContext<any>(ShopContext);
 
-  console.log(checkout)
+  console.log(checkout);
 
   return (
     <>
@@ -24,8 +24,7 @@ const Cart: React.FC = () => {
           <Chakra.DrawerCloseButton />
           <Chakra.DrawerHeader>Your Cart</Chakra.DrawerHeader>
           <Chakra.DrawerBody>
-            {Object.keys(checkout).length && checkout.lineItems?.length ? (
-              
+            {checkout.lineItems?.length ? (
               checkout.lineItems.map((item: any) => {
                 console.log(checkout);
                 return (
