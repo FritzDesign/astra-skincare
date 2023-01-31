@@ -39,7 +39,7 @@ const Announcement: React.FC = () => {
         fontFamily='Inter'
         lineHeight='1.5'
         fontWeight='medium'
-        fontSize='18px'
+        fontSize={['16px', '18px']}
         color='#FFFFFF'
         textAlign='center'
       >
@@ -50,8 +50,8 @@ const Announcement: React.FC = () => {
         cursor='pointer'
         pos='absolute'
         top='.7rem'
-        right={['1rem','2.5rem']}
-        fontSize='18px'
+        right={['1rem', '2.5rem']}
+        fontSize={['16px', '18px']}
         as={MdClose}
         onClick={() => setShouldRender((prev) => !prev)}
       />

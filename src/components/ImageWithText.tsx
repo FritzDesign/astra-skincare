@@ -16,20 +16,22 @@ export const ImageWithText: React.FC<ImageWithTextProps> = ({
   text
 }) => (
   <Stack
-    h={['845px', '900px']}
+    h='900px'
     direction={['column', 'column', 'column', 'row']}
     justify='center'
     align='center'
-    spacing='119px'
     pos='relative'
     p='2rem'
+    mt='40px'
   >
-    <Image src={watermarkTR} pos='absolute' top='0px' right='0px' />
+    <Image src={watermarkTR} pos='absolute' top='-40px' right='-24px' />
     <Image
       src={watermarkBL}
       pos='absolute'
-      bottom={['-120px', '0px']}
+      bottom={['-24px', '0px']}
       left={['0px', '-119px']}
+      zIndex={-1}
+
     />
     <Stack
       alignItems={['flex-start', 'center']}
@@ -43,34 +45,35 @@ export const ImageWithText: React.FC<ImageWithTextProps> = ({
       <Stack
         alignItems='center'
         justifyContent='center'
-        borderColor='brand.Black'
         width={['270.4px', '494px']}
         height={['341px', '623px']}
         maxWidth='100%'
         zIndex={2}
+        pos='relative'
+        mb={['32px','120px']}
       >
         <Image src={image} />
-      </Stack>
-      <Stack
-        borderRadius='50%'
-        width={['120px', '220px']}
-        height={['120px', '220px']}
-        maxWidth='100%'
-        boxShadow='lg'
-        right={['72px', '-40px']}
-        bottom={['24px', '60px']}
-        zIndex='10'
-        pos='absolute'
-      >
-        <Image
-          src={overlayImg}
-          p='0'
-          w={['131.3px', '240px']}
-          h={['131.3px', '240px']}
+        <Stack
+          borderRadius='50%'
+          width={['120px', '220px']}
+          height={['120px', '220px']}
+          maxWidth='100%'
+          boxShadow='lg'
+          right={['-40px', '-40px']}
+          bottom={['16px', '60px']}
+          zIndex='10'
           pos='absolute'
-          objectPosition='center center'
-          objectFit='cover'
-        />
+        >
+          <Image
+            src={overlayImg}
+            p='0'
+            w={['131.3px', '240px']}
+            h={['131.3px', '240px']}
+            pos='absolute'
+            objectPosition='center center'
+            objectFit='cover'
+          />
+        </Stack>
       </Stack>
     </Stack>
     <Stack

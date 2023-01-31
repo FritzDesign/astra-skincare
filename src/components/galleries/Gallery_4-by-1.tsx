@@ -4,14 +4,14 @@ import { GalleryCard } from './GalleryCard';
 
 export const Gallery4x1: React.FC = () => (
   <Stack
-    paddingX='80px'
+    paddingX={['24px', '80px']}
     paddingY='64px'
     justify='flex-start'
     align='center'
-    spacing='56px'
+    spacing={['24px', '56px']}
     overflow='hidden'
     background='brand.Cream'
-    h='621px'
+    minH='621px'
   >
     <Text
       fontFamily='Marcellus'
@@ -19,13 +19,15 @@ export const Gallery4x1: React.FC = () => (
       fontWeight='regular'
       fontSize='32px'
       color='#000000'
+      textAlign='center'
     >
       Shop Customer Favorites
     </Text>
     <Stack
-      direction='row'
-      justify='flex-start'
-      align='flex-start'
+      direction={['column', 'column', 'row']}
+      flexWrap='wrap'
+      justify='center'
+      align='start'
       spacing='16px'
     >
       <GalleryCard btnText='Anti-Aging' />
