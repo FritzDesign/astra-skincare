@@ -8,7 +8,7 @@ const Announcement: React.FC = () => {
 
   React.useEffect(() => {
     if (!shouldRender) {
-      const app = document.getElementsByClassName('App')[0]! as HTMLDivElement;
+      const app = document.querySelector('.App')! as HTMLDivElement;
       app.style.transform = 'translateY(-39px)';
       app.style.transition = 'transform 0.25s';
       setTimeout(() => {
@@ -50,7 +50,7 @@ const Announcement: React.FC = () => {
         cursor='pointer'
         pos='absolute'
         top='.7rem'
-        right='2.5rem'
+        right={['1rem','2.5rem']}
         fontSize='18px'
         as={MdClose}
         onClick={() => setShouldRender((prev) => !prev)}

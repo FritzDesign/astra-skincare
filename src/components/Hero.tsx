@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router';
 import { HeroProps } from '../models/Props';
 import FMC_Component from '../animations/defaults';
 import { AnimatePresence } from 'framer-motion';
+import mobileHero from '../assets/astra-hero-mobile.png'
 
 const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
   const navigate = useNavigate();
@@ -11,18 +12,18 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
   return (
     <Stack
       as={FMC_Component}
-      paddingX='80px'
+      paddingX={['40px', '80px']}
       justify='center'
       align='flex-start'
       spacing='10px'
       overflow='hidden'
       h={['500px', '700px', '900px']}
       objectFit='cover'
-      bg={`${bgColor}, url(${bgImage})`}
+      bg={[`${bgColor}, url(${mobileHero})`,`${bgColor}, url(${bgImage})`]}
     >
       <Stack
-        justify='flex-start'
-        align='flex-start'
+        justify={['center', 'flex-start']}
+        align={['center', 'flex-start']}
         spacing='32px'
         width='698px'
         maxWidth='100%'
@@ -37,12 +38,13 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
           fontFamily='Inter'
           lineHeight='1.2'
           fontWeight='bold'
-          fontSize='16px'
+          fontSize={['12px', '16px']}
           letterSpacing='0.1em'
           textTransform='uppercase'
           color='brand.Mint'
           alignSelf='stretch'
           pointerEvents='none'
+          textAlign={['center', 'left']}
         >
           NEW ASTRA SKIN CARE DROP
         </FMC_Component>
@@ -59,10 +61,10 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
           color='#FFFFFF'
           alignSelf='stretch'
           pointerEvents='none'
+          textAlign={['center', 'left']}
         >
           {heading}
         </FMC_Component>
-
         <FMC_Component
           _hover={{ filter: 'brightness(1.1)' }}
           cursor='pointer'
@@ -77,7 +79,7 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
           p='10.5px 24px'
           borderRadius='.375rem'
           size='lg'
-          fontWeight='600'
+          fontWeight={['400', '600']}
           bgColor='brand.Cream'
           color='UI.1'
           outline='2px solid transparent'
