@@ -11,10 +11,6 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
   return (
     <Stack
       as={FMC_Component}
-      // animate={{
-      //   transform: ['translateY(-90px)', 'translateY(0px)', 'translateY(0px)'],
-      //   opacity: [0.9, 1, 1]
-      // }}
       paddingX='80px'
       justify='center'
       align='flex-start'
@@ -22,7 +18,6 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
       overflow='hidden'
       h={['500px', '700px', '900px']}
       objectFit='cover'
-      zIndex={-1}
       bg={`${bgColor}, url(${bgImage})`}
     >
       <Stack
