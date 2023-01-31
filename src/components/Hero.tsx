@@ -1,20 +1,20 @@
 import * as React from 'react';
 import { Stack, Text, Button } from '@chakra-ui/react';
-
-// import Button from './Button';
-// import { ShopContext } from '../context/ShopContext';
-// import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import { HeroProps } from '../models/Props';
 import FMC_Component from '../animations/defaults';
+import { AnimatePresence } from 'framer-motion';
 
 const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
-  // const navigate = useNavigate();
-  // const { themeColor1, themeColor2, accentColor1 } =
-  //   React.useContext<any>(ShopContext);
+  const navigate = useNavigate();
 
   return (
-    <FMC_Component
-      as={Stack}
+    <Stack
+      as={FMC_Component}
+      // animate={{
+      //   transform: ['translateY(-90px)', 'translateY(0px)', 'translateY(0px)'],
+      //   opacity: [0.9, 1, 1]
+      // }}
       paddingX='80px'
       justify='center'
       align='flex-start'
@@ -22,6 +22,7 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
       overflow='hidden'
       h={['500px', '700px', '900px']}
       objectFit='cover'
+      zIndex={-1}
       bg={`${bgColor}, url(${bgImage})`}
     >
       <Stack
@@ -32,7 +33,12 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
         maxWidth='100%'
         boxShadow='Shadow/XL'
       >
-        <Text
+        <FMC_Component
+          animate={{
+            transform: ['translateX(-400px)', 'translateX(0px)']
+          }}
+          //@ts-ignore
+          transition={{ delay: 0.25, duration: 0.75 }}
           fontFamily='Inter'
           lineHeight='1.2'
           fontWeight='bold'
@@ -44,8 +50,13 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
           pointerEvents='none'
         >
           NEW ASTRA SKIN CARE DROP
-        </Text>
-        <Text
+        </FMC_Component>
+        <FMC_Component
+          animate={{
+            transform: ['translateX(-800px)', 'translateX(0px)']
+          }}
+          //@ts-ignore
+          transition={{ delay: 1, duration: 1 }}
           fontFamily='Marcellus'
           lineHeight='1'
           fontWeight='regular'
@@ -55,17 +66,33 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
           pointerEvents='none'
         >
           {heading}
-        </Text>
-        <Button
+        </FMC_Component>
+
+        <FMC_Component
+          _hover={{ filter: 'brightness(1.1)' }}
+          cursor='pointer'
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1
+          }}
+          //@ts-ignore
+          transition={{ delay: 2, duration: 1 }}
           _active={{ transform: 'scale(0.98)' }}
+          mt='32px'
+          p='10.5px 24px'
+          borderRadius='.375rem'
           size='lg'
+          fontWeight='600'
           bgColor='brand.Cream'
           color='UI.1'
+          outline='2px solid transparent'
+          fontSize='1.125rem'
+          onClick={() => navigate('/products')}
         >
           Shop Now
-        </Button>
+        </FMC_Component>
       </Stack>
-    </FMC_Component>
+    </Stack>
   );
 };
 
