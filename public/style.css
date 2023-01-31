@@ -6,33 +6,17 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
-  border-radius: 2px;
   background: #f7f2ee;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 2px;
-  background: #e6e0dc;
+  background: #2c2c2c;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #b3afab;
 }
-/* 
-::-webkit-scrollbar {
-  width: 20px;
-}
-
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: red;
-  border-radius: 10px;
-} */
