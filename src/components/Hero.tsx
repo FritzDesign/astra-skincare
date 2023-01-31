@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { Stack, Text, Button } from '@chakra-ui/react';
+import { Stack, Text, Button, Image, Box } from '@chakra-ui/react';
 import { useNavigate } from 'react-router';
 import { HeroProps } from '../models/Props';
 import FMC_Component from '../animations/defaults';
 import { AnimatePresence } from 'framer-motion';
-import mobileHero from '../assets/astra-hero-mobile.png'
+import mobileHero from '../assets/astra-hero-mobile.png';
 
 const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
   const navigate = useNavigate();
@@ -12,22 +12,31 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
   return (
     <Stack
       as={FMC_Component}
-      paddingX={['40px', '80px']}
       justify='center'
       align='flex-start'
       spacing='10px'
-      overflow='hidden'
       h={['500px', '700px', '900px']}
-      objectFit='cover'
-      bg={[`${bgColor}, url(${mobileHero})`,`${bgColor}, url(${bgImage})`]}
+      overflow='hidden'
+      bg={bgColor}
     >
+      <Image
+        src={bgImage}
+        h='100%'
+        w='100%'
+        bgColor={bgColor}
+        objectFit='cover'
+        objectPosition='center center'
+        zIndex={-1}
+      />
       <Stack
+        paddingX={['40px', '80px']}
         justify={['center', 'flex-start']}
         align={['center', 'flex-start']}
         spacing='32px'
         width='698px'
         maxWidth='100%'
         boxShadow='Shadow/XL'
+        pos='absolute'
       >
         <FMC_Component
           animate={{
@@ -45,6 +54,7 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
           alignSelf='stretch'
           pointerEvents='none'
           textAlign={['center', 'left']}
+          textShadow='0px 0px 2px black'
         >
           NEW ASTRA SKIN CARE DROP
         </FMC_Component>
@@ -62,6 +72,7 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
           alignSelf='stretch'
           pointerEvents='none'
           textAlign={['center', 'left']}
+          textShadow='0px 0px 2px black'
         >
           {heading}
         </FMC_Component>
