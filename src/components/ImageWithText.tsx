@@ -20,10 +20,10 @@ export const ImageWithText: React.FC<ImageWithTextProps> = ({
     justify='space-evenly'
     align='center'
     pos='relative'
-    p='2rem'
-    mt='40px'
+    p='4rem'
+    overflow='hidden'
   >
-    <Image src={watermarkTR} pos='absolute' top='-40px' right='-24px' />
+    <Image src={watermarkTR} pos='absolute' top='0px' right='-24px' />
     <Image
       src={watermarkBL}
       pos='absolute'

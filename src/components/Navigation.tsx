@@ -69,6 +69,7 @@ const Navigation: React.FC = () => {
       alignItems='center'
       background='UI.5'
       boxShadow='Shadow/Sm'
+      zIndex={15}
     >
       <Image
         loading='lazy'
@@ -268,7 +269,7 @@ const Navigation: React.FC = () => {
           (isSearchOpen && isMobile && (
             <FMC_Component
               animate={{
-                transform: 'translateX(-24rem)'
+                transform: 'translateX(-28rem)'
               }}
               exit={{
                 transform: 'translateX(0rem)'
@@ -277,7 +278,7 @@ const Navigation: React.FC = () => {
               transition={{ duration: 0.5, ease: 'linear' }}
               pos='absolute'
               bottom='-40px'
-              right='-24rem'
+              right='-28rem'
               borderRadius='0px'
               w='100%'
               bgColor='brand.Cream'
