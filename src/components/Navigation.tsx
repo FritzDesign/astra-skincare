@@ -166,7 +166,7 @@ const Navigation: React.FC = () => {
             opacity={isSearchOpen ? 0.5 : 1}
             onClick={() => handleSearchToggle(isSearchOpen)}
           />
-          <Stack>
+          <Stack onClick={openCart}>
             <Icon
               _hover={{ transform: 'scale(1.03)' }}
               as={IoBagOutline}
@@ -178,6 +178,8 @@ const Navigation: React.FC = () => {
               pos='relative'
             ></Icon>
             <Text
+              cursor='pointer'
+              pointerEvents='none'
               pos='absolute'
               top='28.5px'
               right={isMobile ? '67px' : '87px'}
@@ -193,7 +195,6 @@ const Navigation: React.FC = () => {
             h='24px'
             color='brand.Black'
             cursor='pointer'
-            onClick={openCart}
           />
         </Stack>
       ) : (
