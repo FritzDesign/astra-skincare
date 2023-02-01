@@ -16,7 +16,6 @@ export const ImageWithText: React.FC<ImageWithTextProps> = ({
   text
 }) => (
   <Stack
-    // h='900px'
     direction={['column', 'column', 'column', 'column', 'row']}
     justify='space-evenly'
     align='center'
