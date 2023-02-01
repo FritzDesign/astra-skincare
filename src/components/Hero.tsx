@@ -90,7 +90,7 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
           p='10.5px 24px'
           borderRadius='.375rem'
           size='lg'
-          fontWeight={['400', '600']}
+          fontWeight={['500', '600']}
           bgColor='brand.Cream'
           color='UI.1'
           outline='2px solid transparent'
