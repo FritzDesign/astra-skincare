@@ -68,8 +68,7 @@ const Navigation: React.FC = () => {
       justifyContent='space-between'
       alignItems='center'
       background='UI.5'
-      boxShadow='Shadow/Sm'
-      zIndex={15}
+      boxShadow='0px 1px 2px rgba(0, 0, 0, 0.05)'
     >
       <Image
         loading='lazy'
@@ -268,17 +267,22 @@ const Navigation: React.FC = () => {
         )) ||
           (isSearchOpen && isMobile && (
             <FMC_Component
+              initial={{
+                transform: 'translateY(2rem)',
+                opacity: 0
+              }}
               animate={{
-                transform: 'translateX(-28rem)'
+                transform: 'translateY(4rem)',
+                opacity: 1
               }}
               exit={{
-                transform: 'translateX(0rem)'
+                transform: 'translateY(2rem)',
+                opacity: 0
               }}
               // @ts-ignore
-              transition={{ duration: 0.5, ease: 'linear' }}
+              transition={{ duration: 0.2, ease: 'easeInOut' }}
               pos='absolute'
-              bottom='-40px'
-              right='-28rem'
+              left='0rem'
               borderRadius='0px'
               w='100%'
               bgColor='brand.Cream'
@@ -286,14 +290,14 @@ const Navigation: React.FC = () => {
               <Input
                 id='nav-search-input'
                 // initial={{ height: '0px' }}
-                animate={{
-                  transform: 'translateX(-25rem)'
-                }}
-                exit={{
-                  transform: 'translateX(0rem)'
-                }}
-                // @ts-ignore
-                transition={{ duration: 1, ease: 'easeIn' }}
+                // animate={{
+                //   transform: 'translateX(-25rem)'
+                // }}
+                // exit={{
+                //   transform: 'translateX(0rem)'
+                // }}
+                // // @ts-ignore
+                // transition={{ duration: 1, ease: 'easeIn' }}
                 placeholder='search'
                 borderRadius='0px'
                 bgColor='white'
