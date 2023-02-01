@@ -330,11 +330,7 @@ const TextWithIcons: React.FC = () => {
             align='center'
             spacing='32px'
           >
-            <Stack
-              w='200px'
-              justify='center'
-              align='center'
-            >
+            <Stack w='200px' justify='center' align='center'>
               <Stack
                 padding='14px'
                 borderRadius='64px'
@@ -369,11 +365,7 @@ const TextWithIcons: React.FC = () => {
                 INNOVATIVE INGREDIENTS
               </Text>
             </Stack>
-            <Stack
-              w='200px'
-              justify='center'
-              align='center'
-            >
+            <Stack w='200px' justify='center' align='center'>
               <Stack
                 padding='16px'
                 borderRadius='64px'
@@ -403,11 +395,7 @@ const TextWithIcons: React.FC = () => {
                 DERMATOLOGIST TRUSTED
               </Text>
             </Stack>
-            <Stack
-              w='200px'
-              justify='center'
-              align='center'
-            >
+            <Stack w='200px' justify='center' align='center'>
               <Stack
                 padding='16px'
                 borderRadius='64px'
@@ -437,11 +425,7 @@ const TextWithIcons: React.FC = () => {
                 ECO-CONCIOUS PACKAGING
               </Text>
             </Stack>
-            <Stack
-              w='200px'
-              justify='center'
-              align='center'
-            >
+            <Stack w='200px' justify='center' align='center'>
               <Stack
                 padding='16px'
                 borderRadius='64px'
@@ -478,11 +462,7 @@ const TextWithIcons: React.FC = () => {
             align='center'
             spacing='32px'
           >
-            <Stack
-              w='200px'
-              justify='center'
-              align='center'
-            >
+            <Stack w='200px' justify='center' align='center'>
               <Stack
                 padding='14px'
                 borderRadius='64px'
@@ -517,11 +497,7 @@ const TextWithIcons: React.FC = () => {
                 INNOVATIVE INGREDIENTS
               </Text>
             </Stack>
-            <Stack
-              w='200px'
-              justify='center'
-              align='center'
-            >
+            <Stack w='200px' justify='center' align='center'>
               <Stack
                 padding='16px'
                 borderRadius='64px'
@@ -551,11 +527,7 @@ const TextWithIcons: React.FC = () => {
                 DERMATOLOGIST TRUSTED
               </Text>
             </Stack>
-            <Stack
-              w='200px'
-              justify='center'
-              align='center'
-            >
+            <Stack w='200px' justify='center' align='center'>
               <Stack
                 padding='16px'
                 borderRadius='64px'
@@ -585,11 +557,7 @@ const TextWithIcons: React.FC = () => {
                 ECO-CONCIOUS PACKAGING
               </Text>
             </Stack>
-            <Stack
-              w='200px'
-              justify='center'
-              align='center'
-            >
+            <Stack w='200px' justify='center' align='center'>
               <Stack
                 w='50px'
                 padding='16px'

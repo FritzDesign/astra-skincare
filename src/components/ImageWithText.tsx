@@ -16,9 +16,9 @@ export const ImageWithText: React.FC<ImageWithTextProps> = ({
   text
 }) => (
   <Stack
-    h='900px'
-    direction={['column', 'column', 'column', 'row']}
-    justify='center'
+    // h='900px'
+    direction={['column', 'column', 'column', 'column', 'row']}
+    justify='space-evenly'
     align='center'
     pos='relative'
     p='2rem'
@@ -35,12 +35,10 @@ export const ImageWithText: React.FC<ImageWithTextProps> = ({
     />
     <Stack
       alignItems={['flex-start', 'center']}
-      width='596px'
-      height='623px'
       maxWidth='100%'
-      align='center'
       justify='center'
       pos='relative'
+      mt='40px'
     >
       <Stack
         alignItems='center'
