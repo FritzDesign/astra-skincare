@@ -166,7 +166,7 @@ const Navigation: React.FC = () => {
             opacity={isSearchOpen ? 0.5 : 1}
             onClick={() => handleSearchToggle(isSearchOpen)}
           />
-          <Stack onClick={openCart}>
+          <Stack pos='relative' onClick={openCart}>
             <Icon
               _hover={{ transform: 'scale(1.03)' }}
               as={IoBagOutline}
@@ -181,8 +181,8 @@ const Navigation: React.FC = () => {
               cursor='pointer'
               pointerEvents='none'
               pos='absolute'
-              top='28.5px'
-              right={isMobile ? '67px' : '87px'}
+              bottom='.5px'
+              left='8px'
               fontSize={13}
             >
               {getCartItemQty()}
@@ -217,7 +217,7 @@ const Navigation: React.FC = () => {
             color='brand.Black'
             cursor='pointer'
           ></Icon>
-          <Stack>
+          <Stack pos='relative' onClick={openCart}>
             <Icon
               _hover={{ transform: 'scale(1.03)' }}
               as={IoBagOutline}
@@ -227,13 +227,12 @@ const Navigation: React.FC = () => {
               cursor='pointer'
               onClick={openCart}
             />
+            <Text pos='absolute' bottom='.5px' left='8px' fontSize={13}>
+              {getCartItemQty()}
+            </Text>
           </Stack>
-          <Text pos='absolute' top='36px' right='49px' fontSize={13}>
-            {getCartItemQty()}
-          </Text>
         </Stack>
       )}
-
       <AnimatePresence>
         {(isSearchOpen && !isMobile && (
           <FMC_Component
