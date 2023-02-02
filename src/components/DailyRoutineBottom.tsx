@@ -8,8 +8,10 @@ export const DailyRoutineBottom: React.FC = () => {
   return (
     <Stack
       id='container'
-      p='64px'
-      flexDir={['column', 'column', 'column', 'row']}
+      // p='64px'
+      px={['0px', '0px', '0px', '128px']}
+      py={['0px', '0px', '0px', '64px']}
+      flexDir={['column-reverse', 'column-reverse', 'column-reverse', 'row']}
       justify={[
         'space-between',
         'space-between',
@@ -18,105 +20,251 @@ export const DailyRoutineBottom: React.FC = () => {
         'space-evenly'
       ]}
       align='center'
-      h={['1250px', '1300px', '1400px', '650px']}
+      h={['1350px', '1400px', '1500px','1800px','1400px', '900px']}
     >
+      <Stack
+        justify={['center', 'center', 'center', 'flex-start']}
+        align={['center', 'center', 'center', 'flex-start']}
+        spacing='56px'
+        width={['80%', '80%', '80%', '40%']}
+        mb='2rem'
+      >
+        <Stack justify='flex-start' align='flex-start' spacing='5px'>
+          <Stack
+            direction='row'
+            justify='flex-start'
+            align='center'
+            spacing='32px'
+          >
+            <Stack width='53px' height='55px'>
+              <Stack
+                borderRadius='24px'
+                width='45px'
+                height='45px'
+                background='brand.Cream'
+              />
+            </Stack>
+            <Text
+              fontFamily='Marcellus'
+              lineHeight='1.4'
+              fontWeight='regular'
+              fontSize='32px'
+              color='brand.Navy'
+            >
+              Cleanser
+            </Text>
+          </Stack>
+          <Stack
+            paddingStart='88px'
+            direction='row'
+            justify='flex-start'
+            align='flex-start'
+            spacing='10px'
+          >
+            <Text
+              fontFamily='Inter'
+              lineHeight='1.5'
+              fontWeight='medium'
+              fontSize={['14px', '16px', '18px']}
+              color='UI.2'
+              opacity='0.8'
+              // width='408px'
+              maxWidth='100%'
+            >
+              Cleansers come before everything else - they remove dirt, sweat,
+              sebum, and leftover product, keeping the skin clean and preparing
+              it for subsequent products.
+            </Text>
+          </Stack>
+        </Stack>
+        <Stack
+          paddingStart='88px'
+          justify='flex-start'
+          align='flex-start'
+          spacing='5px'
+          // width='559px'
+          maxWidth='100%'
+        >
+          <Stack
+            direction='row'
+            justify='flex-start'
+            align='center'
+            spacing='32px'
+          >
+            <Stack width='53px' height='55px'>
+              <Stack
+                borderRadius='24px'
+                width='45px'
+                height='45px'
+                background='brand.Cream'
+              />
+            </Stack>
+            <Text
+              fontFamily='Marcellus'
+              lineHeight='1.4'
+              fontWeight='regular'
+              fontSize='32px'
+              color='brand.Navy'
+            >
+              Actives
+            </Text>
+          </Stack>
+          <Stack
+            paddingStart='88px'
+            direction='row'
+            justify='flex-start'
+            align='flex-start'
+            spacing='10px'
+            // width='438px'
+            maxWidth='100%'
+          >
+            <Text
+              fontFamily='Inter'
+              lineHeight='1.5'
+              fontWeight='medium'
+              fontSize={['14px', '16px', '18px']}
+              color='UI.2'
+              opacity='0.8'
+              flex='1'
+            >
+              ‘Actives’ refers to specific ingredients that affect the skin such
+              as BHAs, benzoyl peroxide, and retinol. Applying actives to clean,
+              dry skin is the best method.
+            </Text>
+          </Stack>
+        </Stack>
+        <Stack justify='flex-start' align='flex-start' spacing='5px'>
+          <Stack
+            direction='row'
+            justify='flex-start'
+            align='center'
+            spacing='32px'
+          >
+            <Stack width='53px' height='55px'>
+              <Stack
+                borderRadius='24px'
+                width='45px'
+                height='45px'
+                background='brand.Cream'
+              />
+            </Stack>
+            <Text
+              fontFamily='Marcellus'
+              lineHeight='1.4'
+              fontWeight='regular'
+              fontSize='32px'
+              color='brand.Navy'
+            >
+              Everything Else
+            </Text>
+          </Stack>
+          <Stack
+            paddingStart='88px'
+            direction='row'
+            justify='flex-start'
+            align='flex-start'
+            spacing='10px'
+          >
+            <Text
+              fontFamily='Inter'
+              lineHeight='1.5'
+              fontWeight='medium'
+              fontSize={['14px', '16px', '18px']}
+              color='UI.2'
+              opacity='0.8'
+              // width='408px'
+              maxWidth='100%'
+            >
+              Everything else covers, well, everything else! These are the
+              products that don't contain targeted ingredients, and this will
+              likely make up the bulk of your routine. Toners, serums, ampoules,
+              essences, lotions, or creams - it all goes here.{' '}
+            </Text>
+          </Stack>
+        </Stack>
+        <Stack
+          paddingStart='88px'
+          justify='flex-start'
+          align='flex-start'
+          spacing='5px'
+          width='559px'
+          maxWidth='100%'
+        >
+          <Stack
+            direction='row'
+            justify='flex-start'
+            align='center'
+            spacing='32px'
+          >
+            <Stack width='53px' height='55px'>
+              <Stack
+                borderRadius='24px'
+                width='45px'
+                height='45px'
+                background='brand.Cream'
+              />
+            </Stack>
+            <Text
+              fontFamily='Marcellus'
+              lineHeight='1.4'
+              fontWeight='regular'
+              fontSize='32px'
+              color='brand.Navy'
+            >
+              Sunscreens
+            </Text>
+          </Stack>
+          <Stack
+            paddingStart='88px'
+            direction='row'
+            justify='flex-start'
+            align='flex-start'
+            spacing='10px'
+            // width='150%'
+            // maxWidth='120%'
+          >
+            <Text
+              fontFamily='Inter'
+              lineHeight='1.5'
+              fontWeight='medium'
+              fontSize={['14px', '16px', '18px']}
+              color='UI.2'
+              opacity='0.8'
+              flex='1'
+            >
+              This is really the only hard rule for routine order: Sunscreen
+              comes last in your skincare routine. It works by forming a thick,
+              even layer over the skin - you don't want to disrupt this layer
+              too much with subsequent products.
+            </Text>
+          </Stack>
+        </Stack>
+      </Stack>
       <Stack
         pos='relative'
         alignItems='center'
-        w={['100%', '100%', '100%', '50%']}
-        h={['80%', '80%', '80%', '80%', '100%']}
+        justifyContent='center'
+        p='32px'
+        w={['80%', '80%', '80%', '50%', '40%']}
+        // h='91%'
       >
         <Image
           src={placeholder}
-          w={['100%', '100%', '100%', '75%']}
-          h={['80%', '80%']}
+          w='100%'
+          h={['80%', '80%', '60%', '100%']}
           objectFit='cover'
           border='1px solid black'
         />
         <Image
           src={placeholder}
           pos='absolute'
-          bottom={['8%', '6%', '10%', '0%']}
+          top={['65%', '65%', '65%', '-10%', '-5%']}
           right={['10%', '10%', '10%', '15%']}
           borderRadius='50%'
-          h={['120px', '160px', '200px', '160px', '204px']}
-          w={['120px', '160px', '200px', '160px', '204px']}
+          h={['120px', '160px', '160px', '120px', '204px']}
+          w={['120px', '160px', '160px', '120px', '204px']}
           objectFit='cover'
         />
-      </Stack>
-      <Stack
-        justify='flex-start'
-        align='flex-start'
-        spacing='32px'
-        width={['90%', '90%', '90%', '50%']}
-        h='100%'
-        // p='56px'
-        pt={['0px', '0px', '0px', '56px']}
-        maxWidth='100%'
-      >
-        <Stack justify='flex-start' align='flex-start' alignSelf='stretch'>
-          <Text
-            fontFamily='Marcellus'
-            lineHeight='1.2'
-            fontWeight='regular'
-            fontSize={['32px', '40px']}
-            textTransform='capitalize'
-            color='UI.1'
-            mt='1rem'
-            alignSelf='stretch'
-          >
-            build a daily routine
-          </Text>
-        </Stack>
-        <Text
-          fontFamily='Poppins'
-          lineHeight='1.5'
-          fontWeight='regular'
-          fontSize='18px'
-          color='UI.2'
-          opacity='0.8'
-          alignSelf='stretch'
-        >
-          It might be very tempting to rush into expanding your routine. Maybe
-          you'll hope that adding more products will help improve your skin
-          quicker. But make sure the foundation of your routine is strong before
-          moving on to any targeted treatments!
-        </Text>
-        <Stack
-          justify='flex-start'
-          align='flex-start'
-          spacing='32px'
-          alignSelf='stretch'
-        >
-          <Stack justify='flex-start' align='flex-start' alignSelf='stretch'>
-            <Text
-              fontFamily='Inter'
-              lineHeight='1.2'
-              fontWeight='bold'
-              fontSize='16px'
-              letterSpacing='0.1em'
-              textTransform='uppercase'
-              color='brand.Lavender'
-              alignSelf='stretch'
-            >
-              how do i get started?
-            </Text>
-          </Stack>
-          <Text
-            fontFamily='Poppins'
-            lineHeight='1.5'
-            fontWeight='regular'
-            fontSize='18px'
-            color='UI.2'
-            opacity='0.8'
-            alignSelf='stretch'
-          >
-            Knowing your skin type may be helpful for figuring out what products
-            to add. Skin type is not an exact science, and your skin's behavior
-            can change over time. You'll figure out what your skin likes and
-            dislikes as you start your skincare journey.
-          </Text>
-        </Stack>
       </Stack>
     </Stack>
   );

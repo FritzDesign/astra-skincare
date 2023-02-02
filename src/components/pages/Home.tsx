@@ -13,6 +13,7 @@ import heroImage from '../../assets/astra-hero.jpg';
 import imgWithText1 from '../../assets/image-with-text/astra-iwt-1.png';
 import TextWithIcons from '../TextWithIcons';
 import DailyRoutineTop from '../DailyRoutineTop';
+import DailyRoutineBottom from '../DailyRoutineBottom';
 
 const Home: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const Home: React.FC = () => {
       />
       <Gallery4x1 />
       <DailyRoutineTop />
+      <DailyRoutineBottom />
       <TextWithIcons />
       <ImageWithText
         heading='Build Your Ideal Skincare Routine'
