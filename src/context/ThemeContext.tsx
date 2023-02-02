@@ -7,7 +7,7 @@ const theme = extendTheme({
       Plum: '#313C4E',
       Cream: '#F7F2EE',
       Mint: '#8EC2B9',
-      Labender: '#8897AA',
+      Lavender: '#8897AA',
       Black: '#2C2C2C'
     },
     UI: {
