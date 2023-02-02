@@ -11,22 +11,18 @@ const TextWithIcons: React.FC = () => {
     duration: 0
   });
 
-  const animatedElements = Math.ceil(window.innerWidth / 864) + 1;
+  const animatedElementWidth = 864;
+  // enter the total width of the element to animate
 
-  // set start point to off screen nearest multiple of 864
-  // set end point to off screen nearest multiple of 864
+  const animatedElements =
+    Math.ceil(window.innerWidth / animatedElementWidth) + 1;
+  // number of elements needed to keep transition smooth on all widths
 
   const setAnimationSpeedAndTimings = (): void => {
     console.log(animatedElements);
 
     const speed = 140;
     // speed in pixels per second, adjustable for future usage
-    const animatedElementWidth = 864;
-    // enter the total width of the element to animate
-    const windowWidth = animatedElements * animatedElementWidth;
-    console.log(windowWidth);
-
-    // total width of the window + off screen elements
     const distance = animatedElements * animatedElementWidth;
     // total distance for the element to travel
     const startPoint = (-animatedElementWidth * animatedElements) / 2;

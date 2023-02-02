@@ -2,15 +2,13 @@ import * as React from 'react';
 import { Stack, Image, Button, Box } from '@chakra-ui/react';
 import { GalleryCardProps } from '../../models/Props';
 
-import placeholder from '../../assets/astra-card-ph.png';
-
-export const GalleryCard: React.FC<GalleryCardProps> = ({ btnText }) => (
+export const GalleryCard: React.FC<GalleryCardProps> = ({ btnText, image }) => (
   <Stack h={['272px', '392px']} m='16px !important'>
     <Box borderColor='brand.Black' border={['1px solid', 'none']} mb='24px'>
       <Image
         h={['200px', '320px']}
         w={['327px', '290px']}
-        src={placeholder}
+        src={image}
         objectFit='cover'
       />
     </Box>

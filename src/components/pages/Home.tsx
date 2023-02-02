@@ -12,6 +12,7 @@ import Announcement from '../Announcement';
 import heroImage from '../../assets/astra-hero.jpg';
 import imgWithText1 from '../../assets/image-with-text/astra-iwt-1.png';
 import TextWithIcons from '../TextWithIcons';
+import DailyRoutine from '../DailyRoutine';
 
 const Home: React.FC = () => {
   return (
@@ -22,6 +23,7 @@ const Home: React.FC = () => {
         heading='Unlock 24-7 Hydration with a New Clinically Proven Formula'
       />
       <Gallery4x1 />
+      <DailyRoutine />
       <ImageWithText
         heading='Build Your Ideal Skincare Routine'
         text="Whether you're dealing with stubborn acne, looking to minimize fine
