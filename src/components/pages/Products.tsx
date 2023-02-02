@@ -14,7 +14,6 @@ const Products: React.FC = () => {
     React.useContext<any>(ShopContext);
 
   const showMoreProducts = () => {
-    console.log('test');
 
     if (visibleProducts.length === products.length) {
       return setHasMoreProducts(false);
@@ -33,8 +32,6 @@ const Products: React.FC = () => {
     setVisibleProducts([
       ...products.slice(visibleProducts.length, addedPerScrollEvent)
     ]);
-
-    console.log('prod', products);
 
     // if ((container = document.getElementById('products-container'))) {
     //   if (container.children && container.children.length < products.length) {

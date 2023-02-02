@@ -12,11 +12,13 @@ import {
 import { BsPerson, BsSearch } from 'react-icons/bs';
 import { IoBagOutline } from 'react-icons/io5';
 import { HiOutlineMenu } from 'react-icons/hi';
+import { FiX } from 'react-icons/fi';
 import logo from '../assets/astra-logo.png';
 import { useNavigate } from 'react-router';
 import { ShopContext } from '../context/ShopContext';
 import FMC_Component from '../animations/defaults';
 import { AnimatePresence } from 'framer-motion';
+import NavMenu from './NavMenu';
 
 const Navigation: React.FC = () => {
   const [isMobile, isLessThan1280] = useMediaQuery([
@@ -26,10 +28,10 @@ const Navigation: React.FC = () => {
 
   const navigate = useNavigate();
   const [isSearchOpen, setIsSearchOpen] = React.useState(false);
-  const { openCart, checkout } = React.useContext<any>(ShopContext);
+  const { openCart, checkout, openMenu, closeMenu, isMenuOpen } =
+    React.useContext<any>(ShopContext);
 
   const getCartItemQty = (): string => {
-    console.log('render');
     let cartItemQty = 0;
     checkout.lineItems?.forEach((item: any) => {
       if (cartItemQty >= 9) return;
@@ -69,6 +71,8 @@ const Navigation: React.FC = () => {
       alignItems='center'
       background='UI.5'
       boxShadow='0px 1px 2px rgba(0, 0, 0, 0.05)'
+      onMouseLeave={isMenuOpen ? closeMenu : null}
+      onBlur={isMenuOpen ? closeMenu : null}
     >
       <Image
         loading='lazy'
@@ -189,12 +193,14 @@ const Navigation: React.FC = () => {
           </Stack>
           <Icon
             _hover={{ transform: 'scale(1.03)' }}
-            as={HiOutlineMenu}
+            as={isMenuOpen ? FiX : HiOutlineMenu}
+            onClick={isMenuOpen ? closeMenu : openMenu}
             w='24px'
             h='24px'
             color='brand.Black'
             cursor='pointer'
           />
+          {isMenuOpen && <NavMenu />}
         </Stack>
       ) : (
         <Stack direction='row' justify='space-between' w='6rem' align='center'>
@@ -226,7 +232,13 @@ const Navigation: React.FC = () => {
               cursor='pointer'
               onClick={openCart}
             />
-            <Text pos='absolute' pointerEvents='none' bottom='.5px' left='8px' fontSize={13}>
+            <Text
+              pos='absolute'
+              pointerEvents='none'
+              bottom='.5px'
+              left='8px'
+              fontSize={13}
+            >
               {getCartItemQty()}
             </Text>
           </Stack>

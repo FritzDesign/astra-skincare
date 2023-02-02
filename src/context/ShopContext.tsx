@@ -29,7 +29,6 @@ export class ShopProvider extends React.Component {
     client.checkout.create().then((checkout) => {
       localStorage.setItem('checkout_id', checkout.id);
       this.setState({ checkout });
-      console.log(checkout);
     });
   };
 
@@ -49,7 +48,6 @@ export class ShopProvider extends React.Component {
     );
     this.setState({ checkout });
     this.openCart();
-    console.log(checkout);
   };
 
   removeLineItem = async (lineItemIds) => {
@@ -63,14 +61,12 @@ export class ShopProvider extends React.Component {
   fetchAllProducts = () => {
     client.product.fetchAll().then((products) => {
       this.setState({ products });
-      console.log('products', products);
     });
   };
 
   fetchProductByHandle = (handle) => {
     client.product.fetchByHandle(handle).then((product) => {
       this.setState({ product });
-      console.log(product);
     });
   };
 

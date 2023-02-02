@@ -11,13 +11,13 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLDivElement
 );
 root.render(
-  <ChakraProvider theme={theme}>
-    <ShopProvider>
+  <ShopProvider>
+    <ChakraProvider theme={theme}>
       <React.StrictMode>
         <Router>
           <App />
         </Router>
       </React.StrictMode>
-    </ShopProvider>
-  </ChakraProvider>
+    </ChakraProvider>
+  </ShopProvider>
 );

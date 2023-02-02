@@ -19,6 +19,7 @@ export const DailyRoutineBottom: React.FC = () => {
         'space-evenly',
         'space-evenly'
       ]}
+      overflow='hidden'
       align='center'
       h={['1350px', '1400px', '1500px','1800px','1400px', '900px']}
     >
@@ -26,7 +27,7 @@ export const DailyRoutineBottom: React.FC = () => {
         justify={['center', 'center', 'center', 'flex-start']}
         align={['center', 'center', 'center', 'flex-start']}
         spacing='56px'
-        width={['80%', '80%', '80%', '40%']}
+        width={['90%', '80%', '80%', '40%']}
         mb='2rem'
       >
         <Stack justify='flex-start' align='flex-start' spacing='5px'>

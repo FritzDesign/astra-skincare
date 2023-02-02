@@ -1,6 +1,10 @@
 import { extendTheme } from '@chakra-ui/react';
+import { menuTheme } from '../themes/MenuTheme';
 
 const theme = extendTheme({
+  components: {
+    Menu: menuTheme,
+  },
   colors: {
     brand: {
       Peri: '#8897AA',

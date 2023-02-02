@@ -19,7 +19,6 @@ const TextWithIcons: React.FC = () => {
   // number of elements needed to keep transition smooth on all widths
 
   const setAnimationSpeedAndTimings = (): void => {
-    console.log(animatedElements);
 
     const speed = 140;
     // speed in pixels per second, adjustable for future usage
@@ -34,24 +33,12 @@ const TextWithIcons: React.FC = () => {
     const delay = animatedElementWidth / speed;
 
     setAnimation({ delay, startPoint, endPoint, duration });
-    console.log(
-      'start',
-      startPoint,
-      'end',
-      endPoint,
-      'dist',
-      distance,
-      'dur',
-      duration,
-      'del',
-      delay
-    );
   };
 
   useEffect(() => {
     setAnimationSpeedAndTimings();
   }, []);
-  console.log(animatedElements);
+  
   return (
     <Stack
       padding='80px'
