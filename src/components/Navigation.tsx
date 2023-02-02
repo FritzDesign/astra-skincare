@@ -261,14 +261,10 @@ const Navigation: React.FC = () => {
             borderRadius='0px'
             w='24rem'
             bgColor='brand.Cream'
+            onBlur={() => handleSearchToggle(isSearchOpen)}
           >
             <Input
               id='nav-search-input'
-              animate={{
-                transform: 'translateX(-24rem)'
-              }}
-              // @ts-ignore
-              transition={{ duration: 1, ease: 'easeIn' }}
               placeholder='search'
               borderRadius='0px'
               w='24rem'
@@ -298,18 +294,10 @@ const Navigation: React.FC = () => {
               borderRadius='0px'
               w='100%'
               bgColor='brand.Cream'
+              onBlur={() => handleSearchToggle(isSearchOpen)}
             >
               <Input
                 id='nav-search-input'
-                // initial={{ height: '0px' }}
-                // animate={{
-                //   transform: 'translateX(-25rem)'
-                // }}
-                // exit={{
-                //   transform: 'translateX(0rem)'
-                // }}
-                // // @ts-ignore
-                // transition={{ duration: 1, ease: 'easeIn' }}
                 placeholder='search'
                 borderRadius='0px'
                 bgColor='white'
