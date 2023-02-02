@@ -58,7 +58,7 @@ const TextWithIcons: React.FC = () => {
       align='center'
       overflow='hidden'
       background='#313C4E'
-      h='420px'
+      h={['500px', '460px', '420px']}
     >
       <Heading
         fontFamily='Marcellus'

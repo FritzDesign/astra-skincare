@@ -24,6 +24,7 @@ const Home: React.FC = () => {
       />
       <Gallery4x1 />
       <DailyRoutine />
+      <TextWithIcons />
       <ImageWithText
         heading='Build Your Ideal Skincare Routine'
         text="Whether you're dealing with stubborn acne, looking to minimize fine
@@ -33,7 +34,6 @@ const Home: React.FC = () => {
         for you."
         image={imgWithText1}
       />
-      <TextWithIcons />
       {/* <RichText
         heading="The relaxation you've been waiting for"
         text="Settle in for a good soak with an original BathBombs invention, exploding with essential oils and tons of fizzy fun. Whether you're after a relaxing, petal-laden floral soak or an invigorating multilayered explosion of color and scent, there's a handmade bath bomb perfect for every bathing experience."

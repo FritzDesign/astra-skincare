@@ -18,7 +18,7 @@ export const DailyRoutine: React.FC = () => {
         'space-evenly'
       ]}
       align='center'
-      h={['1250px', '1200px', '1200px', '650px']}
+      h={['1250px', '1300px', '1400px', '650px']}
     >
       <Stack
         pos='relative'
