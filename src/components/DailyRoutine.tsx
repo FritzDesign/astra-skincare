@@ -11,14 +11,32 @@ export const DailyRoutine: React.FC = () => {
   return (
     <Stack
       id='container'
-      m='120px'
-      flexDir={['column', 'column', 'row']}
-      justify='space-evenly'
+      my='120px'
+      mx={['60px', '60px', '60px', '60px', '120px']}
+      flexDir={['column', 'column', 'column', 'row']}
+      justify={[
+        'space-between',
+        'space-between',
+        'space-between',
+        'space-evenly',
+        'space-evenly'
+      ]}
       align='center'
-      h='650px'
+      h={['1200px', '1050px', '1050px', '650px']}
     >
-      <Stack pos='relative' w={['100%', '70%', '45%']} h='100%'>
-        <Image src={placeholder} h='62%' objectFit='cover' border='1px solid black' />
+      <Stack
+        pos='relative'
+        alignItems='center'
+        w={['90%', '90%', '90%', '50%']}
+        h='100%'
+      >
+        <Image
+          src={placeholder}
+          w={['90%', '90%', '90%', '75%']}
+          h='65%'
+          objectFit='cover'
+          border='1px solid black'
+        />
         <Image
           src={placeholder}
           pos='absolute'
@@ -34,7 +52,10 @@ export const DailyRoutine: React.FC = () => {
         justify='flex-start'
         align='flex-start'
         spacing='32px'
-        width='422px'
+        width={['90%', '90%', '90%', '50%']}
+        h='100%'
+        p='56px'
+        pt={['0px', '0px', '0px', '56px']}
         maxWidth='100%'
       >
         <Stack justify='flex-start' align='flex-start' alignSelf='stretch'>
@@ -78,7 +99,7 @@ export const DailyRoutine: React.FC = () => {
               fontSize='16px'
               letterSpacing='0.1em'
               textTransform='uppercase'
-              color='Brand.Lavender'
+              color='brand.Lavender'
               alignSelf='stretch'
             >
               how do i get started?
@@ -95,7 +116,7 @@ export const DailyRoutine: React.FC = () => {
           >
             Knowing your skin type may be helpful for figuring out what products
             to add. Skin type is not an exact science, and your skin's behavior
-            can change over time. You’ll figure out what your skin likes and
+            can change over time. You'll figure out what your skin likes and
             dislikes as you start your skincare journey.
           </Text>
         </Stack>

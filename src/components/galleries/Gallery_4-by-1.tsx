@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Stack, Text, Image, Button } from '@chakra-ui/react';
+import { Stack, Text, Image, Button, Grid } from '@chakra-ui/react';
 import { GalleryCard } from './GalleryCard';
 import card1 from '../../assets/Cards/Card1.png';
 import card2 from '../../assets/Cards/Card2.png';
@@ -27,17 +27,20 @@ export const Gallery4x1: React.FC = () => (
     >
       Shop Customer Favorites
     </Text>
-    <Stack
-      direction={['column', 'column', 'row']}
-      flexWrap='wrap'
-      justify='center'
-      align='start'
-      spacing='16px'
+    <Grid
+      templateColumns={[
+        'repeat(1, 4fr)',
+        'repeat(1, 4fr)',
+        'repeat(2, 2fr)',
+        'repeat(2, 2fr)',
+        'repeat(4, 1fr)',
+        'repeat(4, 1fr)'
+      ]}
     >
       <GalleryCard image={card1} btnText='Anti-Aging' />
       <GalleryCard image={card2} btnText='Acne Solutions' />
       <GalleryCard image={card3} btnText='Moisturizers' />
       <GalleryCard image={card4} btnText='Sun Protection' />
-    </Stack>
+    </Grid>
   </Stack>
 );
