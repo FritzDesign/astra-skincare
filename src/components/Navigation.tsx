@@ -226,7 +226,7 @@ const Navigation: React.FC = () => {
               cursor='pointer'
               onClick={openCart}
             />
-            <Text pos='absolute' bottom='.5px' left='8px' fontSize={13}>
+            <Text pos='absolute' pointerEvents='none' bottom='.5px' left='8px' fontSize={13}>
               {getCartItemQty()}
             </Text>
           </Stack>
