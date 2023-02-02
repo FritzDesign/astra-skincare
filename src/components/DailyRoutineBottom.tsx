@@ -4,7 +4,7 @@ import { Stack, Text, Button, Image, AspectRatio } from '@chakra-ui/react';
 
 import placeholder from '../assets/astra-card-ph.png';
 
-export const DailyRoutine: React.FC = () => {
+export const DailyRoutineBottom: React.FC = () => {
   return (
     <Stack
       id='container'
@@ -122,4 +122,4 @@ export const DailyRoutine: React.FC = () => {
   );
 };
 
-export default DailyRoutine;
+export default DailyRoutineBottom;
