@@ -2,17 +2,13 @@
 import * as React from 'react';
 import { Stack, Text, Button, Image, AspectRatio } from '@chakra-ui/react';
 
-import overlayImg from '../assets/image-with-text/astra-iwt-overlay.png';
-import watermarkTR from '../assets/image-with-text/astra-wm-topright.png';
-import watermarkBL from '../assets/image-with-text/astra-wm-bottomleft.png';
 import placeholder from '../assets/astra-card-ph.png';
 
 export const DailyRoutine: React.FC = () => {
   return (
     <Stack
       id='container'
-      my='120px'
-      mx={['60px', '60px', '60px', '60px', '120px']}
+      p='64px'
       flexDir={['column', 'column', 'column', 'row']}
       justify={[
         'space-between',
@@ -22,29 +18,29 @@ export const DailyRoutine: React.FC = () => {
         'space-evenly'
       ]}
       align='center'
-      h={['1200px', '1050px', '1050px', '650px']}
+      h={['1250px', '1200px', '1200px', '650px']}
     >
       <Stack
         pos='relative'
         alignItems='center'
-        w={['90%', '90%', '90%', '50%']}
-        h='100%'
+        w={['100%', '100%', '100%', '50%']}
+        h={['80%', '80%', '80%', '80%', '100%']}
       >
         <Image
           src={placeholder}
-          w={['90%', '90%', '90%', '75%']}
-          h='65%'
+          w={['100%', '100%', '100%', '75%']}
+          h={['80%', '80%']}
           objectFit='cover'
           border='1px solid black'
         />
         <Image
           src={placeholder}
           pos='absolute'
-          bottom='145px'
-          right='50px'
+          bottom={['8%', '6%', '10%', '0%']}
+          right={['10%', '10%', '10%', '15%']}
           borderRadius='50%'
-          h='204px'
-          w='204px'
+          h={['120px', '160px', '200px', '160px', '204px']}
+          w={['120px', '160px', '200px', '160px', '204px']}
           objectFit='cover'
         />
       </Stack>
@@ -54,7 +50,7 @@ export const DailyRoutine: React.FC = () => {
         spacing='32px'
         width={['90%', '90%', '90%', '50%']}
         h='100%'
-        p='56px'
+        // p='56px'
         pt={['0px', '0px', '0px', '56px']}
         maxWidth='100%'
       >
@@ -63,9 +59,10 @@ export const DailyRoutine: React.FC = () => {
             fontFamily='Marcellus'
             lineHeight='1.2'
             fontWeight='regular'
-            fontSize='40px'
+            fontSize={['32px', '40px']}
             textTransform='capitalize'
             color='UI.1'
+            mt='1rem'
             alignSelf='stretch'
           >
             build a daily routine
