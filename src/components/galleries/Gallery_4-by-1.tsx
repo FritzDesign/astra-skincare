@@ -1,6 +1,10 @@
 import * as React from 'react';
 import { Stack, Text, Image, Button } from '@chakra-ui/react';
 import { GalleryCard } from './GalleryCard';
+import card1 from '../../assets/Cards/Card1.png';
+import card2 from '../../assets/Cards/Card2.png';
+import card3 from '../../assets/Cards/Card3.png';
+import card4 from '../../assets/Cards/Card4.png';
 
 export const Gallery4x1: React.FC = () => (
   <Stack
@@ -30,10 +34,10 @@ export const Gallery4x1: React.FC = () => (
       align='start'
       spacing='16px'
     >
-      <GalleryCard btnText='Anti-Aging' />
-      <GalleryCard btnText='Acne Solutions' />
-      <GalleryCard btnText='Moisturizers' />
-      <GalleryCard btnText='Sun Protection' />
+      <GalleryCard image={card1} btnText='Anti-Aging' />
+      <GalleryCard image={card2} btnText='Acne Solutions' />
+      <GalleryCard image={card3} btnText='Moisturizers' />
+      <GalleryCard image={card4} btnText='Sun Protection' />
     </Stack>
   </Stack>
 );

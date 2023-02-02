@@ -29,6 +29,7 @@ export interface ImageWithTextProps {
   image: string;
   heading: string;
   text: string;
+  
 }
 
 export interface RichTextProps {
@@ -40,4 +41,5 @@ export interface RichTextProps {
 
 export interface GalleryCardProps {
   btnText: string;
+  image: string;
 }

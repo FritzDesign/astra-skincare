@@ -3,8 +3,6 @@ import { Stack, Text, Button, Image, Box } from '@chakra-ui/react';
 import { useNavigate } from 'react-router';
 import { HeroProps } from '../models/Props';
 import FMC_Component from '../animations/defaults';
-import { AnimatePresence } from 'framer-motion';
-import mobileHero from '../assets/astra-hero-mobile.png';
 
 const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
   const navigate = useNavigate();
