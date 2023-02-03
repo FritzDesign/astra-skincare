@@ -47,7 +47,6 @@ const Navigation: React.FC = () => {
   };
 
   const handleSearchToggle = (inputState: boolean) => {
-
     if (!isSearchOpen) {
       setTimeout(() => {
         const input = document.getElementById(
@@ -160,7 +159,9 @@ const Navigation: React.FC = () => {
       {isLessThan1280 ? (
         <Stack direction='row' justify='space-between' w='6rem' align='center'>
           <Icon
+            id='search-icon'
             _hover={{ transform: 'scale(1.04)' }}
+            pointerEvents={isSearchOpen ? 'none' : 'auto'}
             as={BsSearch}
             w='20px'
             h='20px'
@@ -207,6 +208,7 @@ const Navigation: React.FC = () => {
           <Icon
             _hover={{ transform: 'scale(1.04)' }}
             as={BsSearch}
+            pointerEvents={isSearchOpen ? 'none' : 'auto'}
             w='20px'
             h='20px'
             color='brand.Black'

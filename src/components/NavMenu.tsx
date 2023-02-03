@@ -16,7 +16,7 @@ import { ShopContext } from '../context/ShopContext';
 
 const NavMenu: React.FC = () => {
   const navigate = useNavigate();
-  const { closeMenu, isMenuOpen } = React.useContext<any>(ShopContext);
+  const { isMenuOpen } = React.useContext<any>(ShopContext);
 
   // menu button and menu seperate, control state from outside component
 
