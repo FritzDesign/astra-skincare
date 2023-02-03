@@ -3,8 +3,12 @@ import * as React from 'react';
 import { Stack, Text, Button, Image, AspectRatio } from '@chakra-ui/react';
 
 import placeholder from '../assets/astra-card-ph.png';
+import { useInView } from 'framer-motion';
 
 export const DailyRoutineBottom: React.FC = () => {
+  const imageRef = React.useRef(null);
+  const isInView = useInView(imageRef, { once: true, margin: '0% 0% -30% 0%' });
+
   return (
     <Stack
       id='container'
@@ -21,7 +25,7 @@ export const DailyRoutineBottom: React.FC = () => {
       ]}
       overflow='hidden'
       align='center'
-      h={['1350px', '1400px', '1500px','1800px','1400px', '900px']}
+      h={['1350px', '1400px', '1500px', '1800px', '1400px', '900px']}
     >
       <Stack
         justify={['center', 'center', 'center', 'flex-start']}
@@ -242,6 +246,9 @@ export const DailyRoutineBottom: React.FC = () => {
         </Stack>
       </Stack>
       <Stack
+        clipPath={isInView ? 'inset(0 0 0 0)' : 'inset(0 0 0 100%)'}
+        ref={imageRef}
+        transition='clip-path 1s ease'
         pos='relative'
         alignItems='center'
         justifyContent='center'

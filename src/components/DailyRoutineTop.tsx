@@ -3,8 +3,13 @@ import * as React from 'react';
 import { Stack, Text, Button, Image, AspectRatio } from '@chakra-ui/react';
 
 import placeholder from '../assets/astra-card-ph.png';
+import FMC_Component from '../animations/defaults';
+import { useInView } from 'framer-motion';
 
 export const DailyRoutineTop: React.FC = () => {
+  const imageRef = React.useRef(null);
+  const isInView = useInView(imageRef, { once: true, margin: '0% 0% -30% 0%' });
+
   return (
     <Stack
       id='container'
@@ -21,6 +26,9 @@ export const DailyRoutineTop: React.FC = () => {
       h={['1250px', '1300px', '1400px', '650px']}
     >
       <Stack
+        clipPath={isInView ? 'inset(0 0 0 0)' : 'inset(0 100% 0 0)'}
+        ref={imageRef}
+        transition='clip-path 1s ease'
         pos='relative'
         alignItems='center'
         w={['100%', '100%', '100%', '50%']}
