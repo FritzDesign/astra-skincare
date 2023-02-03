@@ -19,7 +19,6 @@ const TextWithIcons: React.FC = () => {
   // number of elements needed to keep transition smooth on all widths
 
   const setAnimationSpeedAndTimings = (): void => {
-
     const speed = 140;
     // speed in pixels per second, adjustable for future usage
     const distance = animatedElements * animatedElementWidth;
@@ -38,7 +37,7 @@ const TextWithIcons: React.FC = () => {
   useEffect(() => {
     setAnimationSpeedAndTimings();
   }, []);
-  
+
   return (
     <Stack
       padding='80px'
@@ -46,6 +45,8 @@ const TextWithIcons: React.FC = () => {
       overflow='hidden'
       background='#313C4E'
       h={['500px', '460px', '420px']}
+      zIndex={2}
+      pos='relative'
     >
       <Heading
         fontFamily='Marcellus'

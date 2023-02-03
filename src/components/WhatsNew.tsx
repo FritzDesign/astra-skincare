@@ -30,9 +30,8 @@ const WhatsNew: React.FC = () => {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, {
     once: true,
-    margin: '0% 0% -40% 0%'
+    margin: '0% 0% -66% 0%'
   });
-
   const rightClickRef = useRef(0);
 
   const handleSlideTranslate = (direction: string) => {
@@ -60,12 +59,15 @@ const WhatsNew: React.FC = () => {
   };
 
   const updateButtons = () => {
-    const WNContainerPosition = document
-      .getElementById('wn-container')
-      ?.getBoundingClientRect();
-    const cardContainerPosition = document
-      .getElementById('wn-card-container')
-      ?.getBoundingClientRect();
+    const WNContainerPosition = (
+      document.getElementById('wn-container')! as HTMLDivElement
+    ).getBoundingClientRect();
+    const cardContainerPosition = (
+      document.getElementById('wn-card-container')! as HTMLDivElement
+    ).getBoundingClientRect();
+
+    console.log(cardContainerPosition.right, WNContainerPosition.right);
+
     if (
       WNContainerPosition &&
       cardContainerPosition &&
@@ -84,16 +86,29 @@ const WhatsNew: React.FC = () => {
   };
 
   return (
-    <Stack
-      ref={containerRef}
+    <FMC_Component
+      display='flex'
+      flexDirection='column'
       id='wn-container'
       paddingX={['80px', '240px']}
       paddingY='64px'
-      justify='flex-start'
-      align='flex-start'
-      spacing='56px'
+      justifyContent='flex-start'
+      alignItems='flex-start'
+      gap='56px'
       background='brand.Cream'
       overflow='hidden'
+      ref={containerRef}
+      initial={{
+        transform: 'translateY(-420px)'
+      }}
+      animate={
+        isInView && {
+          transform: 'translateY(0px)'
+        }
+      }
+      // exit={{ transform: 'translateY(420px)' }}
+      // @ts-ignore
+      transition={{ type: 'spring', stiffness: 40, damping: 10 }}
     >
       <Stack direction='row' h='100%' justify='space-between' w='100%'>
         <Stack
@@ -151,22 +166,14 @@ const WhatsNew: React.FC = () => {
           />
         </Stack>
       </Stack>
-      <FMC_Component
-        display='flex'
-        initial={{ transform: `translateX(${window.innerWidth * 2}px)` }}
-        animate={
-          isInView && {
-            transform: 'translateX(0px)'
-          }
-        }
-        // @ts-ignore
-        transition={{ type: 'spring', stiffness: 40, damping: 10 }}
+      <Stack
         id='wn-card-container'
-        flexDirection='row'
-        justifyContent='flex-start'
-        alignItems='flex-start'
-        gap='56px'
+        direction='row'
+        justify='flex-start'
+        align='flex-start'
+        spacing='56px'
         h='492px'
+        mt='56px'
       >
         <Stack
           justify='flex-start'
@@ -247,6 +254,8 @@ const WhatsNew: React.FC = () => {
               fontSize='18px'
               color='UI.1'
               textAlign='center'
+              minWidth='46px'
+
             >
               1.5 oz
             </Text>
@@ -363,6 +372,8 @@ const WhatsNew: React.FC = () => {
               fontSize='18px'
               color='UI.1'
               textAlign='center'
+              minWidth='46px'
+
             >
               1.5 oz
             </Text>
@@ -479,6 +490,8 @@ const WhatsNew: React.FC = () => {
               fontSize='18px'
               color='UI.1'
               textAlign='center'
+              minWidth='46px'
+
             >
               1.5 oz
             </Text>
@@ -595,6 +608,8 @@ const WhatsNew: React.FC = () => {
               fontSize='18px'
               color='UI.1'
               textAlign='center'
+              minWidth='46px'
+
             >
               1.5 oz
             </Text>
@@ -686,6 +701,8 @@ const WhatsNew: React.FC = () => {
               fontSize='18px'
               color='UI.1'
               textAlign='center'
+              minWidth='46px'
+
             >
               1.5 oz
             </Text>
@@ -777,6 +794,8 @@ const WhatsNew: React.FC = () => {
               fontSize='18px'
               color='UI.1'
               textAlign='center'
+              minWidth='46px'
+
             >
               1.5 oz
             </Text>
@@ -813,8 +832,8 @@ const WhatsNew: React.FC = () => {
             </Stack>
           </Stack>
         </Stack>
-      </FMC_Component>
-    </Stack>
+      </Stack>
+    </FMC_Component>
   );
 };
 
