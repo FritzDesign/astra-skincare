@@ -4,7 +4,7 @@ import * as Chakra from '@chakra-ui/react';
 import { ShopContext } from '../../context/ShopContext';
 import Hero from '../Hero';
 import ImageWithText from '../ImageWithText';
-import { Gallery4x1 } from '../galleries/Gallery_4-by-1';
+import Gallery4x1 from '../galleries/Gallery_4-by-1';
 import RichText from '../RichText';
 import Gallery3x1 from '../galleries/Gallery_3-by-1';
 import Announcement from '../Announcement';

@@ -8,7 +8,7 @@ import { useInView } from 'framer-motion';
 const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
   const heroText = React.useRef(null);
   const isInView = useInView(heroText, {
-    margin: '-75% 0% 0% 0%'
+    margin: '-50% 0% 0% 0%'
   });
   const navigate = useNavigate();
 
@@ -51,7 +51,7 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
           }
           ref={heroText}
           //@ts-ignore
-          transition={{ delay: 0.25, duration: 0.75 }}
+          transition={{ duration: 0.5 }}
           fontFamily='Inter'
           lineHeight='1.2'
           fontWeight='bold'
@@ -76,7 +76,7 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
           }
           ref={heroText}
           //@ts-ignore
-          transition={{ delay: 1, duration: 1 }}
+          transition={{ duration: 0.75 }}
           fontFamily='Marcellus'
           lineHeight='1'
           fontWeight='regular'
@@ -102,7 +102,7 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
           }
           ref={heroText}
           //@ts-ignore
-          transition={{ delay: 2, duration: 1 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
           _active={{ transform: 'scale(0.98)' }}
           mt='32px'
           p='10.5px 24px'
