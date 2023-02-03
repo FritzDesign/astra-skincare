@@ -12,13 +12,17 @@ import {
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { MdWaves } from 'react-icons/md';
 import { BiChevronRight } from 'react-icons/bi';
+import { useState } from 'react';
 
 const Footer: React.FC = () => {
+  const [userInput, setUserInput] = useState<string>();
+
   const animateLabel = (direction: string) => {
     const label = document.getElementById(
       'email-input-label'
     )! as HTMLParagraphElement;
-    label.style.transition = 'transform .4s ease'
+    label.style.transition = 'transform .4s ease';
+    if (userInput?.length) return;
     if (direction === 'focus') {
       label.style.transform = 'translateY(-20px)';
     } else {
@@ -65,7 +69,7 @@ const Footer: React.FC = () => {
             fontWeight='bold'
             fontSize='17px'
             letterSpacing='-0.23px'
-            color='#5E4DCD'
+            color='brand.Charcoal'
           >
             Get started
           </Button>
@@ -115,6 +119,7 @@ const Footer: React.FC = () => {
                 fontSize='18px'
                 onFocus={() => animateLabel('focus')}
                 onBlur={() => animateLabel('blur')}
+                onChange={(e: any) => setUserInput(e.target.value)}
               />
               <Button
                 as={BiChevronRight}
@@ -133,7 +138,7 @@ const Footer: React.FC = () => {
             fontWeight='regular'
             fontSize='17px'
             letterSpacing='-0.23px'
-            color='#FFD2DD'
+            color='white'
           >
             Services
           </Link>
@@ -180,7 +185,7 @@ const Footer: React.FC = () => {
             fontWeight='regular'
             fontSize='17px'
             letterSpacing='-0.23px'
-            color='#FFD2DD'
+            color='white'
           >
             About
           </Link>
@@ -227,7 +232,7 @@ const Footer: React.FC = () => {
             fontWeight='regular'
             fontSize='17px'
             letterSpacing='-0.23px'
-            color='#FFD2DD'
+            color='white'
           >
             Help
           </Link>
