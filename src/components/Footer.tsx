@@ -1,57 +1,284 @@
-import * as React from 'react';
-import * as Chakra from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import {
+  Box,
+  Stack,
+  Text,
+  Button,
+  Divider,
+  Icon,
+  Flex,
+  Input,
+  Link
+} from '@chakra-ui/react';
+import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { MdWaves } from 'react-icons/md';
+import { BiChevronRight } from 'react-icons/bi';
 
 const Footer: React.FC = () => {
+  const animateLabel = (direction: string) => {
+    const label = document.getElementById(
+      'email-input-label'
+    )! as HTMLParagraphElement;
+    label.style.transition = 'transform .4s ease'
+    if (direction === 'focus') {
+      label.style.transform = 'translateY(-20px)';
+    } else {
+      label.style.transform = 'translateY(0px)';
+    }
+  };
+
   return (
-    <Chakra.Box backgroundColor='#FFA8E2'>
-      <Chakra.Grid
-        alignItems='center'
-        color='white'
-        fontWeight='bold'
-        templateColumns={['repeat(1, 1fr)', 'repeat(3, 1fr)']}
+    <Stack
+      p='80px 160px'
+      width='100%'
+      maxWidth='100%'
+      background='#1E2833'
+      borderColor='#979797'
+    >
+      <Stack
+        direction='row'
+        w='100%'
+        align='center'
+        justify='space-between'
+        pb='24px'
       >
-        <Chakra.VStack p='2rem'>
-          <Link className='footer-link' to='/'>
-            The Green Blast
-          </Link>
-          <Link className='footer-link' to='/'>
-            The Yellow Mellow
-          </Link>
-          <Link className='footer-link' to='/'>
-            The Blue Berry
-          </Link>
-        </Chakra.VStack>
-        <Chakra.VStack p='2rem'>
-          <Link className='footer-link' to='/'>
-            About Us
-          </Link>
-          <Link className='footer-link' to='/'>
-            Learn More
-          </Link>
-          <Link className='footer-link' to='/'>
-            Sustainability
-          </Link>
-        </Chakra.VStack>
-        <Chakra.Image
-          justifySelf='center'
-          maxH='10rem'
-          width='fit-content'
-          src='https://cdn.shopify.com/s/files/1/0472/5705/9496/files/Bath_Bomb_-_Product-5_-_trans_1.png?v=1610123549'
-        />
-      </Chakra.Grid>
-      <Chakra.Box>
-        <Chakra.Text
-          textAlign='center'
-          color='white'
-          w='100%'
-          borderTop='1px solid white'
-          p='1rem'
+        <Icon as={MdWaves} fill='brand.Cream' h='40px' w='40px' />
+        <Stack
+          direction='row'
+          align='center'
+          width='400px'
+          height='50px'
+          maxWidth='100%'
+          justify='space-between'
         >
-          © Copyright www.siteworx-solutions.com
-        </Chakra.Text>
-      </Chakra.Box>
-    </Chakra.Box>
+          <Text
+            fontFamily='DM Sans'
+            fontWeight='regular'
+            fontSize='22px'
+            letterSpacing='-0.3px'
+            color='#FFFFFF'
+          >
+            Ready to get started?
+          </Text>
+          <Button
+            size='lg'
+            fontFamily='DM Sans'
+            fontWeight='bold'
+            fontSize='17px'
+            letterSpacing='-0.23px'
+            color='#5E4DCD'
+          >
+            Get started
+          </Button>
+        </Stack>
+      </Stack>
+      <Divider borderColor='#979797' />
+      <Stack direction='row' pt='32px' pr='15%' justify='space-between'>
+        <Stack width='289px' height='139px' maxWidth='100%'>
+          <Text
+            fontFamily='DM Sans'
+            fontWeight='regular'
+            fontSize='22px'
+            letterSpacing='-0.3px'
+            color='#FFFFFF'
+          >
+            Subscribe to our newsletter
+          </Text>
+          <Stack pos='relative' width='289px' height='51px' maxWidth='100%'>
+            <Box
+              width='289px'
+              height='1px'
+              maxWidth='100%'
+              background='#FFFFFF'
+              opacity='0.1'
+              borderColor='#979797'
+            />
+            <Text
+              id='email-input-label'
+              fontFamily='DM Sans'
+              fontWeight='regular'
+              fontSize='15px'
+              letterSpacing='-0.2px'
+              color='#FFFFFF'
+              opacity='0.5'
+              pos='absolute'
+              top='16px'
+              left='4px'
+            >
+              Email address
+            </Text>
+            <Flex align='flex-end'>
+              <Input
+                _focus={{ borderColor: 'white' }}
+                variant='flushed'
+                color='brand.Cream'
+                borderColor='#979797'
+                fontSize='18px'
+                onFocus={() => animateLabel('focus')}
+                onBlur={() => animateLabel('blur')}
+              />
+              <Button
+                as={BiChevronRight}
+                borderRadius='8px 8px 0px 0px'
+                width='50px'
+                height='50px'
+                background='#FFD2DD'
+                borderColor='#979797'
+              ></Button>
+            </Flex>
+          </Stack>
+        </Stack>
+        <Stack width='106px' height='182px'>
+          <Link
+            fontFamily='DM Sans'
+            fontWeight='regular'
+            fontSize='17px'
+            letterSpacing='-0.23px'
+            color='#FFD2DD'
+          >
+            Services
+          </Link>
+          <Link
+            fontFamily='DM Sans'
+            fontWeight='regular'
+            fontSize='15px'
+            letterSpacing='-0.2px'
+            color='#FFFFFF'
+          >
+            Email Marketing
+          </Link>
+          <Link
+            fontFamily='DM Sans'
+            fontWeight='regular'
+            fontSize='15px'
+            letterSpacing='-0.2px'
+            color='#FFFFFF'
+          >
+            Campaigns
+          </Link>
+          <Link
+            fontFamily='DM Sans'
+            fontWeight='regular'
+            fontSize='15px'
+            letterSpacing='-0.2px'
+            color='#FFFFFF'
+          >
+            Branding
+          </Link>
+          <Link
+            fontFamily='DM Sans'
+            fontWeight='regular'
+            fontSize='15px'
+            letterSpacing='-0.2px'
+            color='#FFFFFF'
+          >
+            Offline
+          </Link>
+        </Stack>
+        <Stack width='65px' height='182px'>
+          <Link
+            fontFamily='DM Sans'
+            fontWeight='regular'
+            fontSize='17px'
+            letterSpacing='-0.23px'
+            color='#FFD2DD'
+          >
+            About
+          </Link>
+          <Link
+            fontFamily='DM Sans'
+            fontWeight='regular'
+            fontSize='15px'
+            letterSpacing='-0.2px'
+            color='#FFFFFF'
+          >
+            Our Story
+          </Link>
+          <Link
+            fontFamily='DM Sans'
+            fontWeight='regular'
+            fontSize='15px'
+            letterSpacing='-0.2px'
+            color='#FFFFFF'
+          >
+            Benefits
+          </Link>
+          <Link
+            fontFamily='DM Sans'
+            fontWeight='regular'
+            fontSize='15px'
+            letterSpacing='-0.2px'
+            color='#FFFFFF'
+          >
+            Team
+          </Link>
+          <Link
+            fontFamily='DM Sans'
+            fontWeight='regular'
+            fontSize='15px'
+            letterSpacing='-0.2px'
+            color='#FFFFFF'
+          >
+            Careers
+          </Link>
+        </Stack>
+        <Stack width='76px' height='102px'>
+          <Link
+            fontFamily='DM Sans'
+            fontWeight='regular'
+            fontSize='17px'
+            letterSpacing='-0.23px'
+            color='#FFD2DD'
+          >
+            Help
+          </Link>
+          <Link
+            fontFamily='DM Sans'
+            fontWeight='regular'
+            fontSize='15px'
+            letterSpacing='-0.2px'
+            color='#FFFFFF'
+          >
+            FAQs
+          </Link>
+          <Link
+            fontFamily='DM Sans'
+            fontWeight='regular'
+            fontSize='15px'
+            letterSpacing='-0.2px'
+            color='#FFFFFF'
+          >
+            Contact Us
+          </Link>
+        </Stack>
+      </Stack>
+      <Stack width='100%' direction='row' justify='space-between' height='22px'>
+        <Stack direction='row' width='288px' justify='space-between'>
+          <Text
+            fontFamily='DM Sans'
+            fontWeight='regular'
+            fontSize='15px'
+            letterSpacing='-0.2px'
+            color='#FFFFFF'
+          >
+            Terms & Conditions
+          </Text>
+          <Text
+            fontFamily='DM Sans'
+            fontWeight='regular'
+            fontSize='15px'
+            letterSpacing='-0.2px'
+            color='#FFFFFF'
+          >
+            Privacy Policy
+          </Text>
+        </Stack>
+        <Stack direction='row' w='144px' justify='space-between'>
+          <Icon as={FaFacebookF} fill='brand.Cream' h='24px' w='24px' />
+          <Icon as={FaTwitter} fill='brand.Cream' h='24px' w='24px' />
+          <Icon as={FaInstagram} fill='brand.Cream' h='24px' w='24px' />
+        </Stack>
+      </Stack>
+    </Stack>
   );
 };
 
