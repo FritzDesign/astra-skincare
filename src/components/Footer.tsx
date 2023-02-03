@@ -7,7 +7,8 @@ import {
   Icon,
   Flex,
   Input,
-  Link
+  Link,
+  IconButton
 } from '@chakra-ui/react';
 import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { MdWaves } from 'react-icons/md';
@@ -64,6 +65,8 @@ const Footer: React.FC = () => {
             Ready to get started?
           </Text>
           <Button
+            _hover={{ filter: 'brightness(1.1)' }}
+            _focus={{ transform: 'scale(0.98)' }}
             size='lg'
             fontFamily='DM Sans'
             fontWeight='bold'
@@ -121,14 +124,16 @@ const Footer: React.FC = () => {
                 onBlur={() => animateLabel('blur')}
                 onChange={(e: any) => setUserInput(e.target.value)}
               />
-              <Button
+              <IconButton
+                aria-label=''
                 as={BiChevronRight}
+                p='8px'
                 borderRadius='8px 8px 0px 0px'
                 width='50px'
                 height='50px'
                 background='#FFD2DD'
                 borderColor='#979797'
-              ></Button>
+              ></IconButton>
             </Flex>
           </Stack>
         </Stack>
@@ -258,7 +263,7 @@ const Footer: React.FC = () => {
       </Stack>
       <Stack width='100%' direction='row' justify='space-between' height='22px'>
         <Stack direction='row' width='288px' justify='space-between'>
-          <Text
+          <Link
             fontFamily='DM Sans'
             fontWeight='regular'
             fontSize='15px'
@@ -266,8 +271,8 @@ const Footer: React.FC = () => {
             color='#FFFFFF'
           >
             Terms & Conditions
-          </Text>
-          <Text
+          </Link>
+          <Link
             fontFamily='DM Sans'
             fontWeight='regular'
             fontSize='15px'
@@ -275,12 +280,30 @@ const Footer: React.FC = () => {
             color='#FFFFFF'
           >
             Privacy Policy
-          </Text>
+          </Link>
         </Stack>
         <Stack direction='row' w='144px' justify='space-between'>
-          <Icon as={FaFacebookF} fill='brand.Cream' h='24px' w='24px' />
-          <Icon as={FaTwitter} fill='brand.Cream' h='24px' w='24px' />
-          <Icon as={FaInstagram} fill='brand.Cream' h='24px' w='24px' />
+          <Icon
+            cursor='pointer'
+            as={FaFacebookF}
+            fill='brand.Cream'
+            h='24px'
+            w='24px'
+          />
+          <Icon
+            cursor='pointer'
+            as={FaTwitter}
+            fill='brand.Cream'
+            h='24px'
+            w='24px'
+          />
+          <Icon
+            cursor='pointer'
+            as={FaInstagram}
+            fill='brand.Cream'
+            h='24px'
+            w='24px'
+          />
         </Stack>
       </Stack>
     </Stack>
