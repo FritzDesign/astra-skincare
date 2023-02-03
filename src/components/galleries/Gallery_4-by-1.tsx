@@ -13,8 +13,8 @@ const Gallery4x1: React.FC = () => {
   const cardRef = React.useRef(null);
   const isInView = useInView(container, {
     // @ts-ignore
-    // once: true,
-    margin: '0% 0% -25% 0%'
+    once: true,
+    margin: '0% 0% -35% 0%'
   });
 
   return (
@@ -52,7 +52,7 @@ const Gallery4x1: React.FC = () => {
         initial={{ opacity: 0 }}
         animate={
           isInView && {
-            opacity: [0.25, 0.5, 0.75, 1]
+            opacity: [0, 0.25, 0.5, 0.75, 1]
           }
         }
         ref={cardRef}

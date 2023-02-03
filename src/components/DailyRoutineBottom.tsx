@@ -7,7 +7,7 @@ import { useInView } from 'framer-motion';
 
 export const DailyRoutineBottom: React.FC = () => {
   const imageRef = React.useRef(null);
-  const isInView = useInView(imageRef, { once: true, margin: '0% 0% -30% 0%' });
+  const isInView = useInView(imageRef, { once: true, margin: '0% 0% -20% 0%' });
 
   return (
     <Stack
