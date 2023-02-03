@@ -3,7 +3,7 @@ import { menuTheme } from '../themes/MenuTheme';
 
 const theme = extendTheme({
   components: {
-    Menu: menuTheme,
+    Menu: menuTheme
   },
   colors: {
     brand: {
@@ -13,7 +13,8 @@ const theme = extendTheme({
       Cream: '#F7F2EE',
       Mint: '#8EC2B9',
       Lavender: '#8897AA',
-      Black: '#2C2C2C'
+      Black: '#2C2C2C',
+      Charcoal: '#2C2C2C'
     },
     UI: {
       1: '#4D4B49',

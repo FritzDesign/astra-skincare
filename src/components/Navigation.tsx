@@ -72,7 +72,6 @@ const Navigation: React.FC = () => {
       background='UI.5'
       boxShadow='0px 1px 2px rgba(0, 0, 0, 0.05)'
       onMouseLeave={isMenuOpen ? closeMenu : null}
-      onBlur={isMenuOpen ? closeMenu : null}
     >
       <Image
         loading='lazy'

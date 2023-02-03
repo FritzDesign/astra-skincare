@@ -37,7 +37,6 @@ const baseStyle = definePartsStyle({
     }
   },
   divider: {
-    // this will style the MenuDivider component
     my: '20px',
     w: '100%',
     borderColor: 'UI.4',
