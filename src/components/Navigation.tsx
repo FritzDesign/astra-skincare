@@ -21,7 +21,7 @@ import { AnimatePresence } from 'framer-motion';
 import NavMenu from './NavMenu';
 
 const Navigation: React.FC = () => {
-  const [isMobile, isLessThan1280] = useMediaQuery([
+  const [isMobile, isLessThan1536] = useMediaQuery([
     '(max-width: 480px)',
     '(max-width: 1536px)'
   ]);
@@ -156,7 +156,7 @@ const Navigation: React.FC = () => {
           Why Astra
         </Link>
       </Stack>
-      {isLessThan1280 ? (
+      {isLessThan1536 ? (
         <Stack direction='row' justify='space-between' w='6rem' align='center'>
           <Icon
             id='search-icon'
