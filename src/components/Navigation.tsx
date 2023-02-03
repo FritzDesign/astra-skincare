@@ -47,6 +47,7 @@ const Navigation: React.FC = () => {
   };
 
   const handleSearchToggle = (inputState: boolean) => {
+    if (isMenuOpen) closeMenu();
     if (!isSearchOpen) {
       setTimeout(() => {
         const input = document.getElementById(

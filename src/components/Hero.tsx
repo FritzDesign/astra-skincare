@@ -6,15 +6,16 @@ import FMC_Component from '../animations/defaults';
 import { useInView } from 'framer-motion';
 
 const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
-  const heroText = React.useRef(null);
-  const isInView = useInView(heroText, {
-    margin: '-50% 0% 0% 0%'
+  const heroImage = React.useRef(null);
+  const isInView = useInView(heroImage, {
+    margin: '-80% 0% 0% 0%'
   });
   const navigate = useNavigate();
 
   return (
     <Stack
       as={FMC_Component}
+      ref={heroImage}
       justify='center'
       align='flex-start'
       spacing='10px'
@@ -49,7 +50,6 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
                 }
               : { transform: ['translateX(0px)', 'translateX(-400px)'] }
           }
-          ref={heroText}
           //@ts-ignore
           transition={{ duration: 0.5 }}
           fontFamily='Inter'
@@ -74,7 +74,6 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
                 }
               : { transform: ['translateX(0px)', 'translateX(-800px)'] }
           }
-          ref={heroText}
           //@ts-ignore
           transition={{ duration: 0.75 }}
           fontFamily='Marcellus'
@@ -100,7 +99,6 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
                 }
               : { opacity: 0 }
           }
-          ref={heroText}
           //@ts-ignore
           transition={{ delay: 0.5, duration: 0.5 }}
           _active={{ transform: 'scale(0.98)' }}
