@@ -1,4 +1,13 @@
-import { Stack, Menu, Text, Icon, Image, Button, Link, Divider } from '@chakra-ui/react';
+import {
+  Stack,
+  Menu,
+  Text,
+  Icon,
+  Image,
+  Button,
+  Link,
+  Divider
+} from '@chakra-ui/react';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import { MdStarRate, MdStarHalf } from 'react-icons/md';
 
@@ -10,14 +19,13 @@ import cardImage4 from '../assets/Cards/placeholder-img4.png';
 const WhatsNew: React.FC = () => {
   return (
     <Stack
-      paddingX='80px'
+      paddingX={['80px', '240px']}
       paddingY='64px'
       justify='flex-start'
       align='flex-start'
       spacing='56px'
-      // width='1368px'
-      maxWidth='100%'
       background='Brand.Cream'
+      overflow='hidden'
     >
       <Stack direction='row' h='100%' justify='space-between' w='100%'>
         <Stack
@@ -48,7 +56,9 @@ const WhatsNew: React.FC = () => {
             textAlign='center'
             fontWeight='600'
             fontSize='14px'
-          >SHOP ALL</Link>
+          >
+            SHOP ALL
+          </Link>
         </Stack>
         <Stack
           padding='8px'
@@ -156,7 +166,7 @@ const WhatsNew: React.FC = () => {
             align='center'
             spacing='58px'
           >
-            <Button size='lg' variant='outline' colorScheme='blue'>
+            <Button size='lg' variant='outline'>
               More Info
             </Button>
             <Stack
