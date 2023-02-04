@@ -23,7 +23,7 @@ const App: React.FC = () => {
         {/* <Router.Route path='/products' element={<Products />} />
         <Router.Route path='/products/:handle' element={<SingleProduct />} /> */}
       </Router.Routes>
-      {/* <Footer /> */}
+      <Footer />
     </Chakra.Box>
   );
 };

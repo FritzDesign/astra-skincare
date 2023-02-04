@@ -41,7 +41,6 @@ const Home: React.FC = () => {
         image={imgWithText1}
       />
       <Rewards />
-      <Footer />
       {/* <RichText
         heading="The relaxation you've been waiting for"
         text="Settle in for a good soak with an original BathBombs invention, exploding with essential oils and tons of fizzy fun. Whether you're after a relaxing, petal-laden floral soak or an invigorating multilayered explosion of color and scent, there's a handmade bath bomb perfect for every bathing experience."

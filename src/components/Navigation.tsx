@@ -7,7 +7,8 @@ import {
   Link,
   Input,
   useMediaQuery,
-  Text
+  Text,
+  Box
 } from '@chakra-ui/react';
 import { BsPerson, BsSearch } from 'react-icons/bs';
 import { IoBagOutline } from 'react-icons/io5';
@@ -27,6 +28,7 @@ const Navigation: React.FC = () => {
   ]);
 
   const navigate = useNavigate();
+  const [showNav, setShowNav] = React.useState(false);
   const [isSearchOpen, setIsSearchOpen] = React.useState(false);
   const { openCart, checkout, openMenu, closeMenu, isMenuOpen } =
     React.useContext<any>(ShopContext);
@@ -59,13 +61,31 @@ const Navigation: React.FC = () => {
     setIsSearchOpen(!inputState);
   };
 
+  const handleShowNav = (mouseLeave = false): any => {
+    if (mouseLeave) {
+      return setShowNav(false);
+    }
+    const isScrollAtTop =
+      document.body.scrollTop || document.documentElement.scrollTop;
+    console.log(document.body.scrollTop, document.documentElement.scrollTop);
+    if (isScrollAtTop < 150) {
+      setShowNav(false);
+      return 'top';
+    } else {
+      setShowNav(true);
+    }
+  };
+
   React.useEffect(() => {
     getCartItemQty();
   }, [checkout]);
 
   return (
     <Flex
-      pos='relative'
+      pos={showNav ? 'sticky' : 'relative'}
+      w='100vw'
+      left='0'
+      top='0'
       paddingX={['20px', '40px']}
       paddingY='16px'
       justifyContent='space-between'
@@ -73,7 +93,28 @@ const Navigation: React.FC = () => {
       background='UI.5'
       boxShadow='0px 1px 2px rgba(0, 0, 0, 0.05)'
       onMouseLeave={isMenuOpen ? closeMenu : null}
+      zIndex={1001}
+      onMouseEnter={showNav ? () => handleShowNav() : undefined}
     >
+      <Box
+        pos='fixed'
+        h='14px'
+        w='100vw'
+        left='0'
+        top='0'
+        onMouseEnter={() => handleShowNav()}
+        // onMouseLeave={() => handleShowNav(true)}
+        pointerEvents={showNav ? 'none' : 'auto'}
+      ></Box>
+      <Box
+        pos='fixed'
+        h='22px'
+        w='100vw'
+        left='0'
+        top='110px'
+        onMouseEnter={() => handleShowNav(true)}
+        pointerEvents={showNav ? 'auto' : 'none'}
+      ></Box>
       <Image
         loading='lazy'
         src={logo}
@@ -260,7 +301,7 @@ const Navigation: React.FC = () => {
             transition={{ duration: 0.5, ease: 'linear' }}
             pos='absolute'
             bottom='-40px'
-            right='-24rem'
+            right='-23.72rem'
             borderRadius='0px'
             w='24rem'
             bgColor='brand.Cream'

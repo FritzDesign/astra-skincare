@@ -38,6 +38,7 @@ const Footer: React.FC = () => {
       maxWidth='100%'
       background='#1E2833'
       borderColor='#979797'
+      overflow='hidden'
     >
       <Stack
         direction='row'

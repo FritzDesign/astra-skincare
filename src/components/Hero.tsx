@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Stack, Text, Button, Image, Box } from '@chakra-ui/react';
+import { Stack, Image } from '@chakra-ui/react';
 import { useNavigate } from 'react-router';
 import { HeroProps } from '../models/Props';
 import FMC_Component from '../animations/defaults';
