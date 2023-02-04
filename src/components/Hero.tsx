@@ -8,7 +8,7 @@ import { useInView } from 'framer-motion';
 const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
   const heroImage = React.useRef(null);
   const isInView = useInView(heroImage, {
-    margin: '-80% 0% 0% 0%'
+    margin: '-70% 0% 0% 0%'
   });
   const navigate = useNavigate();
 
@@ -43,6 +43,9 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
         pos='absolute'
       >
         <FMC_Component
+          initial={{
+            transform: 'translateX(-400px)'
+          }}
           animate={
             isInView
               ? {
@@ -67,6 +70,9 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
           NEW ASTRA SKIN CARE DROP
         </FMC_Component>
         <FMC_Component
+          initial={{
+            transform: 'translateX(-400px)'
+          }}
           animate={
             isInView
               ? {

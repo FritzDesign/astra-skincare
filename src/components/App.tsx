@@ -12,12 +12,11 @@ import Products from './pages/Products';
 import Announcement from './Announcement';
 
 const App: React.FC = () => {
-  const { accentColor1 } = React.useContext<any>(ShopContext);
+
   return (
-    <Chakra.Box className='App' backgroundColor={accentColor1}>
+    <Chakra.Box className='App'>
       <Announcement />
       <Navigation />
-       {/* <NavMenu /> */}
       <Cart /> 
       <Router.Routes>
         <Router.Route path='/' element={<Home />} />
