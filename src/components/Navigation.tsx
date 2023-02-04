@@ -103,7 +103,6 @@ const Navigation: React.FC = () => {
         left='0'
         top='0'
         onMouseEnter={() => handleShowNav()}
-        // onMouseLeave={() => handleShowNav(true)}
         pointerEvents={showNav ? 'none' : 'auto'}
       ></Box>
       <Box

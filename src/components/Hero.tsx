@@ -8,7 +8,7 @@ import { useInView } from 'framer-motion';
 const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
   const heroImage = React.useRef(null);
   const isInView = useInView(heroImage, {
-    margin: '-70% 0% 0% 0%'
+    margin: '-50% 0% 0% 0%'
   });
   const navigate = useNavigate();
 
@@ -19,7 +19,7 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
       justify='center'
       align='flex-start'
       spacing='10px'
-      h={['500px', '700px', '900px']}
+      h={['360px', '360px', '480px', '480px', '480px', '540px']}
       overflow='hidden'
       bg={bgColor}
     >
@@ -37,7 +37,7 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
         justify={['center', 'flex-start']}
         align={['center', 'flex-start']}
         spacing='32px'
-        width='698px'
+        width={['400px', '400px', '698px']}
         maxWidth='100%'
         boxShadow='Shadow/XL'
         pos='absolute'
@@ -56,7 +56,7 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
           fontFamily='Inter'
           lineHeight='1.2'
           fontWeight='bold'
-          fontSize={['12px', '16px']}
+          fontSize={['12px', '12px', '16px']}
           letterSpacing='0.1em'
           textTransform='uppercase'
           color='brand.Mint'
@@ -84,7 +84,7 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
           fontFamily='Marcellus'
           lineHeight='1'
           fontWeight='regular'
-          fontSize={['32px', '48px', '64px']}
+          fontSize={['32px', '32px', '56px']}
           color='#FFFFFF'
           alignSelf='stretch'
           pointerEvents='none'
@@ -108,14 +108,14 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
           transition={{ delay: 0.5, duration: 0.5 }}
           _active={{ transform: 'scale(0.98)' }}
           mt='32px'
-          p='10.5px 24px'
+          p={['6px 18px', '6px 18px', '10.5px 24px']}
           borderRadius='.375rem'
           size='lg'
           fontWeight={['500', '600']}
           bgColor='brand.Cream'
           color='UI.1'
           outline='2px solid transparent'
-          fontSize='1.125rem'
+          fontSize={['1rem', '1rem', '1.125rem']}
           onClick={() => navigate('/products')}
         >
           Shop Now
