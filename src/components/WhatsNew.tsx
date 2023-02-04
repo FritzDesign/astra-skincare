@@ -30,7 +30,7 @@ const WhatsNew: React.FC = () => {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, {
     once: true,
-    margin: '0% 0% -66% 0%'
+    margin: '0% 0% -80% 0%'
   });
   const rightClickRef = useRef(0);
 
@@ -99,7 +99,7 @@ const WhatsNew: React.FC = () => {
       overflow='hidden'
       ref={containerRef}
       initial={{
-        transform: 'translateY(-420px)'
+        transform: 'translateY(-776px)'
       }}
       animate={
         isInView && {
@@ -108,7 +108,7 @@ const WhatsNew: React.FC = () => {
       }
       // exit={{ transform: 'translateY(420px)' }}
       // @ts-ignore
-      transition={{ type: 'spring', stiffness: 40, damping: 10 }}
+      transition={{ type: 'spring', stiffness: 20, damping: 10 }}
     >
       <Stack direction='row' h='100%' justify='space-between' w='100%'>
         <Stack
@@ -255,7 +255,6 @@ const WhatsNew: React.FC = () => {
               color='UI.1'
               textAlign='center'
               minWidth='46px'
-
             >
               1.5 oz
             </Text>
@@ -373,7 +372,6 @@ const WhatsNew: React.FC = () => {
               color='UI.1'
               textAlign='center'
               minWidth='46px'
-
             >
               1.5 oz
             </Text>
@@ -491,7 +489,6 @@ const WhatsNew: React.FC = () => {
               color='UI.1'
               textAlign='center'
               minWidth='46px'
-
             >
               1.5 oz
             </Text>
@@ -609,7 +606,6 @@ const WhatsNew: React.FC = () => {
               color='UI.1'
               textAlign='center'
               minWidth='46px'
-
             >
               1.5 oz
             </Text>
@@ -702,7 +698,6 @@ const WhatsNew: React.FC = () => {
               color='UI.1'
               textAlign='center'
               minWidth='46px'
-
             >
               1.5 oz
             </Text>
@@ -795,7 +790,6 @@ const WhatsNew: React.FC = () => {
               color='UI.1'
               textAlign='center'
               minWidth='46px'
-
             >
               1.5 oz
             </Text>

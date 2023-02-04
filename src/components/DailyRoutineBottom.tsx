@@ -26,6 +26,9 @@ export const DailyRoutineBottom: React.FC = () => {
       overflow='hidden'
       align='center'
       h={['1350px', '1400px', '1500px', '1800px', '1400px', '900px']}
+      pos='relative'
+      bgColor='white'
+      zIndex={2}
     >
       <Stack
         justify={['center', 'center', 'center', 'flex-start']}
