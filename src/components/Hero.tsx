@@ -43,9 +43,6 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
         pos='absolute'
       >
         <FMC_Component
-          initial={{
-            transform: 'translateX(-400px)'
-          }}
           animate={
             isInView
               ? {
@@ -55,6 +52,7 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
           }
           //@ts-ignore
           transition={{ duration: 0.5 }}
+          transform='translateX(-400px)'
           fontFamily='Inter'
           lineHeight='1.2'
           fontWeight='bold'
@@ -82,6 +80,7 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
           }
           //@ts-ignore
           transition={{ duration: 0.75 }}
+          transform='translateX(-800px)'
           fontFamily='Marcellus'
           lineHeight='1'
           fontWeight='regular'
