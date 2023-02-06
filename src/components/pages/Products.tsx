@@ -29,9 +29,9 @@ const Products: React.FC = () => {
   React.useEffect(() => {
     fetchAllProducts();
 
-    setVisibleProducts([
-      ...products.slice(visibleProducts.length, addedPerScrollEvent)
-    ]);
+    // setVisibleProducts([
+    //   ...products.slice(visibleProducts.length, addedPerScrollEvent)
+    // ]);
 
     // if ((container = document.getElementById('products-container'))) {
     //   if (container.children && container.children.length < products.length) {
@@ -41,6 +41,8 @@ const Products: React.FC = () => {
     //   }
     // }
   }, []);
+
+
 
   return (
     <Chakra.Box>

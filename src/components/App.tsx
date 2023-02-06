@@ -20,8 +20,8 @@ const App: React.FC = () => {
       <Cart /> 
       <Router.Routes>
         <Router.Route path='/' element={<Home />} />
-        {/* <Router.Route path='/products' element={<Products />} />
-        <Router.Route path='/products/:handle' element={<SingleProduct />} /> */}
+        <Router.Route path='/products' element={<Products />} />
+        <Router.Route path='/products/:handle' element={<SingleProduct />} />
       </Router.Routes>
       <Footer />
     </Chakra.Box>
