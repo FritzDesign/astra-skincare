@@ -46,3 +46,12 @@ export interface GalleryCardProps {
 export interface NavMenuProps {
   toggleMenu: Function;
 }
+
+export interface ProductProps {
+  isNew?: boolean;
+  image: string;
+  title: string;
+  category: string;
+  price: string;
+  weight: string;
+}

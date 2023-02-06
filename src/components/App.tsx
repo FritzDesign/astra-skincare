@@ -12,12 +12,11 @@ import Products from './pages/Products';
 import Announcement from './Announcement';
 
 const App: React.FC = () => {
-
   return (
     <Chakra.Box className='App'>
       <Announcement />
       <Navigation />
-      <Cart /> 
+      <Cart />
       <Router.Routes>
         <Router.Route path='/' element={<Home />} />
         <Router.Route path='/products' element={<Products />} />

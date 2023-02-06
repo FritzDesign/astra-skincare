@@ -183,7 +183,7 @@ const Navigation: React.FC = () => {
           fontSize='18px'
           color='brand.Black'
         >
-          Help Me Choose
+          Why Astra
         </Link>
         <Link
           _hover={{ textDecoration: 'underline' }}
@@ -194,7 +194,7 @@ const Navigation: React.FC = () => {
           fontSize='18px'
           color='brand.Black'
         >
-          Why Astra
+          Contact Us
         </Link>
       </Stack>
       {isLessThan1536 ? (

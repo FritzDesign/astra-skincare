@@ -86,8 +86,7 @@ export class ShopProvider extends React.Component {
     this.setState({ isMenuOpen: true });
   };
 
-  
-  render() {
+  render() {    
     return (
       <ShopContext.Provider
         value={{

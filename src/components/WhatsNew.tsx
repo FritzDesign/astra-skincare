@@ -106,7 +106,6 @@ const WhatsNew: React.FC = () => {
           transform: 'translateY(0px)'
         }
       }
-      // exit={{ transform: 'translateY(420px)' }}
       // @ts-ignore
       transition={{ type: 'spring', stiffness: 20, damping: 10 }}
     >
