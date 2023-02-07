@@ -97,13 +97,7 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
           _hover={{ filter: 'brightness(1.1)' }}
           cursor='pointer'
           initial={{ opacity: 0 }}
-          animate={
-            isInView
-              ? {
-                  opacity: 1
-                }
-              : { opacity: 0 }
-          }
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           //@ts-ignore
           transition={{ delay: 0.5, duration: 0.5 }}
           _active={{ transform: 'scale(0.98)' }}

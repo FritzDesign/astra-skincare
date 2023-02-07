@@ -73,16 +73,17 @@ export class ShopProvider extends React.Component {
   };
 
   fetchNextPage = () => {
-    if (this.state.totalProducts === this.state.products.length) {
-      this.setState({ hasMoreProducts: false });
-    }
-    this.setState({ isLoading: true });
-    client.fetchNextPage(this.state.products).then((nextProducts) => {
-      this.setState({
-        products: [...this.state.products, ...nextProducts.model]
+    if (this.state.hasMoreProducts) {
+      console.log('?');
+
+      this.setState({ isLoading: true });
+      client.fetchNextPage(this.state.products).then((nextProducts) => {
+        this.setState({
+          products: [...this.state.products, ...nextProducts.model]
+        });
+        this.setState({ isLoading: false });
       });
-      this.setState({ isLoading: false });
-    });
+    }
   };
 
   fetchProductByHandle = (handle) => {
