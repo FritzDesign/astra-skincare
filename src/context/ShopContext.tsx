@@ -63,7 +63,7 @@ export class ShopProvider extends React.Component {
 
   fetchAllProducts = () => {
     this.setState({ isLoading: true });
-    client.product.fetchAll(9).then((products) => {
+    client.product.fetchAll(6).then((products) => {
       this.setState({ products });
       this.setState({ isLoading: false });
     });
@@ -73,6 +73,7 @@ export class ShopProvider extends React.Component {
   };
 
   fetchNextPage = () => {
+    console.log('called')
     if (this.state.hasMoreProducts) {
       console.log('?');
 

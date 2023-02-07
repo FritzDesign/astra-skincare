@@ -69,14 +69,14 @@ const Products: React.FC = () => {
         {hasMoreProducts && <Box ref={triggerRef} h='1px' />}
         {isLoading && (
           <Grid
-          templateColumns={[
-            'repeat(1, 1fr)',
-            'repeat(1, 1fr)',
-            'repeat(2, 1fr)',
-            'repeat(2, 1fr)',
-            'repeat(3, 1fr)'
-          ]}
-          justifyItems='center'
+            templateColumns={[
+              'repeat(1, 1fr)',
+              'repeat(1, 1fr)',
+              'repeat(2, 1fr)',
+              'repeat(2, 1fr)',
+              'repeat(3, 1fr)'
+            ]}
+            justifyItems='center'
           >
             <Stack
               justify='center'
