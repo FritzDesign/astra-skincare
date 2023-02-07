@@ -1,23 +1,37 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext, useRef } from 'react';
 import * as Chakra from '@chakra-ui/react';
 import { ShopContext } from '../../context/ShopContext';
-import { useNavigate } from 'react-router';
 import Product from '../Product';
 import { Product as ProductInterface } from '../../models/API';
+import { useInView } from 'framer-motion';
 
 const Products: React.FC = () => {
-  const { products, fetchAllProducts } = useContext<any>(ShopContext);
-  const navigate = useNavigate();
+  const [firstRender, setFirstRender] = useState(true);
+  const triggerRef = useRef(null);
+  const isInView = useInView(triggerRef);
+  const {
+    products,
+    totalProducts,
+    fetchAllProducts,
+    fetchNextPage,
+    isLoading,
+    hasMoreProducts
+  } = useContext<any>(ShopContext);
 
   useEffect(() => {
     fetchAllProducts();
+    setFirstRender(false);
   }, []);
 
-  console.log(products);
+  useEffect(() => {
+    if (products.length) {
+      fetchNextPage();
+    }
+  }, [isInView]);
 
   return (
     <Chakra.Box>
-      <Chakra.Grid  p='2rem !important'>
+      <Chakra.Grid p='2rem !important'>
         <Chakra.Grid
           id='products-container'
           templateColumns={[
@@ -29,18 +43,31 @@ const Products: React.FC = () => {
           ]}
           justifyItems='center'
         >
-          {products.map((product: ProductInterface) => {
-            return (
-              <Product
-                image={product.images[0].src}
-                title={product.title}
-                category={product.productType}
-                price={product.variants[0].price.amount}
-                weight={product.variants[0].weight + ' oz'}
-              />
-            );
-          })}
+          {products.length ? (
+            products.map((product: ProductInterface) => {
+              return (
+                <Product
+                  image={product.images[0].src}
+                  title={product.title}
+                  category={product.productType}
+                  price={product.variants[0].price.amount}
+                  weight={product.variants[0].weight + ' oz'}
+                />
+              );
+            })
+          ) : (
+            <Chakra.Box minH='1000px' />
+          )}
         </Chakra.Grid>
+        {isLoading && (
+          <Chakra.Progress
+            isIndeterminate
+            colorScheme='telegram'
+            size='lg'
+            mx='25%'
+          />
+        )}
+        {hasMoreProducts && <Chakra.Box ref={triggerRef} h='1px' />}
       </Chakra.Grid>
     </Chakra.Box>
   );

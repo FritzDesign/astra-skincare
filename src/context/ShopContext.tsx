@@ -12,9 +12,12 @@ export class ShopProvider extends React.Component {
   state = {
     product: {},
     products: [],
+    totalProducts: 0,
     checkout: {},
     isCartOpen: false,
-    isMenuOpen: false
+    isMenuOpen: false,
+    isLoading: false,
+    hasMoreProducts: true
   };
 
   componentDidMount() {
@@ -59,8 +62,28 @@ export class ShopProvider extends React.Component {
   };
 
   fetchAllProducts = () => {
-    client.product.fetchAll().then((products) => {
+    this.setState({ isLoading: true });
+    client.product.fetchAll(9).then((products) => {
       this.setState({ products });
+      this.setState({ isLoading: false });
+    });
+    client.product.fetchAll(250).then((products) => {
+      this.setState({ totalProducts: products.length });
+    });
+  };
+
+  fetchNextPage = () => {
+    if (this.state.totalProducts === this.state.products.length) {
+      this.setState({ hasMoreProducts: false });
+    }
+    console.log(this.state.hasMoreProducts);
+    console.log('fetching...');
+    this.setState({ isLoading: true });
+    client.fetchNextPage(this.state.products).then((nextProducts) => {
+      this.setState({
+        products: [...this.state.products, ...nextProducts.model]
+      });
+      this.setState({ isLoading: false });
     });
   };
 
@@ -86,12 +109,14 @@ export class ShopProvider extends React.Component {
     this.setState({ isMenuOpen: true });
   };
 
-  render() {    
+  render() {
     return (
       <ShopContext.Provider
         value={{
           ...this.state,
           fetchAllProducts: this.fetchAllProducts,
+          fetchPrevPage: this.fetchPrevPage,
+          fetchNextPage: this.fetchNextPage,
           fetchProductByHandle: this.fetchProductByHandle,
           addItemToCheckout: this.addItemToCheckout,
           removeLineItem: this.removeLineItem,
