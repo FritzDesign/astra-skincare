@@ -6,7 +6,6 @@ import { Product as ProductInterface } from '../../models/API';
 import { useInView } from 'framer-motion';
 
 const Products: React.FC = () => {
-  const [firstRender, setFirstRender] = useState(true);
   const triggerRef = useRef(null);
   const isInView = useInView(triggerRef);
   const {
@@ -20,7 +19,6 @@ const Products: React.FC = () => {
 
   useEffect(() => {
     fetchAllProducts();
-    setFirstRender(false);
   }, []);
 
   useEffect(() => {
@@ -44,9 +42,10 @@ const Products: React.FC = () => {
           justifyItems='center'
         >
           {products.length ? (
-            products.map((product: ProductInterface) => {
+            products.map((product: ProductInterface, i: number) => {
               return (
                 <Product
+                  key={i}
                   image={product.images[0].src}
                   title={product.title}
                   category={product.productType}
@@ -64,7 +63,7 @@ const Products: React.FC = () => {
             isIndeterminate
             colorScheme='telegram'
             size='lg'
-            mx='25%'
+            mx={['5%', '25%']}
           />
         )}
         {hasMoreProducts && <Chakra.Box ref={triggerRef} h='1px' />}

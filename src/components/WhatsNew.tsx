@@ -66,8 +66,6 @@ const WhatsNew: React.FC = () => {
       document.getElementById('wn-card-container')! as HTMLDivElement
     ).getBoundingClientRect();
 
-    console.log(cardContainerPosition.right, WNContainerPosition.right);
-
     if (
       WNContainerPosition &&
       cardContainerPosition &&

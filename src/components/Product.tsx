@@ -15,11 +15,11 @@ const Product: React.FC<ProductProps> = ({
       pos='relative'
       align='center'
       spacing='16px'
-      w='376px'
+      w={['300px','376px']}
       h='451px'
       my='2rem'
     >
-      <Image src={image} minW='376px' minH='345px' objectFit='cover' objectPosition='center center' />
+      <Image src={image} minW={['300px', '376px']} minH={['275px', '345px']} objectFit='cover' objectPosition='center center' />
       {isNew && (
         <Stack
           bgColor='brand.Charcoal'

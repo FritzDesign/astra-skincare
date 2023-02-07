@@ -67,7 +67,6 @@ const Navigation: React.FC = () => {
     }
     const isScrollAtTop =
       document.body.scrollTop || document.documentElement.scrollTop;
-    console.log(document.body.scrollTop, document.documentElement.scrollTop);
     if (isScrollAtTop < 150) {
       setShowNav(false);
       return 'top';

@@ -125,8 +125,10 @@ const Footer: React.FC = () => {
                 onBlur={() => animateLabel('blur')}
                 onChange={(e: any) => setUserInput(e.target.value)}
               />
-              <IconButton
-                aria-label=''
+              <Icon
+                _hover={{ filter: 'brightness(1.1)' }}
+                _active={{ transform: 'scale(0.98)' }}
+                cursor='pointer'
                 as={BiChevronRight}
                 p='8px'
                 borderRadius='8px 8px 0px 0px'
@@ -134,7 +136,7 @@ const Footer: React.FC = () => {
                 height='50px'
                 background='#FFD2DD'
                 borderColor='#979797'
-              ></IconButton>
+              ></Icon>
             </Flex>
           </Stack>
         </Stack>

@@ -76,8 +76,6 @@ export class ShopProvider extends React.Component {
     if (this.state.totalProducts === this.state.products.length) {
       this.setState({ hasMoreProducts: false });
     }
-    console.log(this.state.hasMoreProducts);
-    console.log('fetching...');
     this.setState({ isLoading: true });
     client.fetchNextPage(this.state.products).then((nextProducts) => {
       this.setState({
