@@ -228,9 +228,9 @@ const Navigation: React.FC = () => {
               cursor='pointer'
               pointerEvents='none'
               pos='absolute'
-              bottom='.5px'
+              bottom='0px'
               left='8px'
-              fontSize={13}
+              fontSize={12}
             >
               {getCartItemQty()}
             </Text>
@@ -280,9 +280,9 @@ const Navigation: React.FC = () => {
             <Text
               pos='absolute'
               pointerEvents='none'
-              bottom='.5px'
+              bottom='0px'
               left='8px'
-              fontSize={13}
+              fontSize={12}
             >
               {getCartItemQty()}
             </Text>

@@ -19,7 +19,7 @@ const baseStyle = definePartsStyle({
   // },
   list: {
     // this will style the MenuList component
-    boxShadow: '-2px 4px 8px #2C2C2C',
+    boxShadow: '0px 2px 4px #B3AFAB',
     borderRadius: '0',
     py: '4',
     px: '26px',

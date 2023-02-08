@@ -148,7 +148,7 @@ const WhatsNew: React.FC = () => {
           padding='8px'
           direction='row'
           justify='center'
-          align='center'
+          align={['flex-end', 'center']}
           spacing='24px'
         >
           <Icon
