@@ -31,6 +31,7 @@ const Products: React.FC = () => {
   } = useContext<any>(ShopContext);
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     fetchAllProducts();
   }, []);
 

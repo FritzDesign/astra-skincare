@@ -137,6 +137,7 @@ const Navigation: React.FC = () => {
           fontWeight='medium'
           fontSize='18px'
           color='brand.Black'
+          onClick={() => navigate('/products')}
         >
           Skincare Products
         </Link>

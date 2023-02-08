@@ -20,6 +20,7 @@ import cardImage3 from '../assets/Cards/regeneration-kit.png';
 import { useRef, useState } from 'react';
 import { useInView } from 'framer-motion';
 import FMC_Component from '../animations/defaults';
+import { useNavigate } from 'react-router';
 
 const WhatsNew: React.FC = () => {
   const [arrowDisabled, setArrowDisabled] = useState({
@@ -33,6 +34,8 @@ const WhatsNew: React.FC = () => {
     margin: '0% 0% -80% 0%'
   });
   const rightClickRef = useRef(0);
+
+  const navigate = useNavigate();
 
   const handleSlideTranslate = (direction: string) => {
     const cardWidth = 402;
@@ -136,6 +139,7 @@ const WhatsNew: React.FC = () => {
             textAlign='center'
             fontWeight='600'
             fontSize='14px'
+            onClick={() => navigate('/products')}
           >
             SHOP ALL
           </Link>
