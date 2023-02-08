@@ -37,7 +37,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
         src={backdrop}
         pos='absolute'
         w='100vw'
-        h={['95px', '190px']}
+        h={['95px','95px','95px','115px','140px', '190px']}
         zIndex={-2}
       />
       <Stack
@@ -50,9 +50,9 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
         <Image
           src={watermarkTR}
           pos='absolute'
-          w={['33%', '33%', '33%', '50%', '100%']}
-          h={['33%', '33%', '33%', '50%', '100%']}
-          right='0%'
+          w='33%'
+          h='40%'
+          right='0'
           top='0%'
           zIndex={-1}
         />
