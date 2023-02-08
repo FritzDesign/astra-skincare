@@ -23,7 +23,7 @@ export const DailyRoutineTop: React.FC = () => {
         'space-evenly'
       ]}
       align='center'
-      h={['1250px', '1300px', '1400px', '650px']}
+      mb='3rem'
     >
       <Stack
         clipPath={isInView ? 'inset(0 0 0 0)' : 'inset(0 100% 0 0)'}
@@ -31,6 +31,7 @@ export const DailyRoutineTop: React.FC = () => {
         transition='clip-path 1s ease'
         pos='relative'
         alignItems='center'
+        p='32px'
         w={['100%', '100%', '100%', '50%']}
         h={['80%', '80%', '80%', '80%', '100%']}
       >
@@ -58,7 +59,7 @@ export const DailyRoutineTop: React.FC = () => {
         spacing='32px'
         width={['90%', '90%', '90%', '50%']}
         h='100%'
-        // p='56px'
+        pl='5rem'
         pt={['0px', '0px', '0px', '56px']}
         maxWidth='100%'
       >
@@ -84,47 +85,13 @@ export const DailyRoutineTop: React.FC = () => {
           color='UI.2'
           opacity='0.8'
           alignSelf='stretch'
+          w='540px'
         >
           It might be very tempting to rush into expanding your routine. Maybe
           you'll hope that adding more products will help improve your skin
           quicker. But make sure the foundation of your routine is strong before
           moving on to any targeted treatments!
         </Text>
-        <Stack
-          justify='flex-start'
-          align='flex-start'
-          spacing='32px'
-          alignSelf='stretch'
-        >
-          <Stack justify='flex-start' align='flex-start' alignSelf='stretch'>
-            <Text
-              fontFamily='Inter'
-              lineHeight='1.2'
-              fontWeight='bold'
-              fontSize='16px'
-              letterSpacing='0.1em'
-              textTransform='uppercase'
-              color='brand.Lavender'
-              alignSelf='stretch'
-            >
-              how do i get started?
-            </Text>
-          </Stack>
-          <Text
-            fontFamily='Poppins'
-            lineHeight='1.5'
-            fontWeight='regular'
-            fontSize='18px'
-            color='UI.2'
-            opacity='0.8'
-            alignSelf='stretch'
-          >
-            Knowing your skin type may be helpful for figuring out what products
-            to add. Skin type is not an exact science, and your skin's behavior
-            can change over time. You'll figure out what your skin likes and
-            dislikes as you start your skincare journey.
-          </Text>
-        </Stack>
       </Stack>
     </Stack>
   );

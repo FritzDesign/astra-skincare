@@ -12,7 +12,6 @@ export const DailyRoutineBottom: React.FC = () => {
   return (
     <Stack
       id='container'
-      // p='64px'
       px={['0px', '0px', '0px', '128px']}
       py={['0px', '0px', '0px', '64px']}
       flexDir={['column-reverse', 'column-reverse', 'column-reverse', 'row']}
@@ -23,74 +22,27 @@ export const DailyRoutineBottom: React.FC = () => {
         'space-evenly',
         'space-evenly'
       ]}
-      overflow='hidden'
       align='center'
-      h={['1350px', '1400px', '1500px', '1800px', '1400px', '900px']}
+      overflow='hidden'
+      // h={['1350px', '1400px', '1500px', '1800px', '1400px', '900px']}
       pos='relative'
       bgColor='white'
       zIndex={2}
+      mb='3rem'
     >
       <Stack
         justify={['center', 'center', 'center', 'flex-start']}
         align={['center', 'center', 'center', 'flex-start']}
         spacing='56px'
         width={['90%', '80%', '80%', '40%']}
-        mb='2rem'
+        mt='6rem'
       >
-        <Stack justify='flex-start' align='flex-start' spacing='5px'>
-          <Stack
-            direction='row'
-            justify='flex-start'
-            align='center'
-            spacing='32px'
-          >
-            <Stack width='53px' height='55px'>
-              <Stack
-                borderRadius='24px'
-                width='45px'
-                height='45px'
-                background='brand.Cream'
-              />
-            </Stack>
-            <Text
-              fontFamily='Marcellus'
-              lineHeight='1.4'
-              fontWeight='regular'
-              fontSize='32px'
-              color='brand.Navy'
-            >
-              Cleanser
-            </Text>
-          </Stack>
-          <Stack
-            paddingStart='88px'
-            direction='row'
-            justify='flex-start'
-            align='flex-start'
-            spacing='10px'
-          >
-            <Text
-              fontFamily='Inter'
-              lineHeight='1.5'
-              fontWeight='medium'
-              fontSize={['14px', '16px', '18px']}
-              color='UI.2'
-              opacity='0.8'
-              // width='408px'
-              maxWidth='100%'
-            >
-              Cleansers come before everything else - they remove dirt, sweat,
-              sebum, and leftover product, keeping the skin clean and preparing
-              it for subsequent products.
-            </Text>
-          </Stack>
-        </Stack>
         <Stack
           paddingStart='88px'
           justify='flex-start'
           align='flex-start'
           spacing='5px'
-          // width='559px'
+          width='540px'
           maxWidth='100%'
         >
           <Stack
@@ -99,32 +51,23 @@ export const DailyRoutineBottom: React.FC = () => {
             align='center'
             spacing='32px'
           >
-            <Stack width='53px' height='55px'>
-              <Stack
-                borderRadius='24px'
-                width='45px'
-                height='45px'
-                background='brand.Cream'
-              />
-            </Stack>
             <Text
               fontFamily='Marcellus'
               lineHeight='1.4'
               fontWeight='regular'
               fontSize='32px'
               color='brand.Navy'
+              pb='32px'
             >
-              Actives
+              How to Get Started
             </Text>
           </Stack>
           <Stack
-            paddingStart='88px'
             direction='row'
             justify='flex-start'
             align='flex-start'
             spacing='10px'
-            // width='438px'
-            maxWidth='100%'
+            pb='3rem'
           >
             <Text
               fontFamily='Inter'
@@ -135,115 +78,10 @@ export const DailyRoutineBottom: React.FC = () => {
               opacity='0.8'
               flex='1'
             >
-              ‘Actives’ refers to specific ingredients that affect the skin such
-              as BHAs, benzoyl peroxide, and retinol. Applying actives to clean,
-              dry skin is the best method.
-            </Text>
-          </Stack>
-        </Stack>
-        <Stack justify='flex-start' align='flex-start' spacing='5px'>
-          <Stack
-            direction='row'
-            justify='flex-start'
-            align='center'
-            spacing='32px'
-          >
-            <Stack width='53px' height='55px'>
-              <Stack
-                borderRadius='24px'
-                width='45px'
-                height='45px'
-                background='brand.Cream'
-              />
-            </Stack>
-            <Text
-              fontFamily='Marcellus'
-              lineHeight='1.4'
-              fontWeight='regular'
-              fontSize='32px'
-              color='brand.Navy'
-            >
-              Everything Else
-            </Text>
-          </Stack>
-          <Stack
-            paddingStart='88px'
-            direction='row'
-            justify='flex-start'
-            align='flex-start'
-            spacing='10px'
-          >
-            <Text
-              fontFamily='Inter'
-              lineHeight='1.5'
-              fontWeight='medium'
-              fontSize={['14px', '16px', '18px']}
-              color='UI.2'
-              opacity='0.8'
-              // width='408px'
-              maxWidth='100%'
-            >
-              Everything else covers, well, everything else! These are the
-              products that don't contain targeted ingredients, and this will
-              likely make up the bulk of your routine. Toners, serums, ampoules,
-              essences, lotions, or creams - it all goes here.{' '}
-            </Text>
-          </Stack>
-        </Stack>
-        <Stack
-          paddingStart='88px'
-          justify='flex-start'
-          align='flex-start'
-          spacing='5px'
-          width='559px'
-          maxWidth='100%'
-        >
-          <Stack
-            direction='row'
-            justify='flex-start'
-            align='center'
-            spacing='32px'
-          >
-            <Stack width='53px' height='55px'>
-              <Stack
-                borderRadius='24px'
-                width='45px'
-                height='45px'
-                background='brand.Cream'
-              />
-            </Stack>
-            <Text
-              fontFamily='Marcellus'
-              lineHeight='1.4'
-              fontWeight='regular'
-              fontSize='32px'
-              color='brand.Navy'
-            >
-              Sunscreens
-            </Text>
-          </Stack>
-          <Stack
-            paddingStart='88px'
-            direction='row'
-            justify='flex-start'
-            align='flex-start'
-            spacing='10px'
-            // width='150%'
-            // maxWidth='120%'
-          >
-            <Text
-              fontFamily='Inter'
-              lineHeight='1.5'
-              fontWeight='medium'
-              fontSize={['14px', '16px', '18px']}
-              color='UI.2'
-              opacity='0.8'
-              flex='1'
-            >
-              This is really the only hard rule for routine order: Sunscreen
-              comes last in your skincare routine. It works by forming a thick,
-              even layer over the skin - you don't want to disrupt this layer
-              too much with subsequent products.
+              Knowing your skin type may be helpful for figuring out what
+              products to add. Skin type is not an exact science, and your
+              skin's behavior can change over time. You’ll figure out what your
+              skin likes and dislikes as you start your skincare journey.
             </Text>
           </Stack>
         </Stack>
@@ -253,11 +91,10 @@ export const DailyRoutineBottom: React.FC = () => {
         ref={imageRef}
         transition='clip-path 1s ease'
         pos='relative'
-        alignItems='center'
-        justifyContent='center'
+        align='center'
+        justify='center'
         p='32px'
         w={['80%', '80%', '80%', '50%', '40%']}
-        // h='91%'
       >
         <Image
           src={placeholder}

@@ -114,6 +114,7 @@ const Navigation: React.FC = () => {
         pointerEvents={showNav ? 'auto' : 'none'}
       ></Box>
       <Image
+        mixBlendMode='multiply'
         loading='lazy'
         src={logo}
         h='56px'
