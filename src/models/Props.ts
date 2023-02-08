@@ -61,6 +61,6 @@ export interface ProductMenuProps {
   hero: string;
   fallback: string;
   heading: string;
-  categoryNames: string[];
+  categoryNames?: string[];
   menuItems: string[];
 }

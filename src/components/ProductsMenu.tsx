@@ -67,21 +67,29 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
         />
         <Flex
           w='100vw'
-          justifyContent='space-between'
+          justifyContent={categoryNames ? 'space-between' : 'center'}
           alignItems='center'
           bgColor='brand.Cream'
           fontFamily='Poppins'
+          py='32px'
         >
-          <Flex justifyContent='space-between' gap='32px' py='32px' pl='160px'>
-            <Text color='UI.2'>Filter By</Text>
-            {categoryNames.map((_name, i) => {
-              return (
-                <Link color='UI.1' key={i}>
-                  {_name}
-                </Link>
-              );
-            })}
-          </Flex>
+          {categoryNames && (
+            <Flex
+              justifyContent='space-between'
+              gap='32px'
+              pl='160px'
+            >
+              <Text color='UI.2'>Filter By</Text>
+              {categoryNames.map((_name, i) => {
+                return (
+                  <Link color='UI.1' key={i}>
+                    {_name}
+                  </Link>
+                );
+              })}
+            </Flex>
+          )}
+
           <Flex pr='160px' gap='16px' h='21px' alignItems='center'>
             <Text color='UI.2'>Sort By</Text>
             <Menu>
