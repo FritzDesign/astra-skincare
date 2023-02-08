@@ -10,7 +10,9 @@ import {
   Center,
   useMediaQuery,
   MenuItem,
-  MenuList
+  MenuList,
+  Tabs,
+  Tab
 } from '@chakra-ui/react';
 import { ProductMenuProps } from '../models/Props';
 import { BiChevronDown } from 'react-icons/bi';
@@ -125,13 +127,19 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                   </MenuButton>
                 </Menu>
               ) : (
-                categoryNames.map((_name, i) => {
-                  return (
-                    <Link color='UI.1' key={i}>
-                      {_name}
-                    </Link>
-                  );
-                })
+                  <Flex
+                    as={Tabs}
+                    defaultIndex={categoryNames.length}
+                  >
+                  {categoryNames.map((_name, i) => {
+                    return (
+                      <Tab color='UI.1' key={i}>
+                        {_name}
+                      </Tab>
+                    );
+                  })}
+                    <Tab color='UI.1'>Show All</Tab>
+                </Flex>
               )}
             </Flex>
           )}
