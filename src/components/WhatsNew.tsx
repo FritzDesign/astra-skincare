@@ -100,7 +100,7 @@ const WhatsNew: React.FC = () => {
       overflow='hidden'
       ref={containerRef}
       initial={{
-        transform: 'translateY(-776px)'
+        transform: 'translateY(-420px)'
       }}
       animate={
         isInView && {
@@ -108,7 +108,7 @@ const WhatsNew: React.FC = () => {
         }
       }
       // @ts-ignore
-      transition={{ type: 'spring', stiffness: 20, damping: 10 }}
+      transition={{ type: 'spring', stiffness: 50, damping: 10 }}
     >
       <Stack direction='row' h='100%' justify='space-between' w='100%'>
         <Stack
