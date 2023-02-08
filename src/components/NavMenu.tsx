@@ -16,9 +16,12 @@ import { ShopContext } from '../context/ShopContext';
 
 const NavMenu: React.FC = () => {
   const navigate = useNavigate();
-  const { isMenuOpen } = React.useContext<any>(ShopContext);
+  const { isMenuOpen, closeMenu } = React.useContext<any>(ShopContext);
 
-  // menu button and menu seperate, control state from outside component
+  const handleSelect = (path: string) => {
+    navigate(path)
+    if (isMenuOpen) closeMenu();
+  }
 
   return (
     <Stack
@@ -38,7 +41,7 @@ const NavMenu: React.FC = () => {
           flexDir={['column', 'column', 'row-reverse']}
         >
           <MenuGroup>
-            <MenuItem alignSelf='stretch'>Skincare Products</MenuItem>
+            <MenuItem alignSelf='stretch' onClick={() => handleSelect('/products')}>Skincare Products</MenuItem>
             <MenuItem alignSelf='stretch'>Beauty Tools</MenuItem>
             <MenuItem alignSelf='stretch'>Skin Concerns</MenuItem>
             <MenuItem alignSelf='stretch'>Skincare Resources</MenuItem>
