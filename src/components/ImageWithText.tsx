@@ -30,7 +30,6 @@ export const ImageWithText: React.FC<ImageWithTextProps> = ({
       bottom={['-24px', '0px']}
       left={['0px', '-119px']}
       zIndex={-1}
-
     />
     <Stack
       alignItems={['flex-start', 'center']}
@@ -47,7 +46,7 @@ export const ImageWithText: React.FC<ImageWithTextProps> = ({
         maxWidth='100%'
         zIndex={2}
         pos='relative'
-        mb={['32px','120px']}
+        mb={['32px', '120px']}
       >
         <Image src={image} />
         <Stack
@@ -169,7 +168,7 @@ export const ImageWithText: React.FC<ImageWithTextProps> = ({
 //             textColor={accentColor1}
 //             bgColor={themeColor2}
 //             size={{ w: '10rem' }}
-//             onClick={() => navigate('/products')}
+//             onClick={() => navigate('/skincare-products')}
 //           />
 //         </Chakra.Flex>
 //       </Chakra.Flex>

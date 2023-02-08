@@ -110,7 +110,7 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
           color='UI.1'
           outline='2px solid transparent'
           fontSize={['1rem', '1rem', '1.125rem']}
-          onClick={() => navigate('/products')}
+          onClick={() => navigate('/skincare-products')}
         >
           Shop Now
         </FMC_Component>

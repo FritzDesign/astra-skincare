@@ -139,7 +139,7 @@ const WhatsNew: React.FC = () => {
             textAlign='center'
             fontWeight='600'
             fontSize='14px'
-            onClick={() => navigate('/products')}
+            onClick={() => navigate('/skincare-products')}
           >
             SHOP ALL
           </Link>

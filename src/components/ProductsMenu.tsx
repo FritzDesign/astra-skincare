@@ -26,10 +26,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
   categoryNames,
   menuItems
 }) => {
-  const [isMobile, isLessThan1280] = useMediaQuery([
-    '(max-width: 480px)',
-    '(max-width: 1280px)'
-  ]);
+  const [isLessThan1280] = useMediaQuery(['(max-width: 1280px)']);
 
   return (
     <>
@@ -37,7 +34,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
         src={backdrop}
         pos='absolute'
         w='100vw'
-        h={['95px','95px','95px','115px','140px', '190px']}
+        h={['95px', '95px', '95px', '115px', '140px', '190px']}
         zIndex={-2}
       />
       <Stack

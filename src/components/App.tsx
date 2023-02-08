@@ -5,7 +5,7 @@ import Footer from './Footer';
 import Navigation from './Navigation';
 import Home from './pages/Home';
 import SingleProduct from './pages/SingleProduct';
-import Products from './pages/Products';
+import SkincareProducts from './pages/SkincareProducts';
 import Announcement from './Announcement';
 import Ankle from './Ankle';
 
@@ -17,7 +17,7 @@ const App: React.FC = () => {
       <Cart />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/products' element={<Products />} />
+        <Route path='/skincare-products' element={<SkincareProducts />} />
         <Route path='/products/:handle' element={<SingleProduct />} />
       </Routes>
       <Ankle />

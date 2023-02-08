@@ -19,9 +19,9 @@ const NavMenu: React.FC = () => {
   const { isMenuOpen, closeMenu } = React.useContext<any>(ShopContext);
 
   const handleSelect = (path: string) => {
-    navigate(path)
+    navigate(path);
     if (isMenuOpen) closeMenu();
-  }
+  };
 
   return (
     <Stack
@@ -41,7 +41,12 @@ const NavMenu: React.FC = () => {
           flexDir={['column', 'column', 'row-reverse']}
         >
           <MenuGroup>
-            <MenuItem alignSelf='stretch' onClick={() => handleSelect('/products')}>Skincare Products</MenuItem>
+            <MenuItem
+              alignSelf='stretch'
+              onClick={() => handleSelect('/skincare-products')}
+            >
+              Skincare Products
+            </MenuItem>
             <MenuItem alignSelf='stretch'>Beauty Tools</MenuItem>
             <MenuItem alignSelf='stretch'>Skin Concerns</MenuItem>
             <MenuItem alignSelf='stretch'>Skincare Resources</MenuItem>
