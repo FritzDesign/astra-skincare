@@ -63,6 +63,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
           zIndex={-1}
         />
         <Text
+          pointerEvents='none'
           pos='absolute'
           fontFamily='Marcellus'
           fontSize={['32px', '40px', '48px', '56px']}
@@ -127,10 +128,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                   </MenuButton>
                 </Menu>
               ) : (
-                  <Flex
-                    as={Tabs}
-                    defaultIndex={categoryNames.length}
-                  >
+                <Flex as={Tabs} defaultIndex={categoryNames.length}>
                   {categoryNames.map((_name, i) => {
                     return (
                       <Tab color='UI.1' key={i}>
@@ -138,7 +136,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                       </Tab>
                     );
                   })}
-                    <Tab color='UI.1'>Show All</Tab>
+                  <Tab color='UI.1'>Show All</Tab>
                 </Flex>
               )}
             </Flex>

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router';
 import logo from '../assets/astra-logo.png';
 
 const Footer: React.FC = () => {
-  const [selectedTab, setSelectedTab] = useState<string>()
+  const [selectedTab, setSelectedTab] = useState<string>();
 
   const navigate = useNavigate();
 
@@ -16,11 +16,10 @@ const Footer: React.FC = () => {
   };
 
   useEffect(() => {
-    const lastSlash = window.location.href.lastIndexOf('/')
-    const location = window.location.href.slice(lastSlash)
-    console.log(location)
-    setSelectedTab(location)
-  }, [window.location.href])
+    const lastSlash = window.location.href.lastIndexOf('/');
+    const location = window.location.href.slice(lastSlash);
+    setSelectedTab(location);
+  }, [window.location.href]);
 
   return (
     <Stack
@@ -45,7 +44,7 @@ const Footer: React.FC = () => {
         onClick={() => handleNavigate('/')}
       />
       <Stack justify='flex-start' align='center' spacing='24px'>
-        <Stack  
+        <Stack
           as={Tabs}
           defaultIndex={-1}
           display={['none', 'none', 'none', 'flex']}

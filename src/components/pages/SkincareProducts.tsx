@@ -16,7 +16,7 @@ import { useInView } from 'framer-motion';
 
 import heroBackdrop from '../../assets/Products/products-hero-backdrop.png';
 import heroImage from '../../assets/Products/products-hero-img.png';
-import heroFb from '../../assets/Products/products-hero-img-fb.jpg'
+import heroFb from '../../assets/Products/products-hero-img-fb.jpg';
 import ProductMenu from '../ProductsMenu';
 
 const Products: React.FC = () => {
@@ -31,7 +31,7 @@ const Products: React.FC = () => {
   } = useContext<any>(ShopContext);
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
     fetchAllProducts();
   }, []);
 
@@ -48,7 +48,14 @@ const Products: React.FC = () => {
         hero={heroImage}
         fallback={heroFb}
         heading='Skincare Products'
-        categoryNames={['Cleansers', 'Toners', 'Exfoliants', 'Moisturizers', 'Serums', 'Sunscreen']}
+        categoryNames={[
+          'Cleansers',
+          'Toners',
+          'Exfoliants',
+          'Moisturizers',
+          'Serums',
+          'Sunscreen'
+        ]}
         menuItems={['Featured']}
       />
       <Grid p='2rem !important'>
@@ -70,6 +77,7 @@ const Products: React.FC = () => {
                   key={i}
                   image={product.images[0].src}
                   title={product.title}
+                  handle={product.handle}
                   category={product.productType}
                   price={product.variants[0].price.amount}
                   weight={product.variants[0].weight + ' oz'}

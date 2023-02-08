@@ -1,25 +1,52 @@
-import { Stack, Text, Icon, Image, Button, Divider } from '@chakra-ui/react';
+import {
+  Stack,
+  Text,
+  Icon,
+  Image,
+  Button,
+  Divider,
+  Box
+} from '@chakra-ui/react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router';
 import { ProductProps } from '../models/Props';
 
 const Product: React.FC<ProductProps> = ({
   isNew,
   image,
   title,
+  handle,
   category,
   price,
   weight
 }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const navigate = useNavigate();
   return (
     <Stack
       justify='center'
       pos='relative'
       align='center'
       spacing='16px'
-      w={['300px','376px']}
+      w={['300px', '376px']}
       h='451px'
       my='2rem'
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      <Image src={image} minW={['300px', '376px']} minH={['275px', '345px']} objectFit='cover' objectPosition='center center' />
+      <Image
+        _active={{transform: 'scale(0.99)'}}
+        cursor='pointer'
+        filter={isHovered ? 'brightness(0.7)' : 'brightness(1)'}
+        src={image}
+        minW={['300px', '376px']}
+        minH={['275px', '345px']}
+        objectFit='cover'
+        objectPosition='center center'
+        pos='relative'
+        onClick={() => navigate(`${handle}`)}
+      />
       {isNew && (
         <Stack
           bgColor='brand.Charcoal'
@@ -41,6 +68,23 @@ const Product: React.FC<ProductProps> = ({
             NEW
           </Text>
         </Stack>
+      )}
+      {isHovered && (
+        <Button
+          _active={{transform: 'scale(0.99)'}}
+          pos='absolute'
+          variant='outline'
+          colorScheme='blackAlpha'
+          color='white'
+          left='25%'
+          top='30%'
+          onClick={() => navigate(`${handle}`)}
+          fontWeight='normal'
+          fontFamily='Poppins'
+          letterSpacing='1px'
+        >
+          View
+        </Button>
       )}
       <Stack justify='flex-start' align='center' spacing='0px'>
         <Text

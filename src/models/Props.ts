@@ -51,6 +51,7 @@ export interface ProductProps {
   isNew?: boolean;
   image: string;
   title: string;
+  handle: string;
   category: string;
   price: string;
   weight: string;
