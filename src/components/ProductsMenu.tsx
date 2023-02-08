@@ -12,12 +12,13 @@ import {
 import { ProductMenuProps } from '../models/Props';
 import { BiChevronDown } from 'react-icons/bi';
 
-import watermarkTR from '../assets/Products/products-hero-backsplash-tr.png'
-import watermarkBL from '../assets/Products/products-hero-backsplash-bl.png'
+import watermarkTR from '../assets/Products/products-hero-backsplash-tr.png';
+import watermarkBL from '../assets/Products/products-hero-backsplash-bl.png';
 
 const ProductMenu: React.FC<ProductMenuProps> = ({
   backdrop,
   hero,
+  fallback,
   heading,
   categoryNames,
   menuItems
@@ -32,8 +33,20 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
         alignItems='center'
         justifyContent='center'
       >
-      <Image src={watermarkTR} pos='absolute' right='0%' top='0%' zIndex={-1} />
-      <Image src={watermarkBL} pos='absolute' left='0%' bottom='20%' zIndex={-1} />
+        <Image
+          src={watermarkTR}
+          pos='absolute'
+          right='0%'
+          top='0%'
+          zIndex={-1}
+        />
+        <Image
+          src={watermarkBL}
+          pos='absolute'
+          left='0%'
+          bottom='20%'
+          zIndex={-1}
+        />
         <Text
           pos='absolute'
           fontFamily='Marcellus'
@@ -44,7 +57,14 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
         >
           {heading}
         </Text>
-        <Image pb='56px' src={hero} w='80%' />
+        <Image
+          pb='56px'
+          fallback={<Image pb='56px' src={fallback} w='80%' minH='370px' />}
+          fallbackSrc={fallback}
+          src={hero}
+          w='80%'
+          minH='370px'
+        />
         <Flex
           w='100vw'
           justifyContent='space-between'

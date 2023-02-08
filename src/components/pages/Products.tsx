@@ -16,6 +16,7 @@ import { useInView } from 'framer-motion';
 
 import heroBackdrop from '../../assets/Products/products-hero-backdrop.png';
 import heroImage from '../../assets/Products/products-hero-img.png';
+import heroFb from '../../assets/Products/products-hero-img-fb.jpg'
 import ProductMenu from '../ProductsMenu';
 
 const Products: React.FC = () => {
@@ -44,6 +45,7 @@ const Products: React.FC = () => {
       <ProductMenu
         backdrop={heroBackdrop}
         hero={heroImage}
+        fallback={heroFb}
         heading='Skincare Products'
         categoryNames={['Cleansers', 'Toners', 'Exfoliants', 'Moisturizers', 'Serums', 'Sunscreen']}
         menuItems={['Featured']}

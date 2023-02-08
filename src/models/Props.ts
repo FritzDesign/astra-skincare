@@ -59,6 +59,7 @@ export interface ProductProps {
 export interface ProductMenuProps {
   backdrop: string;
   hero: string;
+  fallback: string;
   heading: string;
   categoryNames: string[];
   menuItems: string[];
