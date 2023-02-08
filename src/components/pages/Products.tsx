@@ -14,6 +14,10 @@ import Product from '../Product';
 import { Product as ProductInterface } from '../../models/API';
 import { useInView } from 'framer-motion';
 
+import heroBackdrop from '../../assets/Products/products-hero-backdrop.png';
+import heroImage from '../../assets/Products/products-hero-img.png';
+import ProductMenu from '../ProductsMenu';
+
 const Products: React.FC = () => {
   const triggerRef = useRef(null);
   const isInView = useInView(triggerRef);
@@ -37,6 +41,13 @@ const Products: React.FC = () => {
 
   return (
     <Box>
+      <ProductMenu
+        backdrop={heroBackdrop}
+        hero={heroImage}
+        heading='Skincare Products'
+        categoryNames={['Cleansers', 'Toners', 'Exfoliants', 'Moisturizers', 'Serums', 'Sunscreen']}
+        menuItems={['Featured']}
+      />
       <Grid p='2rem !important'>
         <Grid
           id='products-container'

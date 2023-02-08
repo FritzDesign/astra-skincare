@@ -11,6 +11,7 @@ const theme = extendTheme({
       Navy: '#313C4E',
       Plum: '#313C4E',
       Cream: '#F7F2EE',
+      Tan: '#C4B1A8',
       Mint: '#8EC2B9',
       Lavender: '#8897AA',
       Black: '#2C2C2C',

@@ -55,3 +55,11 @@ export interface ProductProps {
   price: string;
   weight: string;
 }
+
+export interface ProductMenuProps {
+  backdrop: string;
+  hero: string;
+  heading: string;
+  categoryNames: string[];
+  menuItems: string[];
+}
