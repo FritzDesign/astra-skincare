@@ -91,7 +91,7 @@ const WhatsNew: React.FC = () => {
       display='flex'
       flexDirection='column'
       id='wn-container'
-      paddingX={['80px', '240px']}
+      paddingX={['40px', '40px', '240px']}
       paddingY='64px'
       justifyContent='flex-start'
       alignItems='flex-start'
@@ -112,9 +112,9 @@ const WhatsNew: React.FC = () => {
     >
       <Stack direction='row' h='100%' justify='space-between' w='100%'>
         <Stack
-          direction='row'
+          direction={['column','row']}
           justify='flex-start'
-          align='center'
+          align={['flex-start', 'center']}
           spacing='24px'
           w='90vw'
         >
