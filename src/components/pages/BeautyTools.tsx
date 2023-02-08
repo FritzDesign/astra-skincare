@@ -22,13 +22,10 @@ import Product from '../Product';
 
 const BeautyTools: React.FC = () => {
   const triggerRef = useRef(null);
-  const isInView = useInView(triggerRef);
   const {
     products,
     fetchCollectionByHandle,
-    fetchNextPage,
-    isLoading,
-    hasMoreProducts
+    isLoading
   } = useContext<any>(ShopContext);
 
   useEffect(() => {
@@ -36,11 +33,6 @@ const BeautyTools: React.FC = () => {
     fetchCollectionByHandle('beauty-tools');
   }, []);
 
-  useEffect(() => {
-    if (products.length) {
-      fetchNextPage();
-    }
-  }, [isInView]);
   return (
     <Box>
       <ProductMenu
@@ -79,7 +71,6 @@ const BeautyTools: React.FC = () => {
             <Box minH='1000px' />
           )}
         </Grid>
-        {hasMoreProducts && <Box ref={triggerRef} h='1px' />}
         {isLoading && (
           <Grid
             templateColumns={[
