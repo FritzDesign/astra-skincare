@@ -34,10 +34,10 @@ export const DailyRoutineBottom: React.FC = () => {
         align={['center', 'center', 'center', 'flex-start']}
         spacing='56px'
         width={['90%', '80%', '80%', '40%']}
-        mt='6rem'
+        mt={['1rem', '1rem', '6rem']}
       >
         <Stack
-          paddingStart='88px'
+          p='1rem 4rem 4rem 4rem'
           justify='flex-start'
           align='flex-start'
           spacing='5px'
@@ -72,7 +72,7 @@ export const DailyRoutineBottom: React.FC = () => {
               fontFamily='Inter'
               lineHeight='1.5'
               fontWeight='medium'
-              fontSize={['14px', '16px', '18px']}
+              fontSize='18px'
               color='UI.2'
               opacity='0.8'
               flex='1'

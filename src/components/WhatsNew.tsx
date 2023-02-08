@@ -31,7 +31,7 @@ const WhatsNew: React.FC = () => {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, {
     once: true,
-    margin: '0% 0% -80% 0%'
+    margin: '0% 0% 0% 0%'
   });
   const rightClickRef = useRef(0);
 

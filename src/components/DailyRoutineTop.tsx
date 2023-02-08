@@ -31,7 +31,7 @@ export const DailyRoutineTop: React.FC = () => {
         transition='clip-path 1s ease'
         pos='relative'
         alignItems='center'
-        p='32px'
+        p={['0px', '0px', '32px']}
         w={['100%', '100%', '100%', '50%']}
         h={['80%', '80%', '80%', '80%', '100%']}
       >
@@ -59,7 +59,7 @@ export const DailyRoutineTop: React.FC = () => {
         spacing='32px'
         width={['90%', '90%', '90%', '50%']}
         h='100%'
-        pl='5rem'
+        pl={['0rem', '5rem']}
         pt={['0px', '0px', '0px', '56px']}
         maxWidth='100%'
       >
@@ -85,7 +85,7 @@ export const DailyRoutineTop: React.FC = () => {
           color='UI.2'
           opacity='0.8'
           alignSelf='stretch'
-          w='540px'
+          w={['100%', '540px']}
         >
           It might be very tempting to rush into expanding your routine. Maybe
           you'll hope that adding more products will help improve your skin

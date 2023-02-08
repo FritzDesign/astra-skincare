@@ -8,7 +8,7 @@ import { useInView } from 'framer-motion';
 const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
   const heroImage = React.useRef(null);
   const isInView = useInView(heroImage, {
-    margin: '-50% 0% 0% 0%'
+    margin: '-40% 0% 0% 0%'
   });
   const navigate = useNavigate();
 
