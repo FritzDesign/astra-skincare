@@ -131,12 +131,12 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                 <Flex as={Tabs} defaultIndex={categoryNames.length}>
                   {categoryNames.map((_name, i) => {
                     return (
-                      <Tab color='UI.1' key={i}>
+                      <Tab _selected={{  borderColor: 'brand.Lavender'}} color='UI.1' key={i}>
                         {_name}
                       </Tab>
                     );
                   })}
-                  <Tab color='UI.1'>Show All</Tab>
+                  <Tab _selected={{  borderColor: 'brand.Lavender'}} color='UI.1'>Show All</Tab>
                 </Flex>
               )}
             </Flex>

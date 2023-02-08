@@ -5,7 +5,8 @@ import {
   Image,
   Button,
   Divider,
-  Box
+  Box,
+  Flex
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
@@ -36,7 +37,7 @@ const Product: React.FC<ProductProps> = ({
       onMouseLeave={() => setIsHovered(false)}
     >
       <Image
-        _active={{transform: 'scale(0.99)'}}
+        _active={{ transform: 'scale(0.99)' }}
         cursor='pointer'
         filter={isHovered ? 'brightness(0.7)' : 'brightness(1)'}
         src={image}
@@ -71,12 +72,12 @@ const Product: React.FC<ProductProps> = ({
       )}
       {isHovered && (
         <Button
-          _active={{transform: 'scale(0.99)'}}
+          _active={{ transform: 'scale(0.99)' }}
           pos='absolute'
           variant='outline'
           colorScheme='blackAlpha'
           color='white'
-          left='25%'
+          left='40%'
           top='30%'
           onClick={() => navigate(`${handle}`)}
           fontWeight='normal'
@@ -120,28 +121,45 @@ const Product: React.FC<ProductProps> = ({
         width='290px'
         maxWidth='100%'
       >
-        <Text
-          fontFamily='Poppins'
-          lineHeight='1.5'
-          fontWeight='regular'
-          fontSize='18px'
-          color='UI.1'
-          textAlign='center'
-        >
-          ${price}0
-        </Text>
-        <Divider borderColor='UI.2' />
-        <Text
-          fontFamily='Poppins'
-          lineHeight='1.5'
-          fontWeight='regular'
-          fontSize='18px'
-          color='UI.1'
-          textAlign='center'
-          minWidth='46px'
-        >
-          {weight}
-        </Text>
+        {weight ? (
+          <>
+            <Text
+              fontFamily='Poppins'
+              lineHeight='1.5'
+              fontWeight='regular'
+              fontSize='18px'
+              color='UI.1'
+              textAlign='center'
+            >
+              ${price}0
+            </Text>
+            <Divider borderColor='UI.2' />
+            <Text
+              fontFamily='Poppins'
+              lineHeight='1.5'
+              fontWeight='regular'
+              fontSize='18px'
+              color='UI.1'
+              textAlign='center'
+              minWidth='46px'
+            >
+              {weight}
+            </Text>
+          </>
+        ) : (
+          <Flex justifyContent='center' w='100%'>
+            <Text
+              fontFamily='Poppins'
+              lineHeight='1.5'
+              fontWeight='regular'
+              fontSize='18px'
+              color='UI.1'
+              textAlign='center'
+            >
+              ${price}0
+            </Text>
+          </Flex>
+        )}
       </Stack>
     </Stack>
   );

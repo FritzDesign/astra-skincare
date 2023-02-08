@@ -74,7 +74,6 @@ export class ShopProvider extends React.Component {
 
   fetchNextPage = () => {
     if (this.state.hasMoreProducts) {
-
       this.setState({ isLoading: true });
       client.fetchNextPage(this.state.products).then((nextProducts) => {
         this.setState({
@@ -83,6 +82,17 @@ export class ShopProvider extends React.Component {
         this.setState({ isLoading: false });
       });
     }
+  };
+
+  fetchCollectionByHandle = (handle: string) => {
+    this.setState({ isLoading: true });
+    client.collection.fetchByHandle(handle).then((collection) => {
+      this.setState({
+        products: collection.products
+      });
+      console.log('cp', collection);
+      this.setState({ isLoading: false });
+    });
   };
 
   fetchProductByHandle = (handle) => {
@@ -113,7 +123,7 @@ export class ShopProvider extends React.Component {
         value={{
           ...this.state,
           fetchAllProducts: this.fetchAllProducts,
-          fetchPrevPage: this.fetchPrevPage,
+          fetchCollectionByHandle: this.fetchCollectionByHandle,
           fetchNextPage: this.fetchNextPage,
           fetchProductByHandle: this.fetchProductByHandle,
           addItemToCheckout: this.addItemToCheckout,

@@ -47,7 +47,9 @@ const NavMenu: React.FC = () => {
             >
               Skincare Products
             </MenuItem>
-            <MenuItem alignSelf='stretch'>Beauty Tools</MenuItem>
+            <MenuItem alignSelf='stretch'
+              onClick={() => handleSelect('/beauty-tools')}
+            >Beauty Tools</MenuItem>
             <MenuItem alignSelf='stretch'>Skin Concerns</MenuItem>
             <MenuItem alignSelf='stretch'>Skincare Resources</MenuItem>
             <MenuItem alignSelf='stretch'>Help Me Choose</MenuItem>

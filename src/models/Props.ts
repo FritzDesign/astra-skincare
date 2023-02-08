@@ -54,7 +54,7 @@ export interface ProductProps {
   handle: string;
   category: string;
   price: string;
-  weight: string;
+  weight?: string;
 }
 
 export interface ProductMenuProps {

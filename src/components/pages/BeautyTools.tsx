@@ -1,4 +1,3 @@
-import { useEffect, useContext, useRef } from 'react';
 import {
   Box,
   Grid,
@@ -9,22 +8,24 @@ import {
   Skeleton,
   SkeletonText
 } from '@chakra-ui/react';
+import ProductMenu from '../ProductsMenu';
+import { useContext, useEffect, useRef } from 'react';
 import { ShopContext } from '../../context/ShopContext';
-import Product from '../Product';
-import { Product as ProductInterface } from '../../models/API';
 import { useInView } from 'framer-motion';
 
-import heroBackdrop from '../../assets/Products/products-hero-backdrop.png';
-import heroImage from '../../assets/Products/products-hero-img.png';
-import heroFb from '../../assets/Products/products-hero-img-fb.jpg';
-import ProductMenu from '../ProductsMenu';
+import { Product as ProductInterface } from '../../models/API';
 
-const SkincareProducts: React.FC = () => {
+import heroBackdrop from '../../assets/Products/products-hero-backdrop.png';
+import heroImage from '../../assets/Products/bt-hero-img.png';
+import heroFb from '../../assets/Products/bt-hero-img-fb.jpg';
+import Product from '../Product';
+
+const BeautyTools: React.FC = () => {
   const triggerRef = useRef(null);
   const isInView = useInView(triggerRef);
   const {
     products,
-    fetchAllProducts,
+    fetchCollectionByHandle,
     fetchNextPage,
     isLoading,
     hasMoreProducts
@@ -32,7 +33,7 @@ const SkincareProducts: React.FC = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetchAllProducts();
+    fetchCollectionByHandle('beauty-tools');
   }, []);
 
   useEffect(() => {
@@ -40,22 +41,13 @@ const SkincareProducts: React.FC = () => {
       fetchNextPage();
     }
   }, [isInView]);
-
   return (
     <Box>
       <ProductMenu
         backdrop={heroBackdrop}
         hero={heroImage}
         fallback={heroFb}
-        heading='Skincare Products'
-        categoryNames={[
-          'Cleansers',
-          'Toners',
-          'Exfoliants',
-          'Moisturizers',
-          'Serums',
-          'Sunscreen'
-        ]}
+        heading='Beauty Tools'
         menuItems={['Featured']}
       />
       <Grid p='2rem !important'>
@@ -72,7 +64,6 @@ const SkincareProducts: React.FC = () => {
         >
           {products.length ? (
             products.map((product: ProductInterface, i: number) => {
-              console.log(product)
               return (
                 <Product
                   key={i}
@@ -81,7 +72,6 @@ const SkincareProducts: React.FC = () => {
                   handle={product.handle}
                   category={product.productType}
                   price={product.variants[0].price.amount}
-                  weight={product.variants[0].weight + ' oz'}
                 />
               );
             })
@@ -330,4 +320,4 @@ const SkincareProducts: React.FC = () => {
   );
 };
 
-export default SkincareProducts;
+export default BeautyTools;

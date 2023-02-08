@@ -56,12 +56,14 @@ const Footer: React.FC = () => {
         >
           <Tab
             _selected={{ color: 'brand.Navy', borderBottom: '4px solid' }}
-            // onClick={() => handleNavigate('/skincare-products')}
-            isSelected={selectedTab?.includes('skincare-products')}
+            onClick={() => handleNavigate('/skincare-products')}
           >
             Skincare Products
           </Tab>
-          <Tab _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}>
+          <Tab
+            _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}
+            onClick={() => handleNavigate('/beauty-tools')}
+          >
             Beauty Tools
           </Tab>
           <Tab _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}>

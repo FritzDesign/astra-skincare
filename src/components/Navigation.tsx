@@ -150,6 +150,7 @@ const Navigation: React.FC = () => {
           fontWeight='medium'
           fontSize='18px'
           color='brand.Black'
+          onClick={() => navigate('/beauty-tools')}
         >
           Beauty Tools
         </Link>
