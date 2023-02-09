@@ -15,6 +15,7 @@ import WhyAstra from './pages/WhyAstra';
 import ContactUs from './pages/ContactUs';
 import FAQ from './pages/FAQ';
 import ShippingAndPolicies from './pages/ShippingAndPolicies';
+import Disclaimer from './pages/Disclaimer';
 
 const App: React.FC = () => {
   return (
@@ -33,7 +34,7 @@ const App: React.FC = () => {
         <Route path='/contact-us' element={<ContactUs />} />
         <Route path='/faq' element={<FAQ />} />
         <Route path='/policies' element={<ShippingAndPolicies />} />
-        {/* <Route path='/disclaimer' element={<Disclaimer />} /> */}
+        <Route path='/disclaimer' element={<Disclaimer />} />
       </Routes>
       <Ankle />
       <Footer />
