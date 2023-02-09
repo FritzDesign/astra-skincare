@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import {
   Box,
   Button,
+  Divider,
   ListItem,
   Stack,
   Text,
@@ -10,8 +11,11 @@ import {
 import ProductMenu from '../ProductsMenu';
 
 import heroImage from '../../assets/faq-hero-img.png';
+import { useNavigate } from 'react-router';
 
 const ShippingAndPolicies: React.FC = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -78,26 +82,34 @@ const ShippingAndPolicies: React.FC = () => {
             >
               SUBHEADER SECTION TITLE
             </Text>
-            <Text
-              fontFamily='Poppins'
-              lineHeight='1.5'
-              fontWeight='regular'
-              fontSize={['14px', '14px', '16px']}
-              color='UI.2'
-              maxWidth='100%'
-            >
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-            </Text>
-            <Text
-              fontFamily='Poppins'
-              lineHeight='1.5'
-              fontWeight='regular'
-              fontSize={['14px', '14px', '16px']}
-              color='UI.2'
-              maxWidth='100%'
-            >
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-            </Text>
+            <UnorderedList>
+              <ListItem>
+                <Text
+                  display='inline-block'
+                  fontFamily='Poppins'
+                  lineHeight='1.5'
+                  fontWeight='regular'
+                  fontSize={['14px', '14px', '16px']}
+                  color='UI.2'
+                  maxWidth='100%'
+                >
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text
+                  display='inline-block'
+                  fontFamily='Poppins'
+                  lineHeight='1.5'
+                  fontWeight='regular'
+                  fontSize={['14px', '14px', '16px']}
+                  color='UI.2'
+                  maxWidth='100%'
+                >
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                </Text>
+              </ListItem>
+            </UnorderedList>
             <Text
               fontFamily='Poppins'
               lineHeight='1.5'
@@ -107,18 +119,24 @@ const ShippingAndPolicies: React.FC = () => {
             >
               SUBHEADER SECTION TITLE
             </Text>
-            <Text
-              fontFamily='Poppins'
-              lineHeight='1.5'
-              fontWeight='regular'
-              fontSize={['14px', '14px', '16px']}
-              color='UI.2'
-              maxWidth='100%'
-            >
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-            </Text>
+            <UnorderedList>
+              <ListItem>
+                <Text
+                  display='inline-block'
+                  fontFamily='Poppins'
+                  lineHeight='1.5'
+                  fontWeight='regular'
+                  fontSize='16px'
+                  color='UI.2'
+                  maxWidth='100%'
+                >
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                </Text>
+              </ListItem>
+            </UnorderedList>
           </Stack>
         </Stack>
+        <Divider w={['100%', '80%', '60%']} borderColor='UI.3' />
         <Stack
           justify='flex-start'
           align='flex-start'
@@ -158,6 +176,8 @@ const ShippingAndPolicies: React.FC = () => {
             quam, gravida non, commodo a, sodales sit amet, nisi.
           </Text>
         </Stack>
+        <Divider w={['100%', '80%', '60%']} borderColor='UI.3' />
+
         <Stack
           justify='flex-start'
           align='flex-start'
@@ -198,26 +218,34 @@ const ShippingAndPolicies: React.FC = () => {
             >
               SUBHEADER SECTION TITLE
             </Text>
-            <Text
-              fontFamily='Poppins'
-              lineHeight='1.5'
-              fontWeight='regular'
-              fontSize={['14px', '14px', '16px']}
-              color='UI.2'
-              maxWidth='100%'
-            >
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-            </Text>
-            <Text
-              fontFamily='Poppins'
-              lineHeight='1.5'
-              fontWeight='regular'
-              fontSize={['14px', '14px', '16px']}
-              color='UI.2'
-              maxWidth='100%'
-            >
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-            </Text>
+            <UnorderedList>
+              <ListItem>
+                <Text
+                  display='inline-block'
+                  fontFamily='Poppins'
+                  lineHeight='1.5'
+                  fontWeight='regular'
+                  fontSize={['14px', '14px', '16px']}
+                  color='UI.2'
+                  maxWidth='100%'
+                >
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text
+                  display='inline-block'
+                  fontFamily='Poppins'
+                  lineHeight='1.5'
+                  fontWeight='regular'
+                  fontSize={['14px', '14px', '16px']}
+                  color='UI.2'
+                  maxWidth='100%'
+                >
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                </Text>
+              </ListItem>
+            </UnorderedList>
             <Text
               fontFamily='Poppins'
               lineHeight='1.5'
@@ -227,20 +255,24 @@ const ShippingAndPolicies: React.FC = () => {
             >
               SUBHEADER SECTION TITLE
             </Text>
-            <UnorderedList spacing='8px' listStylePos='inside'>
-              <ListItem
-                fontFamily='Poppins'
-                lineHeight='1.5'
-                fontWeight='regular'
-                fontSize={['14px', '14px', '16px']}
-                color='UI.2'
-                maxWidth='100%'
-              >
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+            <UnorderedList>
+              <ListItem>
+                <Text
+                  display='inline-block'
+                  fontFamily='Poppins'
+                  lineHeight='1.5'
+                  fontWeight='regular'
+                  fontSize='16px'
+                  color='UI.2'
+                  maxWidth='100%'
+                >
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                </Text>
               </ListItem>
             </UnorderedList>
           </Stack>
         </Stack>
+        <Divider w={['100%', '80%', '60%']} borderColor='UI.3' />
         <Stack
           justify='flex-start'
           align='flex-start'
@@ -314,6 +346,7 @@ const ShippingAndPolicies: React.FC = () => {
             size='lg'
             bgColor='brand.Charcoal'
             borderRadius='0'
+            onClick={() => navigate('/contact-us')}
           >
             <Text fontFamily='Poppins' fontWeight='400' color='brand.Cream'>
               Send A Message
