@@ -61,19 +61,19 @@ const NavMenu: React.FC = () => {
             </MenuItem>
             <MenuItem
               alignSelf='stretch'
-              onClick={() => navigate('/skincare-resources')}
+              onClick={() => handleSelect('/skincare-resources')}
             >
               Skincare Resources
             </MenuItem>
             <MenuItem
               alignSelf='stretch'
-              onClick={() => navigate('/why-astra')}
+              onClick={() => handleSelect('/why-astra')}
             >
               Why Astra
             </MenuItem>
             <MenuItem
               alignSelf='stretch'
-              onClick={() => navigate('/contact-us')}
+              onClick={() => handleSelect('/contact-us')}
             >
               Contact Us
             </MenuItem>
@@ -97,15 +97,15 @@ const NavMenu: React.FC = () => {
             borderColor='UI.4'
           />
           <MenuGroup>
-            <MenuItem alignSelf='stretch' onClick={() => navigate('/faq')}>
+            <MenuItem alignSelf='stretch' onClick={() => handleSelect('/faq')}>
               F.A.Q.
             </MenuItem>
-            <MenuItem alignSelf='stretch' onClick={() => navigate('/policies')}>
+            <MenuItem alignSelf='stretch' onClick={() => handleSelect('/policies')}>
               Shipping & Policies
             </MenuItem>
             <MenuItem
               alignSelf='stretch'
-              onClick={() => navigate('/disclaimer')}
+              onClick={() => handleSelect('/disclaimer')}
             >
               Disclaimer
             </MenuItem>
