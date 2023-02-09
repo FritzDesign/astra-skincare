@@ -1,4 +1,4 @@
-import { useEffect, useContext, useRef } from 'react';
+import { useEffect, useContext, useRef, useState } from 'react';
 import {
   Box,
   Grid,
@@ -19,10 +19,12 @@ import heroFb from '../../assets/Products/products-hero-img-fb.jpg';
 import ProductMenu from '../ProductsMenu';
 
 const SkincareProducts: React.FC = () => {
+  const [showMoreProducts, setShowMoreProducts] = useState(true);
   const triggerRef = useRef(null);
   const isInView = useInView(triggerRef);
   const {
     products,
+    totalProducts,
     fetchAllProducts,
     fetchNextPage,
     isLoading,
@@ -40,6 +42,14 @@ const SkincareProducts: React.FC = () => {
     }
   }, [isInView]);
 
+  useEffect(() => {
+    if (products.length && totalProducts) {
+      if (!hasMoreProducts || products.length >= totalProducts) {
+        setShowMoreProducts(false);
+      }
+    }
+  }, [hasMoreProducts, totalProducts, products]);
+
   return (
     <Box>
       <ProductMenu
@@ -54,7 +64,13 @@ const SkincareProducts: React.FC = () => {
           'Serums',
           'Sunscreen'
         ]}
-        menuItems={['Featured', 'Newest', 'Highest Rated', 'Price - High','Price - Low']}
+        menuItems={[
+          'Featured',
+          'Newest',
+          'Highest Rated',
+          'Price - High',
+          'Price - Low'
+        ]}
       />
       <Grid p='2rem !important'>
         <Grid
@@ -86,7 +102,7 @@ const SkincareProducts: React.FC = () => {
             <Box minH='1000px' />
           )}
         </Grid>
-        {hasMoreProducts && <Box ref={triggerRef} h='1px' />}
+        {showMoreProducts && <Box ref={triggerRef} h='1px' />}
         {isLoading && (
           <Grid
             templateColumns={[
