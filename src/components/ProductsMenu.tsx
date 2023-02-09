@@ -100,7 +100,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
           src={watermarkBL}
           pos='absolute'
           left='0%'
-          bottom={['30%', '30%', '18%']}
+          bottom={['30%', '30%', '15%']}
           zIndex={-1}
         />
         <Text
