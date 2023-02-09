@@ -33,11 +33,11 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
         zIndex={-1}
       />
       <Stack
-        paddingX={['40px', '80px']}
+        paddingX={['40px', '40px', '80px', '80px', '160px', '160px']}
         justify={['center', 'flex-start']}
         align={['center', 'flex-start']}
         spacing='32px'
-        width={['400px', '400px', '698px']}
+        width={['400px', '400px', '698px', '698px', '1000px', '1000px']}
         maxWidth='100%'
         boxShadow='Shadow/XL'
         pos='absolute'
