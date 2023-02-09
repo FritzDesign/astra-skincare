@@ -1,11 +1,17 @@
 import React, { useEffect } from 'react';
-import { Box, Stack, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  ListItem,
+  Stack,
+  Text,
+  UnorderedList
+} from '@chakra-ui/react';
 import ProductMenu from '../ProductsMenu';
 
 import heroImage from '../../assets/faq-hero-img.png';
 
 const ShippingAndPolicies: React.FC = () => {
-
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -68,7 +74,7 @@ const ShippingAndPolicies: React.FC = () => {
               lineHeight='1.5'
               fontWeight='regular'
               fontSize='14px'
-              color='Brand.Lavender'
+              color='brand.Lavender'
             >
               SUBHEADER SECTION TITLE
             </Text>
@@ -97,7 +103,7 @@ const ShippingAndPolicies: React.FC = () => {
               lineHeight='1.5'
               fontWeight='regular'
               fontSize='14px'
-              color='Brand.Lavender'
+              color='brand.Lavender'
             >
               SUBHEADER SECTION TITLE
             </Text>
@@ -188,7 +194,7 @@ const ShippingAndPolicies: React.FC = () => {
               lineHeight='1.5'
               fontWeight='regular'
               fontSize='14px'
-              color='Brand.Lavender'
+              color='brand.Lavender'
             >
               SUBHEADER SECTION TITLE
             </Text>
@@ -217,21 +223,102 @@ const ShippingAndPolicies: React.FC = () => {
               lineHeight='1.5'
               fontWeight='regular'
               fontSize='14px'
-              color='Brand.Lavender'
+              color='brand.Lavender'
             >
               SUBHEADER SECTION TITLE
             </Text>
+            <UnorderedList spacing='8px' listStylePos='inside'>
+              <ListItem
+                fontFamily='Poppins'
+                lineHeight='1.5'
+                fontWeight='regular'
+                fontSize={['14px', '14px', '16px']}
+                color='UI.2'
+                maxWidth='100%'
+              >
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+              </ListItem>
+            </UnorderedList>
+          </Stack>
+        </Stack>
+        <Stack
+          justify='flex-start'
+          align='flex-start'
+          spacing='32px'
+          w={['100%', '80%', '60%']}
+        >
+          <Text
+            fontFamily='Marcellus'
+            lineHeight='1.4'
+            fontWeight='regular'
+            fontSize='32px'
+            color='#000000'
+          >
+            Still have a question?
+          </Text>
+          <Text
+            fontFamily='Poppins'
+            lineHeight='1.5'
+            fontWeight='regular'
+            fontSize='16px'
+            color='UI.2'
+            width='1004px'
+            maxWidth='100%'
+          >
+            Contact us lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
+            turpis.{' '}
+          </Text>
+          <Stack justify='flex-start' align='flex-start'>
             <Text
               fontFamily='Poppins'
               lineHeight='1.5'
               fontWeight='regular'
-              fontSize={['14px', '14px', '16px']}
-              color='UI.2'
-              maxWidth='100%'
+              fontSize='14px'
+              color='brand.Lavender'
             >
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+              CONTACT HOURS
             </Text>
+            <UnorderedList>
+              <ListItem>
+                <Text
+                  display='inline-block'
+                  fontFamily='Poppins'
+                  lineHeight='1.5'
+                  fontWeight='regular'
+                  fontSize='16px'
+                  color='UI.2'
+                  maxWidth='100%'
+                >
+                  Monday - Friday: 8:00am - 5:00pm MST
+                </Text>
+              </ListItem>
+              <ListItem>
+                <Text
+                  display='inline-block'
+                  fontFamily='Poppins'
+                  lineHeight='1.5'
+                  fontWeight='regular'
+                  fontSize='16px'
+                  color='UI.2'
+                  maxWidth='100%'
+                >
+                  Saturday - Sunday: 10:00am - 12:00pm MST
+                </Text>
+              </ListItem>
+            </UnorderedList>
           </Stack>
+          <Button
+            _hover={{ filter: 'brightness(.9)' }}
+            _active={{ transform: 'scale(0.98)' }}
+            size='lg'
+            bgColor='brand.Charcoal'
+            borderRadius='0'
+          >
+            <Text fontFamily='Poppins' fontWeight='400' color='brand.Cream'>
+              Send A Message
+            </Text>
+          </Button>
         </Stack>
       </Stack>
     </Box>
