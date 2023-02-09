@@ -16,7 +16,7 @@ import ContactUs from './pages/ContactUs';
 
 const App: React.FC = () => {
   return (
-    <Box className='App'>
+    <Box className='App' maxW='100vw' overflowX='hidden'>
       <Announcement />
       <Navigation />
       <Cart />

@@ -12,14 +12,15 @@ import {
   MenuItem,
   MenuList,
   Tabs,
-  Tab
+  Tab,
+  Box
 } from '@chakra-ui/react';
+import { useState } from 'react';
 import { ProductMenuProps } from '../models/Props';
 import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
 
 import watermarkTR from '../assets/Products/products-hero-backsplash-tr.png';
 import watermarkBL from '../assets/Products/products-hero-backsplash-bl.png';
-import { useState } from 'react';
 
 const ProductMenu: React.FC<ProductMenuProps> = ({
   backdrop,
@@ -117,11 +118,11 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
         />
         <Flex
           w='100vw'
-          justifyContent={categoryNames ? 'space-between' : 'center'}
-          alignItems={['flex-start', 'center']}
+          justifyContent={dynamicCategoryNames ? 'space-between' : 'center'}
+          alignItems='center'
           bgColor='brand.Cream'
           fontFamily='Poppins'
-          py={['16px', '32px']}
+          h={isLessThan1280 && dynamicCategoryNames ? '108px' : '60px'}
         >
           {dynamicCategoryNames && (
             <Flex
@@ -129,16 +130,16 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
               justifyContent={['center', 'center', 'space-between']}
               alignItems={['flex-start', 'flex-start', 'center']}
               gap={['16px', '16px', '32px']}
-              pl={['20px', '40px', '80px', '160px']}
+              pl={['20px', '40px', '80px', '80px', '80px', '160px']}
             >
               <Text color='UI.2'>Filter By</Text>
               {isLessThan1280 ? (
-                <Menu isOpen={isFilterMenuOpen}>
+                <Menu isLazy isOpen={isFilterMenuOpen}>
                   <MenuButton
                     onClick={() => setIsFilterMenuOpen((prev) => !prev)}
                   >
                     <Flex
-                      w={['140px', '140px', '165px', '190px']}
+                      w={['150px', '150px', '165px', '190px']}
                       border='1px solid'
                       borderColor='UI.3'
                       borderRadius='2px'
@@ -156,8 +157,8 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                     </Flex>
                   </MenuButton>
                   <MenuList
-                    minW='189px'
-                    w='190px'
+                    minW='150px'
+                    w={['150px', '150px', '165px', '190px']}
                     p='.5rem 1rem'
                     top='-8px'
                     pos='absolute'
@@ -205,15 +206,14 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
 
           <Flex
             direction={['column', 'column', 'row']}
-            pr={['20px', '20px', '80px', '160px']}
+            pr={['20px', '20px', '80px', '80px', '80px', '160px']}
             gap={['16px', '16px', '32px']}
-            h='21px'
             justifyContent={['center', 'center', 'space-between']}
             alignItems={['flex-start', 'flex-start', 'center']}
             pos='relative'
           >
             <Text color='UI.2'>Sort By</Text>
-            <Menu isOpen={isSortMenuOpen}>
+            <Menu isLazy isOpen={isSortMenuOpen}>
               <MenuButton onClick={() => setIsSortMenuOpen((prev) => !prev)}>
                 <Flex
                   border='1px solid'
@@ -223,7 +223,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                   alignItems='center'
                   p='2px 4px 2px 8px'
                   justify='space-between'
-                  w={['140px', '140px', '165px', '190px']}
+                  w={['150px', '150px', '165px', '190px']}
                 >
                   <Text color='UI.1' fontSize='14px'>
                     {dynamicMenuItems[0]}
@@ -237,8 +237,8 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                 </Flex>
               </MenuButton>
               <MenuList
-                minW='189px'
-                w='190px'
+                minW='150px'
+                w={['150px', '150px', '165px', '190px']}
                 p='.5rem 1rem'
                 top='-8px'
                 pos='absolute'
