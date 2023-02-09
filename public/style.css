@@ -6,17 +6,17 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f7f2ee;
+  background: #E6E0DC;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2c2c2c;
+  background: #2C2C2C;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #b3afab;
+  background: #2c2c2ccb;
 }
