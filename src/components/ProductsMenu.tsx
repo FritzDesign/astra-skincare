@@ -95,7 +95,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
           src={watermarkBL}
           pos='absolute'
           left='0%'
-          bottom='20%'
+          bottom={['30%', '30%', '18%']}
           zIndex={-1}
         />
         <Text
@@ -122,7 +122,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
           alignItems='center'
           bgColor='brand.Cream'
           fontFamily='Poppins'
-          h={isLessThan1280 && dynamicCategoryNames ? '108px' : '60px'}
+          h={isLessThan1280 && dynamicCategoryNames ? '108px' : '64px'}
         >
           {dynamicCategoryNames && (
             <Flex
