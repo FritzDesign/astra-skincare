@@ -26,7 +26,7 @@ const ShippingAndPolicies: React.FC = () => {
           justify='flex-start'
           align='flex-start'
           spacing='32px'
-          w={['100%', '100%', '50%']}
+          w={['100%', '80%', '60%']}
         >
           <Text
             fontFamily='Marcellus'
