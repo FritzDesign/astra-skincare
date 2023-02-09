@@ -46,6 +46,7 @@ const SkincareResources: React.FC = () => {
           'Price - High',
           'Price - Low'
         ]}
+        showMenuBar
       />
       <Grid p='2rem !important'>
         {/* <Grid
