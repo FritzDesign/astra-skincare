@@ -19,7 +19,7 @@ import heroImage from '../../assets/Products/bt-hero-img.png';
 import heroFb from '../../assets/Products/bt-hero-img-fb.jpg';
 import Product from '../Product';
 
-const SkincareResources: React.FC = () => {
+const WhyAstra: React.FC = () => {
   const { products, fetchCollectionByHandle, isLoading } =
     useContext<any>(ShopContext);
 
@@ -34,7 +34,7 @@ const SkincareResources: React.FC = () => {
         backdrop={heroBackdrop}
         hero={heroImage}
         fallback={heroFb}
-        heading='Skincare Resources'
+        heading='Why Astra'
         menuItems={[
           'Featured',
           'Newest',
@@ -311,4 +311,4 @@ const SkincareResources: React.FC = () => {
   );
 };
 
-export default SkincareResources;
+export default WhyAstra;

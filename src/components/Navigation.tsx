@@ -174,6 +174,7 @@ const Navigation: React.FC = () => {
           fontWeight='medium'
           fontSize='18px'
           color='brand.Black'
+          onClick={() => navigate('/skincare-resources')}
         >
           Skincare Resources
         </Link>
@@ -185,6 +186,7 @@ const Navigation: React.FC = () => {
           fontWeight='medium'
           fontSize='18px'
           color='brand.Black'
+          onClick={() => navigate('/why-astra')}
         >
           Why Astra
         </Link>
@@ -196,6 +198,7 @@ const Navigation: React.FC = () => {
           fontWeight='medium'
           fontSize='18px'
           color='brand.Black'
+          onClick={() => navigate('/contact-us')}
         >
           Contact Us
         </Link>

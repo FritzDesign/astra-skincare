@@ -10,6 +10,9 @@ import Announcement from './Announcement';
 import Ankle from './Ankle';
 import BeautyTools from './pages/BeautyTools';
 import SkinConcerns from './pages/SkinConcerns';
+import SkincareResources from './pages/SkincareResources';
+import WhyAstra from './pages/WhyAstra';
+import ContactUs from './pages/ContactUs';
 
 const App: React.FC = () => {
   return (
@@ -23,6 +26,9 @@ const App: React.FC = () => {
         <Route path='/products/:handle' element={<SingleProduct />} />
         <Route path='/beauty-tools' element={<BeautyTools />} />
         <Route path='/skin-concerns' element={<SkinConcerns />} />
+        <Route path='/skincare-resources' element={<SkincareResources />} />
+        <Route path='/why-astra' element={<WhyAstra />} />
+        <Route path='/contact-us' element={<ContactUs />} />
       </Routes>
       <Ankle />
       <Footer />

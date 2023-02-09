@@ -47,16 +47,36 @@ const NavMenu: React.FC = () => {
             >
               Skincare Products
             </MenuItem>
-            <MenuItem alignSelf='stretch'
+            <MenuItem
+              alignSelf='stretch'
               onClick={() => handleSelect('/beauty-tools')}
-            >Beauty Tools</MenuItem>
-            <MenuItem alignSelf='stretch'
+            >
+              Beauty Tools
+            </MenuItem>
+            <MenuItem
+              alignSelf='stretch'
               onClick={() => handleSelect('/skin-concerns')}
-            
-            >Skin Concerns</MenuItem>
-            <MenuItem alignSelf='stretch'>Skincare Resources</MenuItem>
-            <MenuItem alignSelf='stretch'>Help Me Choose</MenuItem>
-            <MenuItem alignSelf='stretch'>Why Astra</MenuItem>
+            >
+              Skin Concerns
+            </MenuItem>
+            <MenuItem
+              alignSelf='stretch'
+              onClick={() => navigate('/skincare-resources')}
+            >
+              Skincare Resources
+            </MenuItem>
+            <MenuItem
+              alignSelf='stretch'
+              onClick={() => navigate('/why-astra')}
+            >
+              Why Astra
+            </MenuItem>
+            <MenuItem
+              alignSelf='stretch'
+              onClick={() => navigate('/contact-us')}
+            >
+              Contact Us
+            </MenuItem>
           </MenuGroup>
           <Divider
             m={['20px 0px', '20px 0px', '0px 20px', '0px 20px']}

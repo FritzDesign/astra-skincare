@@ -72,13 +72,22 @@ const Footer: React.FC = () => {
           >
             Skin Concerns
           </Tab>
-          <Tab _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}>
+          <Tab
+            _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}
+            onClick={() => navigate('/skincare-resources')}
+          >
             Skincare Resources
           </Tab>
-          <Tab _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}>
+          <Tab
+            _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}
+            onClick={() => navigate('/why-astra')}
+          >
             Help Me Choose
           </Tab>
-          <Tab _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}>
+          <Tab
+            _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}
+            onClick={() => navigate('/contact-us')}
+          >
             Why Astra
           </Tab>
         </Stack>
