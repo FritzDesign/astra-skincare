@@ -90,7 +90,6 @@ export class ShopProvider extends React.Component {
       this.setState({
         products: collection.products
       });
-      console.log('cp', collection);
       this.setState({ isLoading: false });
     });
   };

@@ -52,7 +52,7 @@ export interface ProductProps {
   image: string;
   title: string;
   handle: string;
-  category: string;
+  category?: string;
   price: string;
   weight?: string;
 }

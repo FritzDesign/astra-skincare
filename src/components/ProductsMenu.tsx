@@ -15,10 +15,11 @@ import {
   Tab
 } from '@chakra-ui/react';
 import { ProductMenuProps } from '../models/Props';
-import { BiChevronDown } from 'react-icons/bi';
+import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
 
 import watermarkTR from '../assets/Products/products-hero-backsplash-tr.png';
 import watermarkBL from '../assets/Products/products-hero-backsplash-bl.png';
+import { useState } from 'react';
 
 const ProductMenu: React.FC<ProductMenuProps> = ({
   backdrop,
@@ -28,7 +29,22 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
   categoryNames,
   menuItems
 }) => {
+  const [isSortMenuOpen, setIsSortMenuOpen] = useState(false);
+  const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
   const [isLessThan1280] = useMediaQuery(['(max-width: 1280px)']);
+  const [dynamicMenuItems, setDynamicMenuItems] = useState(menuItems.sort());
+
+  const handleUpdateSortMenu = (option: string) => {
+    const tempItems = dynamicMenuItems;
+
+    const selection1 = tempItems.slice(
+      tempItems.indexOf(option),
+      tempItems.indexOf(option) + 1
+    );
+    const selection2 = tempItems.filter((item) => item !== option).sort();
+    setDynamicMenuItems([...selection1, ...selection2]);
+    setIsSortMenuOpen((prev) => !prev);
+  };
 
   return (
     <>
@@ -90,10 +106,10 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
         >
           {categoryNames && (
             <Flex
-              direction={['column', 'row']}
-              justifyContent='space-between'
-              alignItems={['flex-start', 'center']}
-              gap={['16px', '32px']}
+              direction={['column', 'column', 'row']}
+              justifyContent={['center', 'center', 'space-between']}
+              alignItems={['flex-start', 'flex-start', 'center']}
+              gap={['16px', '16px', '32px']}
               pl={['20px', '40px', '80px', '160px']}
             >
               <Text color='UI.2'>Filter By</Text>
@@ -131,27 +147,37 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                 <Flex as={Tabs} defaultIndex={categoryNames.length}>
                   {categoryNames.map((_name, i) => {
                     return (
-                      <Tab _selected={{  borderColor: 'brand.Lavender'}} color='UI.1' key={i}>
+                      <Tab
+                        _selected={{ borderColor: 'brand.Lavender' }}
+                        color='UI.1'
+                        key={i}
+                      >
                         {_name}
                       </Tab>
                     );
                   })}
-                  <Tab _selected={{  borderColor: 'brand.Lavender'}} color='UI.1'>Show All</Tab>
+                  <Tab
+                    _selected={{ borderColor: 'brand.Lavender' }}
+                    color='UI.1'
+                  >
+                    Show All
+                  </Tab>
                 </Flex>
               )}
             </Flex>
           )}
 
           <Flex
-            direction={['column', 'row']}
-            pr={['20px', '40px', '80px', '160px']}
-            gap='16px'
+            direction={['column', 'column', 'row']}
+            pr={['20px', '20px', '80px', '160px']}
+            gap={['16px', '16px', '32px']}
             h='21px'
-            justifyContent='space-between'
+            justifyContent={['center', 'center', 'space-between']}
+            alignItems={['flex-start', 'flex-start', 'center']}
           >
             <Text color='UI.2'>Sort By</Text>
-            <Menu>
-              <MenuButton>
+            <Menu isOpen={isSortMenuOpen}>
+              <MenuButton onClick={() => setIsSortMenuOpen((prev) => !prev)}>
                 <Flex
                   border='1px solid'
                   borderColor='UI.3'
@@ -159,20 +185,35 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                   boxSizing='border-box'
                   alignItems='center'
                   p='2px 4px 2px 8px'
-                  gap={['4rem', '4rem', '5rem']}
+                  justify='space-between'
+                  w={['140px', '140px', '165px', '190px']}
                 >
-                  {menuItems.map((item, i) => {
-                    return (
-                      <Text color='UI.1' fontSize='14px' key={i}>
-                        {item}
-                      </Text>
-                    );
-                  })}
+                  <Text>{dynamicMenuItems[0]}</Text>
                   <Center>
-                    <Icon as={BiChevronDown} fontSize='24px'></Icon>
+                    <Icon
+                      as={isSortMenuOpen ? BiChevronUp : BiChevronDown}
+                      fontSize='24px'
+                    ></Icon>
                   </Center>
                 </Flex>
               </MenuButton>
+              <MenuList minW='189px' w='190px' p='.5rem 1rem'>
+                {dynamicMenuItems.map((item, i) => {
+                  if (i < 1) return;
+                  return (
+                    <MenuItem
+                      color='UI.1'
+                      fontSize='14px'
+                      key={i}
+                      ml='0'
+                      pl='0'
+                      onClick={() => handleUpdateSortMenu(item)}
+                    >
+                      {item}
+                    </MenuItem>
+                  );
+                })}
+              </MenuList>
             </Menu>
           </Flex>
         </Flex>

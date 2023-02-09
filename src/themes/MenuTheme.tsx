@@ -6,19 +6,7 @@ const { definePartsStyle, defineMultiStyleConfig } =
 
 // define the base component styles
 const baseStyle = definePartsStyle({
-  // define the part you're going to style
-  // button: {
-  //   // this will style the MenuButton component
-  //   fontWeight: 'medium',
-  //   bg: 'teal.500',
-  //   color: 'gray.200',
-  //   _hover: {
-  //     bg: 'teal.600',
-  //     color: 'white',
-  //   },
-  // },
   list: {
-    // this will style the MenuList component
     boxShadow: '0px 2px 4px #B3AFAB',
     borderRadius: '0',
     py: '4',
@@ -27,7 +15,6 @@ const baseStyle = definePartsStyle({
     bg: 'brand.Cream'
   },
   item: {
-    // this will style the MenuItem and MenuItemOption components
     color: 'brand.Black',
     bg: 'transparent',
     mx: '16px',

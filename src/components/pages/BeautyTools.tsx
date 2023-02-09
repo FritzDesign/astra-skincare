@@ -62,7 +62,6 @@ const BeautyTools: React.FC = () => {
                   image={product.images[0].src}
                   title={product.title}
                   handle={product.handle}
-                  category={product.productType}
                   price={product.variants[0].price.amount}
                 />
               );

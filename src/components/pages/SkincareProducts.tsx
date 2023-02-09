@@ -56,7 +56,7 @@ const SkincareProducts: React.FC = () => {
           'Serums',
           'Sunscreen'
         ]}
-        menuItems={['Featured']}
+        menuItems={['Featured', 'Newest', 'Highest Rated', 'Price (High)','Price (Low)']}
       />
       <Grid p='2rem !important'>
         <Grid
@@ -72,7 +72,6 @@ const SkincareProducts: React.FC = () => {
         >
           {products.length ? (
             products.map((product: ProductInterface, i: number) => {
-              console.log(product)
               return (
                 <Product
                   key={i}
