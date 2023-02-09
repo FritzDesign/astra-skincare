@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Stack, Text } from '@chakra-ui/react';
 import ProductMenu from '../ProductsMenu';
 
 import heroImage from '../../assets/faq-hero-img.png';
 
 const ShippingAndPolicies: React.FC = () => {
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }, []);
+
   return (
     <Box>
       <ProductMenu
