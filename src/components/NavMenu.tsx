@@ -100,8 +100,15 @@ const NavMenu: React.FC = () => {
             <MenuItem alignSelf='stretch' onClick={() => navigate('/faq')}>
               F.A.Q.
             </MenuItem>
-            <MenuItem alignSelf='stretch'>Shipping & Policies</MenuItem>
-            <MenuItem alignSelf='stretch'>Disclaimer</MenuItem>
+            <MenuItem alignSelf='stretch' onClick={() => navigate('/policies')}>
+              Shipping & Policies
+            </MenuItem>
+            <MenuItem
+              alignSelf='stretch'
+              onClick={() => navigate('/disclaimer')}
+            >
+              Disclaimer
+            </MenuItem>
           </MenuGroup>
         </MenuList>
       </Menu>

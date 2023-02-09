@@ -14,6 +14,7 @@ import SkincareResources from './pages/SkincareResources';
 import WhyAstra from './pages/WhyAstra';
 import ContactUs from './pages/ContactUs';
 import FAQ from './pages/FAQ';
+import ShippingAndPolicies from './pages/ShippingAndPolicies';
 
 const App: React.FC = () => {
   return (
@@ -31,6 +32,8 @@ const App: React.FC = () => {
         <Route path='/why-astra' element={<WhyAstra />} />
         <Route path='/contact-us' element={<ContactUs />} />
         <Route path='/faq' element={<FAQ />} />
+        <Route path='/policies' element={<ShippingAndPolicies />} />
+        {/* <Route path='/disclaimer' element={<Disclaimer />} /> */}
       </Routes>
       <Ankle />
       <Footer />

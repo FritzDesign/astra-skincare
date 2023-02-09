@@ -100,16 +100,22 @@ const Footer: React.FC = () => {
           spacing='16px'
           overflow='hidden'
         >
-          <Tab _selected={{ color: 'brand.Navy', borderBottom: '4px solid' }}
+          <Tab
+            _selected={{ color: 'brand.Navy', borderBottom: '4px solid' }}
             onClick={() => navigate('/faq')}
-
           >
             F.A.Q.
           </Tab>
-          <Tab _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}>
+          <Tab
+            _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}
+            onClick={() => navigate('/policies')}
+          >
             Shipping & Policies
           </Tab>
-          <Tab _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}>
+          <Tab
+            _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}
+            onClick={() => navigate('/disclaimer')}
+          >
             Disclaimer
           </Tab>
         </Stack>
