@@ -9,9 +9,8 @@ import {
   SkeletonText
 } from '@chakra-ui/react';
 import ProductMenu from '../ProductsMenu';
-import { useContext, useEffect, useRef } from 'react';
+import { useContext, useEffect } from 'react';
 import { ShopContext } from '../../context/ShopContext';
-import { useInView } from 'framer-motion';
 
 import { Product as ProductInterface } from '../../models/API';
 
@@ -20,13 +19,13 @@ import heroImage from '../../assets/Products/bt-hero-img.png';
 import heroFb from '../../assets/Products/bt-hero-img-fb.jpg';
 import Product from '../Product';
 
-const BeautyTools: React.FC = () => {
+const SkinConcerns: React.FC = () => {
   const { products, fetchCollectionByHandle, isLoading } =
     useContext<any>(ShopContext);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetchCollectionByHandle('beauty-tools');
+    // fetchCollectionByHandle('skin-concerns');
   }, []);
 
   return (
@@ -35,7 +34,7 @@ const BeautyTools: React.FC = () => {
         backdrop={heroBackdrop}
         hero={heroImage}
         fallback={heroFb}
-        heading='Beauty Tools'
+        heading='Skin Concerns'
         menuItems={[
           'Featured',
           'Newest',
@@ -312,4 +311,4 @@ const BeautyTools: React.FC = () => {
   );
 };
 
-export default BeautyTools;
+export default SkinConcerns;

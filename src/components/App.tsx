@@ -9,6 +9,7 @@ import SkincareProducts from './pages/SkincareProducts';
 import Announcement from './Announcement';
 import Ankle from './Ankle';
 import BeautyTools from './pages/BeautyTools';
+import SkinConcerns from './pages/SkinConcerns';
 
 const App: React.FC = () => {
   return (
@@ -21,6 +22,7 @@ const App: React.FC = () => {
         <Route path='/skincare-products' element={<SkincareProducts />} />
         <Route path='/products/:handle' element={<SingleProduct />} />
         <Route path='/beauty-tools' element={<BeautyTools />} />
+        <Route path='/skin-concerns' element={<SkinConcerns />} />
       </Routes>
       <Ankle />
       <Footer />

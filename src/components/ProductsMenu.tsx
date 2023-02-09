@@ -33,8 +33,27 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
   const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
   const [isLessThan1280] = useMediaQuery(['(max-width: 1280px)']);
   const [dynamicMenuItems, setDynamicMenuItems] = useState(menuItems.sort());
+  const [dynamicCategoryNames, setDynamicCategoryNames] = useState(
+    categoryNames?.sort()
+  );
+
+  const handleUpdateFilterMenu = (option: string) => {
+    if (isSortMenuOpen) setIsSortMenuOpen(false);
+    if (!dynamicCategoryNames) return;
+    const selectionIndex = dynamicCategoryNames.indexOf(option);
+    const selection1 = dynamicCategoryNames?.slice(
+      selectionIndex,
+      selectionIndex + 1
+    );
+    const selection2 = dynamicCategoryNames
+      .filter((_name) => _name !== option)
+      .sort();
+    setDynamicCategoryNames([...selection1, ...selection2]);
+    setIsFilterMenuOpen((prev) => !prev);
+  };
 
   const handleUpdateSortMenu = (option: string) => {
+    if (isFilterMenuOpen) setIsFilterMenuOpen(false);
     const tempItems = dynamicMenuItems;
 
     const selection1 = tempItems.slice(
@@ -104,7 +123,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
           fontFamily='Poppins'
           py={['16px', '32px']}
         >
-          {categoryNames && (
+          {dynamicCategoryNames && (
             <Flex
               direction={['column', 'column', 'row']}
               justifyContent={['center', 'center', 'space-between']}
@@ -114,38 +133,55 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
             >
               <Text color='UI.2'>Filter By</Text>
               {isLessThan1280 ? (
-                <Menu isOpen={false}>
-                  <MenuButton>
+                <Menu isOpen={isFilterMenuOpen}>
+                  <MenuButton
+                    onClick={() => setIsFilterMenuOpen((prev) => !prev)}
+                  >
                     <Flex
+                      w={['140px', '140px', '165px', '190px']}
                       border='1px solid'
                       borderColor='UI.3'
                       borderRadius='2px'
                       boxSizing='border-box'
                       alignItems='center'
                       p='2px 4px 2px 8px'
-                      gap='3.5rem'
+                      justify='space-between'
                     >
                       <Text color='UI.1' fontSize='14px'>
-                        {categoryNames[0]}
+                        {dynamicCategoryNames[0]}
                       </Text>
-                      <MenuList>
-                        {categoryNames.map((_name, i) => {
-                          return (
-                            <MenuItem color='UI.1' fontSize='14px' key={i}>
-                              {_name}
-                            </MenuItem>
-                          );
-                        })}
-                      </MenuList>
                       <Center>
                         <Icon as={BiChevronDown} fontSize='24px'></Icon>
                       </Center>
                     </Flex>
                   </MenuButton>
+                  <MenuList
+                    minW='189px'
+                    w='190px'
+                    p='.5rem 1rem'
+                    top='-8px'
+                    pos='absolute'
+                  >
+                    {dynamicCategoryNames.map((_name, i) => {
+                      if (i < 1) return;
+                      return (
+                        <MenuItem
+                          color='UI.1'
+                          fontSize='14px'
+                          key={i}
+                          ml='0'
+                          pl='0'
+                          onClick={() => handleUpdateFilterMenu(_name)}
+                        >
+                          {_name}
+                        </MenuItem>
+                      );
+                    })}
+                  </MenuList>
                 </Menu>
               ) : (
-                <Flex as={Tabs} defaultIndex={categoryNames.length}>
-                  {categoryNames.map((_name, i) => {
+                <Flex as={Tabs} defaultIndex={dynamicCategoryNames.length}>
+                  {dynamicCategoryNames.map((_name, i) => {
                     return (
                       <Tab
                         _selected={{ borderColor: 'brand.Lavender' }}
@@ -174,6 +210,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
             h='21px'
             justifyContent={['center', 'center', 'space-between']}
             alignItems={['flex-start', 'flex-start', 'center']}
+            pos='relative'
           >
             <Text color='UI.2'>Sort By</Text>
             <Menu isOpen={isSortMenuOpen}>
@@ -188,7 +225,9 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                   justify='space-between'
                   w={['140px', '140px', '165px', '190px']}
                 >
-                  <Text>{dynamicMenuItems[0]}</Text>
+                  <Text color='UI.1' fontSize='14px'>
+                    {dynamicMenuItems[0]}
+                  </Text>
                   <Center>
                     <Icon
                       as={isSortMenuOpen ? BiChevronUp : BiChevronDown}
@@ -197,7 +236,13 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                   </Center>
                 </Flex>
               </MenuButton>
-              <MenuList minW='189px' w='190px' p='.5rem 1rem'>
+              <MenuList
+                minW='189px'
+                w='190px'
+                p='.5rem 1rem'
+                top='-8px'
+                pos='absolute'
+              >
                 {dynamicMenuItems.map((item, i) => {
                   if (i < 1) return;
                   return (

@@ -56,7 +56,7 @@ const SkincareProducts: React.FC = () => {
           'Serums',
           'Sunscreen'
         ]}
-        menuItems={['Featured', 'Newest', 'Highest Rated', 'Price (High)','Price (Low)']}
+        menuItems={['Featured', 'Newest', 'Highest Rated', 'Price - High','Price - Low']}
       />
       <Grid p='2rem !important'>
         <Grid

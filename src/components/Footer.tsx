@@ -66,7 +66,10 @@ const Footer: React.FC = () => {
           >
             Beauty Tools
           </Tab>
-          <Tab _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}>
+          <Tab
+            _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}
+            onClick={() => handleNavigate('/skin-concerns')}
+          >
             Skin Concerns
           </Tab>
           <Tab _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}>
