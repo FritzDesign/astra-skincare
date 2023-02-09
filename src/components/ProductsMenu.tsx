@@ -58,13 +58,15 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
   const handleUpdateSortMenu = (option: string) => {
     if (isFilterMenuOpen) setIsFilterMenuOpen(false);
     if (!dynamicMenuItems) return;
-    const tempItems = dynamicMenuItems;
+    const selectionIndex = dynamicMenuItems.indexOf(option);
 
-    const selection1 = tempItems.slice(
-      tempItems.indexOf(option),
-      tempItems.indexOf(option) + 1
+    const selection1 = dynamicMenuItems.slice(
+      selectionIndex,
+      selectionIndex + 1
     );
-    const selection2 = tempItems.filter((item) => item !== option).sort();
+    const selection2 = dynamicMenuItems
+      .filter((item) => item !== option)
+      .sort();
     setDynamicMenuItems([...selection1, ...selection2]);
     setIsSortMenuOpen((prev) => !prev);
   };
@@ -249,21 +251,22 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                   top={['-8px', '-7px', '-8px']}
                   pos='absolute'
                 >
-                  {dynamicMenuItems && dynamicMenuItems.map((item, i) => {
-                    if (i < 1) return;
-                    return (
-                      <MenuItem
-                        color='UI.1'
-                        fontSize='14px'
-                        key={i}
-                        ml='0'
-                        pl='0'
-                        onClick={() => handleUpdateSortMenu(item)}
-                      >
-                        {item}
-                      </MenuItem>
-                    );
-                  })}
+                  {dynamicMenuItems &&
+                    dynamicMenuItems.map((item, i) => {
+                      if (i < 1) return;
+                      return (
+                        <MenuItem
+                          color='UI.1'
+                          fontSize='14px'
+                          key={i}
+                          ml='0'
+                          pl='0'
+                          onClick={() => handleUpdateSortMenu(item)}
+                        >
+                          {item}
+                        </MenuItem>
+                      );
+                    })}
                 </MenuList>
               </Menu>
             </Flex>
