@@ -19,7 +19,7 @@ import { useState } from 'react';
 import { ProductMenuProps } from '../models/Props';
 import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
 
-import heroBackdrop from '../../assets/Products/products-hero-backdrop.png';
+import heroBackdrop from '../assets/Products/products-hero-backdrop.png';
 import watermarkTR from '../assets/Products/products-hero-backsplash-tr.png';
 import watermarkBL from '../assets/Products/products-hero-backsplash-bl.png';
 

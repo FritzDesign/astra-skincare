@@ -97,9 +97,11 @@ const NavMenu: React.FC = () => {
             borderColor='UI.4'
           />
           <MenuGroup>
-            <MenuItem alignSelf='stretch'>About Astra</MenuItem>
-            <MenuItem alignSelf='stretch'>Terms of Service</MenuItem>
-            <MenuItem alignSelf='stretch'>Customer Service</MenuItem>
+            <MenuItem alignSelf='stretch' onClick={() => navigate('/faq')}>
+              F.A.Q.
+            </MenuItem>
+            <MenuItem alignSelf='stretch'>Shipping & Policies</MenuItem>
+            <MenuItem alignSelf='stretch'>Disclaimer</MenuItem>
           </MenuGroup>
         </MenuList>
       </Menu>

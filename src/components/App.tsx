@@ -13,6 +13,7 @@ import SkinConcerns from './pages/SkinConcerns';
 import SkincareResources from './pages/SkincareResources';
 import WhyAstra from './pages/WhyAstra';
 import ContactUs from './pages/ContactUs';
+import FAQ from './pages/FAQ';
 
 const App: React.FC = () => {
   return (
@@ -29,6 +30,7 @@ const App: React.FC = () => {
         <Route path='/skincare-resources' element={<SkincareResources />} />
         <Route path='/why-astra' element={<WhyAstra />} />
         <Route path='/contact-us' element={<ContactUs />} />
+        <Route path='/faq' element={<FAQ />} />
       </Routes>
       <Ankle />
       <Footer />
