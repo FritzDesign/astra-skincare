@@ -131,13 +131,16 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
               alignItems={['flex-start', 'flex-start', 'center']}
               gap={['16px', '16px', '32px']}
               pl={['20px', '40px', '80px', '80px', '80px', '160px']}
+              onMouseLeave={() => setIsFilterMenuOpen(false)}
             >
               <Text color='UI.2'>Filter By</Text>
               {isLessThan1280 ? (
                 <Menu isLazy isOpen={isFilterMenuOpen}>
+
+
                   <MenuButton
                     onClick={() => setIsFilterMenuOpen((prev) => !prev)}
-                  >
+                    >
                     <Flex
                       w={['150px', '150px', '165px', '190px']}
                       border='1px solid'
@@ -147,7 +150,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                       alignItems='center'
                       p='2px 4px 2px 8px'
                       justify='space-between'
-                    >
+                      >
                       <Text color='UI.1' fontSize='14px'>
                         {dynamicCategoryNames[0]}
                       </Text>
@@ -160,19 +163,19 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                     minW='150px'
                     w={['150px', '150px', '165px', '190px']}
                     p='.5rem 1rem'
-                    top='-8px'
+                    top={['-8px','-7px','-8px']}
                     pos='absolute'
-                  >
+                    >
                     {dynamicCategoryNames.map((_name, i) => {
                       if (i < 1) return;
                       return (
                         <MenuItem
-                          color='UI.1'
-                          fontSize='14px'
-                          key={i}
-                          ml='0'
-                          pl='0'
-                          onClick={() => handleUpdateFilterMenu(_name)}
+                        color='UI.1'
+                        fontSize='14px'
+                        key={i}
+                        ml='0'
+                        pl='0'
+                        onClick={() => handleUpdateFilterMenu(_name)}
                         >
                           {_name}
                         </MenuItem>
@@ -185,9 +188,9 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                   {dynamicCategoryNames.map((_name, i) => {
                     return (
                       <Tab
-                        _selected={{ borderColor: 'brand.Lavender' }}
-                        color='UI.1'
-                        key={i}
+                      _selected={{ borderColor: 'brand.Lavender' }}
+                      color='UI.1'
+                      key={i}
                       >
                         {_name}
                       </Tab>
@@ -211,6 +214,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
             justifyContent={['center', 'center', 'space-between']}
             alignItems={['flex-start', 'flex-start', 'center']}
             pos='relative'
+            onMouseLeave={() => setIsSortMenuOpen(false)}
           >
             <Text color='UI.2'>Sort By</Text>
             <Menu isLazy isOpen={isSortMenuOpen}>
@@ -240,7 +244,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                 minW='150px'
                 w={['150px', '150px', '165px', '190px']}
                 p='.5rem 1rem'
-                top='-8px'
+                top={['-8px','-7px','-8px']}
                 pos='absolute'
               >
                 {dynamicMenuItems.map((item, i) => {

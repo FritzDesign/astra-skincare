@@ -44,7 +44,7 @@ const SkinConcerns: React.FC = () => {
         ]}
       />
       <Grid p='2rem !important'>
-        <Grid
+        {/* <Grid
           id='products-container'
           templateColumns={[
             'repeat(1, 1fr)',
@@ -70,7 +70,7 @@ const SkinConcerns: React.FC = () => {
           ) : (
             <Box minH='1000px' />
           )}
-        </Grid>
+        </Grid> */}
         {isLoading && (
           <Grid
             templateColumns={[

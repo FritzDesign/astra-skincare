@@ -82,13 +82,13 @@ const Footer: React.FC = () => {
             _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}
             onClick={() => navigate('/why-astra')}
           >
-            Help Me Choose
+            Why Astra
           </Tab>
           <Tab
             _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}
             onClick={() => navigate('/contact-us')}
           >
-            Why Astra
+            Contact Us
           </Tab>
         </Stack>
         <Stack
