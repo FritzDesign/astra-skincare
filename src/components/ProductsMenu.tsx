@@ -19,21 +19,23 @@ import { useState } from 'react';
 import { ProductMenuProps } from '../models/Props';
 import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
 
+import heroBackdrop from '../../assets/Products/products-hero-backdrop.png';
 import watermarkTR from '../assets/Products/products-hero-backsplash-tr.png';
 import watermarkBL from '../assets/Products/products-hero-backsplash-bl.png';
 
 const ProductMenu: React.FC<ProductMenuProps> = ({
-  backdrop,
+  backdrop = heroBackdrop,
   hero,
   fallback,
   heading,
   categoryNames,
-  menuItems
+  menuItems,
+  showMenuBar = false
 }) => {
   const [isSortMenuOpen, setIsSortMenuOpen] = useState(false);
   const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
   const [isLessThan1280] = useMediaQuery(['(max-width: 1280px)']);
-  const [dynamicMenuItems, setDynamicMenuItems] = useState(menuItems.sort());
+  const [dynamicMenuItems, setDynamicMenuItems] = useState(menuItems?.sort());
   const [dynamicCategoryNames, setDynamicCategoryNames] = useState(
     categoryNames?.sort()
   );
@@ -55,6 +57,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
 
   const handleUpdateSortMenu = (option: string) => {
     if (isFilterMenuOpen) setIsFilterMenuOpen(false);
+    if (!dynamicMenuItems) return;
     const tempItems = dynamicMenuItems;
 
     const selection1 = tempItems.slice(
@@ -116,156 +119,156 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
           src={hero}
           w={['100%', '90%', '80%']}
         />
-        <Flex
-          w='100vw'
-          justifyContent={dynamicCategoryNames ? 'space-between' : 'center'}
-          alignItems='center'
-          bgColor='brand.Cream'
-          fontFamily='Poppins'
-          h={isLessThan1280 && dynamicCategoryNames ? '108px' : '64px'}
-        >
-          {dynamicCategoryNames && (
+        {showMenuBar && (
+          <Flex
+            w='100vw'
+            justifyContent={dynamicCategoryNames ? 'space-between' : 'center'}
+            alignItems='center'
+            bgColor='brand.Cream'
+            fontFamily='Poppins'
+            h={isLessThan1280 && dynamicCategoryNames ? '108px' : '64px'}
+          >
+            {dynamicCategoryNames && (
+              <Flex
+                direction={['column', 'column', 'row']}
+                justifyContent={['center', 'center', 'space-between']}
+                alignItems={['flex-start', 'flex-start', 'center']}
+                gap={['16px', '16px', '32px']}
+                pl={['20px', '40px', '80px', '80px', '80px', '160px']}
+                onMouseLeave={() => setIsFilterMenuOpen(false)}
+              >
+                <Text color='UI.2'>Filter By</Text>
+                {isLessThan1280 ? (
+                  <Menu isLazy isOpen={isFilterMenuOpen}>
+                    <MenuButton
+                      onClick={() => setIsFilterMenuOpen((prev) => !prev)}
+                    >
+                      <Flex
+                        w={['150px', '150px', '165px', '190px']}
+                        border='1px solid'
+                        borderColor='UI.3'
+                        borderRadius='2px'
+                        boxSizing='border-box'
+                        alignItems='center'
+                        p='2px 4px 2px 8px'
+                        justify='space-between'
+                      >
+                        <Text color='UI.1' fontSize='14px'>
+                          {dynamicCategoryNames[0]}
+                        </Text>
+                        <Center>
+                          <Icon as={BiChevronDown} fontSize='24px'></Icon>
+                        </Center>
+                      </Flex>
+                    </MenuButton>
+                    <MenuList
+                      minW='150px'
+                      w={['150px', '150px', '165px', '190px']}
+                      p='.5rem 1rem'
+                      top={['-8px', '-7px', '-8px']}
+                      pos='absolute'
+                    >
+                      {dynamicCategoryNames.map((_name, i) => {
+                        if (i < 1) return;
+                        return (
+                          <MenuItem
+                            color='UI.1'
+                            fontSize='14px'
+                            key={i}
+                            ml='0'
+                            pl='0'
+                            onClick={() => handleUpdateFilterMenu(_name)}
+                          >
+                            {_name}
+                          </MenuItem>
+                        );
+                      })}
+                    </MenuList>
+                  </Menu>
+                ) : (
+                  <Flex as={Tabs} defaultIndex={dynamicCategoryNames.length}>
+                    {dynamicCategoryNames.map((_name, i) => {
+                      return (
+                        <Tab
+                          _selected={{ borderColor: 'brand.Lavender' }}
+                          color='UI.1'
+                          key={i}
+                        >
+                          {_name}
+                        </Tab>
+                      );
+                    })}
+                    <Tab
+                      _selected={{ borderColor: 'brand.Lavender' }}
+                      color='UI.1'
+                    >
+                      Show All
+                    </Tab>
+                  </Flex>
+                )}
+              </Flex>
+            )}
+
             <Flex
               direction={['column', 'column', 'row']}
+              pr={['20px', '20px', '80px', '80px', '80px', '160px']}
+              gap={['16px', '16px', '32px']}
               justifyContent={['center', 'center', 'space-between']}
               alignItems={['flex-start', 'flex-start', 'center']}
-              gap={['16px', '16px', '32px']}
-              pl={['20px', '40px', '80px', '80px', '80px', '160px']}
-              onMouseLeave={() => setIsFilterMenuOpen(false)}
+              pos='relative'
+              onMouseLeave={() => setIsSortMenuOpen(false)}
             >
-              <Text color='UI.2'>Filter By</Text>
-              {isLessThan1280 ? (
-                <Menu isLazy isOpen={isFilterMenuOpen}>
-
-
-                  <MenuButton
-                    onClick={() => setIsFilterMenuOpen((prev) => !prev)}
-                    >
-                    <Flex
-                      w={['150px', '150px', '165px', '190px']}
-                      border='1px solid'
-                      borderColor='UI.3'
-                      borderRadius='2px'
-                      boxSizing='border-box'
-                      alignItems='center'
-                      p='2px 4px 2px 8px'
-                      justify='space-between'
-                      >
-                      <Text color='UI.1' fontSize='14px'>
-                        {dynamicCategoryNames[0]}
-                      </Text>
-                      <Center>
-                        <Icon as={BiChevronDown} fontSize='24px'></Icon>
-                      </Center>
-                    </Flex>
-                  </MenuButton>
-                  <MenuList
-                    minW='150px'
+              <Text color='UI.2'>Sort By</Text>
+              <Menu isLazy isOpen={isSortMenuOpen}>
+                <MenuButton onClick={() => setIsSortMenuOpen((prev) => !prev)}>
+                  <Flex
+                    border='1px solid'
+                    borderColor='UI.3'
+                    borderRadius='2px'
+                    boxSizing='border-box'
+                    alignItems='center'
+                    p='2px 4px 2px 8px'
+                    justify='space-between'
                     w={['150px', '150px', '165px', '190px']}
-                    p='.5rem 1rem'
-                    top={['-8px','-7px','-8px']}
-                    pos='absolute'
-                    >
-                    {dynamicCategoryNames.map((_name, i) => {
-                      if (i < 1) return;
-                      return (
-                        <MenuItem
+                  >
+                    <Text color='UI.1' fontSize='14px'>
+                      {dynamicMenuItems && dynamicMenuItems[0]}
+                    </Text>
+                    <Center>
+                      <Icon
+                        as={isSortMenuOpen ? BiChevronUp : BiChevronDown}
+                        fontSize='24px'
+                      ></Icon>
+                    </Center>
+                  </Flex>
+                </MenuButton>
+                <MenuList
+                  minW='150px'
+                  w={['150px', '150px', '165px', '190px']}
+                  p='.5rem 1rem'
+                  top={['-8px', '-7px', '-8px']}
+                  pos='absolute'
+                >
+                  {dynamicMenuItems && dynamicMenuItems.map((item, i) => {
+                    if (i < 1) return;
+                    return (
+                      <MenuItem
                         color='UI.1'
                         fontSize='14px'
                         key={i}
                         ml='0'
                         pl='0'
-                        onClick={() => handleUpdateFilterMenu(_name)}
-                        >
-                          {_name}
-                        </MenuItem>
-                      );
-                    })}
-                  </MenuList>
-                </Menu>
-              ) : (
-                <Flex as={Tabs} defaultIndex={dynamicCategoryNames.length}>
-                  {dynamicCategoryNames.map((_name, i) => {
-                    return (
-                      <Tab
-                      _selected={{ borderColor: 'brand.Lavender' }}
-                      color='UI.1'
-                      key={i}
+                        onClick={() => handleUpdateSortMenu(item)}
                       >
-                        {_name}
-                      </Tab>
+                        {item}
+                      </MenuItem>
                     );
                   })}
-                  <Tab
-                    _selected={{ borderColor: 'brand.Lavender' }}
-                    color='UI.1'
-                  >
-                    Show All
-                  </Tab>
-                </Flex>
-              )}
+                </MenuList>
+              </Menu>
             </Flex>
-          )}
-
-          <Flex
-            direction={['column', 'column', 'row']}
-            pr={['20px', '20px', '80px', '80px', '80px', '160px']}
-            gap={['16px', '16px', '32px']}
-            justifyContent={['center', 'center', 'space-between']}
-            alignItems={['flex-start', 'flex-start', 'center']}
-            pos='relative'
-            onMouseLeave={() => setIsSortMenuOpen(false)}
-          >
-            <Text color='UI.2'>Sort By</Text>
-            <Menu isLazy isOpen={isSortMenuOpen}>
-              <MenuButton onClick={() => setIsSortMenuOpen((prev) => !prev)}>
-                <Flex
-                  border='1px solid'
-                  borderColor='UI.3'
-                  borderRadius='2px'
-                  boxSizing='border-box'
-                  alignItems='center'
-                  p='2px 4px 2px 8px'
-                  justify='space-between'
-                  w={['150px', '150px', '165px', '190px']}
-                >
-                  <Text color='UI.1' fontSize='14px'>
-                    {dynamicMenuItems[0]}
-                  </Text>
-                  <Center>
-                    <Icon
-                      as={isSortMenuOpen ? BiChevronUp : BiChevronDown}
-                      fontSize='24px'
-                    ></Icon>
-                  </Center>
-                </Flex>
-              </MenuButton>
-              <MenuList
-                minW='150px'
-                w={['150px', '150px', '165px', '190px']}
-                p='.5rem 1rem'
-                top={['-8px','-7px','-8px']}
-                pos='absolute'
-              >
-                {dynamicMenuItems.map((item, i) => {
-                  if (i < 1) return;
-                  return (
-                    <MenuItem
-                      color='UI.1'
-                      fontSize='14px'
-                      key={i}
-                      ml='0'
-                      pl='0'
-                      onClick={() => handleUpdateSortMenu(item)}
-                    >
-                      {item}
-                    </MenuItem>
-                  );
-                })}
-              </MenuList>
-            </Menu>
           </Flex>
-        </Flex>
+        )}
       </Stack>
     </>
   );

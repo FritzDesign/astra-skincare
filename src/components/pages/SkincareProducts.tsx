@@ -14,7 +14,6 @@ import Product from '../Product';
 import { Product as ProductInterface } from '../../models/API';
 import { useInView } from 'framer-motion';
 
-import heroBackdrop from '../../assets/Products/products-hero-backdrop.png';
 import heroImage from '../../assets/Products/products-hero-img.png';
 import heroFb from '../../assets/Products/products-hero-img-fb.jpg';
 import ProductMenu from '../ProductsMenu';
@@ -44,7 +43,6 @@ const SkincareProducts: React.FC = () => {
   return (
     <Box>
       <ProductMenu
-        backdrop={heroBackdrop}
         hero={heroImage}
         fallback={heroFb}
         heading='Skincare Products'
