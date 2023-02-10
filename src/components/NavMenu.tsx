@@ -113,29 +113,6 @@ const NavMenu: React.FC = () => {
         </MenuList>
       </Menu>
     </Stack>
-
-    // <Chakra.Menu isLazy onOpen={() => openMenu()} onClose={() => closeMenu()}>
-    //   <Chakra.MenuButton>
-    //     <Chakra.Icon
-    //       fill={accentColor1}
-    //       w={30}
-    //       h={30}
-    //       cursor='pointer'
-    //       as={isMenuOpen ? ReactIcons.MdMenuOpen : ReactIcons.MdMenu}
-    //     />
-    //   </Chakra.MenuButton>
-    //   <Chakra.MenuList>
-    //     <Chakra.MenuItem onClick={() => navigate('/')}>Home</Chakra.MenuItem>
-    //     <Chakra.MenuItem onClick={() => navigate('/')}>
-    //       Products
-    //     </Chakra.MenuItem>
-    //     <Chakra.MenuItem onClick={() => navigate('/')}>
-    //       Featured Collection
-    //     </Chakra.MenuItem>
-    //     <Chakra.MenuItem onClick={() => navigate('/')}>About</Chakra.MenuItem>
-    //     <Chakra.MenuItem onClick={() => navigate('/')}>Contact</Chakra.MenuItem>
-    //   </Chakra.MenuList>
-    // </Chakra.Menu>
   );
 };
 

@@ -83,12 +83,17 @@ const Navigation: React.FC = () => {
     console.log('shownav?', showNav);
   };
 
+  if (isInView && showNav) {
+    setShowNav(false);
+  }
+
   React.useEffect(() => {
     getCartItemQty();
   }, [checkout]);
 
   return (
-    <Box h='88px'>
+    <Box h='88px' pos='relative'>
+      <Box pos='absolute' h='1px' bottom='0' ref={topWindowRef} />
       <Flex
         pos={showNav ? 'fixed' : 'sticky'}
         w='100vw'
@@ -104,7 +109,6 @@ const Navigation: React.FC = () => {
         zIndex={1001}
         onMouseEnter={showNav ? () => handleShowNav() : undefined}
       >
-        <Box pos='absolute' h='1px' bottom='0' ref={topWindowRef} />
         <Box
           id='show nav'
           pos='fixed'
