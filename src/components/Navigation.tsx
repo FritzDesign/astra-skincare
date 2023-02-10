@@ -104,7 +104,11 @@ const Navigation: React.FC = () => {
         justifyContent='space-between'
         alignItems='center'
         background='UI.5'
-        boxShadow={showNav ? '0px 1px 2px rgba(0, 0, 0, .5)' : '0px 1px 2px rgba(0, 0, 0, .1)'}
+        boxShadow={
+          showNav
+            ? '0px 1px 2px rgba(0, 0, 0, .5)'
+            : '0px 1px 2px rgba(0, 0, 0, .1)'
+        }
         onMouseLeave={isMenuOpen ? closeMenu : null}
         zIndex={1001}
         onMouseEnter={showNav ? () => handleShowNav() : undefined}
@@ -372,19 +376,21 @@ const Navigation: React.FC = () => {
               transition={{ duration: 0.5, ease: 'linear' }}
               pos='absolute'
               bottom='-40px'
-              right='-23.72rem'
+              right='-23.5rem'
               borderRadius='0px'
               w='24rem'
               bgColor='brand.Cream'
               onBlur={() => handleSearchToggle(isSearchOpen)}
             >
               <Input
+                _focus={{  }}
                 id='nav-search-input'
                 placeholder='search'
                 borderRadius='0px'
                 w='24rem'
                 bgColor='white'
-                focusBorderColor='transparent'
+                focusBorderColor='UI.4'
+                borderStyle='inset'
               />
             </FMC_Component>
           )) ||
@@ -416,7 +422,8 @@ const Navigation: React.FC = () => {
                   placeholder='search'
                   borderRadius='0px'
                   bgColor='white'
-                  focusBorderColor='transparent'
+                  focusBorderColor='UI.4'
+                  borderStyle='inset'
                 />
               </FMC_Component>
             ))}
