@@ -63,16 +63,15 @@ const Navigation: React.FC = () => {
   };
 
   const handleUserInput = (event: React.KeyboardEvent) => {
-    console.log(event);
-
     const key: number = event.keyCode;
-    if (key === 13 && searchInput.length > 5) {
+    if (key === 13 && searchInput.length > 3) {
       fetchProductsBySearch({
-        query: searchInput,
+        query: `title:${searchInput}*`,
         sortKey: 'TITLE'
       });
       navigate(`search/${encodeURI(searchInput)}`);
-
+      setSearchInput('');
+      setIsSearchOpen(false);
     }
   };
 

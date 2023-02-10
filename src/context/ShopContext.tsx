@@ -87,9 +87,10 @@ export class ShopProvider extends React.Component {
   fetchProductsBySearch = (searchInput: string) => {
     this.setState({ isLoading: true });
     client.product.fetchQuery(searchInput).then((products) => {
+      console.log(products)
       this.setState({ products });
+      this.setState({ isLoading: false });
     });
-    this.setState({ isLoading: false });
   };
 
   fetchCollectionByHandle = (handle: string) => {
