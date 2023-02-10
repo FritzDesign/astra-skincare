@@ -90,7 +90,7 @@ const Navigation: React.FC = () => {
   return (
     <Box h='88px'>
       <Flex
-        pos={showNav ? 'fixed' : 'relative'}
+        pos={showNav ? 'fixed' : 'sticky'}
         w='100vw'
         left='0'
         top='0'
@@ -99,7 +99,7 @@ const Navigation: React.FC = () => {
         justifyContent='space-between'
         alignItems='center'
         background='UI.5'
-        boxShadow='0px 1px 2px rgba(0, 0, 0, 0.05)'
+        boxShadow='0px 1px 2px rgba(0, 0, 0, .5)'
         onMouseLeave={isMenuOpen ? closeMenu : null}
         zIndex={1001}
         onMouseEnter={showNav ? () => handleShowNav() : undefined}
