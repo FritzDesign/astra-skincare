@@ -16,6 +16,7 @@ import ContactUs from './pages/ContactUs';
 import FAQ from './pages/FAQ';
 import ShippingAndPolicies from './pages/ShippingAndPolicies';
 import Disclaimer from './pages/Disclaimer';
+import Search from './pages/Search';
 
 const App: React.FC = () => {
   return (
@@ -35,6 +36,7 @@ const App: React.FC = () => {
         <Route path='/faq' element={<FAQ />} />
         <Route path='/policies' element={<ShippingAndPolicies />} />
         <Route path='/disclaimer' element={<Disclaimer />} />
+        <Route path='/search/*' element={<Search />} />
       </Routes>
       <Ankle />
       <Footer />

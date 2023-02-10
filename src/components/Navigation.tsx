@@ -36,9 +36,16 @@ const Navigation: React.FC = () => {
   const navigate = useNavigate();
   const [showNav, setShowNav] = React.useState(false);
   const [isSearchOpen, setIsSearchOpen] = React.useState(false);
+  const [searchInput, setSearchInput] = React.useState<string>('');
 
-  const { openCart, checkout, openMenu, closeMenu, isMenuOpen } =
-    React.useContext<any>(ShopContext);
+  const {
+    openCart,
+    checkout,
+    openMenu,
+    closeMenu,
+    isMenuOpen,
+    fetchProductsBySearch
+  } = React.useContext<any>(ShopContext);
 
   const getCartItemQty = (): string => {
     let cartItemQty = 0;
@@ -52,6 +59,20 @@ const Navigation: React.FC = () => {
       return '9+';
     } else {
       return cartItemQty.toString();
+    }
+  };
+
+  const handleUserInput = (event: React.KeyboardEvent) => {
+    console.log(event);
+
+    const key: number = event.keyCode;
+    if (key === 13 && searchInput.length > 5) {
+      fetchProductsBySearch({
+        query: searchInput,
+        sortKey: 'TITLE'
+      });
+      navigate(`search/${encodeURI(searchInput)}`);
+
     }
   };
 
@@ -383,14 +404,18 @@ const Navigation: React.FC = () => {
               onBlur={() => handleSearchToggle(isSearchOpen)}
             >
               <Input
-                _focus={{  }}
                 id='nav-search-input'
+                value={searchInput}
                 placeholder='search'
                 borderRadius='0px'
                 w='24rem'
                 bgColor='white'
                 focusBorderColor='UI.4'
                 borderStyle='inset'
+                onChange={(e: React.SyntheticEvent) =>
+                  setSearchInput((e.target as HTMLInputElement).value)
+                }
+                onKeyDown={(e: React.KeyboardEvent) => handleUserInput(e)}
               />
             </FMC_Component>
           )) ||
@@ -419,11 +444,16 @@ const Navigation: React.FC = () => {
               >
                 <Input
                   id='nav-search-input'
+                  value={searchInput}
                   placeholder='search'
                   borderRadius='0px'
                   bgColor='white'
                   focusBorderColor='UI.4'
                   borderStyle='inset'
+                  onChange={(e: React.SyntheticEvent) =>
+                    setSearchInput((e.target as HTMLInputElement).value)
+                  }
+                  onKeyDown={(e: React.KeyboardEvent) => handleUserInput(e)}
                 />
               </FMC_Component>
             ))}
