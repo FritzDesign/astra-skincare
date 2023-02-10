@@ -41,6 +41,28 @@ export class ShopProvider extends React.Component {
       .then((checkout) => this.setState({ checkout }));
   };
 
+  sortProducts = (sortType: string) => {
+    switch (sortType) {
+      case 'Featured':
+        console.log(sortType);
+        break;
+      case 'Highest Rated':
+        console.log(sortType);
+        break;
+      case 'Newest':
+        console.log(sortType);
+        break;
+      case 'Price - High':
+        console.log(sortType);
+        break;
+      case 'Price - Low':
+        console.log(sortType);
+        break;
+      default:
+        console.log('No Matching Sort Type');
+    }
+  };
+
   addItemToCheckout = async (variantId, quantity) => {
     const checkout = await client.checkout.addLineItems(
       this.state.checkout.id,
@@ -87,7 +109,7 @@ export class ShopProvider extends React.Component {
   fetchProductsBySearch = (searchInput: string) => {
     this.setState({ isLoading: true });
     client.product.fetchQuery(searchInput).then((products) => {
-      console.log(products)
+      console.log(products);
       this.setState({ products });
       this.setState({ isLoading: false });
     });
@@ -140,7 +162,8 @@ export class ShopProvider extends React.Component {
           openCart: this.openCart,
           closeCart: this.closeCart,
           openMenu: this.openMenu,
-          closeMenu: this.closeMenu
+          closeMenu: this.closeMenu,
+          sortProducts: this.sortProducts
         }}
       >
         {this.props.children}

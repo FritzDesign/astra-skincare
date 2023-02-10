@@ -15,13 +15,14 @@ import {
   Tab,
   Box
 } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { ProductMenuProps } from '../models/Props';
 import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
 
 import heroBackdrop from '../assets/Products/products-hero-backdrop.png';
 import watermarkTR from '../assets/Products/products-hero-backsplash-tr.png';
 import watermarkBL from '../assets/Products/products-hero-backsplash-bl.png';
+import { ShopContext } from '../context/ShopContext';
 
 const ProductMenu: React.FC<ProductMenuProps> = ({
   backdrop = heroBackdrop,
@@ -39,6 +40,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
   const [dynamicCategoryNames, setDynamicCategoryNames] = useState(
     categoryNames?.sort()
   );
+  const { sortProducts } = useContext<any>(ShopContext);
 
   const handleUpdateFilterMenu = (option: string) => {
     if (isSortMenuOpen) setIsSortMenuOpen(false);
@@ -69,6 +71,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
       .sort();
     setDynamicMenuItems([...selection1, ...selection2]);
     setIsSortMenuOpen((prev) => !prev);
+    sortProducts(selection1[0]);
   };
 
   return (
