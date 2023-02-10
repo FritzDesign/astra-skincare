@@ -9,12 +9,14 @@ import {
   useMediaQuery,
   Text,
   Box,
-  Center
+  Center,
+  Slide,
+  SlideFade
 } from '@chakra-ui/react';
 import { BsPerson, BsSearch } from 'react-icons/bs';
 import { IoBagOutline } from 'react-icons/io5';
 import { HiOutlineMenu } from 'react-icons/hi';
-import { AiOutlineCaretDown } from 'react-icons/ai';
+import { AiOutlineCaretDown, AiOutlineCaretUp } from 'react-icons/ai';
 import { FiX } from 'react-icons/fi';
 import logo from '../assets/astra-logo.png';
 import { useNavigate } from 'react-router';
@@ -28,7 +30,7 @@ const Navigation: React.FC = () => {
     '(max-width: 480px)',
     '(max-width: 1536px)'
   ]);
-  const topWindowRef = React.useRef(null)
+  const topWindowRef = React.useRef(null);
   const isInView = useInView(topWindowRef);
 
   const navigate = useNavigate();
@@ -113,10 +115,22 @@ const Navigation: React.FC = () => {
           onMouseEnter={() => handleShowNav()}
           pointerEvents={showNav ? 'none' : 'auto'}
         >
-          {!showNav && !isInView &&  (
+          {!showNav && !isInView && (
             <Center>
-              <Icon as={AiOutlineCaretDown} pos='absolute' top='0' fontSize='20px' fill='brand.Cream'/>
-              <Icon as={AiOutlineCaretDown} pos='absolute' top='0' fontSize='18px' fill='brand.Charcoal'/>
+              <Icon
+                as={AiOutlineCaretDown}
+                pos='absolute'
+                top='0'
+                fontSize='20px'
+                fill='brand.Cream'
+              />
+              <Icon
+                as={AiOutlineCaretDown}
+                pos='absolute'
+                top='0'
+                fontSize='18px'
+                fill='brand.Charcoal'
+              />
             </Center>
           )}
         </Box>
@@ -126,10 +140,31 @@ const Navigation: React.FC = () => {
           h='22px'
           w='100vw'
           left='0'
-          top='110px'
+          top='94px'
           onMouseEnter={() => handleShowNav(true)}
           pointerEvents={showNav ? 'auto' : 'none'}
-        ></Box>
+        >
+          {showNav && isInView && isMobile && (
+            <Center>
+              <Icon
+                as={AiOutlineCaretUp}
+                pos='absolute'
+                top='-24px'
+                fontSize='20px'
+                fill='brand.Cream'
+                onClick={() => handleShowNav(true)}
+              />
+              <Icon
+                as={AiOutlineCaretUp}
+                pos='absolute'
+                top='-24px'
+                fontSize='18px'
+                fill='brand.Charcoal'
+                onClick={() => handleShowNav(true)}
+              />
+            </Center>
+          )}
+        </Box>
         <Image
           mixBlendMode='multiply'
           loading='lazy'
