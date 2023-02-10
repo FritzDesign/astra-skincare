@@ -96,13 +96,15 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
           top='0%'
           zIndex={-1}
         />
-        <Image
-          src={watermarkBL}
-          pos='absolute'
-          left={showMenuBar ? ['30%', '30%', '0%'] : ['-50%', '-50%', '0%']}
-          bottom={showMenuBar ? ['30%', '30%', '15%'] : ['45%', '40%', '30%']}
-          zIndex={-1}
-        />
+        {showMenuBar && (
+          <Image
+            src={watermarkBL}
+            pos='absolute'
+            left={['30%', '30%', '0%']}
+            bottom={['30%', '30%', '15%']}
+            zIndex={-1}
+          />
+        )}
         <Text
           pointerEvents='none'
           pos='absolute'
