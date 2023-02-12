@@ -64,7 +64,7 @@ const Navigation: React.FC = () => {
 
   const handleUserInput = (event: React.KeyboardEvent) => {
     const key: number = event.keyCode;
-    if (key === 13 && searchInput.length > 3) {
+    if (key === 13 && searchInput.length) {
       fetchProductsBySearch({
         query: `title:${searchInput}*`,
         sortKey: 'TITLE'

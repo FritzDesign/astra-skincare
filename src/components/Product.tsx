@@ -46,7 +46,7 @@ const Product: React.FC<ProductProps> = ({
         objectFit='cover'
         objectPosition='center center'
         pos='relative'
-        onClick={() => navigate(`${handle}`)}
+        onClick={() => navigate(`/products/${handle}`)}
       />
       {isNew && (
         <Stack
