@@ -91,6 +91,8 @@ const SkincareProducts: React.FC = () => {
         >
           {products.length ? (
             products.map((product: ProductInterface, i: number) => {
+              console.log(product);
+              
               return (
                 <Product
                   key={i}

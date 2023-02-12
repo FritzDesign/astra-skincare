@@ -40,20 +40,23 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
   const [dynamicCategoryNames, setDynamicCategoryNames] = useState(
     categoryNames?.sort()
   );
-  const { sortProducts } = useContext<any>(ShopContext);
+  const { sortProducts, fetchCollectionByHandle } =
+    useContext<any>(ShopContext);
 
-  const handleUpdateFilterMenu = (option: string) => {
+  const handleUpdateFilterMenu = (option: string, isDropdown = true) => {
     if (isSortMenuOpen) setIsSortMenuOpen(false);
     if (!dynamicCategoryNames) return;
-    const selectionIndex = dynamicCategoryNames.indexOf(option);
-    const selection1 = dynamicCategoryNames?.slice(
-      selectionIndex,
-      selectionIndex + 1
-    );
-    const selection2 = dynamicCategoryNames
-      .filter((_name) => _name !== option)
-      .sort();
-    setDynamicCategoryNames([...selection1, ...selection2]);
+    if (isDropdown) {
+      const selectionIndex = dynamicCategoryNames.indexOf(option);
+      const selection1 = dynamicCategoryNames
+        ?.slice(selectionIndex, selectionIndex + 1)
+        .pop();
+      const selection2 = dynamicCategoryNames
+        .filter((_name) => _name !== option)
+        .sort();
+      setDynamicCategoryNames([selection1!, ...selection2]);
+    }    
+    fetchCollectionByHandle(option.toLowerCase());
     setIsFilterMenuOpen((prev) => !prev);
   };
 
@@ -62,16 +65,15 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
     if (!dynamicMenuItems) return;
     const selectionIndex = dynamicMenuItems.indexOf(option);
 
-    const selection1 = dynamicMenuItems.slice(
-      selectionIndex,
-      selectionIndex + 1
-    );
+    const selection1 = dynamicMenuItems
+      .slice(selectionIndex, selectionIndex + 1)
+      .pop();
     const selection2 = dynamicMenuItems
       .filter((item) => item !== option)
       .sort();
-    setDynamicMenuItems([...selection1, ...selection2]);
+    setDynamicMenuItems([selection1!, ...selection2]);
     setIsSortMenuOpen((prev) => !prev);
-    sortProducts(selection1[0]);
+    sortProducts(selection1);
   };
 
   return (
@@ -200,6 +202,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                           _selected={{ borderColor: 'brand.Lavender' }}
                           color='UI.1'
                           key={i}
+                          onClick={() => handleUpdateFilterMenu(_name, false)}
                         >
                           {_name}
                         </Tab>
@@ -208,6 +211,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                     <Tab
                       _selected={{ borderColor: 'brand.Lavender' }}
                       color='UI.1'
+                      onClick={() => handleUpdateFilterMenu('skincare-products', false)}
                     >
                       Show All
                     </Tab>
