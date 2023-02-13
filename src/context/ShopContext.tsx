@@ -1,6 +1,8 @@
 //@ts-nocheck
 import * as React from 'react';
+import { BiDuplicate } from 'react-icons/bi';
 import Client from 'shopify-buy';
+import Product from '../components/Product';
 export const ShopContext = React.createContext({});
 
 const client = Client.buildClient({
@@ -41,10 +43,26 @@ export class ShopProvider extends React.Component {
       .then((checkout) => this.setState({ checkout }));
   };
 
-  sortProducts = (sortType: string) => {
+  sortProducts = (sortType: string, isBeautyTool = false) => {
+    let productsBySortType = [];
+    let remainingProducts = [];
+
     switch (sortType) {
       case 'Featured':
-        console.log(sortType);
+        client.collection.fetchByHandle('featured').then((collection) => {
+          for (const featProduct of collection.products) {
+            for (const product of this.state.products) {
+              if (featProduct.id === product.id) {
+                productsBySortType.push(featProduct);
+              }
+            }
+          }
+          // TODO: Fix this entire logic
+          console.log(productsBySortType, remainingProducts);
+          this.setState({
+            products: [...productsBySortType, ...remainingProducts]
+          });
+        });
         break;
       case 'Highest Rated':
         console.log(sortType);

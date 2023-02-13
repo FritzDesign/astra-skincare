@@ -26,6 +26,7 @@ const SkincareProducts: React.FC = () => {
     products,
     totalProducts,
     fetchAllProducts,
+    fetchCollectionByHandle,
     fetchNextPage,
     isLoading,
     hasMoreProducts
@@ -37,14 +38,14 @@ const SkincareProducts: React.FC = () => {
       left: 0,
       behavior: 'smooth'
     });
-    fetchAllProducts();
+    fetchCollectionByHandle('skincare-products');
   }, []);
 
-  useEffect(() => {
-    if (products.length) {
-      fetchNextPage();
-    }
-  }, [isInView]);
+  // useEffect(() => {
+  //   if (products.length) {
+  //     fetchNextPage();
+  //   }
+  // }, [isInView]);
 
   useEffect(() => {
     if (products.length && totalProducts) {
@@ -62,11 +63,11 @@ const SkincareProducts: React.FC = () => {
         heading='Skincare Products'
         categoryNames={[
           'Cleansers',
-          'Toners',
           'Exfoliants',
           'Moisturizers',
           'Serums',
-          'Sunscreen'
+          'Sunscreen',
+          'Toners'
         ]}
         menuItems={[
           'Featured',
@@ -91,8 +92,6 @@ const SkincareProducts: React.FC = () => {
         >
           {products.length ? (
             products.map((product: ProductInterface, i: number) => {
-              console.log(product);
-              
               return (
                 <Product
                   key={i}

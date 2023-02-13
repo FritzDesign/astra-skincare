@@ -37,26 +37,31 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
   const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(false);
   const [isLessThan1280] = useMediaQuery(['(max-width: 1280px)']);
   const [dynamicMenuItems, setDynamicMenuItems] = useState(menuItems?.sort());
-  const [dynamicCategoryNames, setDynamicCategoryNames] = useState(
-    categoryNames?.sort()
-  );
+  const [dynamicCategoryNames, setDynamicCategoryNames] =
+    useState(categoryNames);
   const { sortProducts, fetchCollectionByHandle } =
     useContext<any>(ShopContext);
 
   const handleUpdateFilterMenu = (option: string, isDropdown = true) => {
     if (isSortMenuOpen) setIsSortMenuOpen(false);
     if (!dynamicCategoryNames) return;
+    if (option === 'Show All') option = 'skincare-products'
     if (isDropdown) {
-      const selectionIndex = dynamicCategoryNames.indexOf(option);
+      let selectionIndex = dynamicCategoryNames.indexOf(option);
+      console.log(selectionIndex);
       const selection1 = dynamicCategoryNames
         ?.slice(selectionIndex, selectionIndex + 1)
         .pop();
       const selection2 = dynamicCategoryNames
-        .filter((_name) => _name !== option)
+        .filter((_name) => _name !== option && _name !== 'Show All')
         .sort();
-      setDynamicCategoryNames([selection1!, ...selection2]);
-    }    
-    fetchCollectionByHandle(option.toLowerCase());
+      if (selection1) {
+        setDynamicCategoryNames([selection1, ...selection2]);
+      } else {
+        setDynamicCategoryNames(['Show All', ...selection2]);
+      }
+      fetchCollectionByHandle(option.toLowerCase());
+    }
     setIsFilterMenuOpen((prev) => !prev);
   };
 
@@ -142,7 +147,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                 direction={['column', 'column', 'row']}
                 justifyContent={['center', 'center', 'space-between']}
                 alignItems={['flex-start', 'flex-start', 'center']}
-                gap={['16px', '16px', '32px']}
+                gap='16px'
                 pl={['20px', '40px', '80px', '80px', '80px', '160px']}
                 onMouseLeave={() => setIsFilterMenuOpen(false)}
               >
@@ -178,7 +183,6 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                       pos='absolute'
                     >
                       {dynamicCategoryNames.map((_name, i) => {
-                        if (i < 1) return;
                         return (
                           <MenuItem
                             color='UI.1'
@@ -192,6 +196,19 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                           </MenuItem>
                         );
                       })}
+                      {dynamicCategoryNames.length === categoryNames?.length ? (
+                        <MenuItem
+                          color='UI.1'
+                          fontSize='14px'
+                          ml='0'
+                          pl='0'
+                          onClick={() =>
+                            handleUpdateFilterMenu('skincare-products')
+                          }
+                        >
+                          Show All
+                        </MenuItem>
+                      ) : null}
                     </MenuList>
                   </Menu>
                 ) : (
@@ -211,7 +228,9 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                     <Tab
                       _selected={{ borderColor: 'brand.Lavender' }}
                       color='UI.1'
-                      onClick={() => handleUpdateFilterMenu('skincare-products', false)}
+                      onClick={() =>
+                        handleUpdateFilterMenu('skincare-products', false)
+                      }
                     >
                       Show All
                     </Tab>
@@ -262,7 +281,6 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                 >
                   {dynamicMenuItems &&
                     dynamicMenuItems.map((item, i) => {
-                      if (i < 1) return;
                       return (
                         <MenuItem
                           color='UI.1'

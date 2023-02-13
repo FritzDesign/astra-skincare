@@ -100,7 +100,6 @@ const Navigation: React.FC = () => {
     } else {
       setShowNav(true);
     }
-    console.log('shownav?', showNav);
   };
 
   if (isInView && showNav) {
