@@ -3,6 +3,7 @@ import * as React from 'react';
 import { BiDuplicate } from 'react-icons/bi';
 import Client from 'shopify-buy';
 import Product from '../components/Product';
+import { encodeQuery, sortBySelection } from '../utils/helpers';
 export const ShopContext = React.createContext({});
 
 const client = Client.buildClient({
@@ -44,41 +45,19 @@ export class ShopProvider extends React.Component {
   };
 
   sortProducts = (sortType: string, isBeautyTool = false) => {
-    let productsBySortType = [];
-    let remainingProducts = [];
+    sortType = encodeQuery(sortType);
 
-    switch (sortType) {
-      case 'Featured':
-        client.collection.fetchByHandle('featured').then((collection) => {
-          for (const featProduct of collection.products) {
-            for (const product of this.state.products) {
-              if (featProduct.id === product.id) {
-                productsBySortType.push(featProduct);
-              }
-            }
-          }
-          // TODO: Fix this entire logic
-          console.log(productsBySortType, remainingProducts);
-          this.setState({
-            products: [...productsBySortType, ...remainingProducts]
-          });
-        });
-        break;
-      case 'Highest Rated':
-        console.log(sortType);
-        break;
-      case 'Newest':
-        console.log(sortType);
-        break;
-      case 'Price - High':
-        console.log(sortType);
-        break;
-      case 'Price - Low':
-        console.log(sortType);
-        break;
-      default:
-        console.log('No Matching Sort Type');
-    }
+    client.collection.fetchByHandle(sortType).then((collection) => {
+      console.log(collection.products)
+      const sortedProducts = sortBySelection(
+        collection.products,
+        this.state.products
+      );
+      console.log(sortedProducts);
+      this.setState({
+        products: sortedProducts
+      });
+    });
   };
 
   addItemToCheckout = async (variantId, quantity) => {

@@ -15,7 +15,7 @@ import {
   Tab,
   Box
 } from '@chakra-ui/react';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ProductMenuProps } from '../models/Props';
 import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
 
@@ -45,7 +45,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
   const handleUpdateFilterMenu = (option: string, isDropdown = true) => {
     if (isSortMenuOpen) setIsSortMenuOpen(false);
     if (!dynamicCategoryNames) return;
-    if (option === 'Show All') option = 'skincare-products'
+    if (option === 'Show All') option = 'skincare-products';
     if (isDropdown) {
       let selectionIndex = dynamicCategoryNames.indexOf(option);
       console.log(selectionIndex);
@@ -60,26 +60,31 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
       } else {
         setDynamicCategoryNames(['Show All', ...selection2]);
       }
-      fetchCollectionByHandle(option.toLowerCase());
+      setIsFilterMenuOpen((prev) => !prev);
     }
-    setIsFilterMenuOpen((prev) => !prev);
+    fetchCollectionByHandle(option.toLowerCase());
   };
 
   const handleUpdateSortMenu = (option: string) => {
     if (isFilterMenuOpen) setIsFilterMenuOpen(false);
     if (!dynamicMenuItems) return;
-    const selectionIndex = dynamicMenuItems.indexOf(option);
 
-    const selection1 = dynamicMenuItems
-      .slice(selectionIndex, selectionIndex + 1)
-      .pop();
     const selection2 = dynamicMenuItems
       .filter((item) => item !== option)
       .sort();
-    setDynamicMenuItems([selection1!, ...selection2]);
+
+    setDynamicMenuItems([option, ...selection2]);
     setIsSortMenuOpen((prev) => !prev);
-    sortProducts(selection1);
+    if (option === 'Price - High' || option === 'Price - Low') {
+      console.log('Price Sorting Goes Here');
+    } else {
+      sortProducts(option);
+    }
   };
+
+  // useEffect(() => {
+  //   fetchCollectionByHandle()
+  // }, [])
 
   return (
     <>
