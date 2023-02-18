@@ -12,7 +12,7 @@ import {
 import { ShopContext } from '../../context/ShopContext';
 import Product from '../Product';
 import { Product as ProductInterface } from '../../models/API';
-import { useInView } from 'framer-motion';
+// import { useInView } from 'framer-motion';
 
 import heroImage from '../../assets/Products/products-hero-img.png';
 import heroFb from '../../assets/Products/products-hero-img-fb.jpg';
@@ -21,13 +21,13 @@ import ProductMenu from '../ProductsMenu';
 const SkincareProducts: React.FC = () => {
   const [showMoreProducts, setShowMoreProducts] = useState(true);
   const triggerRef = useRef(null);
-  const isInView = useInView(triggerRef);
+  // const isInView = useInView(triggerRef);
   const {
     products,
     totalProducts,
-    fetchAllProducts,
+    // fetchAllProducts,
     fetchCollectionByHandle,
-    fetchNextPage,
+    // fetchNextPage,
     isLoading,
     hasMoreProducts
   } = useContext<any>(ShopContext);
@@ -40,6 +40,8 @@ const SkincareProducts: React.FC = () => {
     });
     fetchCollectionByHandle('skincare-products');
   }, []);
+
+  // SAVE THIS FOR LATER - IN CASE OF PAGINATION IDEAS
 
   // useEffect(() => {
   //   if (products.length) {
@@ -92,6 +94,8 @@ const SkincareProducts: React.FC = () => {
         >
           {products.length ? (
             products.map((product: ProductInterface, i: number) => {
+              console.log(product);
+              
               return (
                 <Product
                   key={i}

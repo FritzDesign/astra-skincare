@@ -1,8 +1,6 @@
 //@ts-nocheck
 import * as React from 'react';
-import { BiDuplicate } from 'react-icons/bi';
 import Client from 'shopify-buy';
-import Product from '../components/Product';
 import { encodeQuery, sortByPrice, sortBySelection } from '../utils/helpers';
 export const ShopContext = React.createContext({});
 
