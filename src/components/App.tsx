@@ -27,7 +27,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/skincare-products' element={<SkincareProducts />} />
-        <Route path='/products/:handle' element={<SingleProduct />} />
+        <Route path='/skincare-products/:handle' element={<SingleProduct />} />
         <Route path='/beauty-tools' element={<BeautyTools />} />
         <Route path='/skin-concerns' element={<SkinConcerns />} />
         <Route path='/skincare-resources' element={<SkincareResources />} />

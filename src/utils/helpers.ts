@@ -23,7 +23,6 @@ export const sortBySelection = (
 const comparePriceLH = (productA: Product, productB: Product) => {
   const priceProductA = +productA.variants[0].price.amount;
   const priceProductB = +productB.variants[0].price.amount;
-  console.log(priceProductA, priceProductB);
 
   return priceProductA - priceProductB;
 };
@@ -31,7 +30,6 @@ const comparePriceLH = (productA: Product, productB: Product) => {
 const comparePriceHL = (productA: Product, productB: Product) => {
   const priceProductA = +productA.variants[0].price.amount;
   const priceProductB = +productB.variants[0].price.amount;
-  console.log(priceProductA, priceProductB);
 
   return priceProductB - priceProductA;
 };

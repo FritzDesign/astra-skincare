@@ -29,4 +29,5 @@ export interface Product {
   productType: string;
   images: ProductImages[];
   variants: ProductVariants[];
+  isNew?: boolean;
 }

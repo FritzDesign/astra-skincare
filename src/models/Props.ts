@@ -20,15 +20,15 @@ export interface Gallery3x1Props {
 export interface HeroProps {
   bgColor: string;
   bgImage: string;
-  heading?: string;
   showBtn: boolean;
+  heading?: string;
 }
 
 export interface ImageWithTextProps {
-  reverse?: boolean;
   image: string;
   heading: string;
   text: string;
+  reverse?: boolean;
 }
 
 export interface RichTextProps {
@@ -48,21 +48,40 @@ export interface NavMenuProps {
 }
 
 export interface ProductProps {
-  isNew?: boolean;
   image: string;
   title: string;
   handle: string;
-  category?: string;
   price: string;
+  category?: string;
   weight?: string;
+  isNew?: boolean;
 }
 
 export interface ProductMenuProps {
-  backdrop?: string;
+  heading: string;
   hero: string;
   fallback: string;
-  heading: string;
+  backdrop?: string;
   categoryNames?: string[];
   menuItems?: string[];
   showMenuBar?: boolean;
+}
+
+export interface ScaleableGalleryProps {
+  length: number;
+  title: string;
+  collection: string;
+  link?: {
+    text: string;
+    navTo: string;
+  }
+}
+
+export interface ScaleableGalleryCardProps {
+  image: string;
+  title: string;
+  isNew: boolean;
+  category: string;
+  price: string;
+  weight: number;
 }

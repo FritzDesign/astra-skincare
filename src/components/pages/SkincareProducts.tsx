@@ -93,9 +93,7 @@ const SkincareProducts: React.FC = () => {
           justifyItems='center'
         >
           {products.length ? (
-            products.map((product: ProductInterface, i: number) => {
-              console.log(product);
-              
+            products.map((product: ProductInterface, i: number) => {              
               return (
                 <Product
                   key={i}

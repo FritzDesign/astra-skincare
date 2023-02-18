@@ -1,10 +1,11 @@
 //@ts-nocheck
 import * as React from 'react';
 import Client from 'shopify-buy';
+import { Product } from '../models/API';
 import { encodeQuery, sortByPrice, sortBySelection } from '../utils/helpers';
 export const ShopContext = React.createContext({});
 
-const client = Client.buildClient({
+export const client = Client.buildClient({
   domain: process.env.REACT_APP_SHOPIFY_DOMAIN,
   storefrontAccessToken: process.env.REACT_APP_SHOPIFY_API
 });
@@ -53,12 +54,15 @@ export class ShopProvider extends React.Component {
       }
     } else {
       client.collection.fetchByHandle(sortType).then((collection) => {
-        console.log(collection.products);
+        if (collection.handle === 'newest') {
+          collection.products.forEach((product: Product) => {
+            product.isNew = true;
+          })
+        }
         const sortedProducts = sortBySelection(
           collection.products,
           this.state.products
         );
-        console.log(sortedProducts);
         this.setState({
           products: sortedProducts
         });
@@ -112,7 +116,6 @@ export class ShopProvider extends React.Component {
   fetchProductsBySearch = (searchInput: string) => {
     this.setState({ isLoading: true });
     client.product.fetchQuery(searchInput).then((products) => {
-      console.log(products);
       this.setState({ products });
       this.setState({ isLoading: false });
     });

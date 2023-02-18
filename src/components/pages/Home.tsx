@@ -14,7 +14,7 @@ import imgWithText1 from '../../assets/image-with-text/astra-iwt-1.png';
 import TextWithIcons from '../TextWithIcons';
 import DailyRoutineTop from '../DailyRoutineTop';
 import DailyRoutineBottom from '../DailyRoutineBottom';
-import WhatsNew from '../WhatsNew';
+import ScaleableGallery from '../ScaleableGallery';
 import Rewards from '../Rewards';
 import Footer from '../Footer';
 import { Ankle } from '../Ankle';
@@ -31,7 +31,12 @@ const Home: React.FC = () => {
       <DailyRoutineTop />
       <DailyRoutineBottom />
       <TextWithIcons />
-      <WhatsNew />
+      <ScaleableGallery
+        title={"What's New"}
+        collection='featured'
+        length={10}
+        link={{ text: 'SHOP ALL', navTo: 'skincare-products' }}
+      />
       <Rewards />
       <ImageWithText
         heading='Build Your Ideal Skincare Routine'

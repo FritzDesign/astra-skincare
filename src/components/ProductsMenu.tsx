@@ -48,7 +48,6 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
     if (option === 'Show All') option = 'skincare-products';
     if (isDropdown) {
       let selectionIndex = dynamicCategoryNames.indexOf(option);
-      console.log(selectionIndex);
       const selection1 = dynamicCategoryNames
         ?.slice(selectionIndex, selectionIndex + 1)
         .pop();
