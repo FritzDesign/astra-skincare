@@ -20,6 +20,34 @@ export const sortBySelection = (
   return [...matches, ...rest];
 };
 
+const comparePriceLH = (productA: Product, productB: Product) => {
+  const priceProductA = +productA.variants[0].price.amount;
+  const priceProductB = +productB.variants[0].price.amount;
+  console.log(priceProductA, priceProductB);
+
+  return priceProductA - priceProductB;
+};
+
+const comparePriceHL = (productA: Product, productB: Product) => {
+  const priceProductA = +productA.variants[0].price.amount;
+  const priceProductB = +productB.variants[0].price.amount;
+  console.log(priceProductA, priceProductB);
+
+  return priceProductB - priceProductA;
+};
+
+export const sortByPrice = (products: Product[], lowToHigh = true) => {
+  if (lowToHigh) {
+    return products.sort(comparePriceLH);
+  } else {
+    return products.sort(comparePriceHL);
+  }
+};
+
 export const encodeQuery = (query: string) => {
-  return query.replace(' ', '-').toLowerCase();
+  if (query.includes('Price')) {
+    return query.replaceAll(' ', '').toLowerCase();
+  } else {
+    return query.replaceAll(' ', '-').toLowerCase();
+  }
 };

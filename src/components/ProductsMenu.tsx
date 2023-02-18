@@ -75,11 +75,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
 
     setDynamicMenuItems([option, ...selection2]);
     setIsSortMenuOpen((prev) => !prev);
-    if (option === 'Price - High' || option === 'Price - Low') {
-      console.log('Price Sorting Goes Here');
-    } else {
-      sortProducts(option);
-    }
+    sortProducts(option);
   };
 
   // useEffect(() => {

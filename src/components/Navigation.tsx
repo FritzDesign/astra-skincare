@@ -49,7 +49,7 @@ const Navigation: React.FC = () => {
 
   const getCartItemQty = (): string => {
     let cartItemQty = 0;
-    checkout.lineItems?.forEach((item: any) => {
+    checkout?.lineItems?.forEach((item: any) => {
       if (cartItemQty >= 9) return;
       cartItemQty += item.quantity;
     });

@@ -23,7 +23,7 @@ const Cart: React.FC = () => {
           <Chakra.DrawerCloseButton />
           <Chakra.DrawerHeader>Your Cart</Chakra.DrawerHeader>
           <Chakra.DrawerBody>
-            {checkout.lineItems?.length ? (
+            {checkout?.lineItems?.length ? (
               checkout.lineItems.map((item: any) => {
                 return (
                   <Chakra.Grid
@@ -69,7 +69,7 @@ const Cart: React.FC = () => {
           </Chakra.DrawerBody>
 
           <Chakra.DrawerFooter justifyContent='space-between'>
-            {checkout.totalPrice && +checkout.totalPrice.amount ? (
+            {checkout?.totalPrice && +checkout.totalPrice.amount ? (
               <>
                 <Chakra.Text>
                   {'$' + checkout.totalPrice.amount + '0'}

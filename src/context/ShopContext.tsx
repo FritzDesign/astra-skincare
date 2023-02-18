@@ -3,7 +3,7 @@ import * as React from 'react';
 import { BiDuplicate } from 'react-icons/bi';
 import Client from 'shopify-buy';
 import Product from '../components/Product';
-import { encodeQuery, sortBySelection } from '../utils/helpers';
+import { encodeQuery, sortByPrice, sortBySelection } from '../utils/helpers';
 export const ShopContext = React.createContext({});
 
 const client = Client.buildClient({
@@ -47,17 +47,25 @@ export class ShopProvider extends React.Component {
   sortProducts = (sortType: string, isBeautyTool = false) => {
     sortType = encodeQuery(sortType);
 
-    client.collection.fetchByHandle(sortType).then((collection) => {
-      console.log(collection.products)
-      const sortedProducts = sortBySelection(
-        collection.products,
-        this.state.products
-      );
-      console.log(sortedProducts);
-      this.setState({
-        products: sortedProducts
+    if (sortType.includes('price')) {
+      if (sortType.includes('low')) {
+        this.setState({ producted: sortByPrice(this.state.products) });
+      } else {
+        this.setState({ producted: sortByPrice(this.state.products, false) });
+      }
+    } else {
+      client.collection.fetchByHandle(sortType).then((collection) => {
+        console.log(collection.products);
+        const sortedProducts = sortBySelection(
+          collection.products,
+          this.state.products
+        );
+        console.log(sortedProducts);
+        this.setState({
+          products: sortedProducts
+        });
       });
-    });
+    }
   };
 
   addItemToCheckout = async (variantId, quantity) => {
