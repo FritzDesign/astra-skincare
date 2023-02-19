@@ -23,6 +23,7 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
   collection,
   length,
   title,
+  product,
   link
 }) => {
   const [arrowDisabled, setArrowDisabled] = useState({
@@ -93,12 +94,18 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
     const fetchProducts = async () => {
       client.collection.fetchByHandle(collection).then((collection: any) => {
         if (collection?.products) {
-          setGalleryProducts(collection.products.slice(0, length));
+          let galleryProducts = collection.products.slice(0, length);
+          if (product) {
+            galleryProducts = galleryProducts.filter((_product: Product) => {
+              return product.id !== _product.id;
+            });
+          }
+          setGalleryProducts(galleryProducts);
         }
       });
     };
     fetchProducts();
-  }, []);
+  });
 
   return (
     <FMC_Component

@@ -33,7 +33,7 @@ const Home: React.FC = () => {
       <TextWithIcons />
       <ScaleableGallery
         title={"What's New"}
-        collection='featured'
+        collection='newest'
         length={10}
         link={{ text: 'SHOP ALL', navTo: 'skincare-products' }}
       />

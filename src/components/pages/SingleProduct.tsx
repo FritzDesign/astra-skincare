@@ -19,11 +19,12 @@ import ScaleableGallery from '../ScaleableGallery';
 const SingleProduct: React.FC = () => {
   const { handle } = useParams();
 
-  const { fetchProductByHandle, addItemToCheckout, product } =
+  const { fetchProductByHandle, addItemToCheckout, product, resetProduct } =
     React.useContext<any>(ShopContext);
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
+    resetProduct();
     fetchProductByHandle(handle);
   }, [fetchProductByHandle, handle]);
   if (Object.keys(product).length) {
@@ -265,6 +266,7 @@ const SingleProduct: React.FC = () => {
         </Flex>
         <ScaleableGallery
           title='Similar Products'
+          product={product}
           collection={product.productType}
           length={7}
         />

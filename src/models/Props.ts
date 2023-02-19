@@ -1,3 +1,5 @@
+import { Product } from "./API";
+
 export interface ButtonProps {
   text?: string;
   textColor?: string;
@@ -71,6 +73,7 @@ export interface ScaleableGalleryProps {
   length: number;
   title: string;
   collection: string;
+  product?: Product;
   link?: {
     text: string;
     navTo: string;

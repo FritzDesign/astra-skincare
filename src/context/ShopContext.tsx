@@ -57,7 +57,7 @@ export class ShopProvider extends React.Component {
         if (collection.handle === 'newest') {
           collection.products.forEach((product: Product) => {
             product.isNew = true;
-          })
+          });
         }
         const sortedProducts = sortBySelection(
           collection.products,
@@ -137,6 +137,10 @@ export class ShopProvider extends React.Component {
     });
   };
 
+  resetProduct = () => {
+    this.setState({ product: {} });
+  };
+
   closeCart = () => {
     this.setState({ isCartOpen: false });
   };
@@ -162,6 +166,7 @@ export class ShopProvider extends React.Component {
           fetchCollectionByHandle: this.fetchCollectionByHandle,
           fetchNextPage: this.fetchNextPage,
           fetchProductByHandle: this.fetchProductByHandle,
+          resetProduct: this.resetProduct,
           fetchProductsBySearch: this.fetchProductsBySearch,
           addItemToCheckout: this.addItemToCheckout,
           removeLineItem: this.removeLineItem,
