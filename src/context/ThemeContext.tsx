@@ -1,5 +1,7 @@
 import { extendTheme } from '@chakra-ui/react';
 import { accordionTheme } from '../themes/AccordionTheme';
+import { badgeTheme } from '../themes/BadgeTheme';
+import { buttonTheme } from '../themes/ButtonTheme';
 import { listTheme } from '../themes/ListTheme';
 import { menuTheme } from '../themes/MenuTheme';
 
@@ -7,7 +9,9 @@ const theme = extendTheme({
   components: {
     Menu: menuTheme,
     List: listTheme,
-    Accordion: accordionTheme
+    Accordion: accordionTheme,
+    Button: buttonTheme,
+    Badge: badgeTheme
   },
   colors: {
     brand: {
