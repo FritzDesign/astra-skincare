@@ -12,7 +12,9 @@ import {
   AccordionButton,
   AccordionIcon,
   AccordionItem,
-  AccordionPanel
+  AccordionPanel,
+  UnorderedList,
+  ListItem
 } from '@chakra-ui/react';
 import { BsBag } from 'react-icons/bs';
 import { FiMinus, FiPlus } from 'react-icons/fi';
@@ -204,38 +206,54 @@ const SingleProduct: React.FC = () => {
               spacing='24px'
               alignSelf='stretch'
             >
-                <Accordion>
+              <Accordion>
                 <AccordionItem>
-               
-                    {({ isExpanded }) => (
-               
-                    
-                    <AccordionButton>
-                      Details <Icon as={isExpanded ? FiMinus : FiPlus} />
+                  <AccordionButton>
+                    Details <Icon as={FiPlus} />
                   </AccordionButton>
                   <AccordionPanel>
-
+                    <Stack mt='32px' gap='32px'>
+                      <Stack>
+                        <Text>Benefits</Text>
+                        <UnorderedList>
+                          <ListItem>Replenishes lost moisture</ListItem>
+                          <ListItem>Maintains healthy-looking skins</ListItem>
+                          <ListItem>Provides enhanced barrier support</ListItem>
+                          <ListItem>PH 6.50 - 7.50</ListItem>
+                          <ListItem>Cruelty-free and Vegan</ListItem>
+                          <ListItem>
+                            Use after Squalene Cleanser, and before Natural
+                            Moisturizing Factors + HA
+                          </ListItem>
+                        </UnorderedList>
+                      </Stack>
+                      <Stack>
+                        <Text>Key Ingredients</Text>
+                        <UnorderedList>
+                          <ListItem>Hyaluronic Acid</ListItem>
+                          <ListItem>Hyaluronic Acid Cross-Polymer</ListItem>
+                          <ListItem>Vitamin B5</ListItem>
+                        </UnorderedList>
+                      </Stack>
+                    </Stack>
                   </AccordionPanel>
-                  </AccordionItem>
-                  <Divider borderColor='UI.3' />
-                  
-                  <AccordionItem>
-                    <AccordionButton>
-                      Directions <Icon as={FiPlus} />
-                    </AccordionButton>
+                </AccordionItem>
+                <Divider borderColor='UI.3' />
 
-                    )}
+                <AccordionItem>
+                  <AccordionButton>
+                    Directions <Icon as={FiPlus} />
+                  </AccordionButton>
+                </AccordionItem>
+                <Divider borderColor='UI.3' />
 
-                  </AccordionItem>
-                  <Divider borderColor='UI.3' />
-
-                  <AccordionItem>
-                    <AccordionButton>
-                      Ingredients <Icon as={FiPlus} />
-                    </AccordionButton>
-                  </AccordionItem>
-                  <Divider borderColor='UI.3' />
-                </Accordion>
+                <AccordionItem>
+                  <AccordionButton>
+                    Ingredients <Icon as={FiPlus} />
+                  </AccordionButton>
+                </AccordionItem>
+                <Divider borderColor='UI.3' />
+              </Accordion>
             </Stack>
           </Stack>
         </Flex>

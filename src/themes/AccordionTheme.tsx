@@ -21,7 +21,8 @@ const baseStyle = definePartsStyle({
     pb: '1.5rem'
   },
   panel: {
-    fontFamily: 'Poppins'
+    fontFamily: 'Poppins',
+    px: '0px'
   }
 });
 
