@@ -16,10 +16,9 @@ import DailyRoutineTop from '../DailyRoutineTop';
 import DailyRoutineBottom from '../DailyRoutineBottom';
 import ScaleableGallery from '../ScaleableGallery';
 import Rewards from '../Rewards';
-import Footer from '../Footer';
-import { Ankle } from '../Ankle';
 
 const Home: React.FC = () => {
+  React.useEffect
   return (
     <Chakra.Box>
       <Hero

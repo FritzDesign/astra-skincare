@@ -13,7 +13,8 @@ export const DailyRoutineBottom: React.FC = () => {
     <Stack
       id='container'
       px={['0px', '0px', '0px', '128px']}
-      py={['0px', '0px', '0px', '64px']}
+      pb={['0px', '0px', '0px', '64px']}
+      pt={['0px', '0px', '0px', '16px']}
       flexDir={['column-reverse', 'column-reverse', 'column-reverse', 'row']}
       justify={[
         'space-between',
