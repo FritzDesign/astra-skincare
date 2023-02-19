@@ -4,14 +4,15 @@ import {
   MenuList,
   MenuItem,
   Stack,
-  MenuDivider,
   MenuGroup,
-  MenuButton,
-  Divider
+  Icon,
+  Divider,
+  Flex
 } from '@chakra-ui/react';
 import * as ReactIcons from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import { ShopContext } from '../context/ShopContext';
+import { BsFacebook, BsInstagram, BsPinterest } from 'react-icons/bs';
 // import { NavMenuProps } from '../models/Props';
 
 const NavMenu: React.FC = () => {
@@ -21,6 +22,10 @@ const NavMenu: React.FC = () => {
   const handleSelect = (path: string) => {
     navigate(path);
     if (isMenuOpen) closeMenu();
+  };
+
+  const handleSocialNav = (socialSite: string) => {
+    window.open(socialSite, '_blank');
   };
 
   return (
@@ -100,7 +105,10 @@ const NavMenu: React.FC = () => {
             <MenuItem alignSelf='stretch' onClick={() => handleSelect('/faq')}>
               F.A.Q.
             </MenuItem>
-            <MenuItem alignSelf='stretch' onClick={() => handleSelect('/policies')}>
+            <MenuItem
+              alignSelf='stretch'
+              onClick={() => handleSelect('/policies')}
+            >
               Shipping & Policies
             </MenuItem>
             <MenuItem
@@ -108,6 +116,41 @@ const NavMenu: React.FC = () => {
               onClick={() => handleSelect('/disclaimer')}
             >
               Disclaimer
+            </MenuItem>
+          </MenuGroup>
+          <Divider
+            m={['20px 0px', '20px 0px', '0px 20px', '0px 20px']}
+            orientation={window.innerWidth > 768 ? 'vertical' : 'horizontal'}
+            h='auto'
+            w='auto'
+            borderColor='UI.4'
+          />
+          <MenuGroup>
+            <MenuItem
+              alignSelf='stretch'
+              _active={{ textDecor: 'none' }}
+              _hover={{ textDecor: 'none' }}
+            >
+              Follow Us
+            </MenuItem>
+            <MenuItem alignSelf='stretch'>
+              <Flex gap='1.25rem'>
+                <Icon
+                  as={BsFacebook}
+                  fontSize='20px'
+                  onClick={() => handleSocialNav('https://www.facebook.com')}
+                />
+                <Icon
+                  as={BsPinterest}
+                  fontSize='20px'
+                  onClick={() => handleSocialNav('https://www.pinterest.com')}
+                />
+                <Icon
+                  as={BsInstagram}
+                  fontSize='20px'
+                  onClick={() => handleSocialNav('https://www.instagram.com')}
+                />
+              </Flex>
             </MenuItem>
           </MenuGroup>
         </MenuList>

@@ -39,6 +39,7 @@ const Gallery4x1: React.FC = () => {
         Shop Customer Favorites
       </Text>
       <Grid
+        id='customer-favorites-gallery'
         as={FMC_Component}
         templateColumns={[
           'repeat(1, 4fr)',

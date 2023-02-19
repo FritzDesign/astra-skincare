@@ -22,6 +22,13 @@ const brandSecondary = defineStyle({
   fontFamily: 'Poppins', // change the appearance of the border
   borderRadius: '2px', // remove the border radius
   fontWeight: 'regular', // change the font weight
+  _hover: {
+    bgColor: 'brand.Charcoal',
+    color: 'brand.Cream'
+  },
+  _active: {
+    transform: 'scale(.98)'
+  }
 })
 
 export const buttonTheme = defineStyleConfig({

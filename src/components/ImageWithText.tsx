@@ -81,19 +81,6 @@ export const ImageWithText: React.FC<ImageWithTextProps> = ({
     >
       <Stack justify='flex-start' align='flex-start' alignSelf='stretch'>
         <Text
-          fontFamily='Inter'
-          lineHeight='1.2'
-          fontWeight='bold'
-          fontSize='16px'
-          letterSpacing='0.1em'
-          textTransform='uppercase'
-          color='brand.Peri'
-          alignSelf='stretch'
-          zIndex={2}
-        >
-          SKIN QUIZ
-        </Text>
-        <Text
           fontFamily='Marcellus'
           lineHeight='1.4'
           fontWeight='regular'
