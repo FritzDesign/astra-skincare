@@ -41,14 +41,14 @@ const ScaleableGalleryCard: React.FC<CardProps> = ({
           </Text>
         </Stack>
       )}
-      <Stack h='165px' maxH='165px' justify='space-between'>
+      <Stack h='165px' maxH='165px' justify='space-between' align='center' w='100%'>
         <Stack justify='flex-start' align='center' spacing='0px'>
           <Text
             fontFamily='Marcellus'
             lineHeight='1.2'
             fontWeight='regular'
             fontSize='24px'
-            color='Brand.Navy'
+            color='brand.Navy'
             width='290px'
             maxWidth='100%'
             textAlign='center'

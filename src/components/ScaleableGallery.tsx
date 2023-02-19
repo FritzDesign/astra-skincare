@@ -172,18 +172,13 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
         align='flex-start'
         spacing='56px'
         h='492px'
-        mt='56px'
       >
         {galleryProducts &&
           galleryProducts.map((product: Product, i) => {
             return (
               <Flex key={i}>
                 {i ? (
-                  <Divider
-                    orientation='vertical'
-                    h='92%'
-                    borderColor='UI.2'
-                  />
+                  <Divider orientation='vertical' h='92%' borderColor='UI.2' />
                 ) : null}
                 <ScaleableGalleryCard
                   image={product.images[0].src}
