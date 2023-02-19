@@ -1,18 +1,7 @@
-import {
-  Stack,
-  Menu,
-  Text,
-  Icon,
-  Image,
-  Button,
-  Link,
-  Divider
-} from '@chakra-ui/react';
+import { Stack, Text, Icon, Link, Divider, Flex } from '@chakra-ui/react';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import { client } from '../context/ShopContext';
 import { useEffect, useRef, useState } from 'react';
-import { useInView } from 'framer-motion';
-import FMC_Component from '../animations/defaults';
 import { useNavigate } from 'react-router';
 import { Product } from '../models/API';
 import ScaleableGalleryCard from './ScaleableGalleryCard';
@@ -32,11 +21,6 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
   });
   const [galleryProducts, setGalleryProducts] = useState<Product[]>();
 
-  const containerRef = useRef(null);
-  const isInView = useInView(containerRef, {
-    once: true,
-    margin: '0% 0% 0% 0%'
-  });
   const rightClickRef = useRef(0);
 
   const navigate = useNavigate();
@@ -107,11 +91,13 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
     fetchProducts();
   });
 
+  if (!galleryProducts?.length) {
+    return <Stack></Stack>;
+  }
+
   return (
-    <FMC_Component
-      display='flex'
+    <Flex
       flexDirection='column'
-      id='wn-container'
       paddingX={['40px', '40px', '240px']}
       paddingY='64px'
       justifyContent='flex-start'
@@ -119,17 +105,6 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
       gap='56px'
       background='brand.Cream'
       overflow='hidden'
-      ref={containerRef}
-      initial={{
-        transform: 'translateY(-420px)'
-      }}
-      animate={
-        isInView && {
-          transform: 'translateY(0px)'
-        }
-      }
-      // @ts-ignore
-      transition={{ type: 'spring', stiffness: 50, damping: 10 }}
     >
       <Stack direction='row' h='100%' justify='space-between' w='100%'>
         <Stack
@@ -202,12 +177,15 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
         {galleryProducts &&
           galleryProducts.map((product: Product, i) => {
             return (
-              <>
+              <Flex key={i}>
                 {i ? (
-                  <Divider orientation='vertical' h='92%' borderColor='UI.2' />
+                  <Divider
+                    orientation='vertical'
+                    h='92%'
+                    borderColor='UI.2'
+                  />
                 ) : null}
                 <ScaleableGalleryCard
-                  key={i}
                   image={product.images[0].src}
                   isNew={product.isNew ? true : false}
                   title={product.title}
@@ -215,11 +193,11 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
                   price={product.variants[0].price.amount}
                   weight={product.variants[0].weight}
                 />
-              </>
+              </Flex>
             );
           })}
       </Stack>
-    </FMC_Component>
+    </Flex>
   );
 };
 
