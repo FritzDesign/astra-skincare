@@ -78,6 +78,7 @@ export class ShopProvider extends React.Component {
         quantity: +quantity
       }
     );
+    this.setState({ itemsInCart: this.state.itemsInCart + +quantity });
     this.setState({ checkout });
     this.openCart();
   };

@@ -11,7 +11,7 @@ const baseStyle = definePartsStyle({
     w: '100%'
   },
   container: {
-    border: 'none',
+    border: 'none'
   },
   button: {
     display: 'flex',
@@ -22,7 +22,7 @@ const baseStyle = definePartsStyle({
   },
   panel: {
     fontFamily: 'Poppins',
-    px: '0px'
+    px: '1rem'
   }
 });
 

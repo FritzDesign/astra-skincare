@@ -37,6 +37,7 @@ const Navigation: React.FC = () => {
   const [showNav, setShowNav] = React.useState(false);
   const [isSearchOpen, setIsSearchOpen] = React.useState(false);
   const [searchInput, setSearchInput] = React.useState<string>('');
+  const [cartItemQty, setCartItemQty] = React.useState('0');
 
   const {
     openCart,
@@ -47,18 +48,16 @@ const Navigation: React.FC = () => {
     fetchProductsBySearch
   } = React.useContext<any>(ShopContext);
 
-  const getCartItemQty = (): string => {
+  const getCartItemQty = (): void => {
     let cartItemQty = 0;
     checkout?.lineItems?.forEach((item: any) => {
       if (cartItemQty >= 9) return;
       cartItemQty += item.quantity;
     });
-    if (cartItemQty === 9) {
-      return cartItemQty.toString();
-    } else if (cartItemQty > 9) {
-      return '9+';
+    if (cartItemQty > 9) {
+      setCartItemQty('9+');
     } else {
-      return cartItemQty.toString();
+      setCartItemQty(cartItemQty.toString());
     }
   };
 
@@ -317,10 +316,10 @@ const Navigation: React.FC = () => {
                 pointerEvents='none'
                 pos='absolute'
                 bottom='0px'
-                left='8px'
-                fontSize={12}
+                left={+cartItemQty <= 9 ? '35%' : '20%'}
+                fontSize={13}
               >
-                {getCartItemQty()}
+                {cartItemQty}
               </Text>
             </Stack>
             <Icon
@@ -373,11 +372,12 @@ const Navigation: React.FC = () => {
               <Text
                 pos='absolute'
                 pointerEvents='none'
-                bottom='0px'
-                left='8px'
-                fontSize={12}
-              >
-                {getCartItemQty()}
+                bottom='2%'
+                left={+cartItemQty <= 9 ? '35%' : '20%'}
+
+                fontSize={13}
+                >
+                {cartItemQty}
               </Text>
             </Stack>
           </Stack>

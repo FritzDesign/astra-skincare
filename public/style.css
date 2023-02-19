@@ -20,3 +20,11 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #2c2c2ccb;
 }
+
+#product-info {
+  overscroll-behavior: auto;
+}
+
+#product-info::-webkit-scrollbar {
+  display: none;
+}
