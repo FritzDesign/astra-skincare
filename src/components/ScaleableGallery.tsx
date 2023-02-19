@@ -1,7 +1,7 @@
 import { Stack, Text, Icon, Link, Divider, Flex } from '@chakra-ui/react';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import { client } from '../context/ShopContext';
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Product } from '../models/API';
 import ScaleableGalleryCard from './ScaleableGalleryCard';
@@ -176,7 +176,7 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
         {galleryProducts &&
           galleryProducts.map((product: Product, i) => {
             return (
-              <Flex key={i}>
+              <React.Fragment key={i}>
                 {i ? (
                   <Divider orientation='vertical' h='92%' borderColor='UI.2' />
                 ) : null}
@@ -188,7 +188,7 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
                   price={product.variants[0].price.amount}
                   weight={product.variants[0].weight}
                 />
-              </Flex>
+              </React.Fragment>
             );
           })}
       </Stack>

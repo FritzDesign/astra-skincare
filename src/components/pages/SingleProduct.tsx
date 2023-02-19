@@ -7,10 +7,15 @@ import {
   Icon,
   Flex,
   Image,
-  Divider
+  Divider,
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel
 } from '@chakra-ui/react';
 import { BsBag } from 'react-icons/bs';
-import { FiPlus } from 'react-icons/fi';
+import { FiMinus, FiPlus } from 'react-icons/fi';
 import { useParams } from 'react-router-dom';
 import { ShopContext } from '../../context/ShopContext';
 
@@ -199,94 +204,38 @@ const SingleProduct: React.FC = () => {
               spacing='24px'
               alignSelf='stretch'
             >
-              <Stack
-                justify='flex-start'
-                align='flex-start'
-                spacing='32px'
-                overflow='hidden'
-                alignSelf='stretch'
-              >
-                <Stack
-                  direction='row'
-                  justify='space-between'
-                  align='center'
-                  alignSelf='stretch'
-                >
-                  <Text
-                    fontFamily='Poppins'
-                    lineHeight='1.5'
-                    fontWeight='regular'
-                    fontSize='16px'
-                    color='UI.1'
-                    width='408px'
-                    alignSelf='stretch'
-                    maxWidth='100%'
-                  >
-                    Details
-                  </Text>
-                  <Icon as={FiPlus} />
-                </Stack>
-              </Stack>
-              <Divider borderColor='UI.3' />
-              <Stack
-                justify='flex-start'
-                align='flex-start'
-                spacing='32px'
-                overflow='hidden'
-                alignSelf='stretch'
-              >
-                <Stack
-                  direction='row'
-                  justify='space-between'
-                  align='center'
-                  alignSelf='stretch'
-                >
-                  <Text
-                    fontFamily='Poppins'
-                    lineHeight='1.5'
-                    fontWeight='regular'
-                    fontSize='16px'
-                    color='UI.1'
-                    width='408px'
-                    alignSelf='stretch'
-                    maxWidth='100%'
-                  >
-                    Directions
-                  </Text>
-                  <Icon as={FiPlus} />
-                </Stack>
-              </Stack>
-              <Divider borderColor='UI.3' />
+                <Accordion>
+                <AccordionItem>
+               
+                    {({ isExpanded }) => (
+               
+                    
+                    <AccordionButton>
+                      Details <Icon as={isExpanded ? FiMinus : FiPlus} />
+                  </AccordionButton>
+                  <AccordionPanel>
 
-              <Stack
-                justify='flex-start'
-                align='flex-start'
-                spacing='32px'
-                overflow='hidden'
-                alignSelf='stretch'
-              >
-                <Stack
-                  direction='row'
-                  justify='space-between'
-                  align='center'
-                  alignSelf='stretch'
-                >
-                  <Text
-                    fontFamily='Poppins'
-                    lineHeight='1.5'
-                    fontWeight='regular'
-                    fontSize='16px'
-                    color='UI.1'
-                    width='408px'
-                    alignSelf='stretch'
-                    maxWidth='100%'
-                  >
-                    Ingredients
-                  </Text>
-                  <Icon as={FiPlus} />
-                </Stack>
-              </Stack>
-              <Divider borderColor='UI.3' />
+                  </AccordionPanel>
+                  </AccordionItem>
+                  <Divider borderColor='UI.3' />
+                  
+                  <AccordionItem>
+                    <AccordionButton>
+                      Directions <Icon as={FiPlus} />
+                    </AccordionButton>
+
+                    )}
+
+                  </AccordionItem>
+                  <Divider borderColor='UI.3' />
+
+                  <AccordionItem>
+                    <AccordionButton>
+                      Ingredients <Icon as={FiPlus} />
+                    </AccordionButton>
+                  </AccordionItem>
+                  <Divider borderColor='UI.3' />
+                </Accordion>
             </Stack>
           </Stack>
         </Flex>

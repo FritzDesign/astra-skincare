@@ -1,11 +1,13 @@
 import { extendTheme } from '@chakra-ui/react';
+import { accordionTheme } from '../themes/AccordionTheme';
 import { listTheme } from '../themes/ListTheme';
 import { menuTheme } from '../themes/MenuTheme';
 
 const theme = extendTheme({
   components: {
     Menu: menuTheme,
-    List: listTheme
+    List: listTheme,
+    Accordion: accordionTheme
   },
   colors: {
     brand: {
