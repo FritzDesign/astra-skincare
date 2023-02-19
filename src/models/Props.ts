@@ -78,6 +78,7 @@ export interface ScaleableGalleryProps {
     text: string;
     navTo: string;
   }
+  id?: number;
 }
 
 export interface ScaleableGalleryCardProps {

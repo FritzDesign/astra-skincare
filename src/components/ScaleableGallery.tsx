@@ -13,12 +13,14 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
   length,
   title,
   product,
-  link
+  link,
+  id = 0
 }) => {
   const [arrowDisabled, setArrowDisabled] = useState({
     left: true,
     right: false
   });
+
   const [galleryProducts, setGalleryProducts] = useState<Product[]>();
 
   const rightClickRef = useRef(0);
@@ -26,9 +28,9 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
   const navigate = useNavigate();
 
   const handleSlideTranslate = (direction: string) => {
-    const cardWidth = 345;
+    const cardWidth = 401;
     const cardContainer = document.getElementById(
-      'wn-card-container'
+      `wn-card-container-${id}`
     ) as HTMLDivElement;
     cardContainer.style.transition = 'transform 1s ease';
 
@@ -51,10 +53,10 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
 
   const updateButtons = () => {
     const WNContainerPosition = (
-      document.getElementById('wn-container')! as HTMLDivElement
+      document.getElementById(`wn-container-${id}`)! as HTMLDivElement
     ).getBoundingClientRect();
     const cardContainerPosition = (
-      document.getElementById('wn-card-container')! as HTMLDivElement
+      document.getElementById(`wn-card-container-${id}`)! as HTMLDivElement
     ).getBoundingClientRect();
 
     if (
@@ -89,7 +91,11 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
       });
     };
     fetchProducts();
-  });
+  }, []);
+
+  if (galleryProducts && galleryProducts.length * 401 < window.innerWidth - 457 && (!arrowDisabled.left || !arrowDisabled.right)) {
+    setArrowDisabled({ left: true, right: true });
+  }
 
   if (!galleryProducts?.length) {
     return <Stack></Stack>;
@@ -97,6 +103,7 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
 
   return (
     <Flex
+      id={`wn-container-${id}`}
       flexDirection='column'
       paddingX={['40px', '40px', '240px']}
       paddingY='64px'
@@ -166,7 +173,7 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
         </Stack>
       </Stack>
       <Stack
-        id='wn-card-container'
+        id={`wn-card-container-${id}`}
         direction='row'
         justify='flex-start'
         align='flex-start'

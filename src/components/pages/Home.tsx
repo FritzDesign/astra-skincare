@@ -34,10 +34,10 @@ const Home: React.FC = () => {
       <ScaleableGallery
         title={"What's New"}
         collection='newest'
-        length={10}
+        length={5}
         link={{ text: 'SHOP ALL', navTo: 'skincare-products' }}
+        id={1}
       />
-      <Rewards />
       <ImageWithText
         heading='Build Your Ideal Skincare Routine'
         text="Whether you're dealing with stubborn acne, looking to minimize fine
@@ -46,6 +46,14 @@ const Home: React.FC = () => {
         questions, we'll determine your skin type and find the right collection
         for you."
         image={imgWithText1}
+      />
+      <Rewards />
+      <ScaleableGallery
+        title={'On Sale Now'}
+        collection='featured'
+        length={10}
+        link={{ text: 'SHOP ALL', navTo: 'skincare-products' }}
+        id={2}
       />
     </Chakra.Box>
   );

@@ -170,7 +170,7 @@ const Navigation: React.FC = () => {
           onMouseEnter={() => handleShowNav(true)}
           pointerEvents={showNav ? 'auto' : 'none'}
         >
-          {showNav && isInView && isMobile && (
+          {showNav && isMobile && (
             <Center>
               <Icon
                 as={AiOutlineCaretUp}
