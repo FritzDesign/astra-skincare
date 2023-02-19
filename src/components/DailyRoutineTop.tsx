@@ -23,7 +23,6 @@ export const DailyRoutineTop: React.FC = () => {
         'space-evenly'
       ]}
       align='center'
-      mb='3rem'
     >
       <Stack
         clipPath={isInView ? 'inset(0 0 0 0)' : 'inset(0 100% 0 0)'}
@@ -37,8 +36,9 @@ export const DailyRoutineTop: React.FC = () => {
       >
         <Image
           src={placeholder}
-          w={['100%', '100%', '100%', '75%']}
-          h={['80%', '80%']}
+          ml={['0rem', '0rem', '0rem', '6rem']}
+          w={['100%', '100%', '100%', '60%']}
+          maxH='400px'
           objectFit='cover'
           border='1px solid black'
         />

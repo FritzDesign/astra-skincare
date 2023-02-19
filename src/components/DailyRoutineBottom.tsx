@@ -98,7 +98,7 @@ export const DailyRoutineBottom: React.FC = () => {
         <Image
           src={placeholder}
           w='100%'
-          h={['80%', '80%', '60%', '100%']}
+          maxH='500px'
           objectFit='cover'
           border='1px solid black'
         />
