@@ -6,7 +6,8 @@ import {
   Button,
   Icon,
   Flex,
-  Image
+  Image,
+  Divider
 } from '@chakra-ui/react';
 import { BsBag } from 'react-icons/bs';
 import { FiPlus } from 'react-icons/fi';
@@ -30,8 +31,8 @@ const SingleProduct: React.FC = () => {
   if (Object.keys(product).length) {
     return (
       <Stack>
-        <Flex m='5rem' gap='7.5rem' justifyContent='center'>
-          <Stack>
+        <Flex m='5rem' justifyContent='center'>
+          <Stack alignItems='flex-end'>
             <Image
               src={product.images[0].src}
               w='596px'
@@ -51,12 +52,31 @@ const SingleProduct: React.FC = () => {
             justify='flex-start'
             align='flex-start'
             spacing='44px'
-            width='392px'
-            maxWidth='100%'
+            w='392px'
+            mx='7.5rem'
           >
             <Stack direction='row' justify='flex-start' align='flex-start'>
-              <Badge variant='solid'>New</Badge>
-              <Badge variant='outline'>Free Shipping</Badge>
+              <Badge
+                variant='solid'
+                bgColor='brand.Charcoal'
+                color='brand.Cream'
+                fontWeight='400'
+                fontFamily='Poppins'
+                py='4px'
+                px='16px'
+              >
+                New
+              </Badge>
+              <Badge
+                variant='outline'
+                color='brand.Charcoal'
+                fontWeight='400'
+                fontFamily='Poppins'
+                py='4px'
+                px='16px'
+              >
+                Free Shipping
+              </Badge>
             </Stack>
             <Stack
               justify='flex-start'
@@ -121,19 +141,24 @@ const SingleProduct: React.FC = () => {
                   width='392px'
                   maxWidth='100%'
                 >
-                  {product.variants[0].weight ? product.variants[0].weight : ''}{' '}
-                  oz
+                  {product.variants[0].weight
+                    ? product.variants[0].weight + ' oz'
+                    : ''}
                 </Text>
               </Stack>
             </Stack>
             <Stack width='392px' height='48px' maxWidth='100%'>
               <Button
-                leftIcon={<Icon as={BsBag} />}
+                leftIcon={<Icon as={BsBag} color='brand.Cream' />}
                 size='lg'
-                colorScheme='blue'
+                bgColor='brand.Charcoal'
+                color='brand.Cream'
+                borderRadius='2px'
                 width='392px'
                 height='48px'
                 maxWidth='100%'
+                fontFamily='Poppins'
+                fontWeight='normal'
               >
                 Add to Bag
               </Button>
@@ -185,7 +210,6 @@ const SingleProduct: React.FC = () => {
                   direction='row'
                   justify='space-between'
                   align='center'
-                  spacing='641px'
                   alignSelf='stretch'
                 >
                   <Text
@@ -203,6 +227,7 @@ const SingleProduct: React.FC = () => {
                   <Icon as={FiPlus} />
                 </Stack>
               </Stack>
+              <Divider borderColor='UI.3' />
               <Stack
                 justify='flex-start'
                 align='flex-start'
@@ -214,7 +239,6 @@ const SingleProduct: React.FC = () => {
                   direction='row'
                   justify='space-between'
                   align='center'
-                  spacing='641px'
                   alignSelf='stretch'
                 >
                   <Text
@@ -232,6 +256,8 @@ const SingleProduct: React.FC = () => {
                   <Icon as={FiPlus} />
                 </Stack>
               </Stack>
+              <Divider borderColor='UI.3' />
+
               <Stack
                 justify='flex-start'
                 align='flex-start'
@@ -243,7 +269,6 @@ const SingleProduct: React.FC = () => {
                   direction='row'
                   justify='space-between'
                   align='center'
-                  spacing='641px'
                   alignSelf='stretch'
                 >
                   <Text
@@ -261,6 +286,7 @@ const SingleProduct: React.FC = () => {
                   <Icon as={FiPlus} />
                 </Stack>
               </Stack>
+              <Divider borderColor='UI.3' />
             </Stack>
           </Stack>
         </Flex>

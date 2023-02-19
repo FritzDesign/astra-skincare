@@ -36,6 +36,7 @@ export const GalleryCard: React.FC<GalleryCardProps> = ({ btnText, image }) => {
         fontFamily='Poppins'
         letterSpacing='0'
         fontSize='16px'
+        onClick={handleClick}
       >
         {btnText}
       </Button>

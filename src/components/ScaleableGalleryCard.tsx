@@ -1,6 +1,8 @@
 import React from 'react';
 import { Stack, Image, Text, Divider } from '@chakra-ui/react';
 import { ScaleableGalleryCardProps as CardProps } from '../models/Props';
+import { useNavigate } from 'react-router';
+import { encodeQuery } from '../utils/helpers';
 
 const ScaleableGalleryCard: React.FC<CardProps> = ({
   image,
@@ -10,6 +12,7 @@ const ScaleableGalleryCard: React.FC<CardProps> = ({
   price,
   weight
 }) => {
+  const navigate = useNavigate();
   return (
     <Stack
       justify='flex-start'
@@ -18,7 +21,19 @@ const ScaleableGalleryCard: React.FC<CardProps> = ({
       spacing='16px'
       h='488px'
     >
-      <Image src={image} w='376px' h='345px' minH='345px' objectFit='cover' />
+      <Image
+        src={image}
+        w='376px'
+        h='345px'
+        minH='345px'
+        objectFit='cover'
+        cursor='pointer'
+        onClick={
+          category === 'beautyTools'
+            ? () => navigate(`/beauty-tools/${encodeQuery(title)}`)
+            : () => navigate(`/skincare-products/${encodeQuery(title)}`)
+        }
+      />
       {isNew && (
         <Stack
           bgColor='brand.Charcoal'
@@ -41,7 +56,13 @@ const ScaleableGalleryCard: React.FC<CardProps> = ({
           </Text>
         </Stack>
       )}
-      <Stack h='165px' maxH='165px' justify='space-between' align='center' w='100%'>
+      <Stack
+        h='165px'
+        maxH='165px'
+        justify='space-between'
+        align='center'
+        w='100%'
+      >
         <Stack justify='flex-start' align='center' spacing='0px'>
           <Text
             fontFamily='Marcellus'

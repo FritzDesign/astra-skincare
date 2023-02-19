@@ -129,7 +129,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
         </Text>
         <Image
           pb='56px'
-          fallback={<Image pb='56px' src={fallback} w='80%' />}
+          fallback={<Image pb='56px' src={fallback} w='100%' />}
           fallbackSrc={fallback}
           src={hero}
           w={'100%'}
