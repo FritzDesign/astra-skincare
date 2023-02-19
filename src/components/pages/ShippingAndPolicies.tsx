@@ -82,32 +82,22 @@ const ShippingAndPolicies: React.FC = () => {
             >
               SUBHEADER SECTION TITLE
             </Text>
-            <UnorderedList>
-              <ListItem>
-                <Text
-                  display='inline-block'
-                  fontFamily='Poppins'
-                  lineHeight='1.5'
-                  fontWeight='regular'
-                  fontSize={['14px', '14px', '16px']}
-                  color='UI.2'
-                  maxWidth='100%'
-                >
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                </Text>
+            <UnorderedList listStylePos='outside'>
+              <ListItem
+                ml='1.5rem'
+                color='UI.2'
+                fontSize={['14px', '14px', '16px']}
+                fontFamily='Poppins'
+              >
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit
               </ListItem>
-              <ListItem>
-                <Text
-                  display='inline-block'
-                  fontFamily='Poppins'
-                  lineHeight='1.5'
-                  fontWeight='regular'
-                  fontSize={['14px', '14px', '16px']}
-                  color='UI.2'
-                  maxWidth='100%'
-                >
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                </Text>
+              <ListItem
+                ml='1.5rem'
+                color='UI.2'
+                fontFamily='Poppins'
+                fontSize={['14px', '14px', '16px']}
+              >
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit
               </ListItem>
             </UnorderedList>
             <Text
@@ -120,18 +110,13 @@ const ShippingAndPolicies: React.FC = () => {
               SUBHEADER SECTION TITLE
             </Text>
             <UnorderedList>
-              <ListItem>
-                <Text
-                  display='inline-block'
-                  fontFamily='Poppins'
-                  lineHeight='1.5'
-                  fontWeight='regular'
-                  fontSize='16px'
-                  color='UI.2'
-                  maxWidth='100%'
-                >
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                </Text>
+              <ListItem
+                ml='1.5rem'
+                color='UI.2'
+                fontFamily='Poppins'
+                fontSize={['14px', '14px', '16px']}
+              >
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit
               </ListItem>
             </UnorderedList>
           </Stack>
@@ -220,30 +205,12 @@ const ShippingAndPolicies: React.FC = () => {
             </Text>
             <UnorderedList>
               <ListItem>
-                <Text
-                  display='inline-block'
-                  fontFamily='Poppins'
-                  lineHeight='1.5'
-                  fontWeight='regular'
-                  fontSize={['14px', '14px', '16px']}
-                  color='UI.2'
-                  maxWidth='100%'
-                >
+
                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                </Text>
               </ListItem>
               <ListItem>
-                <Text
-                  display='inline-block'
-                  fontFamily='Poppins'
-                  lineHeight='1.5'
-                  fontWeight='regular'
-                  fontSize={['14px', '14px', '16px']}
-                  color='UI.2'
-                  maxWidth='100%'
-                >
+
                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                </Text>
               </ListItem>
             </UnorderedList>
             <Text
@@ -257,17 +224,8 @@ const ShippingAndPolicies: React.FC = () => {
             </Text>
             <UnorderedList>
               <ListItem>
-                <Text
-                  display='inline-block'
-                  fontFamily='Poppins'
-                  lineHeight='1.5'
-                  fontWeight='regular'
-                  fontSize='16px'
-                  color='UI.2'
-                  maxWidth='100%'
-                >
+
                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit
-                </Text>
               </ListItem>
             </UnorderedList>
           </Stack>
@@ -313,30 +271,12 @@ const ShippingAndPolicies: React.FC = () => {
             </Text>
             <UnorderedList>
               <ListItem>
-                <Text
-                  display='inline-block'
-                  fontFamily='Poppins'
-                  lineHeight='1.5'
-                  fontWeight='regular'
-                  fontSize='16px'
-                  color='UI.2'
-                  maxWidth='100%'
-                >
+
                   Monday - Friday: 8:00am - 5:00pm MST
-                </Text>
               </ListItem>
               <ListItem>
-                <Text
-                  display='inline-block'
-                  fontFamily='Poppins'
-                  lineHeight='1.5'
-                  fontWeight='regular'
-                  fontSize='16px'
-                  color='UI.2'
-                  maxWidth='100%'
-                >
+
                   Saturday - Sunday: 10:00am - 12:00pm MST
-                </Text>
               </ListItem>
             </UnorderedList>
           </Stack>

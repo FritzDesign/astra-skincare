@@ -1,35 +1,20 @@
-import {
-  Box,
-  Grid,
-  Stack,
-  Image,
-  Text,
-  Divider,
-  Skeleton,
-  SkeletonText
-} from '@chakra-ui/react';
+import { Box, Stack, Image, Text, Icon } from '@chakra-ui/react';
 import ProductMenu from '../ProductsMenu';
-import { useContext, useEffect } from 'react';
-import { ShopContext } from '../../context/ShopContext';
-
-import { Product as ProductInterface } from '../../models/API';
+import { useEffect } from 'react';
+import { IoMdQuote } from 'react-icons/io';
 
 import heroBackdrop from '../../assets/Products/products-hero-backdrop.png';
 import heroImage from '../../assets/Products/bt-hero-img.png';
 import heroFb from '../../assets/Products/bt-hero-img-fb.jpg';
-import Product from '../Product';
+import bethSmith from '../../assets/beth-smith.png';
 
 const WhyAstra: React.FC = () => {
-  const { products, fetchCollectionByHandle, isLoading } =
-    useContext<any>(ShopContext);
-
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
-    // fetchCollectionByHandle('skin-concerns');
+    // window.scrollTo({
+    //   top: 0,
+    //   left: 0,
+    //   behavior: 'smooth'
+    // });
   }, []);
 
   return (
@@ -39,278 +24,86 @@ const WhyAstra: React.FC = () => {
         hero={heroImage}
         fallback={heroFb}
         heading='Why Astra'
-        menuItems={[
-          'Featured',
-          'Newest',
-          'Highest Rated',
-          'Price - High',
-          'Price - Low'
-        ]}
+        showMenuBar={false}
       />
-      <Grid p='2rem !important'>
-        {/* <Grid
-          id='products-container'
-          templateColumns={[
-            'repeat(1, 1fr)',
-            'repeat(1, 1fr)',
-            'repeat(2, 1fr)',
-            'repeat(2, 1fr)',
-            'repeat(3, 1fr)'
-          ]}
-          justifyItems='center'
+
+      <Stack
+        paddingX={['2rem', '3rem', '166px']}
+        direction={['column', 'row']}
+        justify='center'
+        align='center'
+        spacing='102px'
+        my='88px'
+      >
+        <Stack
+          pos='relative'
+          borderColor='UI.1'
+          borderStartWidth='2px'
+          borderEndWidth='2px'
+          borderTopWidth='2px'
+          borderBottomWidth='2px'
+          width={['280px', '322px']}
+          height={['280px', '322px']}
+          maxWidth='100%'
         >
-          {products.length ? (
-            products.map((product: ProductInterface, i: number) => {
-              return (
-                <Product
-                  key={i}
-                  image={product.images[0].src}
-                  title={product.title}
-                  handle={product.handle}
-                  price={product.variants[0].price.amount}
-                />
-              );
-            })
-          ) : (
-            <Box minH='1000px' />
-          )}
-        </Grid> */}
-        {isLoading && (
-          <Grid
-            templateColumns={[
-              'repeat(1, 1fr)',
-              'repeat(1, 1fr)',
-              'repeat(2, 1fr)',
-              'repeat(2, 1fr)',
-              'repeat(3, 1fr)'
-            ]}
-            justifyItems='center'
+          <Image src={bethSmith} />
+          <Icon
+            as={IoMdQuote}
+            pos='absolute'
+            left='-20%'
+            color='brand.Lavender'
+            transform='rotate(180deg)'
+            fontSize='96px'
+          />
+        </Stack>
+        <Stack
+          justify='flex-start'
+          align='flex-start'
+          spacing='32px'
+          width='612px'
+          maxWidth='100%'
+          paddingX={['2rem', '3rem', '166px']}
+        >
+          <Stack justify='flex-start' align='flex-start' alignSelf='stretch'>
+            <Text
+              fontFamily='Inter'
+              lineHeight='1.2'
+              fontWeight='bold'
+              fontSize='16px'
+              letterSpacing='0.1em'
+              textTransform='uppercase'
+              color='brand.Lavender'
+              alignSelf='stretch'
+            >
+              FROM THE OWNER
+            </Text>
+          </Stack>
+          <Text
+            fontFamily='Marcellus'
+            lineHeight='1.2'
+            fontWeight='regular'
+            fontSize='24px'
+            color='UI.1'
+            opacity='0.8'
+            alignSelf='stretch'
           >
-            <Stack
-              justify='center'
-              pos='relative'
-              align='center'
-              spacing='16px'
-              w={['300px', '376px']}
-              h='451px'
-              my='2rem'
-            >
-              <Skeleton>
-                <Image minW={['300px', '376px']} minH={['275px', '345px']} />
-              </Skeleton>
-              <SkeletonText>
-                <Stack justify='flex-start' align='center' spacing='0px'>
-                  <Text
-                    fontFamily='Marcellus'
-                    lineHeight='1.2'
-                    fontWeight='regular'
-                    fontSize='24px'
-                    color='brand.Navy'
-                    width='290px'
-                    maxWidth='100%'
-                    textAlign='center'
-                  >
-                    Lorem
-                  </Text>
-                  <Text
-                    fontFamily='Inter'
-                    lineHeight='1.5'
-                    fontWeight='medium'
-                    fontSize='14px'
-                    color='UI.2'
-                    width='290px'
-                    maxWidth='100%'
-                    textAlign='center'
-                  >
-                    Ipsum
-                  </Text>
-                </Stack>
-              </SkeletonText>
-              <Skeleton>
-                <Stack
-                  direction='row'
-                  justify='flex-start'
-                  align='center'
-                  spacing='16px'
-                  width='290px'
-                  maxWidth='100%'
-                >
-                  <Text
-                    fontFamily='Poppins'
-                    lineHeight='1.5'
-                    fontWeight='regular'
-                    fontSize='18px'
-                    color='UI.1'
-                    textAlign='center'
-                  >
-                    $0
-                  </Text>
-                  <Divider borderColor='UI.2' />
-                  <Text
-                    fontFamily='Poppins'
-                    lineHeight='1.5'
-                    fontWeight='regular'
-                    fontSize='18px'
-                    color='UI.1'
-                    textAlign='center'
-                    minWidth='46px'
-                  >
-                    1
-                  </Text>
-                </Stack>
-              </Skeleton>
-            </Stack>
-            <Stack
-              justify='center'
-              pos='relative'
-              align='center'
-              spacing='16px'
-              w={['300px', '376px']}
-              h='451px'
-              my='2rem'
-            >
-              <Skeleton>
-                <Image minW={['300px', '376px']} minH={['275px', '345px']} />
-              </Skeleton>
-              <SkeletonText>
-                <Stack justify='flex-start' align='center' spacing='0px'>
-                  <Text
-                    fontFamily='Marcellus'
-                    lineHeight='1.2'
-                    fontWeight='regular'
-                    fontSize='24px'
-                    color='brand.Navy'
-                    width='290px'
-                    maxWidth='100%'
-                    textAlign='center'
-                  >
-                    Lorem
-                  </Text>
-                  <Text
-                    fontFamily='Inter'
-                    lineHeight='1.5'
-                    fontWeight='medium'
-                    fontSize='14px'
-                    color='UI.2'
-                    width='290px'
-                    maxWidth='100%'
-                    textAlign='center'
-                  >
-                    Ipsum
-                  </Text>
-                </Stack>
-              </SkeletonText>
-              <Skeleton>
-                <Stack
-                  direction='row'
-                  justify='flex-start'
-                  align='center'
-                  spacing='16px'
-                  width='290px'
-                  maxWidth='100%'
-                >
-                  <Text
-                    fontFamily='Poppins'
-                    lineHeight='1.5'
-                    fontWeight='regular'
-                    fontSize='18px'
-                    color='UI.1'
-                    textAlign='center'
-                  >
-                    $0
-                  </Text>
-                  <Divider borderColor='UI.2' />
-                  <Text
-                    fontFamily='Poppins'
-                    lineHeight='1.5'
-                    fontWeight='regular'
-                    fontSize='18px'
-                    color='UI.1'
-                    textAlign='center'
-                    minWidth='46px'
-                  >
-                    1
-                  </Text>
-                </Stack>
-              </Skeleton>
-            </Stack>
-            <Stack
-              justify='center'
-              pos='relative'
-              align='center'
-              spacing='16px'
-              w={['300px', '376px']}
-              h='451px'
-              my='2rem'
-            >
-              <Skeleton>
-                <Image minW={['300px', '376px']} minH={['275px', '345px']} />
-              </Skeleton>
-              <SkeletonText>
-                <Stack justify='flex-start' align='center' spacing='0px'>
-                  <Text
-                    fontFamily='Marcellus'
-                    lineHeight='1.2'
-                    fontWeight='regular'
-                    fontSize='24px'
-                    color='brand.Navy'
-                    width='290px'
-                    maxWidth='100%'
-                    textAlign='center'
-                  >
-                    Lorem
-                  </Text>
-                  <Text
-                    fontFamily='Inter'
-                    lineHeight='1.5'
-                    fontWeight='medium'
-                    fontSize='14px'
-                    color='UI.2'
-                    width='290px'
-                    maxWidth='100%'
-                    textAlign='center'
-                  >
-                    Ipsum
-                  </Text>
-                </Stack>
-              </SkeletonText>
-              <Skeleton>
-                <Stack
-                  direction='row'
-                  justify='flex-start'
-                  align='center'
-                  spacing='16px'
-                  width='290px'
-                  maxWidth='100%'
-                >
-                  <Text
-                    fontFamily='Poppins'
-                    lineHeight='1.5'
-                    fontWeight='regular'
-                    fontSize='18px'
-                    color='UI.1'
-                    textAlign='center'
-                  >
-                    $0
-                  </Text>
-                  <Divider borderColor='UI.2' />
-                  <Text
-                    fontFamily='Poppins'
-                    lineHeight='1.5'
-                    fontWeight='regular'
-                    fontSize='18px'
-                    color='UI.1'
-                    textAlign='center'
-                    minWidth='46px'
-                  >
-                    1
-                  </Text>
-                </Stack>
-              </Skeleton>
-            </Stack>
-          </Grid>
-        )}
-      </Grid>
+            Loving your skin is an act of self-love, whatever that looks like
+            for you and how good you feel about it. It is personal and unique to
+            each person.”
+          </Text>
+          <Text
+            fontFamily='Poppins'
+            lineHeight='1.5'
+            fontWeight='regular'
+            fontSize='16px'
+            color='UI.1'
+            opacity='0.8'
+            alignSelf='stretch'
+          >
+            Beth Smith, Founder and Liscensed Skincare Therapist
+          </Text>
+        </Stack>
+      </Stack>
     </Box>
   );
 };
