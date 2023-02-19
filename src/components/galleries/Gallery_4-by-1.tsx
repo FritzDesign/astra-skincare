@@ -1,18 +1,17 @@
 import * as React from 'react';
-import { Stack, Text, Image, Button, Grid } from '@chakra-ui/react';
+import { Stack, Text, Grid } from '@chakra-ui/react';
 import { GalleryCard } from './GalleryCard';
 import card1 from '../../assets/Cards/Card1.png';
 import card2 from '../../assets/Cards/Card2.png';
 import card3 from '../../assets/Cards/Card3.png';
 import card4 from '../../assets/Cards/Card4.png';
-import { AnimatePresence, MotionConfig, useInView } from 'framer-motion';
+import { useInView } from 'framer-motion';
 import FMC_Component from '../../animations/defaults';
 
 const Gallery4x1: React.FC = () => {
   const container = React.useRef(null);
   const cardRef = React.useRef(null);
   const isInView = useInView(container, {
-    // @ts-ignore
     once: true,
     margin: '0% 0% -35% 0%'
   });
@@ -57,10 +56,10 @@ const Gallery4x1: React.FC = () => {
         }
         ref={cardRef}
       >
-        <GalleryCard image={card1} btnText='Anti-Aging' />
-        <GalleryCard image={card2} btnText='Acne Solutions' />
+        <GalleryCard image={card1} btnText='Cleansers' />
+        <GalleryCard image={card2} btnText='Exfoliants' />
         <GalleryCard image={card3} btnText='Moisturizers' />
-        <GalleryCard image={card4} btnText='Sun Protection' />
+        <GalleryCard image={card4} btnText='Beauty Tools' />
       </Grid>
     </Stack>
   );

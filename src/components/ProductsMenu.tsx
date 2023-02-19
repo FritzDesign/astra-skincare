@@ -92,7 +92,8 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
       />
       <Stack
         pos='relative'
-        p={['4rem 1rem', '4rem 1rem', '4rem 1rem', '4rem']}
+        mx={['2rem', '2rem', '4rem', '4rem', '6rem', '13rem']}
+        pt='4rem'
         h='fit-content'
         alignItems='center'
         justifyContent='center'
@@ -111,7 +112,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
             src={watermarkBL}
             pos='absolute'
             left={['30%', '30%', '0%']}
-            bottom={['30%', '30%', '15%']}
+            bottom={['30%', '30%', '8%']}
             zIndex={-1}
           />
         )}
@@ -131,7 +132,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
           fallback={<Image pb='56px' src={fallback} w='80%' />}
           fallbackSrc={fallback}
           src={hero}
-          w={['100%', '90%', '80%']}
+          w={'100%'}
         />
         {showMenuBar && (
           <Flex
@@ -148,7 +149,8 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                 justifyContent={['center', 'center', 'space-between']}
                 alignItems={['flex-start', 'flex-start', 'center']}
                 gap='16px'
-                pl={['20px', '40px', '80px', '80px', '80px', '160px']}
+                pl={['2rem', '2rem', '4rem', '4rem', '6rem', '13.5rem']}
+                // pl={['20px', '40px', '80px', '80px', '80px', '160px']}
                 onMouseLeave={() => setIsFilterMenuOpen(false)}
               >
                 <Text color='UI.2'>Filter By</Text>
@@ -241,9 +243,13 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
 
             <Flex
               direction={['column', 'column', 'row']}
-              pr={['20px', '20px', '80px', '80px', '80px', '160px']}
+              pr={
+                dynamicCategoryNames
+                  ? ['2rem', '2rem', '4rem', '4rem', '6rem', '13.5rem']
+                  : '0rem'
+              }
               gap={['16px', '16px', '32px']}
-              justifyContent={['center', 'center', 'space-between']}
+              justifyContent={['center', 'center', 'space-between', 'center']}
               alignItems={['flex-start', 'flex-start', 'center']}
               pos='relative'
               onMouseLeave={() => setIsSortMenuOpen(false)}

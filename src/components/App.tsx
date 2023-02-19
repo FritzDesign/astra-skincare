@@ -29,6 +29,7 @@ const App: React.FC = () => {
         <Route path='/skincare-products' element={<SkincareProducts />} />
         <Route path='/skincare-products/:handle' element={<SingleProduct />} />
         <Route path='/beauty-tools' element={<BeautyTools />} />
+        <Route path='/beauty-tools/:handle' element={<SingleProduct />} />
         <Route path='/skin-concerns' element={<SkinConcerns />} />
         <Route path='/skincare-resources' element={<SkincareResources />} />
         <Route path='/why-astra' element={<WhyAstra />} />

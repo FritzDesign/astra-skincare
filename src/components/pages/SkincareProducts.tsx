@@ -7,7 +7,8 @@ import {
   Text,
   Divider,
   Skeleton,
-  SkeletonText
+  SkeletonText,
+  Flex
 } from '@chakra-ui/react';
 import { ShopContext } from '../../context/ShopContext';
 import Product from '../Product';
@@ -38,7 +39,9 @@ const SkincareProducts: React.FC = () => {
       left: 0,
       behavior: 'smooth'
     });
-    fetchCollectionByHandle('skincare-products');
+    if (!products?.length) {
+      fetchCollectionByHandle('skincare-products');
+    }
   }, []);
 
   // SAVE THIS FOR LATER - IN CASE OF PAGINATION IDEAS
@@ -59,31 +62,33 @@ const SkincareProducts: React.FC = () => {
 
   return (
     <Box>
-      <ProductMenu
-        hero={heroImage}
-        fallback={heroFb}
-        heading='Skincare Products'
-        categoryNames={[
-          'Cleansers',
-          'Exfoliants',
-          'Moisturizers',
-          'Serums',
-          'Sunscreen',
-          'Toners'
-        ]}
-        menuItems={[
-          'Featured',
-          'Newest',
-          'Highest Rated',
-          'Price - High',
-          'Price - Low'
-        ]}
-        showMenuBar
-      />
-      <Grid p='2rem !important'>
+        <ProductMenu
+          hero={heroImage}
+          fallback={heroFb}
+          heading='Skincare Products'
+          categoryNames={[
+            'Cleansers',
+            'Exfoliants',
+            'Moisturizers',
+            'Serums',
+            'Sunscreen',
+            'Toners'
+          ]}
+          menuItems={[
+            'Featured',
+            'Newest',
+            'Highest Rated',
+            'Price - High',
+            'Price - Low'
+          ]}
+          showMenuBar
+        />
         <Grid
-          id='products-container'
+        id='products-container'
+        mt='3rem'
+        mx={['2rem', '2rem', '4rem', '4rem', '6rem', '8rem']}
           templateColumns={[
+            'repeat(1, 1fr)',
             'repeat(1, 1fr)',
             'repeat(1, 1fr)',
             'repeat(2, 1fr)',
@@ -93,7 +98,7 @@ const SkincareProducts: React.FC = () => {
           justifyItems='center'
         >
           {products.length ? (
-            products.map((product: ProductInterface, i: number) => {              
+            products.map((product: ProductInterface, i: number) => {
               return (
                 <Product
                   key={i}
@@ -346,7 +351,6 @@ const SkincareProducts: React.FC = () => {
             </Stack>
           </Grid>
         )}
-      </Grid>
     </Box>
   );
 };
