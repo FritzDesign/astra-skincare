@@ -1,23 +1,10 @@
-import {
-  Box,
-  Grid,
-  Stack,
-  Image,
-  Text,
-  Divider,
-  Skeleton,
-  SkeletonText
-} from '@chakra-ui/react';
+import { Box, Grid } from '@chakra-ui/react';
 import ProductMenu from '../ProductsMenu';
-import { useContext, useEffect } from 'react';
-import { ShopContext } from '../../context/ShopContext';
-
-import { Product as ProductInterface } from '../../models/API';
+import { useEffect } from 'react';
 
 import heroBackdrop from '../../assets/Products/products-hero-backdrop.png';
 import heroImage from '../../assets/Products/bt-hero-img.png';
 import heroFb from '../../assets/Products/bt-hero-img-fb.jpg';
-import Product from '../Product';
 
 const ContactUs: React.FC = () => {
   useEffect(() => {

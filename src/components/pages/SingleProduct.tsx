@@ -107,20 +107,24 @@ const SingleProduct: React.FC = () => {
               h={
                 isGreaterThan1280
                   ? '600px'
+                  : isLessThan480
+                  ? '300px'
                   : isLessThan600
                   ? '484px'
                   : isLessThan768
                   ? '594px'
-                  : undefined
+                  : '384px'
               }
               w={
                 isGreaterThan1280
                   ? '600px'
+                  : isLessThan480
+                  ? '300px'
                   : isLessThan600
                   ? '484px'
                   : isLessThan768
                   ? '594px'
-                  : undefined
+                  : '384px'
               }
               objectFit='cover'
               objectPosition='center center'

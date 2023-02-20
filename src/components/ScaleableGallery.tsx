@@ -93,7 +93,11 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
     fetchProducts();
   }, []);
 
-  if (galleryProducts && galleryProducts.length * 401 < window.innerWidth - 457 && (!arrowDisabled.left || !arrowDisabled.right)) {
+  if (
+    galleryProducts &&
+    galleryProducts.length * 401 < window.innerWidth - 457 &&
+    (!arrowDisabled.left || !arrowDisabled.right)
+  ) {
     setArrowDisabled({ left: true, right: true });
   }
 
@@ -105,7 +109,7 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
     <Flex
       id={`wn-container-${id}`}
       flexDirection='column'
-      paddingX={['40px', '40px', '240px']}
+      paddingX={['40px', '40px', '80px', '80px', '120px', '240px']}
       paddingY='64px'
       justifyContent='flex-start'
       alignItems='flex-start'
@@ -125,7 +129,7 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
             fontFamily='Marcellus'
             lineHeight='1.4'
             fontWeight='regular'
-            fontSize='32px'
+            fontSize={['28px','32px']}
             color='brand.Charcoal'
           >
             {title}
