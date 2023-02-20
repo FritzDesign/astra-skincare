@@ -111,8 +111,8 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
           <Image
             src={watermarkBL}
             pos='absolute'
-            left={['30%', '30%', '0%']}
-            bottom={['30%', '30%', '8%']}
+            left={['-40%', '-40%', '-10%', '-18%']}
+            bottom={['30%', '25%', '8%']}
             zIndex={-1}
           />
         )}
@@ -141,7 +141,7 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
             alignItems='center'
             bgColor='brand.Cream'
             fontFamily='Poppins'
-            h={isLessThan1280 && dynamicCategoryNames ? '108px' : '64px'}
+            h={isLessThan1280 ? '108px' : '64px'}
           >
             {dynamicCategoryNames && (
               <Flex

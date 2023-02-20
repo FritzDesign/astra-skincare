@@ -62,7 +62,7 @@ const WhyAstra: React.FC = () => {
           spacing='32px'
           width='612px'
           maxWidth='100%'
-          paddingX={['2rem', '3rem', '166px']}
+          px={['2rem', '3rem', '0rem']}
         >
           <Stack justify='flex-start' align='flex-start' alignSelf='stretch'>
             <Text
