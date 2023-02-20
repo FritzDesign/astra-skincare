@@ -14,11 +14,7 @@ import DailyRoutine from '../DailyRoutine';
 
 const Home: React.FC = () => {
   React.useEffect(() => {
-    window.scrollTo({
-      top: 127,
-      left: 0,
-      behavior: 'smooth'
-    });
+    window.scrollTo(0, 0);
   }, []);
   return (
     <Chakra.Box>

@@ -16,7 +16,8 @@ import {
   UnorderedList,
   ListItem,
   Box,
-  Center
+  Center,
+  useMediaQuery
 } from '@chakra-ui/react';
 import { BsArrowRight, BsBag } from 'react-icons/bs';
 import { FiMinus, FiPlus } from 'react-icons/fi';

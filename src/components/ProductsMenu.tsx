@@ -150,7 +150,6 @@ const ProductMenu: React.FC<ProductMenuProps> = ({
                 alignItems={['flex-start', 'flex-start', 'center']}
                 gap='16px'
                 pl={['2rem', '2rem', '4rem', '4rem', '6rem', '13.5rem']}
-                // pl={['20px', '40px', '80px', '80px', '80px', '160px']}
                 onMouseLeave={() => setIsFilterMenuOpen(false)}
               >
                 <Text color='UI.2'>Filter By</Text>

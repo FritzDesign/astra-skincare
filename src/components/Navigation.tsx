@@ -38,6 +38,11 @@ const Navigation: React.FC = () => {
   const [isSearchOpen, setIsSearchOpen] = React.useState(false);
   const [searchInput, setSearchInput] = React.useState<string>('');
   const [cartItemQty, setCartItemQty] = React.useState('0');
+  const [enterPress, setEnterPress] = React.useState<any>({
+    display: false,
+    keyCode: 0,
+    keyName: ''
+  });
 
   const {
     openCart,
@@ -62,13 +67,14 @@ const Navigation: React.FC = () => {
   };
 
   const handleUserInput = (event: React.KeyboardEvent) => {
+    setEnterPress({display: true, keyCode: event.keyCode, keyName: event.key})
     const key: number = event.keyCode;
     if (key === 13 && searchInput.length) {
       fetchProductsBySearch({
         query: `title:${searchInput}*`,
         sortKey: 'TITLE'
       });
-      navigate(`search/${encodeURI(searchInput)}`);
+      navigate(`/search/${encodeURI(searchInput)}`);
       setSearchInput('');
       setIsSearchOpen(false);
     }
@@ -131,6 +137,13 @@ const Navigation: React.FC = () => {
         zIndex={1001}
         onMouseEnter={showNav ? () => handleShowNav() : undefined}
       >
+        {enterPress.display && (
+          <Box id='testing' pos='absolute' bottom='-30%' left='50%'>
+            {enterPress.keyCode}
+            {' | '}
+            {enterPress.keyName}
+          </Box>
+        )}
         <Box
           id='show nav'
           pos='fixed'
@@ -374,9 +387,8 @@ const Navigation: React.FC = () => {
                 pointerEvents='none'
                 bottom='2%'
                 left={+cartItemQty <= 9 ? '35%' : '20%'}
-
                 fontSize={13}
-                >
+              >
                 {cartItemQty}
               </Text>
             </Stack>
