@@ -16,9 +16,10 @@ import DailyRoutineTop from '../DailyRoutineTop';
 import DailyRoutineBottom from '../DailyRoutineBottom';
 import ScaleableGallery from '../ScaleableGallery';
 import Rewards from '../Rewards';
+import DailyRoutine from '../DailyRoutine';
 
 const Home: React.FC = () => {
-  React.useEffect
+  React.useEffect;
   return (
     <Chakra.Box>
       <Hero
@@ -27,8 +28,9 @@ const Home: React.FC = () => {
         heading='Unlock 24-7 Hydration with a New Clinically Proven Formula'
       />
       <Gallery4x1 />
-      <DailyRoutineTop />
-      <DailyRoutineBottom />
+      <DailyRoutine />
+      {/* <DailyRoutineTop />
+      <DailyRoutineBottom /> */}
       <TextWithIcons />
       <ScaleableGallery
         title={"What's New"}
