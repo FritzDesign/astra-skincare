@@ -1,5 +1,14 @@
-import React, { useContext, useEffect } from 'react'
-import { Box, Divider, Grid, Image, Skeleton, SkeletonText, Stack, Text }  from '@chakra-ui/react'
+import React, { useContext, useEffect } from 'react';
+import {
+  Box,
+  Divider,
+  Grid,
+  Image,
+  Skeleton,
+  SkeletonText,
+  Stack,
+  Text
+} from '@chakra-ui/react';
 import { ShopContext } from '../../context/ShopContext';
 import ProductMenu from '../ProductsMenu';
 import Product from '../Product';
@@ -9,20 +18,17 @@ import heroImage from '../../assets/Products/products-hero-img.png';
 import heroFb from '../../assets/Products/products-hero-img-fb.jpg';
 
 const Search: React.FC = () => {
-  const {
-    products,
-    isLoading
-  } = useContext<any>(ShopContext);
+  const { products, isLoading } = useContext<any>(ShopContext);
   useEffect(() => {
     window.scrollTo({
-      top: 0,
+      top: 127,
       left: 0,
       behavior: 'smooth'
     });
   }, []);
-return (
-<Box>
-<ProductMenu
+  return (
+    <Box>
+      <ProductMenu
         hero={heroImage}
         fallback={heroFb}
         heading='Search Results'
@@ -309,8 +315,8 @@ return (
           </Grid>
         )}
       </Grid>
-</Box>
-);
-}
+    </Box>
+  );
+};
 
 export default Search;

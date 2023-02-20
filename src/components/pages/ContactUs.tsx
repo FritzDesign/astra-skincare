@@ -20,10 +20,9 @@ import heroFb from '../../assets/Products/bt-hero-img-fb.jpg';
 import Product from '../Product';
 
 const ContactUs: React.FC = () => {
-
   useEffect(() => {
     window.scrollTo({
-      top: 0,
+      top: 127,
       left: 0,
       behavior: 'smooth'
     });

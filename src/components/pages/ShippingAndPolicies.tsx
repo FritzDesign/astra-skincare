@@ -18,7 +18,7 @@ const ShippingAndPolicies: React.FC = () => {
 
   useEffect(() => {
     window.scrollTo({
-      top: 0,
+      top: 127,
       left: 0,
       behavior: 'smooth'
     });
@@ -205,12 +205,10 @@ const ShippingAndPolicies: React.FC = () => {
             </Text>
             <UnorderedList>
               <ListItem>
-
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit
               </ListItem>
               <ListItem>
-
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit
               </ListItem>
             </UnorderedList>
             <Text
@@ -224,8 +222,7 @@ const ShippingAndPolicies: React.FC = () => {
             </Text>
             <UnorderedList>
               <ListItem>
-
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit
               </ListItem>
             </UnorderedList>
           </Stack>
@@ -270,14 +267,8 @@ const ShippingAndPolicies: React.FC = () => {
               CONTACT HOURS
             </Text>
             <UnorderedList>
-              <ListItem>
-
-                  Monday - Friday: 8:00am - 5:00pm MST
-              </ListItem>
-              <ListItem>
-
-                  Saturday - Sunday: 10:00am - 12:00pm MST
-              </ListItem>
+              <ListItem>Monday - Friday: 8:00am - 5:00pm MST</ListItem>
+              <ListItem>Saturday - Sunday: 10:00am - 12:00pm MST</ListItem>
             </UnorderedList>
           </Stack>
           <Button

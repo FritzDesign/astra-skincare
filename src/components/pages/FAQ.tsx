@@ -29,7 +29,7 @@ const FAQ: React.FC = () => {
 
   useEffect(() => {
     window.scrollTo({
-      top: 0,
+      top: 127,
       left: 0,
       behavior: 'smooth'
     });
@@ -43,7 +43,7 @@ const FAQ: React.FC = () => {
           <AccordionItem>
             <AccordionButton
               fontFamily='Marcellus'
-              fontSize={['24px', '24px','32px']}
+              fontSize={['24px', '24px', '32px']}
               onClick={() =>
                 setIsPanelOpen({
                   first: !isPanelOpen.first,
@@ -150,7 +150,7 @@ const FAQ: React.FC = () => {
           <AccordionItem>
             <AccordionButton
               fontFamily='Marcellus'
-              fontSize={['24px', '24px','32px']}
+              fontSize={['24px', '24px', '32px']}
               onClick={() =>
                 setIsPanelOpen({
                   first: false,
@@ -257,7 +257,7 @@ const FAQ: React.FC = () => {
           <AccordionItem>
             <AccordionButton
               fontFamily='Marcellus'
-              fontSize={['24px', '24px','32px']}
+              fontSize={['24px', '24px', '32px']}
               onClick={() =>
                 setIsPanelOpen({
                   second: false,
@@ -364,7 +364,7 @@ const FAQ: React.FC = () => {
           <AccordionItem>
             <AccordionButton
               fontFamily='Marcellus'
-              fontSize={['24px', '24px','32px']}
+              fontSize={['24px', '24px', '32px']}
               onClick={() =>
                 setIsPanelOpen({
                   first: false,
@@ -471,7 +471,7 @@ const FAQ: React.FC = () => {
           <AccordionItem>
             <AccordionButton
               fontFamily='Marcellus'
-              fontSize={['24px', '24px','32px']}
+              fontSize={['24px', '24px', '32px']}
               onClick={() =>
                 setIsPanelOpen({
                   first: false,
@@ -578,7 +578,7 @@ const FAQ: React.FC = () => {
           <AccordionItem>
             <AccordionButton
               fontFamily='Marcellus'
-              fontSize={['24px', '24px','32px']}
+              fontSize={['24px', '24px', '32px']}
               onClick={() =>
                 setIsPanelOpen({
                   first: false,

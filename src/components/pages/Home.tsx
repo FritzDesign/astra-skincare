@@ -1,25 +1,25 @@
 //@ts-nocheck
 import * as React from 'react';
 import * as Chakra from '@chakra-ui/react';
-import { ShopContext } from '../../context/ShopContext';
 import Hero from '../Hero';
 import ImageWithText from '../ImageWithText';
 import Gallery4x1 from '../galleries/Gallery_4-by-1';
-import RichText from '../RichText';
-import Gallery3x1 from '../galleries/Gallery_3-by-1';
-import Announcement from '../Announcement';
 
 import heroImage from '../../assets/astra-hero.jpg';
 import imgWithText1 from '../../assets/image-with-text/astra-iwt-1.png';
 import TextWithIcons from '../TextWithIcons';
-import DailyRoutineTop from '../DailyRoutineTop';
-import DailyRoutineBottom from '../DailyRoutineBottom';
 import ScaleableGallery from '../ScaleableGallery';
 import Rewards from '../Rewards';
 import DailyRoutine from '../DailyRoutine';
 
 const Home: React.FC = () => {
-  React.useEffect;
+  React.useEffect(() => {
+    window.scrollTo({
+      top: 127,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }, []);
   return (
     <Chakra.Box>
       <Hero
@@ -29,8 +29,6 @@ const Home: React.FC = () => {
       />
       <Gallery4x1 />
       <DailyRoutine />
-      {/* <DailyRoutineTop />
-      <DailyRoutineBottom /> */}
       <TextWithIcons />
       <ScaleableGallery
         title={"What's New"}

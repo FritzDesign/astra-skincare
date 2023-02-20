@@ -9,7 +9,7 @@ import {
   SkeletonText
 } from '@chakra-ui/react';
 import ProductMenu from '../ProductsMenu';
-import { useContext, useEffect} from 'react';
+import { useContext, useEffect } from 'react';
 import { ShopContext } from '../../context/ShopContext';
 
 import { Product as ProductInterface } from '../../models/API';
@@ -25,7 +25,7 @@ const BeautyTools: React.FC = () => {
 
   useEffect(() => {
     window.scrollTo({
-      top: 0,
+      top: 127,
       left: 0,
       behavior: 'smooth'
     });

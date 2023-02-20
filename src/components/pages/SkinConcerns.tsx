@@ -25,7 +25,7 @@ const SkinConcerns: React.FC = () => {
 
   useEffect(() => {
     window.scrollTo({
-      top: 0,
+      top: 127,
       left: 0,
       behavior: 'smooth'
     });

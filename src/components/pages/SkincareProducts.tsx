@@ -35,7 +35,7 @@ const SkincareProducts: React.FC = () => {
 
   useEffect(() => {
     window.scrollTo({
-      top: 0,
+      top: 127,
       left: 0,
       behavior: 'smooth'
     });
@@ -62,33 +62,63 @@ const SkincareProducts: React.FC = () => {
 
   return (
     <Box>
-        <ProductMenu
-          hero={heroImage}
-          fallback={heroFb}
-          heading='Skincare Products'
-          categoryNames={[
-            'Cleansers',
-            'Exfoliants',
-            'Moisturizers',
-            'Serums',
-            'Sunscreen',
-            'Toners'
-          ]}
-          menuItems={[
-            'Featured',
-            'Newest',
-            'Highest Rated',
-            'Price - High',
-            'Price - Low'
-          ]}
-          showMenuBar
-        />
-        <Grid
+      <ProductMenu
+        hero={heroImage}
+        fallback={heroFb}
+        heading='Skincare Products'
+        categoryNames={[
+          'Cleansers',
+          'Exfoliants',
+          'Moisturizers',
+          'Serums',
+          'Sunscreen',
+          'Toners'
+        ]}
+        menuItems={[
+          'Featured',
+          'Newest',
+          'Highest Rated',
+          'Price - High',
+          'Price - Low'
+        ]}
+        showMenuBar
+      />
+      <Grid
         id='products-container'
         mt='3rem'
         mx={['2rem', '2rem', '4rem', '4rem', '6rem', '8rem']}
+        templateColumns={[
+          'repeat(1, 1fr)',
+          'repeat(1, 1fr)',
+          'repeat(1, 1fr)',
+          'repeat(2, 1fr)',
+          'repeat(2, 1fr)',
+          'repeat(3, 1fr)'
+        ]}
+        justifyItems='center'
+      >
+        {products.length ? (
+          products.map((product: ProductInterface, i: number) => {
+            return (
+              <Product
+                key={i}
+                image={product.images[0].src}
+                title={product.title}
+                handle={product.handle}
+                category={product.productType}
+                price={product.variants[0].price.amount}
+                weight={product.variants[0].weight + ' oz'}
+              />
+            );
+          })
+        ) : (
+          <Box minH='1000px' />
+        )}
+      </Grid>
+      {showMoreProducts && <Box ref={triggerRef} h='1px' />}
+      {isLoading && (
+        <Grid
           templateColumns={[
-            'repeat(1, 1fr)',
             'repeat(1, 1fr)',
             'repeat(1, 1fr)',
             'repeat(2, 1fr)',
@@ -97,260 +127,230 @@ const SkincareProducts: React.FC = () => {
           ]}
           justifyItems='center'
         >
-          {products.length ? (
-            products.map((product: ProductInterface, i: number) => {
-              return (
-                <Product
-                  key={i}
-                  image={product.images[0].src}
-                  title={product.title}
-                  handle={product.handle}
-                  category={product.productType}
-                  price={product.variants[0].price.amount}
-                  weight={product.variants[0].weight + ' oz'}
-                />
-              );
-            })
-          ) : (
-            <Box minH='1000px' />
-          )}
-        </Grid>
-        {showMoreProducts && <Box ref={triggerRef} h='1px' />}
-        {isLoading && (
-          <Grid
-            templateColumns={[
-              'repeat(1, 1fr)',
-              'repeat(1, 1fr)',
-              'repeat(2, 1fr)',
-              'repeat(2, 1fr)',
-              'repeat(3, 1fr)'
-            ]}
-            justifyItems='center'
+          <Stack
+            justify='center'
+            pos='relative'
+            align='center'
+            spacing='16px'
+            w={['300px', '376px']}
+            h='451px'
+            my='2rem'
           >
-            <Stack
-              justify='center'
-              pos='relative'
-              align='center'
-              spacing='16px'
-              w={['300px', '376px']}
-              h='451px'
-              my='2rem'
-            >
-              <Skeleton>
-                <Image minW={['300px', '376px']} minH={['275px', '345px']} />
-              </Skeleton>
-              <SkeletonText>
-                <Stack justify='flex-start' align='center' spacing='0px'>
-                  <Text
-                    fontFamily='Marcellus'
-                    lineHeight='1.2'
-                    fontWeight='regular'
-                    fontSize='24px'
-                    color='brand.Navy'
-                    width='290px'
-                    maxWidth='100%'
-                    textAlign='center'
-                  >
-                    Lorem
-                  </Text>
-                  <Text
-                    fontFamily='Inter'
-                    lineHeight='1.5'
-                    fontWeight='medium'
-                    fontSize='14px'
-                    color='UI.2'
-                    width='290px'
-                    maxWidth='100%'
-                    textAlign='center'
-                  >
-                    Ipsum
-                  </Text>
-                </Stack>
-              </SkeletonText>
-              <Skeleton>
-                <Stack
-                  direction='row'
-                  justify='flex-start'
-                  align='center'
-                  spacing='16px'
+            <Skeleton>
+              <Image minW={['300px', '376px']} minH={['275px', '345px']} />
+            </Skeleton>
+            <SkeletonText>
+              <Stack justify='flex-start' align='center' spacing='0px'>
+                <Text
+                  fontFamily='Marcellus'
+                  lineHeight='1.2'
+                  fontWeight='regular'
+                  fontSize='24px'
+                  color='brand.Navy'
                   width='290px'
                   maxWidth='100%'
+                  textAlign='center'
                 >
-                  <Text
-                    fontFamily='Poppins'
-                    lineHeight='1.5'
-                    fontWeight='regular'
-                    fontSize='18px'
-                    color='UI.1'
-                    textAlign='center'
-                  >
-                    $0
-                  </Text>
-                  <Divider borderColor='UI.2' />
-                  <Text
-                    fontFamily='Poppins'
-                    lineHeight='1.5'
-                    fontWeight='regular'
-                    fontSize='18px'
-                    color='UI.1'
-                    textAlign='center'
-                    minWidth='46px'
-                  >
-                    1
-                  </Text>
-                </Stack>
-              </Skeleton>
-            </Stack>
-            <Stack
-              justify='center'
-              pos='relative'
-              align='center'
-              spacing='16px'
-              w={['300px', '376px']}
-              h='451px'
-              my='2rem'
-            >
-              <Skeleton>
-                <Image minW={['300px', '376px']} minH={['275px', '345px']} />
-              </Skeleton>
-              <SkeletonText>
-                <Stack justify='flex-start' align='center' spacing='0px'>
-                  <Text
-                    fontFamily='Marcellus'
-                    lineHeight='1.2'
-                    fontWeight='regular'
-                    fontSize='24px'
-                    color='brand.Navy'
-                    width='290px'
-                    maxWidth='100%'
-                    textAlign='center'
-                  >
-                    Lorem
-                  </Text>
-                  <Text
-                    fontFamily='Inter'
-                    lineHeight='1.5'
-                    fontWeight='medium'
-                    fontSize='14px'
-                    color='UI.2'
-                    width='290px'
-                    maxWidth='100%'
-                    textAlign='center'
-                  >
-                    Ipsum
-                  </Text>
-                </Stack>
-              </SkeletonText>
-              <Skeleton>
-                <Stack
-                  direction='row'
-                  justify='flex-start'
-                  align='center'
-                  spacing='16px'
+                  Lorem
+                </Text>
+                <Text
+                  fontFamily='Inter'
+                  lineHeight='1.5'
+                  fontWeight='medium'
+                  fontSize='14px'
+                  color='UI.2'
                   width='290px'
                   maxWidth='100%'
+                  textAlign='center'
                 >
-                  <Text
-                    fontFamily='Poppins'
-                    lineHeight='1.5'
-                    fontWeight='regular'
-                    fontSize='18px'
-                    color='UI.1'
-                    textAlign='center'
-                  >
-                    $0
-                  </Text>
-                  <Divider borderColor='UI.2' />
-                  <Text
-                    fontFamily='Poppins'
-                    lineHeight='1.5'
-                    fontWeight='regular'
-                    fontSize='18px'
-                    color='UI.1'
-                    textAlign='center'
-                    minWidth='46px'
-                  >
-                    1
-                  </Text>
-                </Stack>
-              </Skeleton>
-            </Stack>
-            <Stack
-              justify='center'
-              pos='relative'
-              align='center'
-              spacing='16px'
-              w={['300px', '376px']}
-              h='451px'
-              my='2rem'
-            >
-              <Skeleton>
-                <Image minW={['300px', '376px']} minH={['275px', '345px']} />
-              </Skeleton>
-              <SkeletonText>
-                <Stack justify='flex-start' align='center' spacing='0px'>
-                  <Text
-                    fontFamily='Marcellus'
-                    lineHeight='1.2'
-                    fontWeight='regular'
-                    fontSize='24px'
-                    color='brand.Navy'
-                    width='290px'
-                    maxWidth='100%'
-                    textAlign='center'
-                  >
-                    Lorem
-                  </Text>
-                  <Text
-                    fontFamily='Inter'
-                    lineHeight='1.5'
-                    fontWeight='medium'
-                    fontSize='14px'
-                    color='UI.2'
-                    width='290px'
-                    maxWidth='100%'
-                    textAlign='center'
-                  >
-                    Ipsum
-                  </Text>
-                </Stack>
-              </SkeletonText>
-              <Skeleton>
-                <Stack
-                  direction='row'
-                  justify='flex-start'
-                  align='center'
-                  spacing='16px'
+                  Ipsum
+                </Text>
+              </Stack>
+            </SkeletonText>
+            <Skeleton>
+              <Stack
+                direction='row'
+                justify='flex-start'
+                align='center'
+                spacing='16px'
+                width='290px'
+                maxWidth='100%'
+              >
+                <Text
+                  fontFamily='Poppins'
+                  lineHeight='1.5'
+                  fontWeight='regular'
+                  fontSize='18px'
+                  color='UI.1'
+                  textAlign='center'
+                >
+                  $0
+                </Text>
+                <Divider borderColor='UI.2' />
+                <Text
+                  fontFamily='Poppins'
+                  lineHeight='1.5'
+                  fontWeight='regular'
+                  fontSize='18px'
+                  color='UI.1'
+                  textAlign='center'
+                  minWidth='46px'
+                >
+                  1
+                </Text>
+              </Stack>
+            </Skeleton>
+          </Stack>
+          <Stack
+            justify='center'
+            pos='relative'
+            align='center'
+            spacing='16px'
+            w={['300px', '376px']}
+            h='451px'
+            my='2rem'
+          >
+            <Skeleton>
+              <Image minW={['300px', '376px']} minH={['275px', '345px']} />
+            </Skeleton>
+            <SkeletonText>
+              <Stack justify='flex-start' align='center' spacing='0px'>
+                <Text
+                  fontFamily='Marcellus'
+                  lineHeight='1.2'
+                  fontWeight='regular'
+                  fontSize='24px'
+                  color='brand.Navy'
                   width='290px'
                   maxWidth='100%'
+                  textAlign='center'
                 >
-                  <Text
-                    fontFamily='Poppins'
-                    lineHeight='1.5'
-                    fontWeight='regular'
-                    fontSize='18px'
-                    color='UI.1'
-                    textAlign='center'
-                  >
-                    $0
-                  </Text>
-                  <Divider borderColor='UI.2' />
-                  <Text
-                    fontFamily='Poppins'
-                    lineHeight='1.5'
-                    fontWeight='regular'
-                    fontSize='18px'
-                    color='UI.1'
-                    textAlign='center'
-                    minWidth='46px'
-                  >
-                    1
-                  </Text>
-                </Stack>
-              </Skeleton>
-            </Stack>
-          </Grid>
-        )}
+                  Lorem
+                </Text>
+                <Text
+                  fontFamily='Inter'
+                  lineHeight='1.5'
+                  fontWeight='medium'
+                  fontSize='14px'
+                  color='UI.2'
+                  width='290px'
+                  maxWidth='100%'
+                  textAlign='center'
+                >
+                  Ipsum
+                </Text>
+              </Stack>
+            </SkeletonText>
+            <Skeleton>
+              <Stack
+                direction='row'
+                justify='flex-start'
+                align='center'
+                spacing='16px'
+                width='290px'
+                maxWidth='100%'
+              >
+                <Text
+                  fontFamily='Poppins'
+                  lineHeight='1.5'
+                  fontWeight='regular'
+                  fontSize='18px'
+                  color='UI.1'
+                  textAlign='center'
+                >
+                  $0
+                </Text>
+                <Divider borderColor='UI.2' />
+                <Text
+                  fontFamily='Poppins'
+                  lineHeight='1.5'
+                  fontWeight='regular'
+                  fontSize='18px'
+                  color='UI.1'
+                  textAlign='center'
+                  minWidth='46px'
+                >
+                  1
+                </Text>
+              </Stack>
+            </Skeleton>
+          </Stack>
+          <Stack
+            justify='center'
+            pos='relative'
+            align='center'
+            spacing='16px'
+            w={['300px', '376px']}
+            h='451px'
+            my='2rem'
+          >
+            <Skeleton>
+              <Image minW={['300px', '376px']} minH={['275px', '345px']} />
+            </Skeleton>
+            <SkeletonText>
+              <Stack justify='flex-start' align='center' spacing='0px'>
+                <Text
+                  fontFamily='Marcellus'
+                  lineHeight='1.2'
+                  fontWeight='regular'
+                  fontSize='24px'
+                  color='brand.Navy'
+                  width='290px'
+                  maxWidth='100%'
+                  textAlign='center'
+                >
+                  Lorem
+                </Text>
+                <Text
+                  fontFamily='Inter'
+                  lineHeight='1.5'
+                  fontWeight='medium'
+                  fontSize='14px'
+                  color='UI.2'
+                  width='290px'
+                  maxWidth='100%'
+                  textAlign='center'
+                >
+                  Ipsum
+                </Text>
+              </Stack>
+            </SkeletonText>
+            <Skeleton>
+              <Stack
+                direction='row'
+                justify='flex-start'
+                align='center'
+                spacing='16px'
+                width='290px'
+                maxWidth='100%'
+              >
+                <Text
+                  fontFamily='Poppins'
+                  lineHeight='1.5'
+                  fontWeight='regular'
+                  fontSize='18px'
+                  color='UI.1'
+                  textAlign='center'
+                >
+                  $0
+                </Text>
+                <Divider borderColor='UI.2' />
+                <Text
+                  fontFamily='Poppins'
+                  lineHeight='1.5'
+                  fontWeight='regular'
+                  fontSize='18px'
+                  color='UI.1'
+                  textAlign='center'
+                  minWidth='46px'
+                >
+                  1
+                </Text>
+              </Stack>
+            </Skeleton>
+          </Stack>
+        </Grid>
+      )}
     </Box>
   );
 };

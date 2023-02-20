@@ -52,7 +52,7 @@ const SkincareResources: React.FC = () => {
       section3: _blogs.slice(10, 14)
     });
     window.scrollTo({
-      top: 0,
+      top: 127,
       left: 0,
       behavior: 'smooth'
     });

@@ -38,7 +38,11 @@ const SingleProduct: React.FC = () => {
     React.useContext<any>(ShopContext);
 
   React.useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 127,
+      left: 0,
+      behavior: 'smooth'
+    });
     resetProduct();
     fetchProductByHandle(handle);
   }, [fetchProductByHandle, handle]);

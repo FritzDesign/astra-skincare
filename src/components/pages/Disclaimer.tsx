@@ -14,7 +14,7 @@ import heroImage from '../../assets/faq-hero-img.png';
 const Disclaimer: React.FC = () => {
   useEffect(() => {
     window.scrollTo({
-      top: 0,
+      top: 127,
       left: 0,
       behavior: 'smooth'
     });
