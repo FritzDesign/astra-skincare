@@ -66,9 +66,9 @@ const Navigation: React.FC = () => {
     }
   };
 
-  const handleUserInput = (event: React.KeyboardEvent) => {
-    setEnterPress({display: true, keyName: event.keyCode})
-    const key: number = event.keyCode;
+  const handleUserInput = (key: number) => {
+    setEnterPress({display: true, keyName: key})
+    
     if (key === 13 && searchInput.length) {
       fetchProductsBySearch({
         query: `title:${searchInput}*`,
@@ -425,7 +425,7 @@ const Navigation: React.FC = () => {
                 onChange={(e: React.SyntheticEvent) =>
                   setSearchInput((e.target as HTMLInputElement).value)
                 }
-                onKeyDown={(e: React.KeyboardEvent) => handleUserInput(e)}
+                onKeyDown={(e: React.KeyboardEvent) => handleUserInput(e.keyCode)}
               />
             </FMC_Component>
           )) ||
@@ -463,7 +463,7 @@ const Navigation: React.FC = () => {
                   onChange={(e: React.SyntheticEvent) =>
                     setSearchInput((e.target as HTMLInputElement).value)
                   }
-                  onKeyDown={(e: React.KeyboardEvent) => handleUserInput(e)}
+                  onKeyDown={(e: React.KeyboardEvent) => handleUserInput(e.keyCode)}
                 />
               </FMC_Component>
             ))}
