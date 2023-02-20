@@ -9,11 +9,9 @@ import {
   Divider,
   Flex
 } from '@chakra-ui/react';
-import * as ReactIcons from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import { ShopContext } from '../context/ShopContext';
 import { BsFacebook, BsInstagram, BsPinterest } from 'react-icons/bs';
-// import { NavMenuProps } from '../models/Props';
 
 const NavMenu: React.FC = () => {
   const navigate = useNavigate();
@@ -36,14 +34,14 @@ const NavMenu: React.FC = () => {
       mt='20px'
       bottom='-4px'
       right='0px'
-      w={['100vw', '100vw', '75vw', '60vw', '48vw']}
+      w={['100vw', '100vw', '100vw', '80vw', '64vw']}
       pos='absolute'
     >
       <Menu isOpen={isMenuOpen} isLazy>
         <MenuList
-          w={['100vw', '100vw', '75vw', '60vw', '48vw']}
+          w={['140vw', '100vw', '100vw', '80vw', '64vw']}
           display='flex'
-          flexDir={['column', 'column', 'row-reverse']}
+          flexDir={['column', 'column', 'row']}
         >
           <MenuGroup>
             <MenuItem

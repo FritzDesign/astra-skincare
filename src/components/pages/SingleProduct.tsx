@@ -51,7 +51,7 @@ const SingleProduct: React.FC = () => {
     '(min-width: 1280px)'
   ]);
 
-  const { fetchProductByHandle, addItemToCheckout, product, resetProduct } =
+  const { fetchProductByHandle, fetchCollectionByHandle, addItemToCheckout, product, resetProduct } =
     React.useContext<any>(ShopContext);
 
   React.useEffect(() => {
@@ -235,6 +235,7 @@ const SingleProduct: React.FC = () => {
                     fontWeight='regular'
                     fontSize='14px'
                     color='UI.2'
+                    onClick={() => fetchCollectionByHandle()}
                   >
                     {product.productType}
                   </Text>
