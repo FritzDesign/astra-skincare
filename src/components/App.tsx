@@ -17,6 +17,7 @@ import FAQ from './pages/FAQ';
 import ShippingAndPolicies from './pages/ShippingAndPolicies';
 import Disclaimer from './pages/Disclaimer';
 import Search from './pages/Search';
+import BlogPost from './pages/BlogPost';
 
 const App: React.FC = () => {
   return (
@@ -32,6 +33,7 @@ const App: React.FC = () => {
         <Route path='/beauty-tools/:handle' element={<SingleProduct />} />
         <Route path='/skin-concerns' element={<SkinConcerns />} />
         <Route path='/skincare-resources' element={<SkincareResources />} />
+        <Route path='/skincare-resources/:postId' element={<BlogPost />} />
         <Route path='/why-astra' element={<WhyAstra />} />
         <Route path='/contact-us' element={<ContactUs />} />
         <Route path='/faq' element={<FAQ />} />
