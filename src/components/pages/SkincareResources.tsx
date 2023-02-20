@@ -42,18 +42,20 @@ const SkincareResources: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // BlogPosts.splice(5, 1)
-    // BlogPosts.splice(7, 1)
+    const _blogs = [...BlogPosts];
+    _blogs.splice(5, 1);
+    _blogs.splice(6, 1);
+
     setBlogPosts({
-      section1: BlogPosts.slice(0, 4),
-      section2: BlogPosts.slice(8, 12),
-      section3: BlogPosts.slice(12, 16)
+      section1: _blogs.slice(0, 4),
+      section2: _blogs.slice(5, 9),
+      section3: _blogs.slice(10, 14)
     });
-    // window.scrollTo({
-    //   top: 0,
-    //   left: 0,
-    //   behavior: 'smooth'
-    // });
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   }, []);
 
   return (
@@ -66,7 +68,7 @@ const SkincareResources: React.FC = () => {
       />
       <Stack
         align='center'
-        mt='104px'
+        mt={['32px', '64px', '88px', '104px']}
         mx={['2rem', '2rem', '4rem', '4rem', '6rem', '13rem']}
       >
         <Stack
