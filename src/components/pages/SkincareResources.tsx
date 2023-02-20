@@ -8,7 +8,8 @@ import {
   Skeleton,
   SkeletonText,
   Button,
-  Badge
+  Badge,
+  useMediaQuery
 } from '@chakra-ui/react';
 import ProductMenu from '../ProductsMenu';
 import { useEffect, useState } from 'react';
@@ -32,19 +33,27 @@ const SkincareResources: React.FC = () => {
     section3: []
   });
 
+  const [isLessThan1656, isLessThan1056, isLessThan672] = useMediaQuery([
+    '(max-width: 1656px)',
+    '(max-width: 1056px)',
+    '(max-width: 672px)'
+  ]);
+
   const navigate = useNavigate();
 
   useEffect(() => {
+    // BlogPosts.splice(5, 1)
+    // BlogPosts.splice(7, 1)
     setBlogPosts({
       section1: BlogPosts.slice(0, 4),
       section2: BlogPosts.slice(8, 12),
       section3: BlogPosts.slice(12, 16)
     });
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
+    // window.scrollTo({
+    //   top: 0,
+    //   left: 0,
+    //   behavior: 'smooth'
+    // });
   }, []);
 
   return (
@@ -56,272 +65,277 @@ const SkincareResources: React.FC = () => {
         heading='Skincare Resources'
       />
       <Stack
+        align='center'
+        mt='104px'
         mx={['2rem', '2rem', '4rem', '4rem', '6rem', '13rem']}
-        mb='104px'
-        mt='88px'
-        direction='row'
-        justify='space-between'
-        align='flex-start'
-        spacing='0px'
-        h='100%'
-        bgColor='brand.Cream'
       >
         <Stack
-          px='96px'
-          paddingY='64px'
-          justify='flex-start'
-          align='flex-start'
-          spacing='32px'
-          overflow='hidden'
-          width='712px'
-          maxWidth='100%'
+          mb='88px'
+          direction={['column', 'column', 'row']}
+          justify='space-between'
+          h='100%'
+          minW={['340px', '440px']}
+          bgColor='brand.Cream'
         >
-          <Stack justify='flex-start' align='flex-start' alignSelf='stretch'>
+          <Stack
+            pl={['32px', '32px', '80px', '96px']}
+            pr={['32px', '32px']}
+            py='64px'
+            justify='space-between'
+            align={['center', 'center', 'flex-start']}
+            spacing='32px'
+            overflow='hidden'
+            w={['100%', '100%', '86%']}
+            h={['300px', '300px', '320px', '428px']}
+          >
+            <Stack justify='flex-start' align='flex-start' alignSelf='stretch'>
+              <Text
+                textAlign={['center', 'center', 'left']}
+                fontFamily='Marcellus'
+                lineHeight='1.2'
+                fontWeight='regular'
+                fontSize={['28px', '28px', '28px', '28px', '32px', '40px']}
+                color='UI.1'
+                alignSelf='stretch'
+              >
+                {BlogPosts[5].title}
+              </Text>
+            </Stack>
             <Text
-              fontFamily='Marcellus'
-              lineHeight='1.2'
+              display={['none', 'none', 'none', 'block']}
+              fontFamily='Poppins'
+              lineHeight='1.5'
               fontWeight='regular'
-              fontSize='40px'
-              color='UI.1'
+              fontSize={['12px', '12px', '14px', '14px', '16px', '16px']}
+              color='UI.2'
+              opacity='0.8'
               alignSelf='stretch'
             >
-              {BlogPosts[5].title}
+              {BlogPosts[5].paragraphs[0].slice(0, 200)}...
             </Text>
-          </Stack>
-          <Text
-            fontFamily='Poppins'
-            lineHeight='1.5'
-            fontWeight='regular'
-            fontSize='16px'
-            color='UI.2'
-            opacity='0.8'
-            alignSelf='stretch'
-          >
-            {BlogPosts[5].paragraphs[0].slice(0, 200)}...
-          </Text>
-          <Button
-            size='lg'
-            variant='brandPrimary'
-            onClick={() => navigate(`${BlogPosts[5].id}`)}
-          >
-            Read More
-          </Button>
-        </Stack>
-        <Stack>
-          <Image
-            src={BlogPosts[5].image}
-            h='100%'
-            maxH='504px'
-            objectFit='fill'
-          />
-        </Stack>
-      </Stack>
-      <Stack
-        mx={['2rem', '2rem', '4rem', '4rem', '6rem', '13rem']}
-        mb='104px'
-        mt='88px'
-        direction='row'
-        justify='space-between'
-        align='flex-start'
-        gap='16px'
-        // h='432px'
-      >
-        {blogPosts.section1.map((post, i) => {
-          return (
-            <Stack
-              key={i}
-              justify='flex-start'
-              align='center'
-              spacing='16px'
-              onClick={() => navigate(`${post.id}`)}
+            <Button
+              size='lg'
+              variant='brandPrimary'
+              onClick={() => navigate(`${BlogPosts[5].id}`)}
             >
-              <Stack width='290px' height='290px' maxWidth='100%'>
-                <Image
-                  _hover={{ filter: 'brightness(.75)' }}
-                  cursor='pointer'
-                  src={post.image}
-                  h='290px'
-                  w='290px'
-                  objectFit='cover'
-                />
-              </Stack>
-              <Badge variant='brandOutline'>{post.category}</Badge>
-              <Stack width='290px' height='58px' maxWidth='100%'>
-                <Text
-                  fontFamily='Marcellus'
-                  lineHeight='1.2'
-                  fontWeight='regular'
-                  fontSize='24px'
-                  color='#000000'
-                  width='290px'
-                  maxWidth='100%'
-                  textAlign='center'
-                >
-                  {post.title}
-                </Text>
-              </Stack>
-            </Stack>
-          );
-        })}
-      </Stack>
-      <Stack
-        mx={['2rem', '2rem', '4rem', '4rem', '6rem', '13rem']}
-        mb='104px'
-        direction='row'
-        justify='flex-start'
-        align='flex-start'
-        spacing='0px'
-        h='432px'
-        bgColor='brand.Cream'
-      >
-        <Stack>
-          <Image
-            src={BlogPosts[7].image}
-            h='432px'
-            w='588px'
-            objectFit='cover'
-          />
+              Read More
+            </Button>
+          </Stack>
+          <Stack h='100%'>
+            <Image
+              src={BlogPosts[5].image}
+              h={['300px', '400px', '320px', '428px']}
+              objectFit='cover'
+            />
+          </Stack>
         </Stack>
-
         <Stack
-          px='96px'
-          paddingY='64px'
-          justify='flex-start'
+          mb='104px !important'
+          direction='row'
+          justify={isLessThan672 ? 'center' : 'space-between'}
           align='flex-start'
-          spacing='32px'
-          overflow='hidden'
-          width='712px'
-          maxWidth='100%'
-          background='brand.Cream'
+          gap='16px'
+          w='100%'
         >
-          <Stack justify='flex-start' align='flex-start' alignSelf='stretch'>
+          {blogPosts.section1.map((post, i) => {
+            if (isLessThan672 && i === 1) return;
+            if (isLessThan1056 && i === 2) return;
+            if (isLessThan1656 && i === 3) return;
+            return (
+              <Stack
+                key={i}
+                justify='flex-start'
+                align='center'
+                spacing='16px'
+                onClick={() => navigate(`${post.id}`)}
+              >
+                <Stack width='290px' height='290px' maxWidth='100%'>
+                  <Image
+                    _hover={{ filter: 'brightness(.75)' }}
+                    cursor='pointer'
+                    src={post.image}
+                    h='290px'
+                    w='290px'
+                    objectFit='cover'
+                  />
+                </Stack>
+                <Badge variant='brandOutline'>{post.category}</Badge>
+                <Stack width='290px' height='58px' maxWidth='100%'>
+                  <Text
+                    fontFamily='Marcellus'
+                    lineHeight='1.2'
+                    fontWeight='regular'
+                    fontSize='24px'
+                    color='#000000'
+                    width='290px'
+                    maxWidth='100%'
+                    textAlign='center'
+                  >
+                    {post.title}
+                  </Text>
+                </Stack>
+              </Stack>
+            );
+          })}
+        </Stack>
+        <Stack
+          mb='104px !important'
+          direction={['column', 'column', 'row']}
+          justify='space-between'
+          h='100%'
+          minW={['340px', '440px']}
+          w='100%'
+          bgColor='brand.Cream'
+        >
+          <Stack h='100%'>
+            <Image
+              src={BlogPosts[7].image}
+              h={['300px', '400px', '320px', '428px']}
+              objectFit='cover'
+            />
+          </Stack>
+          <Stack
+            pl={['32px', '32px', '80px', '96px']}
+            pr={['32px', '32px']}
+            py='64px'
+            justify='space-between'
+            align={['center', 'center', 'flex-start']}
+            spacing='32px'
+            overflow='hidden'
+            w={['100%', '100%', '86%']}
+            h={['300px', '300px', '320px', '428px']}
+          >
+            <Stack justify='flex-start' align='flex-start' alignSelf='stretch'>
+              <Text
+                textAlign={['center', 'center', 'left']}
+                fontFamily='Marcellus'
+                lineHeight='1.2'
+                fontWeight='regular'
+                fontSize={['28px', '28px', '28px', '28px', '32px', '40px']}
+                color='UI.1'
+                alignSelf='stretch'
+              >
+                {BlogPosts[7].title}
+              </Text>
+            </Stack>
             <Text
-              fontFamily='Marcellus'
-              lineHeight='1.2'
+              display={['none', 'none', 'none', 'block']}
+              fontFamily='Poppins'
               fontWeight='regular'
-              fontSize='40px'
-              textTransform='capitalize'
-              color='UI.1'
+              fontSize={['12px', '12px', '14px', '14px', '16px', '16px']}
+              color='UI.2'
+              opacity='0.8'
               alignSelf='stretch'
             >
-              {BlogPosts[7].title}
+              {BlogPosts[7].paragraphs[0].slice(0, 200)}...
             </Text>
+            <Button
+              size='lg'
+              variant='brandPrimary'
+              onClick={() => navigate(`${BlogPosts[7].id}`)}
+            >
+              Read More
+            </Button>
           </Stack>
-          <Text
-            fontFamily='Poppins'
-            lineHeight='1.5'
-            fontWeight='regular'
-            fontSize='16px'
-            color='UI.2'
-            opacity='0.8'
-            alignSelf='stretch'
-          >
-            {BlogPosts[7].paragraphs[0].slice(0, 200)}...
-          </Text>
-          <Button
-            size='lg'
-            variant='brandPrimary'
-            onClick={() => navigate(`${BlogPosts[7].id}`)}
-          >
-            Read More
-          </Button>
         </Stack>
-      </Stack>
-      <Stack
-        mx={['2rem', '2rem', '4rem', '4rem', '6rem', '13rem']}
-        mb='104px'
-        mt='88px'
-        direction='row'
-        justify='space-between'
-        align='flex-start'
-        gap='16px'
-        h='432px'
-      >
-        {blogPosts.section2.map((post, i) => {
-          return (
-            <Stack
-              key={i}
-              justify='flex-start'
-              align='center'
-              spacing='16px'
-              onClick={() => navigate(`${post.id}`)}
-            >
-              <Stack width='290px' height='290px' maxWidth='100%'>
-                <Image
-                  _hover={{ filter: 'brightness(.75)' }}
-                  cursor='pointer'
-                  src={post.image}
-                  h='290px'
-                  w='290px'
-                  objectFit='cover'
-                />
+        <Stack
+          mb='104px !important'
+          direction='row'
+          justify={isLessThan672 ? 'center' : 'space-between'}
+          align='flex-start'
+          gap='16px'
+          w='100%'
+        >
+          {blogPosts.section2.map((post, i) => {
+            if (isLessThan672 && i === 1) return;
+            if (isLessThan1056 && i === 2) return;
+            if (isLessThan1656 && i === 3) return;
+            return (
+              <Stack
+                key={i}
+                justify='flex-start'
+                align='center'
+                spacing='16px'
+                onClick={() => navigate(`${post.id}`)}
+              >
+                <Stack width='290px' height='290px' maxWidth='100%'>
+                  <Image
+                    _hover={{ filter: 'brightness(.75)' }}
+                    cursor='pointer'
+                    src={post.image}
+                    h='290px'
+                    w='290px'
+                    objectFit='cover'
+                  />
+                </Stack>
+                <Badge variant='brandOutline'>{post.category}</Badge>
+                <Stack width='290px' height='58px' maxWidth='100%'>
+                  <Text
+                    fontFamily='Marcellus'
+                    lineHeight='1.2'
+                    fontWeight='regular'
+                    fontSize='24px'
+                    color='#000000'
+                    width='290px'
+                    maxWidth='100%'
+                    textAlign='center'
+                  >
+                    {post.title}
+                  </Text>
+                </Stack>
               </Stack>
-              <Badge variant='brandOutline'>{post.category}</Badge>
-              <Stack width='290px' height='58px' maxWidth='100%'>
-                <Text
-                  fontFamily='Marcellus'
-                  lineHeight='1.2'
-                  fontWeight='regular'
-                  fontSize='24px'
-                  color='#000000'
-                  width='290px'
-                  maxWidth='100%'
-                  textAlign='center'
-                >
-                  {post.title}
-                </Text>
+            );
+          })}
+        </Stack>
+        <Stack
+          mb='104px !important'
+          direction='row'
+          justify={isLessThan672 ? 'center' : 'space-between'}
+          align='flex-start'
+          gap='16px'
+          w='100%'
+        >
+          {blogPosts.section3.map((post, i) => {
+            if (isLessThan672 && i === 1) return;
+            if (isLessThan1056 && i === 2) return;
+            if (isLessThan1656 && i === 3) return;
+            return (
+              <Stack
+                key={i}
+                justify='flex-start'
+                align='center'
+                spacing='16px'
+                onClick={() => navigate(`${post.id}`)}
+              >
+                <Stack width='290px' height='290px' maxWidth='100%'>
+                  <Image
+                    _hover={{ filter: 'brightness(.75)' }}
+                    cursor='pointer'
+                    src={post.image}
+                    h='290px'
+                    w='290px'
+                    objectFit='cover'
+                  />
+                </Stack>
+                <Badge variant='brandOutline'>{post.category}</Badge>
+                <Stack width='290px' height='58px' maxWidth='100%'>
+                  <Text
+                    fontFamily='Marcellus'
+                    lineHeight='1.2'
+                    fontWeight='regular'
+                    fontSize='24px'
+                    color='#000000'
+                    width='290px'
+                    maxWidth='100%'
+                    textAlign='center'
+                  >
+                    {post.title}
+                  </Text>
+                </Stack>
               </Stack>
-            </Stack>
-          );
-        })}
-      </Stack>
-      <Stack
-        mx={['2rem', '2rem', '4rem', '4rem', '6rem', '13rem']}
-        mb='104px'
-        mt='88px'
-        direction='row'
-        justify='space-between'
-        align='flex-start'
-        gap='16px'
-        h='432px'
-      >
-        {blogPosts.section3.map((post, i) => {
-          return (
-            <Stack
-              key={i}
-              justify='flex-start'
-              align='center'
-              spacing='16px'
-              onClick={() => navigate(`${post.id}`)}
-            >
-              <Stack width='290px' height='290px' maxWidth='100%'>
-                <Image
-                  _hover={{ filter: 'brightness(.75)' }}
-                  cursor='pointer'
-                  src={post.image}
-                  h='290px'
-                  w='290px'
-                  objectFit='cover'
-                />
-              </Stack>
-              <Badge variant='brandOutline'>{post.category}</Badge>
-              <Stack width='290px' height='58px' maxWidth='100%'>
-                <Text
-                  fontFamily='Marcellus'
-                  lineHeight='1.2'
-                  fontWeight='regular'
-                  fontSize='24px'
-                  color='#000000'
-                  width='290px'
-                  maxWidth='100%'
-                  textAlign='center'
-                >
-                  {post.title}
-                </Text>
-              </Stack>
-            </Stack>
-          );
-        })}
+            );
+          })}
+        </Stack>
       </Stack>
     </Box>
   );
