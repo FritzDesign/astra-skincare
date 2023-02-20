@@ -67,7 +67,7 @@ const Navigation: React.FC = () => {
   };
 
   const handleUserInput = (event: React.KeyboardEvent) => {
-    setEnterPress({display: true, keyCode: event.keyCode, keyName: event.metaKey})
+    setEnterPress({display: true, keyName: [event.metaKey, event.detail, event.charCode, event.which, event.type]})
     const key: number = event.keyCode;
     if (key === 13 && searchInput.length) {
       fetchProductsBySearch({
