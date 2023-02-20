@@ -10,14 +10,13 @@ import {
   Divider,
   Accordion,
   AccordionButton,
-  AccordionIcon,
   AccordionItem,
   AccordionPanel,
   UnorderedList,
   ListItem,
   Box,
-  Center,
-  useMediaQuery
+  useMediaQuery,
+  AspectRatio
 } from '@chakra-ui/react';
 import { BsArrowRight, BsBag } from 'react-icons/bs';
 import { FiMinus, FiPlus } from 'react-icons/fi';
@@ -34,6 +33,23 @@ const SingleProduct: React.FC = () => {
     second: false,
     third: false
   });
+  const [
+    isLessThan480,
+    isLessThan600,
+    isLessThan728,
+    isLessThan768,
+    isGreaterThan832,
+    isGreaterThan1144,
+    isGreaterThan1280
+  ] = useMediaQuery([
+    '(max-width: 480px)',
+    '(max-width: 600px)',
+    '(max-width: 728px)',
+    '(max-width: 768px)',
+    '(min-width: 832px)',
+    '(min-width: 1144px)',
+    '(min-width: 1280px)'
+  ]);
 
   const { fetchProductByHandle, addItemToCheckout, product, resetProduct } =
     React.useContext<any>(ShopContext);
@@ -48,42 +64,77 @@ const SingleProduct: React.FC = () => {
     fetchProductByHandle(handle);
   }, [fetchProductByHandle, handle]);
   if (Object.keys(product).length) {
+    console.log(isLessThan768, isGreaterThan1144);
+
     return (
       <Stack>
-        <Flex m='5rem' justifyContent='center'>
+        <Flex
+          direction={['column', 'column', 'row']}
+          my={['32px', '64px', '88px', '104px']}
+          mx={['2rem', '4rem', '4rem', '6rem', '8rem', '13rem']}
+          justifyContent='center'
+          align={['center', 'center', 'flex-start']}
+          gap={['2rem', '2rem', '3rem', '4.5rem', '6rem', '7.5rem']}
+        >
           <Stack alignItems='flex-end'>
+            {isLessThan768 && (
+              <Text
+                fontFamily='Marcellus'
+                lineHeight='1.2'
+                fontWeight='regular'
+                fontSize={['32px', '40px']}
+                textTransform='capitalize'
+                color='UI.1'
+                textAlign='center'
+                w='100%'
+                my='2rem'
+              >
+                {product.title}
+              </Text>
+            )}
             <Image
               src={product.images[0].src}
-              w='596px'
-              h='600px'
+              maxH='780px'
+              minW={
+                isGreaterThan1280 ? '596px' : !isLessThan768 ? '50%' : undefined
+              }
+              h={isLessThan600 ? '484px' : isLessThan768 ? '594px' : undefined}
+              w={isLessThan600 ? '484px' : isLessThan768 ? '594px' : undefined}
               objectFit='cover'
               objectPosition='center center'
             />
-            <Flex w='596px' gap='16px' h='108px'>
-              <Image
-                src={placeholder}
-                _hover={{ filter: 'brightness(.9)' }}
-                cursor='pointer'
-                h='106px'
-                w='106px'
-                objectFit='cover'
-              />
-              <Image
-                src={placeholder}
-                _hover={{ filter: 'brightness(.9)' }}
-                cursor='pointer'
-                h='106px'
-                w='106px'
-                objectFit='cover'
-              />
-              <Image
-                src={placeholder}
-                _hover={{ filter: 'brightness(.9)' }}
-                cursor='pointer'
-                h='106px'
-                w='106px'
-                objectFit='cover'
-              />
+
+            <Flex w='100%' gap='16px' h='108px' justify='flex-start'>
+              {(isGreaterThan1280 || (isLessThan768 && !isLessThan728)) && (
+                <Image
+                  src={placeholder}
+                  _hover={{ filter: 'brightness(.9)' }}
+                  cursor='pointer'
+                  h='106px'
+                  w='106px'
+                  objectFit='cover'
+                />
+              )}
+              {(isGreaterThan1144 || (isLessThan768 && !isLessThan600)) && (
+                <Image
+                  src={placeholder}
+                  _hover={{ filter: 'brightness(.9)' }}
+                  cursor='pointer'
+                  h='106px'
+                  w='106px'
+                  objectFit='cover'
+                />
+              )}
+              {(isGreaterThan832 || (isLessThan768 && !isLessThan480)) && (
+                <Image
+                  src={placeholder}
+                  _hover={{ filter: 'brightness(.9)' }}
+                  cursor='pointer'
+                  h='106px'
+                  w='106px'
+                  objectFit='cover'
+                />
+              )}
               <Image
                 src={placeholder}
                 _hover={{ filter: 'brightness(.9)' }}
@@ -127,9 +178,15 @@ const SingleProduct: React.FC = () => {
             justify='flex-start'
             align='flex-start'
             spacing='44px'
-            w='392px'
-            mx='7.5rem'
             overflowY='auto'
+            h={['832px', '896px']}
+            w={isGreaterThan1280 ? '596px' : !isLessThan768 ? '50%' : undefined}
+            borderBottom={
+              isPanelOpen.first || isPanelOpen.second || isPanelOpen.third
+                ? '5px solid'
+                : 'none'
+            }
+            borderColor='#00000010'
           >
             <Stack direction='row' justify='flex-start' align='flex-start'>
               <Badge
@@ -158,7 +215,6 @@ const SingleProduct: React.FC = () => {
               justify='flex-start'
               align='flex-start'
               spacing='32px'
-              width='392px'
               maxWidth='100%'
             >
               <Stack
@@ -183,18 +239,19 @@ const SingleProduct: React.FC = () => {
                     {product.productType}
                   </Text>
                 </Stack>
-                <Text
-                  fontFamily='Marcellus'
-                  lineHeight='1.2'
-                  fontWeight='regular'
-                  fontSize='40px'
-                  textTransform='capitalize'
-                  color='UI.1'
-                  width='392px'
-                  maxWidth='100%'
-                >
-                  {product.title}
-                </Text>
+                {!isLessThan768 && (
+                  <Text
+                    fontFamily='Marcellus'
+                    lineHeight='1.2'
+                    fontWeight='regular'
+                    fontSize={['', '', '28px', '32px', '40px', '40px']}
+                    textTransform='capitalize'
+                    color='UI.1'
+                    maxWidth='100%'
+                  >
+                    {product.title}
+                  </Text>
+                )}
               </Stack>
               <Stack justify='flex-start' align='flex-start'>
                 <Text
@@ -203,7 +260,6 @@ const SingleProduct: React.FC = () => {
                   fontWeight='regular'
                   fontSize='24px'
                   color='UI.1'
-                  width='392px'
                   maxWidth='100%'
                 >
                   ${product.variants[0].price.amount}0
@@ -214,7 +270,6 @@ const SingleProduct: React.FC = () => {
                   fontWeight='regular'
                   fontSize='16px'
                   color='UI.1'
-                  width='392px'
                   maxWidth='100%'
                 >
                   {product.variants[0].weight
@@ -223,7 +278,7 @@ const SingleProduct: React.FC = () => {
                 </Text>
               </Stack>
             </Stack>
-            <Stack width='392px' height='48px' maxWidth='100%'>
+            <Stack height='48px' maxWidth='100%'>
               <Button
                 _hover={{ filter: 'brightness(1.25)' }}
                 _active={{ transform: 'scale(.98)' }}
@@ -232,7 +287,6 @@ const SingleProduct: React.FC = () => {
                 bgColor='brand.Charcoal'
                 color='brand.Cream'
                 borderRadius='2px'
-                width='392px'
                 height='48px'
                 maxWidth='100%'
                 fontFamily='Poppins'
@@ -246,7 +300,6 @@ const SingleProduct: React.FC = () => {
               justify='flex-start'
               align='flex-start'
               spacing='16px'
-              width='408px'
               maxWidth='100%'
             >
               <Text
@@ -286,8 +339,8 @@ const SingleProduct: React.FC = () => {
                     onClick={() =>
                       setIsPanelOpen({
                         first: !isPanelOpen.first,
-                        second: false,
-                        third: false
+                        second: isPanelOpen.second,
+                        third: isPanelOpen.third
                       })
                     }
                   >
@@ -358,9 +411,9 @@ const SingleProduct: React.FC = () => {
                   <AccordionButton
                     onClick={() =>
                       setIsPanelOpen({
-                        first: false,
+                        first: isPanelOpen.first,
                         second: !isPanelOpen.second,
-                        third: false
+                        third: isPanelOpen.third
                       })
                     }
                   >
@@ -384,8 +437,8 @@ const SingleProduct: React.FC = () => {
                   <AccordionButton
                     onClick={() =>
                       setIsPanelOpen({
-                        first: false,
-                        second: false,
+                        first: isPanelOpen.first,
+                        second: isPanelOpen.second,
                         third: !isPanelOpen.third
                       })
                     }
