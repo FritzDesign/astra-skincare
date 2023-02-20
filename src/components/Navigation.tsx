@@ -11,11 +11,13 @@ import {
   Box,
   Center,
   Slide,
-  SlideFade
+  SlideFade,
+  InputGroup,
+  Button
 } from '@chakra-ui/react';
 import { BsPerson, BsSearch } from 'react-icons/bs';
 import { IoBagOutline } from 'react-icons/io5';
-import { HiOutlineMenu } from 'react-icons/hi';
+import { HiArrowRight, HiOutlineMenu } from 'react-icons/hi';
 import { AiOutlineCaretDown, AiOutlineCaretUp } from 'react-icons/ai';
 import { FiX } from 'react-icons/fi';
 import logo from '../assets/astra-logo.png';
@@ -38,11 +40,6 @@ const Navigation: React.FC = () => {
   const [isSearchOpen, setIsSearchOpen] = React.useState(false);
   const [searchInput, setSearchInput] = React.useState<string>('');
   const [cartItemQty, setCartItemQty] = React.useState('0');
-  const [enterPress, setEnterPress] = React.useState<any>({
-    display: false,
-    keyCode: 0,
-    keyName: ''
-  });
 
   const {
     openCart,
@@ -66,10 +63,7 @@ const Navigation: React.FC = () => {
     }
   };
 
-  const handleUserInput = (e: React.KeyboardEvent) => {
-    const key = e.key
-    setEnterPress({display: true, keyName: key})
-    
+  const handleUserInput = (key: string) => {
     if (key == 'Enter' && searchInput.length) {
       fetchProductsBySearch({
         query: `title:${searchInput}*`,
@@ -138,13 +132,6 @@ const Navigation: React.FC = () => {
         zIndex={1001}
         onMouseEnter={showNav ? () => handleShowNav() : undefined}
       >
-        {enterPress.display && (
-          <Box id='testing' pos='absolute' bottom='0%' left='50%'>
-            {enterPress.keyCode}
-            {' | v1 | '}
-            {enterPress.keyName}
-          </Box>
-        )}
         <Box
           id='show nav'
           pos='fixed'
@@ -426,7 +413,7 @@ const Navigation: React.FC = () => {
                 onChange={(e: React.SyntheticEvent) =>
                   setSearchInput((e.target as HTMLInputElement).value)
                 }
-                onKeyDown={(e: React.KeyboardEvent) => handleUserInput(e)}
+                onKeyDown={(e: React.KeyboardEvent) => handleUserInput(e.key)}
               />
             </FMC_Component>
           )) ||
@@ -453,19 +440,35 @@ const Navigation: React.FC = () => {
                 bgColor='brand.Cream'
                 onBlur={() => handleSearchToggle(isSearchOpen)}
               >
-                <Input
-                  id='nav-search-input'
-                  value={searchInput}
-                  placeholder='search'
-                  borderRadius='0px'
-                  bgColor='white'
-                  focusBorderColor='UI.4'
-                  borderStyle='inset'
-                  onChange={(e: React.SyntheticEvent) =>
-                    setSearchInput((e.target as HTMLInputElement).value)
-                  }
-                  onKeyDown={(e: React.KeyboardEvent) => handleUserInput(e)}
-                />
+                <InputGroup
+                  borderBottom='1px solid'
+                  borderTop='1px solid'
+                  borderColor='UI.4'
+                >
+                  <Input
+                    id='nav-search-input'
+                    value={searchInput}
+                    placeholder='search'
+                    borderRadius='0px'
+                    bgColor='white'
+                    focusBorderColor='UI.4'
+                    borderTop='none'
+                    borderBottom='none'
+                    borderStyle='inset'
+                    onChange={(e: React.SyntheticEvent) =>
+                      setSearchInput((e.target as HTMLInputElement).value)
+                    }
+                    onKeyDown={(e: React.KeyboardEvent) =>
+                      handleUserInput(e.key)
+                    }
+                  />
+                  <Button
+                    bgColor='brand.Cream'
+                    onClick={() => handleUserInput('Enter')}
+                  >
+                    <Icon as={HiArrowRight} />
+                  </Button>
+                </InputGroup>
               </FMC_Component>
             ))}
         </AnimatePresence>
