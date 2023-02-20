@@ -140,7 +140,7 @@ const Navigation: React.FC = () => {
         {enterPress.display && (
           <Box id='testing' pos='absolute' bottom='0%' left='50%'>
             {enterPress.keyCode}
-            {' | '}
+            {' | v1 | '}
             {enterPress.keyName}
           </Box>
         )}
