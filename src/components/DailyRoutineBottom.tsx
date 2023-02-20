@@ -1,9 +1,10 @@
 // @ts-nocheck
 import * as React from 'react';
 import { Stack, Text, Button, Image, AspectRatio } from '@chakra-ui/react';
-
-import placeholder from '../assets/astra-card-ph.png';
 import { useInView } from 'framer-motion';
+
+import lgImg from '../assets/Lifestyle/daily-routine-bottom-image-lg.jpg';
+import smImg from '../assets/Lifestyle/daily-routine-bottom-image-sm.jpg';
 
 export const DailyRoutineBottom: React.FC = () => {
   const imageRef = React.useRef(null);
@@ -93,21 +94,23 @@ export const DailyRoutineBottom: React.FC = () => {
         pos='relative'
         align='center'
         justify='center'
-        p='32px'
+        pt='4rem'
+        h='fit-content'
+        pr='6rem'
         w={['80%', '80%', '80%', '50%', '40%']}
       >
         <Image
-          src={placeholder}
+          src={lgImg}
           w='100%'
           maxH='500px'
           objectFit='cover'
           border='1px solid black'
         />
         <Image
-          src={placeholder}
+          src={smImg}
           pos='absolute'
-          top={['65%', '65%', '65%', '-10%', '-5%']}
-          right={['10%', '10%', '10%', '15%']}
+          top={['65%', '65%', '65%', '-10%', '0%']}
+          right={['10%', '10%', '10%', '20%']}
           borderRadius='50%'
           h={['120px', '160px', '160px', '120px', '204px']}
           w={['120px', '160px', '160px', '120px', '204px']}

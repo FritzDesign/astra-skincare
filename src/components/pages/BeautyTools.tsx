@@ -9,14 +9,13 @@ import {
   SkeletonText
 } from '@chakra-ui/react';
 import ProductMenu from '../ProductsMenu';
-import { useContext, useEffect, useRef } from 'react';
+import { useContext, useEffect} from 'react';
 import { ShopContext } from '../../context/ShopContext';
-import { useInView } from 'framer-motion';
 
 import { Product as ProductInterface } from '../../models/API';
 
 import heroBackdrop from '../../assets/Products/products-hero-backdrop.png';
-import heroImage from '../../assets/Products/bt-hero-img.png';
+import heroImage from '../../assets/Products/beauty-tools-hero.png';
 import heroFb from '../../assets/Products/bt-hero-img-fb.jpg';
 import Product from '../Product';
 

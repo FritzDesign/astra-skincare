@@ -1,10 +1,10 @@
 // @ts-nocheck
 import * as React from 'react';
 import { Stack, Text, Button, Image, AspectRatio } from '@chakra-ui/react';
-
-import placeholder from '../assets/astra-card-ph.png';
-import FMC_Component from '../animations/defaults';
 import { useInView } from 'framer-motion';
+
+import lgImg from '../assets/Lifestyle/daily-routine-top-image-lg.jpg'
+import smImg from '../assets/Lifestyle/daily-routine-top-image-sm.jpg'
 
 export const DailyRoutineTop: React.FC = () => {
   const imageRef = React.useRef(null);
@@ -35,15 +35,16 @@ export const DailyRoutineTop: React.FC = () => {
         h={['80%', '80%', '80%', '80%', '100%']}
       >
         <Image
-          src={placeholder}
+          src={lgImg}
           ml={['0rem', '0rem', '0rem', '6rem']}
           w={['100%', '100%', '100%', '60%']}
           maxH='400px'
+          objectPosition='top center'
           objectFit='cover'
           border='1px solid black'
         />
         <Image
-          src={placeholder}
+          src={smImg}
           pos='absolute'
           bottom={['8%', '6%', '10%', '0%']}
           right={['10%', '10%', '10%', '15%']}
