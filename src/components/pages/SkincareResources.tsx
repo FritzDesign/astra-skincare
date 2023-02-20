@@ -124,7 +124,7 @@ const SkincareResources: React.FC = () => {
         justify='space-between'
         align='flex-start'
         gap='16px'
-        h='432px'
+        // h='432px'
       >
         {blogPosts.section1.map((post, i) => {
           return (
@@ -174,8 +174,13 @@ const SkincareResources: React.FC = () => {
         h='432px'
         bgColor='brand.Cream'
       >
-        <Stack width={['280px', '280px', '494px']}>
-          <Image src={BlogPosts[7].image} maxH='432px' objectFit='cover' />
+        <Stack>
+          <Image
+            src={BlogPosts[7].image}
+            h='432px'
+            w='588px'
+            objectFit='cover'
+          />
         </Stack>
 
         <Stack
