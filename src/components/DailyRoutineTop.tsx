@@ -3,8 +3,8 @@ import * as React from 'react';
 import { Stack, Text, Button, Image, AspectRatio } from '@chakra-ui/react';
 import { useInView } from 'framer-motion';
 
-import lgImg from '../assets/Lifestyle/daily-routine-top-image-lg.jpg'
-import smImg from '../assets/Lifestyle/daily-routine-top-image-sm.jpg'
+import lgImg from '../assets/Lifestyle/daily-routine-top-image-lg.jpg';
+import smImg from '../assets/Lifestyle/daily-routine-top-image-sm.jpg';
 
 export const DailyRoutineTop: React.FC = () => {
   const imageRef = React.useRef(null);
@@ -13,7 +13,9 @@ export const DailyRoutineTop: React.FC = () => {
   return (
     <Stack
       id='container'
-      p='64px'
+      px={['1.5rem', '0px', '0px', '128px']}
+      pb={['0px', '0px', '0px', '64px']}
+      pt={['2rem', '2rem', '3rem', '7.5rem']}
       flexDir={['column', 'column', 'column', 'row']}
       justify={[
         'space-between',
@@ -46,8 +48,8 @@ export const DailyRoutineTop: React.FC = () => {
         <Image
           src={smImg}
           pos='absolute'
-          bottom={['8%', '6%', '10%', '0%']}
-          right={['10%', '10%', '10%', '15%']}
+          bottom={['0%', '6%', '10%', '0%']}
+          right={['0%', '10%', '10%', '15%']}
           borderRadius='50%'
           h={['120px', '160px', '200px', '160px', '204px']}
           w={['120px', '160px', '200px', '160px', '204px']}
@@ -58,7 +60,7 @@ export const DailyRoutineTop: React.FC = () => {
         justify='flex-start'
         align='flex-start'
         spacing='32px'
-        width={['90%', '90%', '90%', '50%']}
+        width={['100%', '90%', '90%', '50%']}
         h='100%'
         pl={['0rem', '5rem']}
         pt={['0px', '0px', '0px', '56px']}
@@ -74,6 +76,7 @@ export const DailyRoutineTop: React.FC = () => {
             color='UI.1'
             mt='1rem'
             alignSelf='stretch'
+            textAlign={['center', 'center', 'left']}
           >
             build a daily routine
           </Text>
@@ -87,6 +90,7 @@ export const DailyRoutineTop: React.FC = () => {
           opacity='0.8'
           alignSelf='stretch'
           w={['100%', '540px']}
+          textAlign={['center', 'center', 'left']}
         >
           It might be very tempting to rush into expanding your routine. Maybe
           you'll hope that adding more products will help improve your skin

@@ -102,7 +102,7 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
           transition={{ delay: 0.5, duration: 0.5 }}
           _active={{ transform: 'scale(0.98)' }}
           mt='32px'
-          p={['6px 18px', '6px 18px', '10.5px 24px']}
+          p={['10.5px 24px', '10.5px 24px', '10.5px 24px']}
           borderRadius='.375rem'
           size='lg'
           fontWeight={['500', '600']}

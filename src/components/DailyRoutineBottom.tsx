@@ -13,7 +13,7 @@ export const DailyRoutineBottom: React.FC = () => {
   return (
     <Stack
       id='container'
-      px={['0px', '0px', '0px', '128px']}
+      px={['1.5rem', '0px', '0px', '128px']}
       pb={['0px', '0px', '0px', '64px']}
       pt={['0px', '0px', '0px', '16px']}
       flexDir={['column-reverse', 'column-reverse', 'column-reverse', 'row']}
@@ -35,11 +35,10 @@ export const DailyRoutineBottom: React.FC = () => {
         justify={['center', 'center', 'center', 'flex-start']}
         align={['center', 'center', 'center', 'flex-start']}
         spacing='56px'
-        width={['90%', '80%', '80%', '40%']}
+        width={['100%', '80%', '80%', '40%']}
         mt={['1rem', '1rem', '6rem']}
       >
         <Stack
-          p='1rem 4rem 4rem 4rem'
           justify='flex-start'
           align='flex-start'
           spacing='5px'
@@ -51,6 +50,7 @@ export const DailyRoutineBottom: React.FC = () => {
             justify='flex-start'
             align='center'
             spacing='32px'
+            w='100%'
           >
             <Text
               fontFamily='Marcellus'
@@ -59,6 +59,10 @@ export const DailyRoutineBottom: React.FC = () => {
               fontSize='32px'
               color='brand.Navy'
               pb='32px'
+            w='100%'
+
+              textAlign={['center', 'center', 'right']}
+
             >
               How to Get Started
             </Text>
@@ -71,13 +75,14 @@ export const DailyRoutineBottom: React.FC = () => {
             pb='3rem'
           >
             <Text
-              fontFamily='Inter'
+              fontFamily='Poppins'
               lineHeight='1.5'
               fontWeight='medium'
               fontSize='18px'
               color='UI.2'
               opacity='0.8'
               flex='1'
+              textAlign={['center', 'center', 'right']}
             >
               Knowing your skin type may be helpful for figuring out what
               products to add. Skin type is not an exact science, and your
@@ -96,8 +101,8 @@ export const DailyRoutineBottom: React.FC = () => {
         justify='center'
         pt='4rem'
         h='fit-content'
-        pr='6rem'
-        w={['80%', '80%', '80%', '50%', '40%']}
+        pr={['0rem', '0rem', '6rem']}
+        w={['100%', '80%', '80%', '50%', '40%']}
       >
         <Image
           src={lgImg}
@@ -109,8 +114,8 @@ export const DailyRoutineBottom: React.FC = () => {
         <Image
           src={smImg}
           pos='absolute'
-          top={['65%', '65%', '65%', '-10%', '0%']}
-          right={['10%', '10%', '10%', '20%']}
+          top={['15%', '65%', '65%', '-10%', '0%']}
+          right={['0%', '10%', '10%', '20%']}
           borderRadius='50%'
           h={['120px', '160px', '160px', '120px', '204px']}
           w={['120px', '160px', '160px', '120px', '204px']}

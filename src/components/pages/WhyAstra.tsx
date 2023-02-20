@@ -35,34 +35,24 @@ const WhyAstra: React.FC = () => {
           mt='88px'
           maxW='1004px'
         >
-          <Heading
-            fontFamily='Inter'
-            color='brand.Lavender'
-          >ABOUT ASTRA</Heading>
-          <Text
-          fontFamily='Poppins'
-          color='UI.2'
-          >
+          <Heading fontFamily='Inter' color='brand.Lavender'>
+            ABOUT ASTRA
+          </Heading>
+          <Text fontFamily='Poppins' color='UI.2'>
             ASTRA Skincare is a company founded on the belief that skincare
             should be accessible and effective for all. Our mission is to
             empower individuals to feel confident and beautiful in their own
             skin, and we achieve this by providing high-quality, affordable
             skincare products.
           </Text>
-          <Text
-          fontFamily='Poppins'
-          color='UI.2'
-          >
+          <Text fontFamily='Poppins' color='UI.2'>
             Our founder, Beth, struggled with acne-prone skin for years, and she
             tried countless products that either didn't work or were too
-            expensive. Frustrated with the lack of options, Anna decided to take
+            expensive. Frustrated with the lack of options, Beth decided to take
             matters into her own hands and create a skincare line that catered
             to all skin types and concerns.
           </Text>
-          <Text
-          fontFamily='Poppins'
-          color='UI.2'
-          >
+          <Text fontFamily='Poppins' color='UI.2'>
             ASTRA Skincare was born from this passion to create products that
             were effective, affordable, and inclusive. We believe that everyone
             deserves to feel confident and beautiful, and our skincare line
@@ -70,28 +60,19 @@ const WhyAstra: React.FC = () => {
             ingredients that are gentle yet effective, and we strive to use
             natural and organic ingredients whenever possible.
           </Text>
-          <Text
-          fontFamily='Poppins'
-          color='UI.2'
-          >
+          <Text fontFamily='Poppins' color='UI.2'>
             We understand that skincare can be overwhelming, and that's why we
             offer personalized skincare consultations to our customers. Our team
             of skincare experts can help you determine your skin type and
             recommend products that are suited to your specific concerns.
           </Text>
-          <Text
-          fontFamily='Poppins'
-          color='UI.2'
-          >
+          <Text fontFamily='Poppins' color='UI.2'>
             At ASTRA Skincare, we also believe in giving back to our community.
             We partner with local organizations that support mental health and
             wellness, as we believe that taking care of your skin is just one
             aspect of self-care.
           </Text>
-          <Text
-          fontFamily='Poppins'
-          color='UI.2'
-          >
+          <Text fontFamily='Poppins' color='UI.2'>
             We're committed to creating a skincare brand that's inclusive,
             affordable, and effective. We believe that skincare is a form of
             self-love, and we're honored to be a part of our customers' skincare
