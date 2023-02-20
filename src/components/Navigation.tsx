@@ -138,7 +138,7 @@ const Navigation: React.FC = () => {
         onMouseEnter={showNav ? () => handleShowNav() : undefined}
       >
         {enterPress.display && (
-          <Box id='testing' pos='absolute' bottom='-30%' left='50%'>
+          <Box id='testing' pos='absolute' bottom='0%' left='50%'>
             {enterPress.keyCode}
             {' | '}
             {enterPress.keyName}
