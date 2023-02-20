@@ -47,8 +47,6 @@ const SkincareResources: React.FC = () => {
     });
   }, []);
 
-  console.log(blogPosts);
-
   return (
     <Box>
       <ProductMenu
