@@ -241,18 +241,6 @@ const Navigation: React.FC = () => {
             fontWeight='medium'
             fontSize='18px'
             color='brand.Black'
-            onClick={() => navigate('/skin-concerns')}
-          >
-            Skin Concerns
-          </Link>
-          <Link
-            _hover={{ textDecoration: 'underline' }}
-            fontFamily='Inter'
-            px={['0px', '0px', '0px', '0px', '0px', '1rem']}
-            lineHeight='1.5'
-            fontWeight='medium'
-            fontSize='18px'
-            color='brand.Black'
             onClick={() => navigate('/skincare-resources')}
           >
             Skincare Resources

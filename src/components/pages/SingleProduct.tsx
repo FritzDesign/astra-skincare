@@ -51,8 +51,13 @@ const SingleProduct: React.FC = () => {
     '(min-width: 1280px)'
   ]);
 
-  const { fetchProductByHandle, fetchCollectionByHandle, addItemToCheckout, product, resetProduct } =
-    React.useContext<any>(ShopContext);
+  const {
+    fetchProductByHandle,
+    fetchCollectionByHandle,
+    addItemToCheckout,
+    product,
+    resetProduct
+  } = React.useContext<any>(ShopContext);
 
   React.useEffect(() => {
     window.scrollTo({
@@ -98,8 +103,25 @@ const SingleProduct: React.FC = () => {
               minW={
                 isGreaterThan1280 ? '596px' : !isLessThan768 ? '50%' : undefined
               }
-              h={isLessThan600 ? '484px' : isLessThan768 ? '594px' : undefined}
-              w={isLessThan600 ? '484px' : isLessThan768 ? '594px' : undefined}
+              maxW='596px'
+              h={
+                isGreaterThan1280
+                  ? '600px'
+                  : isLessThan600
+                  ? '484px'
+                  : isLessThan768
+                  ? '594px'
+                  : undefined
+              }
+              w={
+                isGreaterThan1280
+                  ? '600px'
+                  : isLessThan600
+                  ? '484px'
+                  : isLessThan768
+                  ? '594px'
+                  : undefined
+              }
               objectFit='cover'
               objectPosition='center center'
             />

@@ -26,7 +26,6 @@ const ContactUs: React.FC = () => {
       left: 0,
       behavior: 'smooth'
     });
-    // fetchCollectionByHandle('skin-concerns');
   }, []);
 
   return (

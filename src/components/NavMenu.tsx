@@ -58,12 +58,6 @@ const NavMenu: React.FC = () => {
             </MenuItem>
             <MenuItem
               alignSelf='stretch'
-              onClick={() => handleSelect('/skin-concerns')}
-            >
-              Skin Concerns
-            </MenuItem>
-            <MenuItem
-              alignSelf='stretch'
               onClick={() => handleSelect('/skincare-resources')}
             >
               Skincare Resources
