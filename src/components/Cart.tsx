@@ -1,92 +1,152 @@
 import * as React from 'react';
-import * as Chakra from '@chakra-ui/react';
+import {
+  Flex,
+  Image,
+  Drawer,
+  Text,
+  Button,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  DrawerHeader,
+  DrawerBody,
+  DrawerFooter,
+  Stack
+} from '@chakra-ui/react';
 import * as ReactIcons from 'react-icons/md';
 import { ShopContext } from '../context/ShopContext';
-import Button from './Button';
+import { Navigate, useNavigate } from 'react-router';
 
 const Cart: React.FC = () => {
-  const {
-    isCartOpen,
-    closeCart,
-    checkout,
-    removeLineItem,
-    themeColor2,
-    accentColor1
-  } = React.useContext<any>(ShopContext);
+  const { isCartOpen, closeCart, checkout, removeLineItem } =
+    React.useContext<any>(ShopContext);
 
+  const navigate = useNavigate();
+
+  const handleViewProducts = () => {
+    closeCart();
+    navigate('/skincare-products');
+  };
 
   return (
-    <>
-      <Chakra.Drawer isOpen={isCartOpen} placement='right' onClose={closeCart}>
-        <Chakra.DrawerOverlay />
-        <Chakra.DrawerContent bgColor='brand.Cream'>
-          <Chakra.DrawerCloseButton />
-          <Chakra.DrawerHeader>Your Cart</Chakra.DrawerHeader>
-          <Chakra.DrawerBody>
-            {checkout?.lineItems?.length ? (
-              checkout.lineItems.map((item: any) => {
-                return (
-                  <Chakra.Grid
-                    textAlign='center'
-                    alignItems='center'
-                    templateColumns='repeat(4, 1fr)'
-                    gap={1}
-                    key={item.id}
-                  >
-                    <Chakra.GridItem colSpan={4}>
-                      <Chakra.Flex justifyContent='center'>
-                        <Chakra.Text fontWeight='bold'>
-                          {item.title}
-                        </Chakra.Text>
-                      </Chakra.Flex>
-                    </Chakra.GridItem>
-                    <Chakra.Flex>
-                      <Chakra.Image src={item.variant.image.src} />
-                    </Chakra.Flex>
-                    <Chakra.Flex justifyContent='center'>
-                      <Chakra.Text>${item.variant.price.amount}0</Chakra.Text>
-                    </Chakra.Flex>
-                    <Chakra.Flex justifyContent='center'>
-                      <Chakra.Text>x{item.quantity}</Chakra.Text>
-                    </Chakra.Flex>
-                    <Chakra.Flex justifyContent='flex-end'>
-                      <Chakra.Icon
-                        w={30}
-                        h={30}
-                        cursor='pointer'
-                        as={ReactIcons.MdClose}
-                        onClick={() => removeLineItem(item.id)}
-                      />
-                    </Chakra.Flex>
-                  </Chakra.Grid>
-                );
-              })
-            ) : (
-              <Chakra.Flex h='100%' alignItems='center' justifyContent='center'>
-                <Chakra.Text fontWeight='bold'>No Items In Cart</Chakra.Text>
-              </Chakra.Flex>
-            )}
-          </Chakra.DrawerBody>
+    <Drawer
+      isOpen={isCartOpen}
+      placement='right'
+      onClose={closeCart}
+      autoFocus={false}
+    >
+      <DrawerOverlay />
+      <DrawerContent bgColor='brand.Cream'>
+        <DrawerCloseButton
+          color='brand.Charcoal'
+          fontSize='14px'
+          mt='4px'
+          mr='4px'
+        />
+        <DrawerHeader
+          color='brand.Charcoal'
+          py='1rem'
+          fontFamily='Poppins'
+          fontSize='16px'
+          fontWeight='400'
+          borderBottom='1px solid'
+          borderColor='UI.4'
+        >
+          Your Cart ({checkout?.lineItems?.length})
+        </DrawerHeader>
+        <DrawerBody>
+          {checkout?.lineItems?.length ? (
+            checkout.lineItems.map((item: any) => {
+              return (
+                <Flex my='1rem' maxH='80px' w='100%'>
+                  <Image
+                    src={item.variant.image.src}
+                    minH='80px'
+                    minW='80px'
+                    h='80px'
+                    w='80px'
+                    objectFit='cover'
+                  />
+                  <Stack ml='1rem' w='100%'>
+                    <Text
+                      color='brand.Charcoal'
+                      fontSize='14px'
+                      fontFamily='Poppins'
+                    >
+                      {item.title}
+                    </Text>
+                    <Stack
+                      mt='0px !important'
+                      justifyContent='space-between'
+                      h='100%'
+                    >
+                      <Flex justify='space-between' mt='0px !important'>
+                        <Text color='UI.2' fontSize='12px'>
+                          ${item.variant.price.amount}0
+                        </Text>
 
-          <Chakra.DrawerFooter justifyContent='space-between'>
-            {checkout?.totalPrice && +checkout.totalPrice.amount ? (
-              <>
-                <Chakra.Text>
-                  {'$' + checkout.totalPrice.amount + '0'}
-                </Chakra.Text>
-                <Button
-                  text='Checkout'
-                  textColor={accentColor1}
-                  bgColor={themeColor2}
-                  size={{ w: '10rem' }}
-                  onClick={() => (window.location.href = checkout.webUrl)}
-                />
-              </>
-            ) : null}
-          </Chakra.DrawerFooter>
-        </Chakra.DrawerContent>
-      </Chakra.Drawer>
-    </>
+                        <Text fontFamily='Poppins' color='UI.2' fontSize='12px'>
+                          Qty:{' '}
+                          {item.quantity < 10
+                            ? '0' + item.quantity
+                            : item.quantity < 99
+                            ? '99+'
+                            : item.quantity}
+                        </Text>
+                      </Flex>
+                      <Text
+                        _hover={{ bgColor: 'UI.6' }}
+                        cursor='pointer'
+                        color='brand.Charcoal'
+                        pb='2px'
+                        px='1px'
+                        borderBottom='1px solid'
+                        w='fit-content'
+                        fontSize='12px'
+                        mt='0px !important'
+                        onClick={() => removeLineItem(item.id)}
+                      >
+                        Remove
+                      </Text>
+                    </Stack>
+                  </Stack>
+                </Flex>
+              );
+            })
+          ) : (
+            <Flex h='100%' alignItems='flex-start' justifyContent='center'>
+              <Text fontFamily='Poppins' fontWeight='bold'>
+                No Items In Cart
+              </Text>
+            </Flex>
+          )}
+        </DrawerBody>
+
+        <DrawerFooter
+          justifyContent='space-between'
+          borderTop='1px solid'
+          borderColor='UI.4'
+        >
+          {checkout?.totalPrice && +checkout.totalPrice.amount ? (
+            <Button
+              variant='brandPrimary'
+              w='100%'
+              onClick={() => (window.location.href = checkout.webUrl)}
+            >
+              Checkout
+            </Button>
+          ) : (
+            <Button
+              variant='brandPrimary'
+              w='100%'
+              onClick={handleViewProducts}
+            >
+              View Products
+            </Button>
+          )}
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
   );
 };
 

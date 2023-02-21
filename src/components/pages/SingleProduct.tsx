@@ -60,17 +60,19 @@ const SingleProduct: React.FC = () => {
   } = React.useContext<any>(ShopContext);
 
   React.useEffect(() => {
+    resetProduct();
+    fetchProductByHandle(handle);
+  }, [fetchProductByHandle, handle]);
+
+  React.useEffect(() => {
     window.scrollTo({
       top: 127,
       left: 0,
       behavior: 'smooth'
     });
-    resetProduct();
-    fetchProductByHandle(handle);
-  }, [fetchProductByHandle, handle]);
-  if (Object.keys(product).length) {
-    console.log(isLessThan768, isGreaterThan1144);
+  }, []);
 
+  if (Object.keys(product).length) {
     return (
       <Stack>
         <Flex
