@@ -83,7 +83,7 @@ const SingleProduct: React.FC = () => {
           align={['center', 'center', 'flex-start']}
           gap={['2rem', '2rem', '3rem', '4.5rem', '6rem', '7.5rem']}
         >
-          <Stack alignItems='flex-end'>
+          <Stack alignItems='flex-end' w={isLessThan768 ? '100%' : undefined}>
             {isLessThan768 && (
               <Text
                 fontFamily='Marcellus'
@@ -103,7 +103,7 @@ const SingleProduct: React.FC = () => {
               src={product.images[0].src}
               maxH='780px'
               minW={
-                isGreaterThan1280 ? '596px' : !isLessThan768 ? '50%' : undefined
+                isGreaterThan1280 ? '596px' : !isLessThan768 ? '50%' : '100%'
               }
               maxW='596px'
               h={
@@ -115,24 +115,25 @@ const SingleProduct: React.FC = () => {
                   ? '484px'
                   : isLessThan768
                   ? '594px'
-                  : '384px'
+                  : ['', '', '524px', '524px']
               }
-              w={
-                isGreaterThan1280
-                  ? '600px'
-                  : isLessThan480
-                  ? '300px'
-                  : isLessThan600
-                  ? '484px'
-                  : isLessThan768
-                  ? '594px'
-                  : '384px'
-              }
+              w='100%'
               objectFit='cover'
               objectPosition='center center'
             />
 
-            <Flex w='100%' gap='16px' h='108px' justify='flex-start'>
+            <Flex
+              w='100%'
+              gap='16px'
+              h='108px'
+              justify={[
+                'flex-start',
+                'flex-start',
+                'flex-start',
+                'flex-start',
+                'space-between'
+              ]}
+            >
               {(isGreaterThan1280 || (isLessThan768 && !isLessThan728)) && (
                 <Image
                   src={placeholder}
@@ -143,7 +144,7 @@ const SingleProduct: React.FC = () => {
                   objectFit='cover'
                 />
               )}
-              {(isGreaterThan1144 || (isLessThan768 && !isLessThan600)) && (
+              {(isGreaterThan1280 || (isLessThan768 && !isLessThan600)) && (
                 <Image
                   src={placeholder}
                   _hover={{ filter: 'brightness(.9)' }}

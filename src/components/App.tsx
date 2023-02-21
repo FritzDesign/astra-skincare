@@ -17,6 +17,7 @@ import ShippingAndPolicies from './pages/ShippingAndPolicies';
 import Disclaimer from './pages/Disclaimer';
 import Search from './pages/Search';
 import BlogPost from './pages/BlogPost';
+import LoginRegister from './pages/LoginRegister';
 import Blogs from './pages/Blogs';
 
 const App: React.FC = () => {
@@ -27,6 +28,7 @@ const App: React.FC = () => {
       <Cart />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/login' element={<LoginRegister />} />
         <Route path='/skincare-products' element={<SkincareProducts />} />
         <Route path='/skincare-products/:handle' element={<SingleProduct />} />
         <Route path='/beauty-tools' element={<BeautyTools />} />
