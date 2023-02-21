@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Button,
   Icon,
@@ -83,13 +83,26 @@ const LoginRegister: React.FC = () => {
     }
   };
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 127,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }, [formType]);
+
   if (formType === 'success') {
     return (
-      <Flex minW='100vw' minH='100vh' align='center' justify='center'>
+      <Flex
+        minW='100vw'
+        minH={['', '', '100vh']}
+        align='center'
+        justify='center'
+      >
         <Stack
           bgColor='brand.Cream'
           w='552px'
-          p='5rem'
+          p={['2.5rem', '5rem']}
           gap='2.5rem'
           align='center'
         >
@@ -122,7 +135,12 @@ const LoginRegister: React.FC = () => {
 
   if (formType === 'register') {
     return (
-      <Flex minW='100vw' minH='100vh' align='center' justify='center'>
+      <Flex
+        minW='100vw'
+        minH={['', '', '100vh']}
+        align='center'
+        justify='center'
+      >
         <Stack
           bgColor='brand.Cream'
           w='552px'
@@ -139,7 +157,7 @@ const LoginRegister: React.FC = () => {
             Create An Account
           </Heading>
           <Stack gap='1.5rem' fontFamily='Poppins'>
-            <Flex gap='1.5rem'>
+            <Flex gap='1.5rem' direction={['column', 'column', 'row']}>
               <Input
                 id='reg-fn'
                 className='reg-input'
@@ -262,7 +280,12 @@ const LoginRegister: React.FC = () => {
     );
   } else {
     return (
-      <Flex minW='100vw' minH='100vh' align='center' justify='center'>
+      <Flex
+        minW='100vw'
+        minH={['', '', '100vh']}
+        align='center'
+        justify='center'
+      >
         <Stack
           bgColor='brand.Cream'
           w='552px'
