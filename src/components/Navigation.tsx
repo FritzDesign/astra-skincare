@@ -347,6 +347,7 @@ const Navigation: React.FC = () => {
               h='28px'
               color='brand.Black'
               cursor='pointer'
+              onClick={() => navigate('/login')}
             ></Icon>
             <Stack pos='relative' onClick={openCart}>
               <Icon

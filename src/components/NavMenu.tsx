@@ -82,9 +82,24 @@ const NavMenu: React.FC = () => {
             borderColor='UI.4'
           />
           <MenuGroup>
-            <MenuItem alignSelf='stretch'>My Account</MenuItem>
-            <MenuItem alignSelf='stretch'>Order History</MenuItem>
-            <MenuItem alignSelf='stretch'>Rewards</MenuItem>
+            <MenuItem
+              alignSelf='stretch'
+              onClick={() => handleSelect('/login')}
+            >
+              My Account
+            </MenuItem>
+            <MenuItem
+              alignSelf='stretch'
+              onClick={() => handleSelect('/login')}
+            >
+              Order History
+            </MenuItem>
+            <MenuItem
+              alignSelf='stretch'
+              onClick={() => handleSelect('/login')}
+            >
+              Rewards
+            </MenuItem>
           </MenuGroup>
           <Divider
             m={['20px 0px', '20px 0px', '0px 20px', '0px 20px']}
