@@ -14,6 +14,7 @@ const brandOutline = defineStyle({
 const brandSolid = defineStyle({
   border: '1px solid',
   borderColor: 'brand.Charcoal',
+  bgColor: 'brand.Charcoal',
   color: 'brand.Cream',
   borderRadius: '2px',
   fontFamily: 'Poppins',

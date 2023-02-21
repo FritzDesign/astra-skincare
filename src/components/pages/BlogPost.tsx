@@ -2,10 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Box, Button, Flex, Heading, Stack, Text } from '@chakra-ui/react';
 import ProductMenu from '../ProductsMenu';
 import { useNavigate, useParams } from 'react-router';
-import {
-  BlogPost as BlogPostInterface,
-  getBlogPostById
-} from '../../db/BlogPosts';
+import { getBlogPostById } from '../../db/BlogPosts';
+import { BlogPost as BlogPostInterface } from '../../models/Props';
 
 import heroBackdrop from '../../assets/Products/products-hero-backdrop.png';
 import heroImage from '../../assets/Products/bt-hero-img.png';
@@ -18,15 +16,15 @@ const BlogPost: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (postId) {
+      setPost(getBlogPostById(+postId));
+    }
     window.scrollTo({
       top: 127,
       left: 0,
       behavior: 'smooth'
     });
-    if (postId) {
-      setPost(getBlogPostById(+postId));
-    }
-  }, []);
+  }, [post]);
 
   if (!post) {
     return (

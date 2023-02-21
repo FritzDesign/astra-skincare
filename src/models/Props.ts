@@ -89,3 +89,12 @@ export interface ScaleableGalleryCardProps {
   price: string;
   weight: number;
 }
+
+export interface BlogPost {
+  id: number;
+  title: string;
+  author: string;
+  image: string;
+  category: string;
+  paragraphs: string[];
+}

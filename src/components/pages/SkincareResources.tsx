@@ -1,24 +1,20 @@
 import {
   Box,
-  Grid,
   Stack,
   Image,
   Text,
-  Divider,
-  Skeleton,
-  SkeletonText,
   Button,
-  Badge,
   useMediaQuery
 } from '@chakra-ui/react';
 import ProductMenu from '../ProductsMenu';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import heroBackdrop from '../../assets/Products/products-hero-backdrop.png';
 import heroImage from '../../assets/Lifestyle/skincare-resources-hero.png';
-import placeholder from '../../assets/astra-card-ph.png';
-import BlogPosts, { BlogPost } from '../../db/BlogPosts';
+import BlogPosts from '../../db/BlogPosts';
 import { useNavigate } from 'react-router';
+import BlogCard from '../BlogCard';
+import { BlogPost } from '../../models/Props';
 
 interface BlogPostsState {
   section1: BlogPost[];
@@ -144,39 +140,17 @@ const SkincareResources: React.FC = () => {
             if (isLessThan1056 && i === 2) return;
             if (isLessThan1656 && i === 3) return;
             return (
-              <Stack
-                key={i}
-                justify='flex-start'
-                align='center'
-                spacing='16px'
-                onClick={() => navigate(`${post.id}`)}
-              >
-                <Stack width='290px' height='290px' maxWidth='100%'>
-                  <Image
-                    _hover={{ filter: 'brightness(.75)' }}
-                    cursor='pointer'
-                    src={post.image}
-                    h='290px'
-                    w='290px'
-                    objectFit='cover'
-                  />
-                </Stack>
-                <Badge variant='brandOutline'>{post.category}</Badge>
-                <Stack width='290px' height='58px' maxWidth='100%'>
-                  <Text
-                    fontFamily='Marcellus'
-                    lineHeight='1.2'
-                    fontWeight='regular'
-                    fontSize='24px'
-                    color='#000000'
-                    width='290px'
-                    maxWidth='100%'
-                    textAlign='center'
-                  >
-                    {post.title}
-                  </Text>
-                </Stack>
-              </Stack>
+              <React.Fragment key={i}>
+                <BlogCard
+                  key={post.id}
+                  id={post.id}
+                  title={post.title}
+                  author={post.author}
+                  category={post.category}
+                  image={post.image}
+                  paragraphs={post.paragraphs}
+                />
+              </React.Fragment>
             );
           })}
         </Stack>
@@ -253,39 +227,17 @@ const SkincareResources: React.FC = () => {
             if (isLessThan1056 && i === 2) return;
             if (isLessThan1656 && i === 3) return;
             return (
-              <Stack
-                key={i}
-                justify='flex-start'
-                align='center'
-                spacing='16px'
-                onClick={() => navigate(`${post.id}`)}
-              >
-                <Stack width='290px' height='290px' maxWidth='100%'>
-                  <Image
-                    _hover={{ filter: 'brightness(.75)' }}
-                    cursor='pointer'
-                    src={post.image}
-                    h='290px'
-                    w='290px'
-                    objectFit='cover'
-                  />
-                </Stack>
-                <Badge variant='brandOutline'>{post.category}</Badge>
-                <Stack width='290px' height='58px' maxWidth='100%'>
-                  <Text
-                    fontFamily='Marcellus'
-                    lineHeight='1.2'
-                    fontWeight='regular'
-                    fontSize='24px'
-                    color='#000000'
-                    width='290px'
-                    maxWidth='100%'
-                    textAlign='center'
-                  >
-                    {post.title}
-                  </Text>
-                </Stack>
-              </Stack>
+              <React.Fragment key={i}>
+                <BlogCard
+                  key={post.id}
+                  id={post.id}
+                  title={post.title}
+                  author={post.author}
+                  category={post.category}
+                  image={post.image}
+                  paragraphs={post.paragraphs}
+                />
+              </React.Fragment>
             );
           })}
         </Stack>
@@ -302,39 +254,17 @@ const SkincareResources: React.FC = () => {
             if (isLessThan1056 && i === 2) return;
             if (isLessThan1656 && i === 3) return;
             return (
-              <Stack
-                key={i}
-                justify='flex-start'
-                align='center'
-                spacing='16px'
-                onClick={() => navigate(`${post.id}`)}
-              >
-                <Stack width='290px' height='290px' maxWidth='100%'>
-                  <Image
-                    _hover={{ filter: 'brightness(.75)' }}
-                    cursor='pointer'
-                    src={post.image}
-                    h='290px'
-                    w='290px'
-                    objectFit='cover'
-                  />
-                </Stack>
-                <Badge variant='brandOutline'>{post.category}</Badge>
-                <Stack width='290px' height='58px' maxWidth='100%'>
-                  <Text
-                    fontFamily='Marcellus'
-                    lineHeight='1.2'
-                    fontWeight='regular'
-                    fontSize='24px'
-                    color='#000000'
-                    width='290px'
-                    maxWidth='100%'
-                    textAlign='center'
-                  >
-                    {post.title}
-                  </Text>
-                </Stack>
-              </Stack>
+              <React.Fragment key={i}>
+                <BlogCard
+                  key={post.id}
+                  id={post.id}
+                  title={post.title}
+                  author={post.author}
+                  category={post.category}
+                  image={post.image}
+                  paragraphs={post.paragraphs}
+                />
+              </React.Fragment>
             );
           })}
         </Stack>

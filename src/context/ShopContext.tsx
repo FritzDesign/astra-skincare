@@ -1,6 +1,7 @@
 //@ts-nocheck
 import * as React from 'react';
 import Client from 'shopify-buy';
+import BlogPosts from '../db/BlogPosts';
 import { Product } from '../models/API';
 import { encodeQuery, sortByPrice, sortBySelection } from '../utils/helpers';
 export const ShopContext = React.createContext({});
@@ -15,11 +16,12 @@ export class ShopProvider extends React.Component {
     product: {},
     products: [],
     totalProducts: 0,
+    hasMoreProducts: true,
+    blogPosts: [],
     checkout: {},
     isCartOpen: false,
     isMenuOpen: false,
-    isLoading: false,
-    hasMoreProducts: true
+    isLoading: false
   };
 
   componentDidMount() {
@@ -142,6 +144,14 @@ export class ShopProvider extends React.Component {
     this.setState({ product: {} });
   };
 
+  getBlogPostsByCategory = (category: string) => {
+    if (category === 'all') {
+      return this.setState({ blogPosts: BlogPosts})
+    }
+    const bp = BlogPosts.filter((post) => post.category == category);
+    this.setState({ blogPosts: bp });
+  };
+
   closeCart = () => {
     this.setState({ isCartOpen: false });
   };
@@ -169,6 +179,7 @@ export class ShopProvider extends React.Component {
           fetchProductByHandle: this.fetchProductByHandle,
           resetProduct: this.resetProduct,
           fetchProductsBySearch: this.fetchProductsBySearch,
+          getBlogPostsByCategory: this.getBlogPostsByCategory,
           addItemToCheckout: this.addItemToCheckout,
           removeLineItem: this.removeLineItem,
           openCart: this.openCart,
