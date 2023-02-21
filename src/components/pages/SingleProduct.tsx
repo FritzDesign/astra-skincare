@@ -58,7 +58,6 @@ const SingleProduct: React.FC = () => {
   } = React.useContext<any>(ShopContext);
 
   React.useEffect(() => {
-    console.log(product);
     resetProduct();
     fetchProductByHandle(handle);
   }, [fetchProductByHandle, handle]);
