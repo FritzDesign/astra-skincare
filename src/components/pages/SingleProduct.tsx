@@ -39,7 +39,6 @@ const SingleProduct: React.FC = () => {
     isLessThan728,
     isLessThan768,
     isGreaterThan832,
-    isGreaterThan1144,
     isGreaterThan1280
   ] = useMediaQuery([
     '(max-width: 480px)',
@@ -47,7 +46,6 @@ const SingleProduct: React.FC = () => {
     '(max-width: 728px)',
     '(max-width: 768px)',
     '(min-width: 832px)',
-    '(min-width: 1144px)',
     '(min-width: 1280px)'
   ]);
 
@@ -60,6 +58,7 @@ const SingleProduct: React.FC = () => {
   } = React.useContext<any>(ShopContext);
 
   React.useEffect(() => {
+    console.log(product);
     resetProduct();
     fetchProductByHandle(handle);
   }, [fetchProductByHandle, handle]);
@@ -72,7 +71,7 @@ const SingleProduct: React.FC = () => {
     });
   }, []);
 
-  if (Object.keys(product).length) {
+  if (product && Object.keys(product).length) {
     return (
       <Stack>
         <Flex

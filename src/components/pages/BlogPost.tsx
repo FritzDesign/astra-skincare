@@ -27,11 +27,9 @@ const BlogPost: React.FC = () => {
   const [post, setPost] = useState<BlogPostInterface>();
   const [userInput, setUserInput] = useState<string>();
   const [topArticles, setTopArticles] = useState<BlogPostInterface[]>([]);
-  const {
-    getBlogPostsByCategory,
-    fetchCollectionByHandle,
-    fetchAllProducts
-  } = useContext<any>(ShopContext);
+  const [isBadgeHovered, setIsBadgeHovered] = useState(false);
+  const { getBlogPostsByCategory, fetchCollectionByHandle, fetchAllProducts } =
+    useContext<any>(ShopContext);
   const { postId } = useParams();
 
   const navigate = useNavigate();
@@ -161,7 +159,9 @@ const BlogPost: React.FC = () => {
           <Badge
             w='fit-content'
             cursor='pointer'
-            variant='brandOutline'
+            variant={isBadgeHovered ? 'brandSolid' : 'brandOutline'}
+            onMouseEnter={() => setIsBadgeHovered(true)}
+            onMouseLeave={() => setIsBadgeHovered(false)}
             onClick={() => handleCategoryNavigate()}
           >
             {post.category}

@@ -28,8 +28,6 @@ const App: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log('running');
-    
     if (
       window.location.href.includes('resources/') &&
       !window.location.href.includes('blogs')
