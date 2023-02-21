@@ -114,7 +114,7 @@ const SkincareResources: React.FC = () => {
             <Button
               size='lg'
               variant='brandPrimary'
-              onClick={() => navigate(`${BlogPosts[5].id}`)}
+              onClick={() => navigate(`/skincare-resources/${BlogPosts[5].id}`)}
             >
               Read More
             </Button>
@@ -208,7 +208,7 @@ const SkincareResources: React.FC = () => {
             <Button
               size='lg'
               variant='brandPrimary'
-              onClick={() => navigate(`${BlogPosts[7].id}`)}
+              onClick={() => navigate(`/skincare-resources/${BlogPosts[7].id}`)}
             >
               Read More
             </Button>

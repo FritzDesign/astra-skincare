@@ -10,9 +10,7 @@ const BlogCard: React.FC<BlogPost> = ({ id, title, category, image }) => {
 
   const navigate = useNavigate();
 
-  const handleCategoryNavigate = () => {
-    console.log('tst');
-    
+  const handleCategoryNavigate = () => {   
     getBlogPostsByCategory(category);
     navigate('/skincare-resources/blogs');
   };
@@ -27,7 +25,7 @@ const BlogCard: React.FC<BlogPost> = ({ id, title, category, image }) => {
           h='290px'
           w='290px'
           objectFit='cover'
-          onClick={() => navigate(`${id}`)}
+          onClick={() => navigate(`/skincare-resources/${id}`)}
           onMouseEnter={() => setIsHovered({ image: true, category: false })}
           onMouseLeave={() => setIsHovered({ image: false, category: false })}
         />

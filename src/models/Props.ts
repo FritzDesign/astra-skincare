@@ -96,5 +96,6 @@ export interface BlogPost {
   author: string;
   image: string;
   category: string;
+  tagline?: string;
   paragraphs: string[];
 }

@@ -1,4 +1,4 @@
-import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
+import { defineStyle, defineStyleConfig } from '@chakra-ui/react';
 
 const brandPrimary = defineStyle({
   bgColor: 'brand.Charcoal',
@@ -6,13 +6,15 @@ const brandPrimary = defineStyle({
   fontFamily: 'Poppins', // change the appearance of the border
   borderRadius: '2px', // remove the border radius
   fontWeight: 'regular', // change the font weight
+  px: '24px',
+  py: '12px',
   _hover: {
     filter: 'brightness(1.25)'
   },
   _active: {
     transform: 'scale(.98)'
   }
-})
+});
 
 const brandSecondary = defineStyle({
   bgColor: 'transparent',
@@ -22,6 +24,8 @@ const brandSecondary = defineStyle({
   fontFamily: 'Poppins', // change the appearance of the border
   borderRadius: '2px', // remove the border radius
   fontWeight: 'regular', // change the font weight
+  px: '24px',
+  py: '12px',
   _hover: {
     bgColor: 'brand.Charcoal',
     color: 'brand.Cream'
@@ -29,8 +33,8 @@ const brandSecondary = defineStyle({
   _active: {
     transform: 'scale(.98)'
   }
-})
+});
 
 export const buttonTheme = defineStyleConfig({
-  variants: { brandPrimary, brandSecondary },
-})
+  variants: { brandPrimary, brandSecondary }
+});

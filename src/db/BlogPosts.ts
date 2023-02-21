@@ -16,6 +16,7 @@ import bpImg13 from '../assets/Blogs/blog-13-img.jpg';
 import bpImg14 from '../assets/Blogs/blog-14-img.jpg';
 import bpImg15 from '../assets/Blogs/blog-15-img.jpg';
 import bpImg16 from '../assets/Blogs/blog-16-img.jpg';
+import bpImg17 from '../assets/Blogs/blog-17-img.jpg';
 
 // Fully generated and translated to JS by ChatGPT :)
 
@@ -26,6 +27,7 @@ const BlogPosts: BlogPost[] = [
     author: 'Jane Smith',
     image: bpImg1,
     category: 'Skincare',
+    tagline: 'Consistency is crucial',
     paragraphs: [
       "Having a consistent skincare routine is crucial for maintaining healthy, glowing skin. It's important to establish a routine that works for your skin type and stick to it, as inconsistency can lead to a variety of issues such as breakouts, dryness, and premature aging. A consistent routine should include cleansing, toning, moisturizing, and protecting your skin from the sun. With a little patience and dedication, you can achieve your dream skin goals and enjoy the many benefits of a consistent skincare routine.",
       "To start a consistent skincare routine, it's important to identify your skin type and choose products that work well for you. A gentle cleanser, exfoliant, moisturizer, and sunscreen should be staples in your routine. Make sure to use products that are formulated for your skin type and avoid harsh ingredients that can cause irritation. It's also important to be patient and give your skin time to adjust to new products. Consistency is key, so stick to your routine and don't skip steps, even on days when you're tired or in a rush.",
@@ -38,6 +40,7 @@ const BlogPosts: BlogPost[] = [
     author: 'Sarah Johnson',
     image: bpImg2,
     category: 'Cleansers',
+    tagline: 'Cleanse your way to healthy, clear skin.',
     paragraphs: [
       "Choosing the right cleanser for your skin type is essential for achieving healthy, clear skin. There are many types of cleansers available, including gel, foam, cream, and oil cleansers. It's important to choose one that matches your skin type and concerns. If you have oily skin, a gel or foam cleanser might work best for you, while those with dry skin may benefit from a cream or oil cleanser. Additionally, those with sensitive skin should look for a fragrance-free and gentle cleanser. Remember, cleansing is the first and most important step in any skincare routine, so take the time to find the right one for you.",
       "Cleansing is an essential step in any skincare routine, but choosing the right cleanser for your skin type can be tricky. The first step in choosing a cleanser is to identify your skin type. If you have oily skin, look for a cleanser that is designed to control oil production and minimize shine. For dry skin, choose a gentle, hydrating cleanser that won't strip your skin of its natural oils. Combination skin may benefit from a gel or foaming cleanser that can balance oil production in the T-zone while hydrating drier areas of the face.",
@@ -50,6 +53,7 @@ const BlogPosts: BlogPost[] = [
     author: 'Emily Lee',
     image: bpImg3,
     category: 'Exfoliating',
+    tagline: 'Revive Your Skin with the Right Exfoliant',
     paragraphs: [
       "Exfoliating is an essential step in any skincare routine, as it helps to remove dead skin cells and reveal a brighter, more radiant complexion. There are two types of exfoliants: physical and chemical. Physical exfoliants use a scrub or brush to manually slough off dead skin cells, while chemical exfoliants use ingredients like alpha-hydroxy acids (AHAs) or beta-hydroxy acids (BHAs) to dissolve dead skin cells. It's important to choose an exfoliant that matches your skin type and concerns. Those with sensitive skin should opt for a gentle exfoliant, while those with oily skin may benefit from a stronger chemical exfoliant.",
       "When choosing an exfoliator, it's important to consider your skin type and choose a product that is gentle and effective. For sensitive skin, a gentle physical exfoliant or a mild chemical exfoliant, such as lactic acid or mandelic acid, may be more suitable. For oily or acne-prone skin, salicylic acid can help to unclog pores and prevent breakouts. For mature skin, alpha hydroxy acids, such as glycolic acid, can help to boost collagen production and improve skin texture.",
@@ -63,6 +67,7 @@ const BlogPosts: BlogPost[] = [
     author: 'Rachel Lee',
     image: bpImg4,
     category: 'Tips',
+    tagline: 'Hydrate and Nourish Your Skin with the Right Moisturizer',
     paragraphs: [
       "Moisturizing is an essential step in any skincare routine, as it helps to hydrate and nourish the skin. There are many types of moisturizers available, including creams, lotions, gels, and oils. It's important to choose one that matches your skin type and concerns. If you have dry skin, a thicker cream or oil might work best for you, while those with oily skin may benefit from a lightweight gel moisturizer. Additionally, those with sensitive skin should look for a fragrance-free and gentle moisturizer. Remember, moisturizing is key to maintaining healthy, plump skin, so don't skip this important step.",
       "Moisturizers are a vital component of any skincare routine, as they help to keep the skin hydrated and plump. With so many different types of moisturizers on the market, it can be overwhelming to choose the right one for your skin type and concerns. The first step in selecting a moisturizer is to identify your skin type. If you have oily skin, look for a lightweight, oil-free moisturizer that won't clog your pores. If you have dry skin, opt for a richer, creamier formula that will provide intense hydration. Combination skin may benefit from a moisturizer that is lightweight yet hydrating.",
@@ -76,6 +81,7 @@ const BlogPosts: BlogPost[] = [
     author: 'Hannah Chen',
     image: bpImg5,
     category: 'Skincare',
+    tagline: 'Why Serums are the Key to Transforming Your Skin',
     paragraphs: [
       "Serums are an essential step in any skincare routine, as they are packed with potent ingredients that can transform your skin. There are many types of serums available, including those for brightening, hydrating, and anti-aging. It's important to choose one that matches your skin type and concerns. If you have dry skin, a hydrating serum might work best for you, while those with dark spots may benefit from a brightening serum. Additionally, those with sensitive skin should look for a fragrance-free and gentle serum. Remember, serums can be expensive, but they are worth the investment if you want to see a real difference in your skin.",
       'Another advantage of serums is their lightweight, fast-absorbing texture. Because they are formulated with smaller molecules than moisturizers, serums are able to penetrate deeper into the skin, delivering their active ingredients where they are needed most. This means that you can achieve results more quickly and with less product than you would with a heavier moisturizer.',
@@ -89,6 +95,7 @@ const BlogPosts: BlogPost[] = [
     author: 'Lily Wang',
     image: bpImg6,
     category: 'Sunscreen',
+    tagline: 'Are You Ready For Summer?',
     paragraphs: [
       "Sun protection is a crucial aspect of any skincare routine. Exposure to the sun's harmful UV rays can cause premature aging, hyperpigmentation, and even skin cancer. To protect your skin from the sun, it is essential to wear sunscreen daily. When choosing a sunscreen, look for one with an SPF of 30 or higher and broad-spectrum protection to protect against both UVA and UVB rays. Make sure to apply sunscreen at least 15 minutes before going outside and reapply every two hours or after swimming or sweating.",
       "In addition to sunscreen, there are other ways to protect your skin from the sun. Wear protective clothing, such as hats and long-sleeved shirts, and seek shade during the hottest part of the day. Avoid tanning beds and limit your time spent in direct sunlight. If you do get sunburned, apply aloe vera or a cool compress to soothe the skin. Remember, sun damage can occur even on cloudy or overcast days, so it's important to make sun protection a daily habit. By incorporating these sun protection tips into your routine, you can keep your skin healthy and protected from the sun's harmful rays.",
@@ -106,6 +113,8 @@ const BlogPosts: BlogPost[] = [
     author: 'Ava Chen',
     image: bpImg7,
     category: 'Beauty Tools',
+    tagline:
+      'The must-haves and the can-do-withouts - how to invest your money wisely',
     paragraphs: [
       'There is no denying that the beauty industry is inundated with an endless array of products and tools. While some of them are indeed game-changers, not every single tool is worth the investment. From skincare to makeup to haircare, it is important to understand which beauty tools are worth the splurge and which ones you can do without.',
       "Beauty tools can be a great addition to any skincare routine, but it's important to choose wisely to avoid wasting money on products that don't work. There are many types of beauty tools available, including facial rollers, cleansing brushes, and LED light therapy devices. Facial rollers can be great for reducing puffiness and promoting lymphatic drainage, while cleansing brushes can help to deeply cleanse your skin and remove impurities. LED light therapy devices can be beneficial for reducing inflammation and promoting collagen production. When choosing a beauty tool, consider your skin type and concerns, as well as the reviews and reputation of the product.",
@@ -121,6 +130,8 @@ const BlogPosts: BlogPost[] = [
     author: 'Mia Lee',
     image: bpImg8,
     category: 'Routines',
+    tagline:
+      'Nourish your skin with natural ingredients while avoiding harmful toxins.',
     paragraphs: [
       'Clean beauty has become increasingly popular in recent years, and for good reason. A clean beauty routine focuses on using products that are free from harmful ingredients like parabens, sulfates, and synthetic fragrances. By avoiding these ingredients, you can reduce your exposure to toxins and potentially harmful chemicals, which can have long-term effects on your skin and overall health. When choosing clean beauty products, look for those that are certified by reputable organizations like EWG or COSMOS. Additionally, consider making your own skincare products using natural ingredients like honey, avocado, and aloe vera.',
       'As we become more aware of the impact of environmental toxins on our health, many people are turning to clean beauty products. These are products made with natural and organic ingredients that are free from synthetic chemicals and harmful toxins. While a clean beauty routine may seem like just another trend, it is actually a crucial step in maintaining healthy skin and overall wellbeing.',
@@ -136,6 +147,8 @@ const BlogPosts: BlogPost[] = [
     author: 'Sophia Park',
     image: bpImg9,
     category: 'Routines',
+    tagline:
+      'Transform Your Skin: Tailor Your Skincare Routine to Your Lifestyle',
     paragraphs: [
       'Whether you prefer a morning or night skincare routine depends on your personal preferences and lifestyle. A morning routine should focus on protecting your skin from the sun and preparing it for the day ahead, while a night routine should focus on repairing and rejuvenating your skin while you sleep. A morning routine should include cleansing, toning, moisturizing, and sunscreen, while a night routine should include cleansing, toning, moisturizing, and a treatment like a serum or facial oil. Ultimately, the most important thing is to establish a consistent routine that works for your skin type and concerns.',
       'Skincare routines are essential for maintaining healthy and glowing skin. While many people swear by their morning routines, others prefer to stick to their nighttime rituals. But which one is right for you? Let’s take a closer look at the benefits of morning and night skincare routines.',
@@ -150,6 +163,8 @@ const BlogPosts: BlogPost[] = [
     author: 'Isabella Nguyen',
     image: bpImg10,
     category: 'Tips',
+    tagline:
+      'Clearing Up Acne: Tips and Tricks for a Smooth, Blemish-Free Complexion',
     paragraphs: [
       "Acne-prone skin can be frustrating to deal with, but there are many tips and tricks you can use to help clear up your skin. First, focus on using gentle, non-comedogenic products that won't clog your pores. It's also important to avoid touching your face and to regularly clean your phone, pillowcases, and makeup brushes to prevent the spread of bacteria. Consider incorporating ingredients like salicylic acid, benzoyl peroxide, and tea tree oil into your skincare routine to help clear up breakouts. Finally, remember to be patient and consistent in your skincare routine, as it can take time to see results.",
       "Firstly, it's important to be gentle with your skin. Harsh scrubs and abrasive products can actually make acne worse by irritating the skin and causing more inflammation. Instead, opt for gentle cleansers that won't strip the skin of its natural oils. Look for products with salicylic acid or benzoyl peroxide, which can help unclog pores and fight bacteria. It's also a good idea to avoid touching your face as much as possible, as this can spread bacteria and lead to more breakouts.",
@@ -164,6 +179,7 @@ const BlogPosts: BlogPost[] = [
     author: 'Jessica Kim',
     image: bpImg11,
     category: 'Tips',
+    tagline: 'Say Goodbye to Dry Skin with These Hydrating Tips',
     paragraphs: [
       "Dry skin can be uncomfortable and even painful, but there are steps you can take to keep your skin hydrated and healthy. First and foremost, make sure to drink plenty of water to hydrate your skin from the inside out. In terms of your skincare routine, use a gentle cleanser and avoid hot water, which can strip your skin of its natural oils. Incorporate a hydrating serum or oil into your routine, and use a rich moisturizer to seal in hydration. Consider using a humidifier in your home to add moisture to the air, especially during the dry winter months. Finally, don't forget to protect your skin from the sun, as sun damage can exacerbate dryness.",
       "First and foremost, make sure you're drinking enough water. Staying hydrated from the inside out is essential for healthy skin. Aim to drink at least eight glasses of water a day, and consider carrying a water bottle with you wherever you go. Not only will this help keep your skin moisturized, but it will also benefit your overall health.",
@@ -180,6 +196,7 @@ const BlogPosts: BlogPost[] = [
     author: 'Lily Chen',
     image: bpImg12,
     category: 'Exfoliating',
+    tagline: 'Glow Up with the Right Exfoliant for Your Skin Type',
     paragraphs: [
       'Exfoliation is an important step in any skincare routine, as it helps to remove dead skin cells and promote cell turnover. Regular exfoliation can help to improve the texture and tone of your skin, and even reduce the appearance of fine lines and wrinkles. There are two main types of exfoliants: physical and chemical. Physical exfoliants use particles like sugar or salt to physically scrub away dead skin cells, while chemical exfoliants use ingredients like alpha-hydroxy acids (AHAs) or beta-hydroxy acids (BHAs) to dissolve dead skin cells. When choosing an exfoliant, consider your skin type and concerns. Those with sensitive skin may prefer a gentle physical exfoliant, while those with oily or acne-prone skin may benefit from a chemical exfoliant.',
       'Firstly, exfoliating can help to remove the buildup of dead skin cells that can make your complexion appear dull and lackluster. By sloughing off these dead cells, you can reveal the fresh, healthy skin cells underneath, giving your skin a brighter, more youthful appearance. Regular exfoliation can also help to improve the texture of your skin, leaving it smoother and softer to the touch.',
@@ -194,6 +211,7 @@ const BlogPosts: BlogPost[] = [
     author: 'Emily Lee',
     image: bpImg13,
     category: 'Sunscreen',
+    tagline: "The Skincare Must-Have You Can't Afford to Skip",
     paragraphs: [
       "When it comes to skincare, there are a plethora of products out there that promise to improve your skin's health and appearance. However, there is one product that stands out as the most important of them all – sunscreen. While it may not seem as glamorous as some other skincare products, sunscreen is essential for protecting your skin from damage and keeping it healthy.",
       "Sunscreen is often overlooked in skincare routines, but it is perhaps the most important product you can use to protect your skin. Sun damage can cause premature aging, dark spots, and even skin cancer. It's important to use a broad-spectrum sunscreen with an SPF of at least 30 every day, even on cloudy days. Apply sunscreen generously to all exposed areas, and reapply every two hours or after sweating or swimming. Consider using a mineral-based sunscreen, which uses zinc oxide or titanium dioxide to physically block UV rays, rather than a chemical sunscreen, which can be irritating to sensitive skin.",
@@ -210,6 +228,7 @@ const BlogPosts: BlogPost[] = [
     author: 'Ava Chen',
     image: bpImg14,
     category: 'Serums',
+    tagline: 'Achieve Your Best Skin Yet with the Power of Serums',
     paragraphs: [
       'Serums are highly concentrated products that are designed to target specific skincare concerns. They often contain active ingredients like vitamin C, hyaluronic acid, or retinol, which can help to brighten, hydrate, or reduce the appearance of fine lines and wrinkles. Serums should be applied after cleansing and toning, but before moisturizing. Use a small amount and gently pat into your skin, allowing it to absorb fully before applying your moisturizer. When choosing a serum, consider your skin type and concerns, and look for products with high-quality, effective ingredients.',
       'Firstly, serums are formulated with high concentrations of active ingredients such as antioxidants, peptides, and hyaluronic acid, which are designed to penetrate deeper into the skin compared to other skincare products like moisturizers. This means they can deliver more noticeable and effective results in a shorter amount of time. By including a serum in your skincare routine, you can effectively tackle specific skin concerns such as fine lines, dullness, hyperpigmentation, and dryness.',
@@ -224,6 +243,7 @@ const BlogPosts: BlogPost[] = [
     author: 'James Kim',
     image: bpImg15,
     category: 'Skincare',
+    tagline: "Skincare Isn't Just for Women: A Guide to Basic Skincare for Men",
     paragraphs: [
       "Skincare is often associated with women, but it's important for men to take care of their skin as well. Men's skin tends to be thicker and oilier than women's skin, and they are also more prone to ingrown hairs and razor burn. A basic skincare routine for men should include cleansing, toning, and moisturizing. Consider using a gentle exfoliant to help prevent ingrown hairs and promote cell turnover. Men should also use a sunscreen every day to protect their skin from sun damage. When choosing skincare products, look for those that are formulated specifically for men's skin, and be consistent in your routine for best results.",
       'The skin is the largest organ of the body and acts as a barrier between the internal organs and the environment. Men, just like women, are exposed to environmental factors that can damage the skin, such as pollution, UV radiation, and harsh weather conditions. A good skincare routine helps to protect the skin from these environmental stressors, prevent premature aging, and keep the skin healthy.',
@@ -239,6 +259,7 @@ const BlogPosts: BlogPost[] = [
     author: 'Sarah Lee',
     image: bpImg16,
     category: 'Tips',
+    tagline: "Don't Let These Skincare Mistakes Sabotage Your Glow",
     paragraphs: [
       "Skincare is all about taking care of your skin and keeping it healthy, but there are certain habits that can actually damage your skin. One common mistake is over-exfoliating, which can strip your skin of its natural oils and cause irritation. Another mistake is using hot water when cleansing, which can also strip your skin and cause dryness. Using too many products can also be damaging, as it can overload your skin and cause breakouts or irritation. It's important to find a skincare routine that works for your skin type and stick to it. Finally, avoid picking at your skin or popping pimples, as this can lead to scarring and further breakouts. By being mindful of these common mistakes, you can help to keep your skin healthy and glowing.",
       "Taking care of our skin is essential, especially since it's the largest organ of our body. However, some common habits may cause damage to our skin, leaving it looking dull, dry, and prone to breakouts. Here are some skincare mistakes to avoid if you want to maintain healthy and beautiful skin.",
@@ -248,6 +269,22 @@ const BlogPosts: BlogPost[] = [
       'Using too many products - Using too many skincare products at once can be overwhelming for your skin. It can cause irritation, breakouts, and even allergic reactions. Stick to a simple skincare routine with a cleanser, moisturizer, and sunscreen. If you have specific skin concerns, consult a dermatologist before adding any new products to your routine.',
       "Ignoring your skin type - Everyone's skin is unique, and what works for one person may not work for another. Ignoring your skin type and using products that aren't suited for your skin can cause more harm than good. Determine your skin type and choose skincare products accordingly to achieve the best results.",
       'In conclusion, avoiding these common skincare mistakes can help you maintain healthy, beautiful skin. Remember to cleanse your face every night, limit your exfoliation, wear sunscreen, use a simple skincare routine, and choose products that suit your skin type. With consistent care and attention, you can achieve the healthy, glowing skin you deserve.'
+    ]
+  },
+  {
+    id: 17,
+    title: 'How to Go Vegan in Your Skincare Routine',
+    author: 'Emily Green',
+    image: bpImg17,
+    category: 'Tips',
+    tagline:
+      'Cruelty-Free Beauty: How to Transition to a Vegan Skincare Routine',
+    paragraphs: [
+      'Switching to a vegan skincare routine can be a great way to not only reduce your carbon footprint but also improve the health and appearance of your skin. However, it can be overwhelming to know where to start. Here are some tips on how to go vegan in your skincare routine.',
+      'Firstly, check the ingredients list. Look for products that are free from animal-derived ingredients such as honey, beeswax, lanolin, and collagen. Instead, opt for plant-based ingredients such as coconut oil, shea butter, and avocado oil. Many brands now proudly display a vegan logo on their packaging, making it easy for you to identify which products are vegan-friendly.',
+      'Secondly, switch to cruelty-free brands. Choose brands that do not test their products on animals, as animal testing is cruel and unnecessary. Many brands now offer a cruelty-free option and are certified by organizations such as Leaping Bunny and PETA.',
+      'Thirdly, make your own skincare products. You can easily make your own vegan skincare products using natural ingredients found in your kitchen. For example, a simple sugar scrub can be made by mixing sugar and coconut oil, while a moisturizing face mask can be made using mashed avocado and a few drops of jojoba oil.',
+      'In conclusion, going vegan in your skincare routine can be a simple and effective way to improve the health and appearance of your skin, while also being kinder to animals and the environment. By checking ingredients lists, choosing cruelty-free brands, and making your own products, you can create a vegan skincare routine that is effective, affordable, and ethical.'
     ]
   }
 ];

@@ -34,6 +34,7 @@ const Announcement: React.FC = () => {
       overflow='hidden'
       background='brand.Peri'
       pos='relative'
+      zIndex={5}
     >
       <Text
         fontFamily='Inter'

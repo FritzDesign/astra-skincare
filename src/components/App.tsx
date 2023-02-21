@@ -1,5 +1,7 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import { Box } from '@chakra-ui/react';
+import { useContext, useEffect, useState } from 'react';
+import { ShopContext } from '../context/ShopContext';
 import Cart from './Cart';
 import Footer from './Footer';
 import Navigation from './Navigation';
@@ -21,6 +23,23 @@ import LoginRegister from './pages/LoginRegister';
 import Blogs from './pages/Blogs';
 
 const App: React.FC = () => {
+  const [showAnkle, setShowAnkle] = useState(true);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    console.log('running');
+    
+    if (
+      window.location.href.includes('resources/') &&
+      !window.location.href.includes('blogs')
+    ) {
+      setShowAnkle(false);
+    } else {
+      setShowAnkle(true);
+    }
+  }, [navigate]);
+
   return (
     <Box className='App' maxW='100vw' overflowX='hidden'>
       <Announcement />
@@ -43,7 +62,7 @@ const App: React.FC = () => {
         <Route path='/disclaimer' element={<Disclaimer />} />
         <Route path='/search/*' element={<Search />} />
       </Routes>
-      <Ankle />
+      {showAnkle && <Ankle />}
       <Footer />
     </Box>
   );

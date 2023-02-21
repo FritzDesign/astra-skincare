@@ -50,10 +50,12 @@ const BeautyTools: React.FC = () => {
       />
       <Grid
         id='products-container'
+        mt='3rem'
         mx={['2rem', '2rem', '4rem', '4rem', '6rem', '8rem']}
         templateColumns={[
           'repeat(1, 1fr)',
           'repeat(1, 1fr)',
+          'repeat(2, 1fr)',
           'repeat(2, 1fr)',
           'repeat(2, 1fr)',
           'repeat(3, 1fr)'

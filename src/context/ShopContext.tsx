@@ -146,7 +146,7 @@ export class ShopProvider extends React.Component {
 
   getBlogPostsByCategory = (category: string) => {
     if (category === 'all') {
-      return this.setState({ blogPosts: BlogPosts})
+      return this.setState({ blogPosts: BlogPosts });
     }
     const bp = BlogPosts.filter((post) => post.category == category);
     this.setState({ blogPosts: bp });
