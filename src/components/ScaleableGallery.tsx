@@ -1,7 +1,7 @@
 import { Stack, Text, Icon, Link, Divider, Flex } from '@chakra-ui/react';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
-import { client } from '../context/ShopContext';
-import React, { useEffect, useRef, useState } from 'react';
+import { client, ShopContext } from '../context/ShopContext';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Product } from '../models/API';
 import ScaleableGalleryCard from './ScaleableGalleryCard';
@@ -20,10 +20,9 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
     left: true,
     right: false
   });
-
   const [galleryProducts, setGalleryProducts] = useState<Product[]>();
-
   const rightClickRef = useRef(0);
+  const { fetchCollectionByHandle } = useContext<any>(ShopContext);
 
   const navigate = useNavigate();
 
@@ -74,6 +73,11 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
     } else {
       setArrowDisabled({ right: false, left: false });
     }
+  };
+
+  const handleNavigate = () => {
+    fetchCollectionByHandle('skincare-products');
+    navigate(link!.navTo);
   };
 
   useEffect(() => {
@@ -129,7 +133,7 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
             fontFamily='Marcellus'
             lineHeight='1.4'
             fontWeight='regular'
-            fontSize={['28px','32px']}
+            fontSize={['28px', '32px']}
             color='brand.Charcoal'
           >
             {title}
@@ -147,7 +151,7 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
               textAlign='center'
               fontWeight='600'
               fontSize='14px'
-              onClick={() => navigate(link.navTo)}
+              onClick={handleNavigate}
             >
               {link.text}
             </Link>

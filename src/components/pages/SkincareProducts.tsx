@@ -86,6 +86,7 @@ const SkincareProducts: React.FC = () => {
       <Grid
         id='products-container'
         mt='3rem'
+        mb={['3rem', '3rem', '6.5rem']}
         mx={['2rem', '2rem', '4rem', '4rem', '6rem', '8rem']}
         templateColumns={[
           'repeat(1, 1fr)',

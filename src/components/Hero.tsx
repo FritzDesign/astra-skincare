@@ -4,13 +4,20 @@ import { useNavigate } from 'react-router';
 import { HeroProps } from '../models/Props';
 import FMC_Component from '../animations/defaults';
 import { useInView } from 'framer-motion';
+import { ShopContext } from '../context/ShopContext';
 
 const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
   const heroImage = React.useRef(null);
   const isInView = useInView(heroImage, {
     margin: '-40% 0% 0% 0%'
   });
+  const { fetchCollectionByHandle } = React.useContext<any>(ShopContext);
   const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    fetchCollectionByHandle('skincare-products');
+    navigate('/skincare-products');
+  };
 
   return (
     <Stack
@@ -110,7 +117,7 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
           color='UI.1'
           outline='2px solid transparent'
           fontSize={['1rem', '1rem', '1.125rem']}
-          onClick={() => navigate('/skincare-products')}
+          onClick={handleNavigate}
         >
           Shop Now
         </FMC_Component>
