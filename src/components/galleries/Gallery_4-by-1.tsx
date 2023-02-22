@@ -12,8 +12,7 @@ const Gallery4x1: React.FC = () => {
   const container = React.useRef(null);
   const cardRef = React.useRef(null);
   const isInView = useInView(container, {
-    once: true,
-    margin: '0% 0% -35% 0%'
+    once: true
   });
 
   return (
