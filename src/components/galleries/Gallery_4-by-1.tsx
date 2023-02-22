@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Stack, Text, Grid } from '@chakra-ui/react';
+import { Stack, Text, Grid, useMediaQuery } from '@chakra-ui/react';
 import { GalleryCard } from './GalleryCard';
 import card1 from '../../assets/Cards/Card1.png';
 import card2 from '../../assets/Cards/Card2.png';
@@ -9,6 +9,7 @@ import { useInView } from 'framer-motion';
 import FMC_Component from '../../animations/defaults';
 
 const Gallery4x1: React.FC = () => {
+  const [isGreaterThan480] = useMediaQuery(['(min-width: 480px)']);
   const container = React.useRef(null);
   const cardRef = React.useRef(null);
   const isInView = useInView(container, {
@@ -59,8 +60,12 @@ const Gallery4x1: React.FC = () => {
       >
         <GalleryCard image={card1} btnText='Cleansers' />
         <GalleryCard image={card2} btnText='Exfoliants' />
-        <GalleryCard image={card3} btnText='Moisturizers' />
-        <GalleryCard image={card4} btnText='Beauty Tools' />
+        {isGreaterThan480 && (
+          <>
+            <GalleryCard image={card3} btnText='Moisturizers' />
+            <GalleryCard image={card4} btnText='Beauty Tools' />
+          </>
+        )}
       </Grid>
     </Stack>
   );
