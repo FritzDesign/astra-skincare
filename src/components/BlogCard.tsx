@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Badge, Grid, Image, Stack, Text } from '@chakra-ui/react';
+import { Badge, Button, Grid, Image, Stack, Text } from '@chakra-ui/react';
 import { useNavigate } from 'react-router';
 import { BlogPost } from '../models/Props';
 import { ShopContext } from '../context/ShopContext';
@@ -10,14 +10,22 @@ const BlogCard: React.FC<BlogPost> = ({ id, title, category, image }) => {
 
   const navigate = useNavigate();
 
-  const handleCategoryNavigate = () => {   
+  const handleCategoryNavigate = () => {
     getBlogPostsByCategory(category);
     navigate('/skincare-resources/blogs');
   };
 
   return (
     <Stack justify='flex-start' align='center' spacing='16px'>
-      <Stack width='290px' height='290px' maxWidth='100%'>
+      <Stack
+        pos='relative'
+        width='290px'
+        height='290px'
+        maxWidth='100%'
+        onClick={() => navigate(`/skincare-resources/${id}`)}
+        onMouseEnter={() => setIsHovered({ image: true, category: false })}
+        onMouseLeave={() => setIsHovered({ image: false, category: false })}
+      >
         <Image
           _hover={{ filter: 'brightness(.75)' }}
           cursor='pointer'
@@ -25,10 +33,28 @@ const BlogCard: React.FC<BlogPost> = ({ id, title, category, image }) => {
           h='290px'
           w='290px'
           objectFit='cover'
-          onClick={() => navigate(`/skincare-resources/${id}`)}
-          onMouseEnter={() => setIsHovered({ image: true, category: false })}
-          onMouseLeave={() => setIsHovered({ image: false, category: false })}
         />
+        {isHovered.image && (
+          <Button
+            _hover={{
+              borderColor: 'brand.Charcoal',
+              bgColor: 'brand.Cream',
+              color: 'brand.Charcoal'
+            }}
+            _active={{ transform: 'scale(0.99)' }}
+            pos='absolute'
+            variant='outline'
+            colorScheme='blackAlpha'
+            color='white'
+            left='37%'
+            top='40%'
+            fontWeight='normal'
+            fontFamily='Poppins'
+            letterSpacing='1px'
+          >
+            View
+          </Button>
+        )}
       </Stack>
       <Badge
         cursor='pointer'
