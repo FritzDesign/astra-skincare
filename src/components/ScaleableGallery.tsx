@@ -195,7 +195,8 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
             if (
               handle === 'starry-night-serum-sample' ||
               handle === 'barrier-regeneration-moisturizer-kit' ||
-              handle === 'jade-crystal-roller'
+              handle === 'jade-crystal-roller' ||
+              handle === 'lunar-glow-sunscreen'
             ) {
               product.isNew = true;
             }

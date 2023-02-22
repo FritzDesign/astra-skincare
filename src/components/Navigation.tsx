@@ -118,7 +118,7 @@ const Navigation: React.FC = () => {
         w='100vw'
         left='0'
         top='0'
-        paddingX={['20px', '40px']}
+        px={['2rem', '2rem', '4rem', '4rem', '6rem', '8rem']}
         paddingY='16px'
         justifyContent='space-between'
         alignItems='center'

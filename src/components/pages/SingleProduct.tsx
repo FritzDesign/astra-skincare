@@ -224,17 +224,22 @@ const SingleProduct: React.FC = () => {
             borderColor='#00000010'
           >
             <Stack direction='row' justify='flex-start' align='flex-start'>
-              <Badge
-                variant='solid'
-                bgColor='brand.Charcoal'
-                color='brand.Cream'
-                fontWeight='400'
-                fontFamily='Poppins'
-                py='4px'
-                px='16px'
-              >
-                New
-              </Badge>
+              {(product.handle === 'starry-night-serum-sample' ||
+                product.handle === 'barrier-regeneration-moisturizer-kit' ||
+                product.handle === 'jade-crystal-roller' ||
+                product.handle === 'lunar-glow-sunscreen') && (
+                <Badge
+                  variant='solid'
+                  bgColor='brand.Charcoal'
+                  color='brand.Cream'
+                  fontWeight='400'
+                  fontFamily='Poppins'
+                  py='4px'
+                  px='16px'
+                >
+                  New
+                </Badge>
+              )}
               <Badge
                 variant='outline'
                 color='brand.Charcoal'

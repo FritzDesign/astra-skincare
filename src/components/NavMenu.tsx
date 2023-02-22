@@ -28,11 +28,11 @@ const NavMenu: React.FC = () => {
 
   return (
     <Stack
-      borderTop='2px solid'
+      borderTop='1px solid'
       borderBottom='2px solid'
       borderColor='UI.4'
       mt='20px'
-      bottom='-4px'
+      bottom='-1px'
       right='0px'
       w={['100vw', '100vw', '100vw', '80vw', '64vw']}
       pos='absolute'

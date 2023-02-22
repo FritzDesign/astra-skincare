@@ -64,6 +64,15 @@ const BeautyTools: React.FC = () => {
       >
         {products.length ? (
           products.map((product: ProductInterface, i: number) => {
+            const handle = product.handle;
+            if (
+              handle === 'starry-night-serum-sample' ||
+              handle === 'barrier-regeneration-moisturizer-kit' ||
+              handle === 'jade-crystal-roller' ||
+              handle === 'lunar-glow-sunscreen'
+            ) {
+              product.isNew = true;
+            }
             return (
               <Product
                 key={i}
@@ -71,6 +80,7 @@ const BeautyTools: React.FC = () => {
                 title={product.title}
                 handle={product.handle}
                 price={product.variants[0].price.amount}
+                isNew={product.isNew}
               />
             );
           })
