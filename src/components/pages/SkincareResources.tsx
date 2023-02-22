@@ -4,7 +4,8 @@ import {
   Image,
   Text,
   Button,
-  useMediaQuery
+  useMediaQuery,
+  Grid
 } from '@chakra-ui/react';
 import ProductMenu from '../ProductsMenu';
 import React, { useEffect, useState } from 'react';
@@ -28,12 +29,6 @@ const SkincareResources: React.FC = () => {
     section2: [],
     section3: []
   });
-
-  const [isLessThan1656, isLessThan1056, isLessThan672] = useMediaQuery([
-    '(max-width: 1656px)',
-    '(max-width: 1056px)',
-    '(max-width: 672px)'
-  ]);
 
   const navigate = useNavigate();
 
@@ -127,33 +122,29 @@ const SkincareResources: React.FC = () => {
             />
           </Stack>
         </Stack>
-        <Stack
-          mb='104px !important'
-          direction='row'
-          justify={isLessThan672 ? 'center' : 'space-between'}
-          align='flex-start'
-          gap='16px'
+        <Grid
+          templateColumns='repeat(4, 1fr)'
+          gap='1rem'
+          justifyItems='center'
+          overflowX='scroll'
+          pb='1rem'
+          mb='5rem !important'
           w='100%'
         >
-          {blogPosts.section1.map((post, i) => {
-            if (isLessThan672 && i === 1) return;
-            if (isLessThan1056 && i === 2) return;
-            if (isLessThan1656 && i === 3) return;
+          {blogPosts.section1.map((post) => {
             return (
-              <React.Fragment key={i}>
-                <BlogCard
-                  key={post.id}
-                  id={post.id}
-                  title={post.title}
-                  author={post.author}
-                  category={post.category}
-                  image={post.image}
-                  paragraphs={post.paragraphs}
-                />
-              </React.Fragment>
+              <BlogCard
+                key={post.id}
+                id={post.id}
+                title={post.title}
+                author={post.author}
+                category={post.category}
+                image={post.image}
+                paragraphs={post.paragraphs}
+              />
             );
           })}
-        </Stack>
+        </Grid>
         <Stack
           mb='104px !important'
           direction={['column', 'column', 'row']}
@@ -214,18 +205,16 @@ const SkincareResources: React.FC = () => {
             </Button>
           </Stack>
         </Stack>
-        <Stack
-          mb='104px !important'
-          direction='row'
-          justify={isLessThan672 ? 'center' : 'space-between'}
-          align='flex-start'
-          gap='16px'
+        <Grid
+          templateColumns='repeat(4, 1fr)'
+          gap='1rem'
+          justifyItems='center'
+          overflowX='scroll'
+          pb='1rem'
+          mb='5rem !important'
           w='100%'
         >
           {blogPosts.section2.map((post, i) => {
-            if (isLessThan672 && i === 1) return;
-            if (isLessThan1056 && i === 2) return;
-            if (isLessThan1656 && i === 3) return;
             return (
               <React.Fragment key={i}>
                 <BlogCard
@@ -240,19 +229,17 @@ const SkincareResources: React.FC = () => {
               </React.Fragment>
             );
           })}
-        </Stack>
-        <Stack
-          mb='104px !important'
-          direction='row'
-          justify={isLessThan672 ? 'center' : 'space-between'}
-          align='flex-start'
-          gap='16px'
+        </Grid>
+        <Grid
+          templateColumns='repeat(4, 1fr)'
+          gap='1rem'
+          justifyItems='center'
+          overflowX='scroll'
+          pb='1rem'
+          mb='5rem !important'
           w='100%'
         >
           {blogPosts.section3.map((post, i) => {
-            if (isLessThan672 && i === 1) return;
-            if (isLessThan1056 && i === 2) return;
-            if (isLessThan1656 && i === 3) return;
             return (
               <React.Fragment key={i}>
                 <BlogCard
@@ -267,7 +254,7 @@ const SkincareResources: React.FC = () => {
               </React.Fragment>
             );
           })}
-        </Stack>
+        </Grid>
       </Stack>
     </Box>
   );
