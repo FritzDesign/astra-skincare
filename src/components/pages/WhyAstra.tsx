@@ -28,7 +28,7 @@ const WhyAstra: React.FC = () => {
       />
       <Flex w='100%' justify='center'>
         <Stack
-          paddingX={['2rem', '3rem', '3rem', '0rem']}
+          mx={['2rem', '2rem', '4rem', '4rem', '6rem', '13rem']}
           justify='center'
           align='center'
           spacing='1.5rem'
@@ -83,7 +83,7 @@ const WhyAstra: React.FC = () => {
 
       <Flex w='100%' justify='center'>
         <Stack
-          mx={['2rem', '3rem', '3rem', '3rem', '4rem', '166px']}
+          mx={['2rem', '2rem', '4rem', '4rem', '6rem', '13rem']}
           direction={['column', 'column', 'row']}
           justify='center'
           align={['flex-start', 'flex-start', 'center']}

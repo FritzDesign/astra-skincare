@@ -36,6 +36,7 @@ const App: React.FC = () => {
     } else {
       setShowAnkle(true);
     }
+
   }, [navigate]);
 
   return (
@@ -52,7 +53,10 @@ const App: React.FC = () => {
         <Route path='/beauty-tools/:handle' element={<SingleProduct />} />
         <Route path='/skincare-resources' element={<SkincareResources />} />
         <Route path='/skincare-resources/blogs' element={<Blogs />} />
-        <Route path='/skincare-resources/:postId' element={<BlogPost setShowAnkle={setShowAnkle} />} />
+        <Route
+          path='/skincare-resources/:postId'
+          element={<BlogPost setShowAnkle={setShowAnkle} />}
+        />
         <Route path='/why-astra' element={<WhyAstra />} />
         <Route path='/contact-us' element={<ContactUs />} />
         <Route path='/faq' element={<FAQ />} />
