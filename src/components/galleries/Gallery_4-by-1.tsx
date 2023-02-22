@@ -9,7 +9,6 @@ import { useInView } from 'framer-motion';
 import FMC_Component from '../../animations/defaults';
 
 const Gallery4x1: React.FC = () => {
-  const [isGreaterThan768] = useMediaQuery(['(min-width: 768px)']);
   const container = React.useRef(null);
   const cardRef = React.useRef(null);
   const isInView = useInView(container, {
@@ -19,10 +18,9 @@ const Gallery4x1: React.FC = () => {
 
   return (
     <Stack
-      paddingX={['24px', '80px']}
+      paddingX={['40px', '40px', '80px', '80px', '120px', '240px']}
       paddingY='64px'
       justify='flex-start'
-      align='center'
       spacing={['24px', '56px']}
       overflow='hidden'
       background='brand.Cream'
@@ -42,14 +40,11 @@ const Gallery4x1: React.FC = () => {
       <Grid
         id='customer-favorites-gallery'
         as={FMC_Component}
-        templateColumns={[
-          'repeat(1, 4fr)',
-          'repeat(1, 4fr)',
-          'repeat(2, 2fr)',
-          'repeat(2, 2fr)',
-          'repeat(4, 1fr)',
-          'repeat(4, 1fr)'
-        ]}
+        templateColumns='repeat(4, 1fr)'
+        gap='1rem'
+        justifyItems='center'
+        overflowX='auto'
+        pb='1rem'
         initial={{ opacity: 0 }}
         animate={
           isInView && {
@@ -60,12 +55,9 @@ const Gallery4x1: React.FC = () => {
       >
         <GalleryCard image={card1} btnText='Cleansers' />
         <GalleryCard image={card2} btnText='Exfoliants' />
-        {isGreaterThan768 && (
-          <>
-            <GalleryCard image={card3} btnText='Moisturizers' />
-            <GalleryCard image={card4} btnText='Beauty Tools' />
-          </>
-        )}
+
+        <GalleryCard image={card3} btnText='Moisturizers' />
+        <GalleryCard image={card4} btnText='Beauty Tools' />
       </Grid>
     </Stack>
   );

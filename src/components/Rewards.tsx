@@ -4,8 +4,8 @@ import { MdCardGiftcard } from 'react-icons/md';
 const Rewards: React.FC = () => {
   return (
     <Stack
-      display={['none','none','none','flex']}
-      paddingX={['2rem', '4rem', '10rem', '10rem', '20rem']}
+      display={['none', 'none', 'none', 'flex']}
+      paddingX={['40px', '40px', '80px', '80px', '120px', '240px']}
       paddingY='35px'
       direction='row'
       justify='space-between'

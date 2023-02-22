@@ -499,7 +499,7 @@ const BlogPost: React.FC<Props> = ({ setShowAnkle }) => {
           templateColumns='repeat(4, 1fr)'
           gap='1rem'
           justifyItems='center'
-          overflowX='scroll'
+          overflowX='auto'
           pb='1rem'
         >
           {BlogPosts.slice(5, 9).map((post) => {

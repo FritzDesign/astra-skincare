@@ -21,12 +21,12 @@ const DailyRoutine: React.FC = () => {
 
   return (
     <Stack
-      mx={['2rem', '2rem', '4rem', '4rem', '6rem', '13rem']}
+      paddingX={['40px', '40px', '80px', '80px', '120px', '240px']}
       mb={['3rem', '3rem', '5rem']}
     >
       <Stack
         id='container-top'
-        px={['1.5rem', '0px', '0px', '128px']}
+        // px={['1.5rem', '0px', '0px', '128px']}
         pb={['0px', '0px', '0px', '64px']}
         pt={['2rem', '2rem', '3rem', '7.5rem']}
         flexDir={['column', 'column', 'column', 'row']}
@@ -114,7 +114,6 @@ const DailyRoutine: React.FC = () => {
       </Stack>
       <Stack
         id='container-bot'
-        px={['0px', '0px', '0px', '128px']}
         pb={['0px', '0px', '0px', '64px']}
         pt='1rem'
         flexDir={['column-reverse', 'column-reverse', 'column-reverse', 'row']}

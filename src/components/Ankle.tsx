@@ -27,7 +27,7 @@ const Ankle: React.FC = () => {
   };
   return (
     <Stack
-      paddingX={['2rem', '4rem', '10rem', '10rem', '20rem']}
+      paddingX={['40px', '40px', '80px', '80px', '120px', '240px']}
       paddingY='49px'
       direction={['column', 'column', 'row']}
       justify='space-between'

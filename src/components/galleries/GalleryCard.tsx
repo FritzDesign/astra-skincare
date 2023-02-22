@@ -16,7 +16,14 @@ export const GalleryCard: React.FC<GalleryCardProps> = ({ btnText, image }) => {
 
   return (
     <Stack h={['272px', '392px']} m='16px !important'>
-      <Box borderColor='brand.Black' border={['1px solid', 'none']} mb='24px' onClick={handleClick}>
+      <Box
+        h={['200px', '320px']}
+        w={['327px', '290px']}
+        borderColor='brand.Black'
+        border={['1px solid', 'none']}
+        mb='24px'
+        onClick={handleClick}
+      >
         <Image
           cursor='pointer'
           h={['200px', '320px']}
