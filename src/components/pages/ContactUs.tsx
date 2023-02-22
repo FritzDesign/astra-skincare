@@ -82,7 +82,7 @@ const ContactUs: React.FC = () => {
             Success!
           </Heading>
           <Text fontFamily='Poppins' textAlign='center'>
-            We'll get back to you as quickly as we can.
+            Thanks for your message. We'll get back to you as quickly as we can.
           </Text>
           <Stack align='center'>
             <Button

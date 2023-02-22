@@ -123,11 +123,7 @@ const Navigation: React.FC = () => {
         justifyContent='space-between'
         alignItems='center'
         background='UI.5'
-        boxShadow={
-          showNav
-            ? '0px 1px 2px rgba(0, 0, 0, .5)'
-            : '0px 1px 2px rgba(0, 0, 0, .1)'
-        }
+        boxShadow='0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -1px rgba(0, 0, 0, 0.06)'
         onMouseLeave={isMenuOpen ? closeMenu : null}
         zIndex={1001}
         onMouseEnter={showNav ? () => handleShowNav() : undefined}
