@@ -82,6 +82,7 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
 
   useEffect(() => {
     const fetchProducts = async () => {
+      client.shop.fetchInfo().then((info) => console.log(info));
       client.collection.fetchByHandle(collection).then((collection: any) => {
         if (collection?.products) {
           let galleryProducts = collection.products.slice(0, length);

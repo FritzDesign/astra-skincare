@@ -20,42 +20,49 @@ const LoginRegister: React.FC = () => {
 
   const navigate = useNavigate();
 
+  const handleFormType = (formType: string) => {
+    setError('');
+    setFormType(formType);
+  };
+
   const handleRegisterSubmit = () => {
-    const inputs = document.getElementsByClassName(
-      'reg-input'
-    )! as HTMLCollectionOf<HTMLInputElement>;
+    const fnInput = (document.getElementById('reg-fn')! as HTMLInputElement)
+      .value;
+    const lnInput = (document.getElementById('reg-ln')! as HTMLInputElement)
+      .value;
+    const emailInput = (
+      document.getElementById('reg-email')! as HTMLInputElement
+    ).value;
+    const unInput = (document.getElementById('reg-un')! as HTMLInputElement)
+      .value;
     const password = (document.getElementById('reg-pw')! as HTMLInputElement)
       .value;
     const confirmPassword = (
       document.getElementById('reg-pw-confirm')! as HTMLInputElement
     ).value;
 
+    if (!fnInput.length) return setError('Enter your first name');
+    if (!lnInput.length) return setError('Enter your last name');
+    if (!password.length) return setError('Enter your last name');
+    if (!emailInput.length) return setError('Enter your Email');
+    if (!unInput.length) return setError('Enter a username');
+    if (unInput.length < 6)
+      return setError('Enter a username between 6 & 18 characters');
+    if (password.length < 8) {
+      return setError('Enter a password between 8 & 24 characters');
+    }
+    console.log(emailInput)
+    if (!emailInput.includes('.') || !emailInput.includes('@')) {
+      return setError('Enter a valid Email');
+    }
+
     if (password !== confirmPassword) {
       return setError('Passwords do not match');
     }
 
-    Array.from(inputs).map((input) => {
-      if (!input.value.length) {
-        return setError('Fill out the entire form');
-      }
-      if (
-        input.id === 'reg-email' &&
-        (!input.value.includes('@') || !input.value.includes('.'))
-      ) {
-        return setError('Enter a valid Email');
-      }
-      if (input.id === 'reg-un' && input.value.length < 6) {
-        return setError('Enter a username with at least 6 characters');
-      }
-
-      if (input.id.includes('pw') && input.value.length < 8) {
-        return setError('Enter a password at least 8 characters long');
-      }
-    });
-
     if (!error.length) {
-      setError('Success! One moment...');
       setTimeout(() => {
+        setError('Success! One moment...');
         setFormType('success');
       }, 1000);
     }
@@ -123,7 +130,7 @@ const LoginRegister: React.FC = () => {
             <Button
               variant='brandPrimary'
               w='6rem'
-              onClick={() => setFormType('login')}
+              onClick={() => handleFormType('login')}
             >
               Log In
             </Button>
@@ -250,7 +257,7 @@ const LoginRegister: React.FC = () => {
           </Stack>
           <Text fontFamily='Poppins' textAlign='center'>
             Already have an account?{' '}
-            <Link textDecor='underline' onClick={() => setFormType('login')}>
+            <Link textDecor='underline' onClick={() => handleFormType('login')}>
               Log in.
             </Link>
           </Text>
@@ -341,7 +348,10 @@ const LoginRegister: React.FC = () => {
           </Stack>
           <Text fontFamily='Poppins' textAlign='center'>
             Don't have an account?{' '}
-            <Link textDecor='underline' onClick={() => setFormType('register')}>
+            <Link
+              textDecor='underline'
+              onClick={() => handleFormType('register')}
+            >
               Sign up.
             </Link>
           </Text>

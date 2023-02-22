@@ -26,21 +26,24 @@ const ContactUs: React.FC = () => {
   const navigate = useNavigate();
 
   const handleSubmit = () => {
-    const inputs = document.getElementsByClassName(
-      'cu-input'
-    )! as HTMLCollectionOf<HTMLInputElement>;
+    const fnInput = (document.getElementById('cu-fn')! as HTMLInputElement)
+      .value;
+    const lnInput = (document.getElementById('cu-ln')! as HTMLInputElement)
+      .value;
+    const emailInput = (
+      document.getElementById('cu-email')! as HTMLInputElement
+    ).value;
+    const msgInput = (document.getElementById('cu-msg')! as HTMLInputElement)
+      .value;
 
-    Array.from(inputs).map((input) => {
-      if (!input.value.length) {
-        return setError('Fill out the entire form');
-      }
-      if (
-        input.id === 'cu-email' &&
-        (!input.value.includes('@') || !input.value.includes('.'))
-      ) {
-        return setError('Enter a valid Email');
-      }
-    });
+    if (!fnInput.length) return setError('Enter your first name');
+    if (!lnInput.length) return setError('Enter your last name');
+    if (!emailInput.length) return setError('Enter your Email');
+    if (!msgInput.length) return setError('Enter a message');
+
+    if (!emailInput.includes('.') || !emailInput.includes('@')) {
+      return setError('Enter a valid Email');
+    }
 
     if (!error.length) {
       setError('Success! One moment...');
@@ -85,10 +88,7 @@ const ContactUs: React.FC = () => {
             Thanks for your message. We'll get back to you as quickly as we can.
           </Text>
           <Stack align='center'>
-            <Button
-              variant='brandPrimary'
-              onClick={() => navigate('/')}
-            >
+            <Button variant='brandPrimary' onClick={() => navigate('/')}>
               Go Home
             </Button>
           </Stack>
@@ -158,7 +158,7 @@ const ContactUs: React.FC = () => {
               onFocus={error ? () => setError('') : undefined}
             />
             <Textarea
-              id='cu-un'
+              id='cu-msg'
               className='cu-input'
               _focus={{ borderColor: 'brand.Lavender' }}
               _hover={{ borderColor: 'UI.3' }}
