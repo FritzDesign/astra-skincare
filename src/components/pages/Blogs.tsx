@@ -35,7 +35,6 @@ const Blogs: React.FC = () => {
         gap='2rem'
       >
         <Grid
-          id='products-container'
           templateColumns={[
             'repeat(1, 1fr)',
             'repeat(1, 1fr)',
@@ -53,10 +52,8 @@ const Blogs: React.FC = () => {
                 key={post.id}
                 id={post.id}
                 title={post.title}
-                author={post.author}
                 category={post.category}
                 image={post.image}
-                paragraphs={post.paragraphs}
               />
             );
           })}

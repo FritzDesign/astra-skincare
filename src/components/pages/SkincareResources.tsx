@@ -109,7 +109,7 @@ const SkincareResources: React.FC = () => {
               opacity='0.8'
               alignSelf='stretch'
             >
-              {BlogPosts[5].paragraphs[0].slice(0, 200)}...
+              {BlogPosts[5].paragraphs![0].slice(0, 200)}...
             </Text>
             <Button
               size='lg'
@@ -203,7 +203,7 @@ const SkincareResources: React.FC = () => {
               opacity='0.8'
               alignSelf='stretch'
             >
-              {BlogPosts[7].paragraphs[0].slice(0, 200)}...
+              {BlogPosts[7].paragraphs![0].slice(0, 200)}...
             </Text>
             <Button
               size='lg'

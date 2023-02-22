@@ -93,9 +93,9 @@ export interface ScaleableGalleryCardProps {
 export interface BlogPost {
   id: number;
   title: string;
-  author: string;
+  author?: string;
   image: string;
   category: string;
   tagline?: string;
-  paragraphs: string[];
+  paragraphs?: string[];
 }

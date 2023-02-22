@@ -10,7 +10,9 @@ import {
   Icon,
   Stack,
   Text,
-  useMediaQuery
+  useMediaQuery,
+  Divider,
+  Grid
 } from '@chakra-ui/react';
 import ProductMenu from '../ProductsMenu';
 import { useNavigate, useParams } from 'react-router';
@@ -22,6 +24,7 @@ import { HiArrowRight } from 'react-icons/hi';
 import { BsFacebook, BsInstagram, BsPinterest } from 'react-icons/bs';
 
 import watermark from '../../assets/Blogs/blogpost-watermark.png';
+import BlogCard from '../BlogCard';
 
 interface Props {
   setShowAnkle: Function;
@@ -68,7 +71,7 @@ const BlogPost: React.FC<Props> = ({ setShowAnkle }) => {
       <Box>
         <Flex
           justify='center'
-          mt='5rem'
+          mt={['2rem', '2rem', '5rem']}
           mb='5.5rem'
           mx={['2rem', '2rem', '4rem', '4rem', '6rem', '13rem']}
         >
@@ -138,7 +141,7 @@ const BlogPost: React.FC<Props> = ({ setShowAnkle }) => {
   return (
     <Stack
       align='center'
-      mt='5rem'
+      mt={['2rem', '2rem', '5rem']}
       mb='5.5rem'
       mx={['1rem', '2rem', '2rem', '3rem', '6rem', '13rem']}
     >
@@ -204,7 +207,7 @@ const BlogPost: React.FC<Props> = ({ setShowAnkle }) => {
       </Flex>
       <Flex w='100%' maxW='1208px'>
         <Stack maxW='695px'>
-          <Stack align='flex-start'>
+          <Stack align='flex-start' mb='2.5rem'>
             <Heading
               fontFamily='Marcellus'
               fontWeight='normal'
@@ -216,13 +219,13 @@ const BlogPost: React.FC<Props> = ({ setShowAnkle }) => {
             >
               {post.tagline}
             </Heading>
-            {post.paragraphs.map((paragraph: string, i) => {
+            {post.paragraphs?.map((paragraph: string, i) => {
               return (
                 <Text
                   key={i}
                   fontFamily='Poppins'
                   color='UI.2'
-                  fontSize={['12px', '14px', '16px']}
+                  fontSize={['14px', '14px', '16px']}
                   textAlign={['center', 'center', 'left']}
                   mb={['1rem !important', '2rem !important']}
                 >
@@ -309,7 +312,12 @@ const BlogPost: React.FC<Props> = ({ setShowAnkle }) => {
           )}
         </Stack>
         {!isLessThan768 && (
-          <Stack w='394px' minW='304px' gap='1.5rem' ml={['','','2rem','4rem','6.5rem']}>
+          <Stack
+            w='394px'
+            minW='304px'
+            gap='1.5rem'
+            ml={['', '', '2rem', '4rem', '6.5rem']}
+          >
             <Stack
               p='2.5rem'
               bgColor='brand.Lavender'
@@ -470,6 +478,43 @@ const BlogPost: React.FC<Props> = ({ setShowAnkle }) => {
           </Stack>
         )}
       </Flex>
+      <Stack w='100%' mt='6.5rem !important'>
+        <Flex w='100%' align='center' mb='2.5rem'>
+          {isLessThan768 && (
+            <Divider borderColor='UI.2' mr={['1rem', '2.5rem']} />
+          )}
+
+          <Heading
+            fontFamily='Marcellus'
+            fontWeight='normal'
+            fontSize={['20px', '20px', '20px', '20px', '24px']}
+            color='brand.Charcoal'
+            whiteSpace='nowrap'
+          >
+            Articles You Might Like
+          </Heading>
+          <Divider borderColor='UI.2' ml={['1rem', '2.5rem']} />
+        </Flex>
+        <Grid
+          templateColumns='repeat(4, 1fr)'
+          gap='1rem'
+          justifyItems='center'
+          overflowX='scroll'
+          pb='1rem'
+        >
+          {BlogPosts.slice(5, 9).map((post) => {
+            return (
+              <BlogCard
+                key={post.id}
+                id={post.id}
+                title={post.title}
+                category={post.category}
+                image={post.image}
+              />
+            );
+          })}
+        </Grid>
+      </Stack>
     </Stack>
   );
 };
