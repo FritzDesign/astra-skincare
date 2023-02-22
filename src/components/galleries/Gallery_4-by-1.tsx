@@ -9,7 +9,7 @@ import { useInView } from 'framer-motion';
 import FMC_Component from '../../animations/defaults';
 
 const Gallery4x1: React.FC = () => {
-  const [isGreaterThan480] = useMediaQuery(['(min-width: 480px)']);
+  const [isGreaterThan768] = useMediaQuery(['(min-width: 768px)']);
   const container = React.useRef(null);
   const cardRef = React.useRef(null);
   const isInView = useInView(container, {
@@ -60,7 +60,7 @@ const Gallery4x1: React.FC = () => {
       >
         <GalleryCard image={card1} btnText='Cleansers' />
         <GalleryCard image={card2} btnText='Exfoliants' />
-        {isGreaterThan480 && (
+        {isGreaterThan768 && (
           <>
             <GalleryCard image={card3} btnText='Moisturizers' />
             <GalleryCard image={card4} btnText='Beauty Tools' />
