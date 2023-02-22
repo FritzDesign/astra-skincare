@@ -56,9 +56,9 @@ const Cart: React.FC = () => {
         </DrawerHeader>
         <DrawerBody>
           {checkout?.lineItems?.length ? (
-            checkout.lineItems.map((item: any) => {
+            checkout.lineItems.map((item: any, i: number) => {
               return (
-                <Flex my='1rem' maxH='80px' w='100%'>
+                <Flex key={i} my='1rem' maxH='80px' w='100%'>
                   <Image
                     src={item.variant.image.src}
                     minH='80px'

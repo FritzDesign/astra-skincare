@@ -20,11 +20,12 @@ import {
 } from '@chakra-ui/react';
 import { BsArrowRight, BsBag } from 'react-icons/bs';
 import { FiMinus, FiPlus } from 'react-icons/fi';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { ShopContext } from '../../context/ShopContext';
 
 import placeholder from '../../assets/astra-card-ph.png';
 import ScaleableGallery from '../ScaleableGallery';
+import { encodeQuery } from '../../utils/helpers';
 
 const SingleProduct: React.FC = () => {
   const { handle } = useParams();
@@ -49,6 +50,8 @@ const SingleProduct: React.FC = () => {
     '(min-width: 1280px)'
   ]);
 
+  const navigate = useNavigate();
+
   const {
     fetchProductByHandle,
     fetchCollectionByHandle,
@@ -56,6 +59,11 @@ const SingleProduct: React.FC = () => {
     product,
     resetProduct
   } = React.useContext<any>(ShopContext);
+
+  const handleCategoryNavigate = (category: string) => {
+    fetchCollectionByHandle(encodeQuery(category));
+    navigate('/skincare-products');
+  };
 
   React.useEffect(() => {
     resetProduct();
@@ -257,12 +265,14 @@ const SingleProduct: React.FC = () => {
                   borderBottomWidth='1px'
                 >
                   <Text
+                    _hover={{ bgColor: 'brand.Cream' }}
+                    cursor='pointer'
                     fontFamily='Poppins'
                     lineHeight='1.5'
                     fontWeight='regular'
                     fontSize='14px'
                     color='UI.2'
-                    onClick={() => fetchCollectionByHandle()}
+                    onClick={() => handleCategoryNavigate(product.productType)}
                   >
                     {product.productType}
                   </Text>
