@@ -39,9 +39,12 @@ const FAQ: React.FC = () => {
     <Box>
       <ProductMenu hero={heroImage} fallback={heroImage} heading='F.A.Q.' />
       <Stack w='100%' align='center' px='2rem'>
-        <Accordion allowToggle maxW='1036px' defaultIndex={0}
+        <Accordion
+          allowToggle
+          maxW='1036px'
+          defaultIndex={0}
           mt='3rem'
-          mb={['3rem','3rem','6.5rem']}
+          mb={['3rem', '3rem', '6.5rem']}
         >
           <AccordionItem>
             <AccordionButton
@@ -61,15 +64,13 @@ const FAQ: React.FC = () => {
               Headline Line Item
               <Icon as={isPanelOpen.first ? FiMinus : FiPlus} />
             </AccordionButton>
-            <AccordionPanel
-              py='2rem'
-            >
+            <AccordionPanel py='2rem'>
               <Stack
                 justify='flex-start'
                 align='flex-start'
                 spacing='32px'
-                w={['100%', '100%', '90%']}
-
+                w='100%'
+                pr='3rem'
               >
                 <Text
                   fontFamily='Poppins'
@@ -171,14 +172,13 @@ const FAQ: React.FC = () => {
               Headline Line Item
               <Icon as={isPanelOpen.second ? FiMinus : FiPlus} />
             </AccordionButton>
-            <AccordionPanel
-              py='2rem'
-            >
+            <AccordionPanel py='2rem'>
               <Stack
                 justify='flex-start'
                 align='flex-start'
                 spacing='32px'
-                w={['100%', '100%', '90%']}
+                w='100%'
+                pr='3rem'
               >
                 <Text
                   fontFamily='Poppins'
@@ -280,15 +280,13 @@ const FAQ: React.FC = () => {
               Headline Line Item
               <Icon as={isPanelOpen.third ? FiMinus : FiPlus} />
             </AccordionButton>
-            <AccordionPanel
-              py='2rem'
-            >
+            <AccordionPanel py='2rem'>
               <Stack
                 justify='flex-start'
                 align='flex-start'
                 spacing='32px'
-                w={['100%', '100%', '90%']}
-
+                w='100%'
+                pr='3rem'
               >
                 <Text
                   fontFamily='Poppins'
@@ -390,15 +388,13 @@ const FAQ: React.FC = () => {
               Headline Line Item
               <Icon as={isPanelOpen.fourth ? FiMinus : FiPlus} />
             </AccordionButton>
-            <AccordionPanel
-              py='2rem'
-            >
+            <AccordionPanel py='2rem'>
               <Stack
                 justify='flex-start'
                 align='flex-start'
                 spacing='32px'
-                w={['100%', '100%', '90%']}
-
+                w='100%'
+                pr='3rem'
               >
                 <Text
                   fontFamily='Poppins'
@@ -500,15 +496,13 @@ const FAQ: React.FC = () => {
               Headline Line Item
               <Icon as={isPanelOpen.fifth ? FiMinus : FiPlus} />
             </AccordionButton>
-            <AccordionPanel
-              py='2rem'
-            >
+            <AccordionPanel py='2rem'>
               <Stack
                 justify='flex-start'
                 align='flex-start'
                 spacing='32px'
-                w={['100%', '100%', '90%']}
-
+                w='100%'
+                pr='3rem'
               >
                 <Text
                   fontFamily='Poppins'
@@ -610,15 +604,13 @@ const FAQ: React.FC = () => {
               Headline Line Item
               <Icon as={isPanelOpen.sixth ? FiMinus : FiPlus} />
             </AccordionButton>
-            <AccordionPanel
-              py='2rem'
-            >
+            <AccordionPanel py='2rem'>
               <Stack
                 justify='flex-start'
                 align='flex-start'
                 spacing='32px'
-                w={['100%', '100%', '90%']}
-
+                w='100%'
+                pr='3rem'
               >
                 <Text
                   fontFamily='Poppins'
