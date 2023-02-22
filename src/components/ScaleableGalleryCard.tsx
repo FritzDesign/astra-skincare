@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stack, Image, Text, Divider } from '@chakra-ui/react';
+import { Stack, Image, Text, Divider, Box, Button } from '@chakra-ui/react';
 import { ScaleableGalleryCardProps as CardProps } from '../models/Props';
 import { useNavigate } from 'react-router';
 import { encodeQuery } from '../utils/helpers';
@@ -12,6 +12,8 @@ const ScaleableGalleryCard: React.FC<CardProps> = ({
   price,
   weight
 }) => {
+  const [isHovered, setIsHovered] = React.useState(false);
+
   const navigate = useNavigate();
   return (
     <Stack
@@ -21,41 +23,65 @@ const ScaleableGalleryCard: React.FC<CardProps> = ({
       spacing='16px'
       h='488px'
     >
-      <Image
-        src={image}
-        w='376px'
-        h='345px'
-        minH='345px'
-        objectFit='cover'
-        cursor='pointer'
+      <Box
+        pos='relative'
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
         onClick={
           category === 'beautyTools'
             ? () => navigate(`/beauty-tools/${encodeQuery(title)}`)
             : () => navigate(`/skincare-products/${encodeQuery(title)}`)
         }
-      />
-      {isNew && (
-        <Stack
-          bgColor='brand.Charcoal'
-          borderRadius='50%'
-          align='center'
-          justify='center'
-          width='72px'
-          height='72px'
-          pos='absolute'
-          left='16px'
-        >
-          <Text
-            fontFamily='Inter'
-            lineHeight='1.5'
-            fontWeight='medium'
-            fontSize='14px'
-            color='#FFFFFF'
+      >
+        <Image
+          src={image}
+          filter={isHovered ? 'brightness(0.7)' : 'brightness(1)'}
+          w='376px'
+          h='345px'
+          minH='345px'
+          objectFit='cover'
+          cursor='pointer'
+        />
+        {isHovered && (
+          <Button
+            _active={{ transform: 'scale(0.99)' }}
+            pos='absolute'
+            variant='outline'
+            colorScheme='blackAlpha'
+            color='white'
+            left='37%'
+            top='40%'
+            fontWeight='normal'
+            fontFamily='Poppins'
+            letterSpacing='1px'
           >
-            NEW
-          </Text>
-        </Stack>
-      )}
+            View
+          </Button>
+        )}
+        {isNew && (
+          <Stack
+            bgColor='brand.Charcoal'
+            borderRadius='50%'
+            align='center'
+            justify='center'
+            width='72px'
+            height='72px'
+            pos='absolute'
+            left='16px'
+            top='16px'
+          >
+            <Text
+              fontFamily='Inter'
+              lineHeight='1.5'
+              fontWeight='medium'
+              fontSize='14px'
+              color='#FFFFFF'
+            >
+              NEW
+            </Text>
+          </Stack>
+        )}
+      </Box>
       <Stack
         h='165px'
         maxH='165px'

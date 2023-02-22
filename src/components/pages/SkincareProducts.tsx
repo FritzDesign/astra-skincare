@@ -100,15 +100,24 @@ const SkincareProducts: React.FC = () => {
       >
         {products.length ? (
           products.map((product: ProductInterface, i: number) => {
+            const handle = product.handle;
+            if (
+              handle === 'starry-night-serum-sample' ||
+              handle === 'barrier-regeneration-moisturizer-kit' ||
+              handle === 'jade-crystal-roller'
+            ) {
+              product.isNew = true;
+            }
             return (
               <Product
                 key={i}
                 image={product.images[0].src}
                 title={product.title}
-                handle={product.handle}
+                handle={handle}
                 category={product.productType}
                 price={product.variants[0].price.amount}
                 weight={product.variants[0].weight + ' oz'}
+                isNew={product.isNew}
               />
             );
           })

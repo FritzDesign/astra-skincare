@@ -191,11 +191,20 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
       >
         {galleryProducts &&
           galleryProducts.map((product: Product, i) => {
+            const handle = product.handle;
+            if (
+              handle === 'starry-night-serum-sample' ||
+              handle === 'barrier-regeneration-moisturizer-kit' ||
+              handle === 'jade-crystal-roller'
+            ) {
+              product.isNew = true;
+            }
             return (
               <React.Fragment key={i}>
                 {i ? (
                   <Divider orientation='vertical' h='92%' borderColor='UI.2' />
                 ) : null}
+
                 <ScaleableGalleryCard
                   image={product.images[0].src}
                   isNew={product.isNew ? true : false}

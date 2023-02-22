@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router';
 import { encodeQuery } from '../../utils/helpers';
 
 export const GalleryCard: React.FC<GalleryCardProps> = ({ btnText, image }) => {
+  const [isHovered, setIsHovered] = React.useState(false);
   const { fetchCollectionByHandle } = React.useContext<any>(ShopContext);
   const navigate = useNavigate();
 
@@ -17,20 +18,41 @@ export const GalleryCard: React.FC<GalleryCardProps> = ({ btnText, image }) => {
   return (
     <Stack h={['272px', '392px']} m='16px !important'>
       <Box
+        pos='relative'
         h={['200px', '320px']}
         w={['327px', '290px']}
         borderColor='brand.Black'
         border={['1px solid', 'none']}
         mb='24px'
         onClick={handleClick}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
         <Image
+          filter={isHovered ? 'brightness(0.7)' : 'brightness(1)'}
           cursor='pointer'
           h={['200px', '320px']}
           w={['327px', '290px']}
           src={image}
           objectFit='cover'
         />
+        {isHovered && (
+          <Button
+            _active={{ transform: 'scale(0.99)' }}
+            pos='absolute'
+            variant='outline'
+            colorScheme='blackAlpha'
+            color='white'
+            left='37%'
+            top='40%'
+            onClick={handleClick}
+            fontWeight='normal'
+            fontFamily='Poppins'
+            letterSpacing='1px'
+          >
+            View
+          </Button>
+        )}
       </Box>
       <Button
         _hover={{ bgColor: 'brand.Charcoal', color: 'brand.Cream' }}

@@ -58,6 +58,7 @@ const Product: React.FC<ProductProps> = ({
           height='72px'
           pos='absolute'
           left='16px'
+          top='0px'
         >
           <Text
             fontFamily='Inter'
