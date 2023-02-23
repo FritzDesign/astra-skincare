@@ -57,7 +57,7 @@
 
 ## Author & Developer
 
-👤 **C.J. Fritz**
+👨 **C.J. Fritz**
 
 - Website: https://www.cjfritz.dev
 - Github: [@cjfritz9](https://github.com/cjfritz9)
@@ -65,7 +65,7 @@
 
 ## Designer
 
-👤 **Jeana Hudson**
+👩 **Jeana Hudson**
 
 - Website: https://dribbble.com/jeanahudson
 - LinkedIn: [@cj-fritz](https://linkedin.com/in/jeanahudson)
