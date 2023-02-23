@@ -41,9 +41,13 @@
 
 <a href="https://chakra-ui.com" target="_blank" rel="noreferrer"> <img src="https://images.opencollective.com/chakra-ui-pro/61bd1dd/logo/256.png" alt="chakra-ui" width="40" height="40"/></a>
 
+---
+
 ##### Framer Motion
 
 <a href="https://www.framer.com/motion/" target="_blank" rel="noreferrer"> <img src="https://e1.pngegg.com/pngimages/188/872/png-clipart-macos-app-icons-framer.png" alt="framer-motion" width="40" height="40"/></a>
+
+---
 
 ##### Shopify Buy SDK
 
