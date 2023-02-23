@@ -29,11 +29,15 @@
 
 <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/></a>
 
+Who doesn't love TypeScript? As someone born with the "memory of a developer" I can't even fathom the number of times TypeScript has kept me from forgetting function names, parameter types, or variable names.
+
 ---
 
 ##### React
 
 <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/></a>
+
+Ever heard of it? 😉
 
 ---
 
@@ -41,17 +45,23 @@
 
 <a href="https://chakra-ui.com" target="_blank" rel="noreferrer"> <img src="https://images.opencollective.com/chakra-ui-pro/61bd1dd/logo/256.png" alt="chakra-ui" width="40" height="40"/></a>
 
+Chakra UI + FigPilot allowed me to streamline Jeana's designs in Figma to code with ease. I was able to generate Chakra components directly from Figma and create custom components, themes, and variants for the entire website - saving me an incredible amount of time.
+
 ---
 
 ##### Framer Motion
 
 <a href="https://www.framer.com/motion/" target="_blank" rel="noreferrer"> <img src="https://e1.pngegg.com/pngimages/188/872/png-clipart-macos-app-icons-framer.png" alt="framer-motion" width="40" height="40"/></a>
 
+Framer Motion is a great animation tool and integrates well with React and Chakra UI and also ships with some very handy hooks, such as the "useInView" hook.
+
 ---
 
 ##### Shopify Buy SDK
 
 <a href="https://www.npmjs.com/package/shopify-buy" target="_blank" rel="noreferrer"> <img src="https://brandeps.com/logo-download/S/Shopify-logo-vector-01.svg" alt="shopify-buy-sdk" width="40" height="40"/></a>
+
+We created a Shopify webstore together, created a custom App, and hosted all of our products and checkout that is interfaced with via this custom front-end and Shopify's developer tools.
 
 ---
 
