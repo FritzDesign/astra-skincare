@@ -17,7 +17,7 @@
 
 > This project was the first project that I collaborated with my partner on. Over two years ago I jokingly said to her that I should become a web developer so that we can make websites together. She is an incredible designer and the key reason why I am so proud of this project. I love programming and creating functionality but when the end result is so beautiful to look at, I think it makes it 10 times better.
 
-### BLOG
+### MORE
 
 > Check my [developer blog](https://cjfritz.dev/blogs) about this project for more about what I learned and the tools that I used to streamline design to development, from Figma to VSCode using powerful tools like Chakra UI's Figpilot & more.
 
