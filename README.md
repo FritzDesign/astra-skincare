@@ -55,18 +55,6 @@
 
 ---
 
-## Install
-
-```sh
-npm install
-```
-
-## Usage
-
-```sh
-npm run start
-```
-
 ## Author & Developer
 
 👤 **C.J. Fritz**
