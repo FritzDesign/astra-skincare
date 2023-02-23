@@ -39,13 +39,8 @@ const SPGallery: React.FC<SPGalleryProps> = ({
       justify='center'
       bgColor='#00000090'
       userSelect='none'
-      >
-      <Flex
-        pos='relative'
-        maxW='90vw'
-        h='fit-content'
-        w='fit-content'
-      >
+    >
+      <Flex pos='relative' maxW='90vw' h='fit-content' w='fit-content'>
         <Box
           _hover={{
             filter: 'brightness(1.25)',
@@ -76,7 +71,7 @@ const SPGallery: React.FC<SPGalleryProps> = ({
           // maxH='80vh'
           // maxW='90vw'
           h='80vh'
-          w='50vw'
+          w={['90vw', '80vw', '65vw', '50vw']}
           objectFit='cover'
           objectPosition='center center'
         />
