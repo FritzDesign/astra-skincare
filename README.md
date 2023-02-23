@@ -7,9 +7,6 @@
   <a href="https://github.com/cjfritz9/React-Shopify/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
-  <a href="#" target="_blank">
-    <img alt="License: ISC" src="https://img.shields.io/github/license/cjfritz9/ASTRA Skincare [DEMO]" />
-  </a>
 </p>
 
 > ASTRA Skincare is a site made for demonstration purposes only. It's a custom front-end app for a Shopify webstore. The products, cart, and checkout object are all hosted on Shopify and interacted with through the Shopify Buy SDK and the Shopify Storefront API. This site acts as a proof-of-concept to demonstrate the possibilities of having a custom, highly-responsive front-end for a Shopify webstore with all of the features of managing products, customers, orders, etc. via the store's Shopify Admin.
