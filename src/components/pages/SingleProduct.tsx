@@ -15,8 +15,7 @@ import {
   UnorderedList,
   ListItem,
   Box,
-  useMediaQuery,
-  AspectRatio
+  useMediaQuery
 } from '@chakra-ui/react';
 import { BsArrowRight, BsBag } from 'react-icons/bs';
 import { FiMinus, FiPlus } from 'react-icons/fi';
@@ -77,8 +76,6 @@ const SingleProduct: React.FC = () => {
   };
 
   const handleKeydown = (e: KeyboardEvent) => {
-    console.log(e);
-
     if (e.key === 'Escape') {
       setShowGallery(false);
       window.removeEventListener('keydown', handleKeydown);
@@ -146,6 +143,9 @@ const SingleProduct: React.FC = () => {
               </Text>
             )}
             <Image
+              _hover={{
+                filter: 'brightness(.75)'
+              }}
               src={product.images[0].src}
               cursor='pointer'
               maxH='780px'
@@ -224,17 +224,19 @@ const SingleProduct: React.FC = () => {
                 objectFit='cover'
                 onClick={() => handleOpenGallery(4)}
               />
-              <Box pos='relative' onClick={() => handleOpenGallery(5)}>
+              <Box
+                _hover={{ filter: 'brightness(.9)' }}
+                cursor='pointer'
+                pos='relative'
+                onClick={() => handleOpenGallery(5)}
+              >
                 <Image
                   src={GalleryImages[4]}
-                  _hover={{ filter: 'brightness(.9)' }}
-                  cursor='pointer'
                   h='106px'
                   w='106px'
                   objectFit='cover'
                 />
                 <Box
-                  cursor='pointer'
                   w='56px'
                   h='56px'
                   borderRadius='50%'
