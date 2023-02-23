@@ -20,7 +20,7 @@ export const GalleryCard: React.FC<GalleryCardProps> = ({ btnText, image }) => {
       <Box
         pos='relative'
         h={['200px', '320px']}
-        w={['327px', '290px']}
+        w={['316px', '280px']}
         borderColor='brand.Black'
         border={['1px solid', 'none']}
         mb='24px'
@@ -35,6 +35,7 @@ export const GalleryCard: React.FC<GalleryCardProps> = ({ btnText, image }) => {
           w={['327px', '290px']}
           src={image}
           objectFit='cover'
+          objectPosition={['bottom center', 'center center']}
         />
         {isHovered && (
           <Button
