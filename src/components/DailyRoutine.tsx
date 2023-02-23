@@ -2,6 +2,8 @@ import React from 'react';
 import { Stack, Text, Button, Image, Box, Flex } from '@chakra-ui/react';
 import { useInView } from 'framer-motion';
 
+import watermarkTop from '../assets/Lifestyle/daily-routine-watermark-top.png';
+import watermarkBottom from '../assets/Lifestyle/daily-routine-watermark-bottom.png';
 import lgImgTop from '../assets/Lifestyle/daily-routine-top-image-lg.jpg';
 import smImgTop from '../assets/Lifestyle/daily-routine-top-image-sm.jpg';
 import lgImgBot from '../assets/Lifestyle/daily-routine-bottom-image-lg.jpg';
@@ -21,9 +23,12 @@ const DailyRoutine: React.FC = () => {
 
   return (
     <Stack
+      pos='relative'
       paddingX={['40px', '40px', '80px', '80px', '120px', '240px']}
       mb={['3rem', '3rem', '5rem']}
     >
+      <Image pos='absolute' top='0' right='0' src={watermarkTop} zIndex={-1} />
+      <Image pos='absolute' bottom='-5rem' left='0' src={watermarkBottom} zIndex={-1} />
       <Stack
         id='container-top'
         // px={['1.5rem', '0px', '0px', '128px']}
