@@ -55,6 +55,14 @@
 
 ---
 
+##### ChatGPT
+
+<a href="https://chat.openai.com/" target="_blank" rel="noreferrer"> <img src="https://play-lh.googleusercontent.com/2QXCv40cUDNEeZqviEJGdITx6tVEYScVi4tFWaJY4ckLei2ggsIxVZPLqAj1IITIlZh9" alt="chat-gpt" width="40" height="40"/></a>
+
+"ChatGPT, create 16 blog articles related to these topics ... Now format them into JavaScript objects with the following keys ..."
+
+---
+
 ## Author & Developer
 
 👨 **C.J. Fritz**
