@@ -32,7 +32,7 @@ export const GalleryCard: React.FC<GalleryCardProps> = ({ btnText, image }) => {
           filter={isHovered ? 'brightness(0.7)' : 'brightness(1)'}
           cursor='pointer'
           h={['200px', '320px']}
-          w={['327px', '290px']}
+          w={['316px', '280px']}
           src={image}
           objectFit='cover'
           objectPosition={['bottom center', 'center center']}
