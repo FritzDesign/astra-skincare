@@ -1,5 +1,5 @@
 {
-  "name": "react-shopify",
+  "name": "astra-skincare",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cjfritz9/React-Shopify.git"
+    "url": "git+https://github.com/AtlasCreative/astra-skincare.git"
   },
   "keywords": [],
   "author": "",

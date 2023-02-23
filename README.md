@@ -19,7 +19,7 @@
 
 ### BLOG
 
-> Check my [developer blog](https://cjfritz.dev/blogs) about this project for more about what I learned and the tools that I used to streamline design to development, from Figma to VSCode.
+> Check my [developer blog](https://cjfritz.dev/blogs) about this project for more about what I learned and the tools that I used to streamline design to development, from Figma to VSCode using powerful tools like Chakra UI's Figpilot & more.
 
 ### ✨ [Demo/Homepage](https://www.astra-skincare.com)
 
@@ -33,7 +33,23 @@
 
 ##### React
 
+<a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/></a>
 
+---
+
+##### Chakra UI
+
+<a href="https://chakra-ui.com" target="_blank" rel="noreferrer"> <img src="https://images.opencollective.com/chakra-ui-pro/61bd1dd/logo/256.png" alt="chakra-ui" width="40" height="40"/></a>
+
+##### Framer Motion
+
+<a href="https://www.framer.com/motion/" target="_blank" rel="noreferrer"> <img src="https://e1.pngegg.com/pngimages/188/872/png-clipart-macos-app-icons-framer.png" alt="framer-motion" width="40" height="40"/></a>
+
+##### Shopify Buy SDK
+
+<a href="https://www.npmjs.com/package/shopify-buy" target="_blank" rel="noreferrer"> <img src="https://brandeps.com/logo-download/S/Shopify-logo-vector-01.svg" alt="shopify-buy-sdk" width="40" height="40"/></a>
+
+---
 
 ## Install
 
@@ -47,13 +63,20 @@ npm install
 npm run start
 ```
 
-## Author
+## Author & Developer
 
 👤 **C.J. Fritz**
 
 - Website: https://www.cjfritz.dev
 - Github: [@cjfritz9](https://github.com/cjfritz9)
 - LinkedIn: [@cj-fritz](https://linkedin.com/in/cj-fritz)
+
+## Designer
+
+👤 **Jeana Hudson**
+
+- Website: https://dribbble.com/jeanahudson
+- LinkedIn: [@cj-fritz](https://linkedin.com/in/jeanahudson)
 
 ## 🤝 Contributing
 
