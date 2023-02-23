@@ -1,4 +1,4 @@
-import { Product } from "./API";
+import { Product } from './API';
 
 export interface ButtonProps {
   text?: string;
@@ -77,7 +77,7 @@ export interface ScaleableGalleryProps {
   link?: {
     text: string;
     navTo: string;
-  }
+  };
   id?: number;
 }
 
@@ -98,4 +98,12 @@ export interface BlogPost {
   category: string;
   tagline?: string;
   paragraphs?: string[];
+}
+
+export interface SPGalleryProps {
+  photos: string[];
+  index: number;
+  galleryLength: number;
+  setSelectedIndex: Function;
+  setShowGallery: Function;
 }

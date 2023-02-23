@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Stack, Text, Grid, useMediaQuery } from '@chakra-ui/react';
+import { Stack, Text, Grid } from '@chakra-ui/react';
 import { GalleryCard } from './GalleryCard';
 import card1 from '../../assets/Cards/Card1.png';
 import card2 from '../../assets/Cards/Card2.png';

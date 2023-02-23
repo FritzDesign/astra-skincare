@@ -23,11 +23,17 @@ import { FiMinus, FiPlus } from 'react-icons/fi';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ShopContext } from '../../context/ShopContext';
 
-import placeholder from '../../assets/astra-card-ph.png';
+import GalleryImages from '../../db/ProductGalleryImages';
 import ScaleableGallery from '../ScaleableGallery';
 import { encodeQuery } from '../../utils/helpers';
+import SPGallery from '../galleries/SingleProductGallery';
 
 const SingleProduct: React.FC = () => {
+  const [showGallery, setShowGallery] = React.useState(false);
+  const [galleryPhotos, setGalleryPhotos] = React.useState<
+    typeof GalleryImages
+  >([]);
+  const [selectedIndex, setSelectedIndex] = React.useState<number | null>(null);
   const { handle } = useParams();
   const [isPanelOpen, setIsPanelOpen] = React.useState({
     first: false,
@@ -65,18 +71,28 @@ const SingleProduct: React.FC = () => {
     navigate('/skincare-products');
   };
 
+  const handleOpenGallery = (index: number) => {
+    setSelectedIndex(index);
+    setShowGallery(true);
+  };
+
   React.useEffect(() => {
     resetProduct();
     fetchProductByHandle(handle);
   }, [fetchProductByHandle, handle]);
 
   React.useEffect(() => {
+    if (product && Object.keys(product).length) {
+      setGalleryPhotos([product.images[0].src, ...GalleryImages]);
+    }
     window.scrollTo({
       top: 127,
       left: 0,
       behavior: 'smooth'
     });
-  }, []);
+  }, [product]);
+
+  console.log(selectedIndex, galleryPhotos.length, showGallery);
 
   if (product && Object.keys(product).length) {
     return (
@@ -89,6 +105,17 @@ const SingleProduct: React.FC = () => {
           align={['center', 'center', 'flex-start']}
           gap={['2rem', '2rem', '3rem', '4.5rem', '6rem', '7.5rem']}
         >
+          {typeof selectedIndex === 'number' &&
+            galleryPhotos.length > 0 &&
+            showGallery && (
+              <SPGallery
+                photos={galleryPhotos}
+                index={selectedIndex}
+                galleryLength={galleryPhotos.length}
+                setSelectedIndex={setSelectedIndex}
+                setShowGallery={setShowGallery}
+              />
+            )}
           <Stack alignItems='flex-end' w={isLessThan768 ? '100%' : undefined}>
             {isLessThan768 && (
               <Text
@@ -107,6 +134,7 @@ const SingleProduct: React.FC = () => {
             )}
             <Image
               src={product.images[0].src}
+              cursor='pointer'
               maxH='780px'
               minW={
                 isGreaterThan1280 ? '596px' : !isLessThan768 ? '50%' : '100%'
@@ -126,6 +154,7 @@ const SingleProduct: React.FC = () => {
               w='100%'
               objectFit='cover'
               objectPosition='center center'
+              onClick={() => handleOpenGallery(0)}
             />
 
             <Flex
@@ -142,45 +171,49 @@ const SingleProduct: React.FC = () => {
             >
               {(isGreaterThan1280 || (isLessThan768 && !isLessThan728)) && (
                 <Image
-                  src={placeholder}
+                  src={GalleryImages[0]}
                   _hover={{ filter: 'brightness(.9)' }}
                   cursor='pointer'
                   h='106px'
                   w='106px'
                   objectFit='cover'
+                  onClick={() => handleOpenGallery(1)}
                 />
               )}
               {(isGreaterThan1280 || (isLessThan768 && !isLessThan600)) && (
                 <Image
-                  src={placeholder}
+                  src={GalleryImages[1]}
                   _hover={{ filter: 'brightness(.9)' }}
                   cursor='pointer'
                   h='106px'
                   w='106px'
                   objectFit='cover'
+                  onClick={() => handleOpenGallery(2)}
                 />
               )}
               {(isGreaterThan832 || (isLessThan768 && !isLessThan480)) && (
                 <Image
-                  src={placeholder}
+                  src={GalleryImages[2]}
                   _hover={{ filter: 'brightness(.9)' }}
                   cursor='pointer'
                   h='106px'
                   w='106px'
                   objectFit='cover'
+                  onClick={() => handleOpenGallery(3)}
                 />
               )}
               <Image
-                src={placeholder}
+                src={GalleryImages[3]}
                 _hover={{ filter: 'brightness(.9)' }}
                 cursor='pointer'
                 h='106px'
                 w='106px'
                 objectFit='cover'
+                onClick={() => handleOpenGallery(4)}
               />
-              <Box pos='relative'>
+              <Box pos='relative' onClick={() => handleOpenGallery(5)}>
                 <Image
-                  src={placeholder}
+                  src={GalleryImages[4]}
                   _hover={{ filter: 'brightness(.9)' }}
                   cursor='pointer'
                   h='106px'
