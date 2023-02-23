@@ -54,7 +54,6 @@ const Gallery4x1: React.FC = () => {
       >
         <GalleryCard image={card1} btnText='Cleansers' />
         <GalleryCard image={card2} btnText='Exfoliants' />
-
         <GalleryCard image={card3} btnText='Moisturizers' />
         <GalleryCard image={card4} btnText='Beauty Tools' />
       </Grid>
