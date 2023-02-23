@@ -86,6 +86,7 @@ ChatGPT wrote all of our blog articles, formatted them into JavaScript objects, 
 👩 **Jeana Hudson**
 
 - Website: https://dribbble.com/jeanahudson
+- Github: [@jeanahudson](https://github.com/jeanahudson)
 - LinkedIn: [@jeanahudson](https://linkedin.com/in/jeanahudson)
 
 ## 🤝 Contributing
