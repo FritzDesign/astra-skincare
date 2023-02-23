@@ -17,7 +17,6 @@ const SPGallery: React.FC<SPGalleryProps> = ({
   });
 
   useEffect(() => {
-    console.log(index);
 
     if (index + 1 >= galleryLength) {
       setIsArrowDisabled({ left: false, right: true });

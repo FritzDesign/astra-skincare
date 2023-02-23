@@ -76,6 +76,15 @@ const SingleProduct: React.FC = () => {
     setShowGallery(true);
   };
 
+  const handleKeydown = (e: KeyboardEvent) => {
+    console.log(e);
+
+    if (e.key === 'Escape') {
+      setShowGallery(false);
+      window.removeEventListener('keydown', handleKeydown);
+    }
+  };
+
   React.useEffect(() => {
     resetProduct();
     fetchProductByHandle(handle);
@@ -92,7 +101,11 @@ const SingleProduct: React.FC = () => {
     });
   }, [product]);
 
-  console.log(selectedIndex, galleryPhotos.length, showGallery);
+  React.useEffect(() => {
+    if (showGallery) {
+      window.addEventListener('keydown', handleKeydown);
+    }
+  }, [showGallery]);
 
   if (product && Object.keys(product).length) {
     return (

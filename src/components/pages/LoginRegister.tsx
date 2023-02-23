@@ -51,7 +51,6 @@ const LoginRegister: React.FC = () => {
     if (password.length < 8) {
       return setError('Enter a password between 8 & 24 characters');
     }
-    console.log(emailInput)
     if (!emailInput.includes('.') || !emailInput.includes('@')) {
       return setError('Enter a valid Email');
     }
