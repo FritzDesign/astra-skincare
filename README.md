@@ -9,9 +9,14 @@
   </a>
 </p>
 
+### ✨ [Demo/Homepage](https://www.astra-skincare.com)
+
 > ASTRA Skincare is a site made for demonstration purposes only. It's a custom front-end app for a Shopify webstore. The products, cart, and checkout object are all hosted on Shopify and interacted with through the Shopify Buy SDK and the Shopify Storefront API. This site acts as a proof-of-concept to demonstrate the possibilities of having a custom, highly-responsive front-end for a Shopify webstore with all of the features of managing products, customers, orders, etc. via the store's Shopify Admin.
 
-### ✨ [Demo](https://www.astra-skincare.com)
+### 👨‍💻 Technologies Used
+
+<a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a> <h4>TypeScript</h4>
+
 
 ## Install
 
