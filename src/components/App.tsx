@@ -21,9 +21,11 @@ import Search from './pages/Search';
 import BlogPost from './pages/BlogPost';
 import LoginRegister from './pages/LoginRegister';
 import Blogs from './pages/Blogs';
+import EULA_Modal from './EULA_Modal';
 
 const App: React.FC = () => {
   const [showAnkle, setShowAnkle] = useState(true);
+  const [showEULA, setShowEULA] = useState(false);
 
   const navigate = useNavigate();
 
@@ -39,10 +41,19 @@ const App: React.FC = () => {
 
   }, [navigate]);
 
+  useEffect(() => {
+    const EULAstatus = localStorage.getItem('EULA');
+    
+    if (EULAstatus === null) {     
+      setShowEULA(true);
+    }
+  }, [])
+
   return (
     <Box className='App' maxW='100vw' overflowX='hidden'>
       <Announcement />
       <Navigation />
+      {showEULA && <EULA_Modal />}
       <Cart />
       <Routes>
         <Route path='/' element={<Home />} />
