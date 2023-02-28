@@ -49,6 +49,11 @@ const EULA_Modal: React.FC = () => {
         <ModalCloseButton />
         <ModalBody as={Stack} gap='1.5rem'>
           <Text>
+            ASTRA Skincare is a demonstration-only website developed by C.J.
+            Fritz and does not attempt to portray accurate skincare information
+            or sell any products.
+          </Text>
+          <Text>
             By using this website, you agree to the following terms and
             conditions:
           </Text>
