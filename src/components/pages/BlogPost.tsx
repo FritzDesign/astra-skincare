@@ -14,7 +14,6 @@ import {
   Divider,
   Grid
 } from '@chakra-ui/react';
-import ProductMenu from '../ProductsMenu';
 import { useNavigate, useParams } from 'react-router';
 import BlogPosts, { getBlogPostById } from '../../db/BlogPosts';
 import { BlogPost as BlogPostInterface } from '../../models/Props';

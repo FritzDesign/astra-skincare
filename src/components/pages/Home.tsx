@@ -5,8 +5,8 @@ import Hero from '../Hero';
 import ImageWithText from '../ImageWithText';
 import Gallery4x1 from '../galleries/Gallery_4-by-1';
 
-import heroImage from '../../assets/astra-hero.jpg';
-import imgWithText1 from '../../assets/image-with-text/astra-iwt-1.png';
+import heroImage from '../../assets/astra-hero.webp';
+import imgWithText1 from '../../assets/image-with-text/astra-iwt-1.webp';
 import TextWithIcons from '../TextWithIcons';
 import ScaleableGallery from '../ScaleableGallery';
 import Rewards from '../Rewards';

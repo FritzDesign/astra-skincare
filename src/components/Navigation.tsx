@@ -10,8 +10,6 @@ import {
   Text,
   Box,
   Center,
-  Slide,
-  SlideFade,
   InputGroup,
   Button
 } from '@chakra-ui/react';
@@ -20,7 +18,7 @@ import { IoBagOutline } from 'react-icons/io5';
 import { HiArrowRight, HiOutlineMenu } from 'react-icons/hi';
 import { AiOutlineCaretDown, AiOutlineCaretUp } from 'react-icons/ai';
 import { FiX } from 'react-icons/fi';
-import logo from '../assets/astra-logo.png';
+import logo from '../assets/astra-logo.webp';
 import { useNavigate } from 'react-router';
 import { ShopContext } from '../context/ShopContext';
 import FMC_Component from '../animations/defaults';

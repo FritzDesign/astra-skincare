@@ -3,10 +3,10 @@ import ProductMenu from '../ProductsMenu';
 import { useEffect } from 'react';
 import { IoMdQuote } from 'react-icons/io';
 
-import heroBackdrop from '../../assets/Products/products-hero-backdrop.png';
-import heroImage from '../../assets/Products/bt-hero-img.png';
-import heroFb from '../../assets/Products/bt-hero-img-fb.jpg';
-import bethSmith from '../../assets/beth-smith.png';
+import heroBackdrop from '../../assets/Products/products-hero-backdrop.webp';
+import heroImage from '../../assets/Products/bt-hero-img.webp';
+import heroFb from '../../assets/Products/bt-hero-img-fb.webp';
+import bethSmith from '../../assets/beth-smith.webp';
 
 const WhyAstra: React.FC = () => {
   useEffect(() => {

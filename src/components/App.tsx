@@ -1,7 +1,6 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { Box } from '@chakra-ui/react';
-import { useContext, useEffect, useState } from 'react';
-import { ShopContext } from '../context/ShopContext';
+import { useEffect, useState } from 'react';
 import Cart from './Cart';
 import Footer from './Footer';
 import Navigation from './Navigation';

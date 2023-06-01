@@ -14,8 +14,8 @@ import ProductMenu from '../ProductsMenu';
 import Product from '../Product';
 import { Product as ProductInterface } from '../../models/API';
 
-import heroImage from '../../assets/Products/products-hero-img.png';
-import heroFb from '../../assets/Products/products-hero-img-fb.jpg';
+import heroImage from '../../assets/Products/products-hero-img.webp';
+import heroFb from '../../assets/Products/products-hero-img-fb.webp';
 
 const Search: React.FC = () => {
   const { products, isLoading } = useContext<any>(ShopContext);

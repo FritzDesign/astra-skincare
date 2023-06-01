@@ -1,12 +1,10 @@
 import { Stack, Tab, Icon, Tabs, Image } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
 import { BsFacebook, BsPinterest, BsInstagram } from 'react-icons/bs';
 import { useNavigate } from 'react-router';
 
-import logo from '../assets/astra-logo.png';
+import logo from '../assets/astra-logo.webp';
 
 const Footer: React.FC = () => {
-  const [selectedTab, setSelectedTab] = useState<string>();
 
   const navigate = useNavigate();
 
@@ -14,12 +12,6 @@ const Footer: React.FC = () => {
     window.scrollTo({ top: 100, behavior: 'smooth' });
     navigate(path);
   };
-
-  useEffect(() => {
-    const lastSlash = window.location.href.lastIndexOf('/');
-    const location = window.location.href.slice(lastSlash);
-    setSelectedTab(location);
-  }, [window.location.href]);
 
   return (
     <Stack

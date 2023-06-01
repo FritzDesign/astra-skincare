@@ -1,13 +1,13 @@
 import React from 'react';
-import { Stack, Text, Button, Image, Box, Flex } from '@chakra-ui/react';
+import { Stack, Text, Image } from '@chakra-ui/react';
 import { useInView } from 'framer-motion';
 
-import watermarkTop from '../assets/Lifestyle/daily-routine-watermark-top.png';
-import watermarkBottom from '../assets/Lifestyle/daily-routine-watermark-bottom.png';
-import lgImgTop from '../assets/Lifestyle/daily-routine-top-image-lg.jpg';
-import smImgTop from '../assets/Lifestyle/daily-routine-top-image-sm.jpg';
-import lgImgBot from '../assets/Lifestyle/daily-routine-bottom-image-lg.jpg';
-import smImgBot from '../assets/Lifestyle/daily-routine-bottom-image-sm.jpg';
+import watermarkTop from '../assets/Lifestyle/daily-routine-watermark-top.webp';
+import watermarkBottom from '../assets/Lifestyle/daily-routine-watermark-bottom.webp';
+import lgImgTop from '../assets/Lifestyle/daily-routine-top-image-lg.webp';
+import smImgTop from '../assets/Lifestyle/daily-routine-top-image-sm.webp';
+import lgImgBot from '../assets/Lifestyle/daily-routine-bottom-image-lg.webp';
+import smImgBot from '../assets/Lifestyle/daily-routine-bottom-image-sm.webp';
 
 const DailyRoutine: React.FC = () => {
   const imageRefTop = React.useRef(null);

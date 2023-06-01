@@ -1,22 +1,22 @@
 import { BlogPost } from '../models/Props';
 
-import bpImg1 from '../assets/Blogs/blog-1-img.jpg';
-import bpImg2 from '../assets/Blogs/blog-2-img.jpg';
-import bpImg3 from '../assets/Blogs/blog-3-img.jpg';
-import bpImg4 from '../assets/Blogs/blog-4-img.jpg';
-import bpImg5 from '../assets/Blogs/blog-5-img.jpg';
-import bpImg6 from '../assets/Blogs/blog-6-img.jpg';
-import bpImg7 from '../assets/Blogs/blog-7-img.jpg';
-import bpImg8 from '../assets/Blogs/blog-8-img.jpg';
-import bpImg9 from '../assets/Blogs/blog-9-img.jpg';
-import bpImg10 from '../assets/Blogs/blog-10-img.jpg';
-import bpImg11 from '../assets/Blogs/blog-11-img.jpg';
-import bpImg12 from '../assets/Blogs/blog-12-img.jpg';
-import bpImg13 from '../assets/Blogs/blog-13-img.jpg';
-import bpImg14 from '../assets/Blogs/blog-14-img.jpg';
-import bpImg15 from '../assets/Blogs/blog-15-img.jpg';
-import bpImg16 from '../assets/Blogs/blog-16-img.jpg';
-import bpImg17 from '../assets/Blogs/blog-17-img.jpg';
+import bpImg1 from '../assets/Blogs/blog-1-img.webp';
+import bpImg2 from '../assets/Blogs/blog-2-img.webp';
+import bpImg3 from '../assets/Blogs/blog-3-img.webp';
+import bpImg4 from '../assets/Blogs/blog-4-img.webp';
+import bpImg5 from '../assets/Blogs/blog-5-img.webp';
+import bpImg6 from '../assets/Blogs/blog-6-img.webp';
+import bpImg7 from '../assets/Blogs/blog-7-img.webp';
+import bpImg8 from '../assets/Blogs/blog-8-img.webp';
+import bpImg9 from '../assets/Blogs/blog-9-img.webp';
+import bpImg10 from '../assets/Blogs/blog-10-img.webp';
+import bpImg11 from '../assets/Blogs/blog-11-img.webp';
+import bpImg12 from '../assets/Blogs/blog-12-img.webp';
+import bpImg13 from '../assets/Blogs/blog-13-img.webp';
+import bpImg14 from '../assets/Blogs/blog-14-img.webp';
+import bpImg15 from '../assets/Blogs/blog-15-img.webp';
+import bpImg16 from '../assets/Blogs/blog-16-img.webp';
+import bpImg17 from '../assets/Blogs/blog-17-img.webp';
 
 // Fully generated and translated to JS by ChatGPT :)
 

@@ -8,15 +8,14 @@ import {
   Divider,
   Skeleton,
   SkeletonText,
-  Flex
 } from '@chakra-ui/react';
 import { ShopContext } from '../../context/ShopContext';
 import Product from '../Product';
 import { Product as ProductInterface } from '../../models/API';
 // import { useInView } from 'framer-motion';
 
-import heroImage from '../../assets/Products/products-hero-img.png';
-import heroFb from '../../assets/Products/products-hero-img-fb.jpg';
+import heroImage from '../../assets/Products/products-hero-img.webp';
+import heroFb from '../../assets/Products/products-hero-img-fb.webp';
 import ProductMenu from '../ProductsMenu';
 
 const SkincareProducts: React.FC = () => {

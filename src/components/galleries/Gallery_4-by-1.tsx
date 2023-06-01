@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Stack, Text, Grid } from '@chakra-ui/react';
 import { GalleryCard } from './GalleryCard';
-import card1 from '../../assets/Cards/Card1.png';
-import card2 from '../../assets/Cards/Card2.png';
-import card3 from '../../assets/Cards/Card3.png';
-import card4 from '../../assets/Cards/Card4.png';
+import card1 from '../../assets/Cards/Card1.webp';
+import card2 from '../../assets/Cards/Card2.webp';
+import card3 from '../../assets/Cards/Card3.webp';
+import card4 from '../../assets/Cards/Card4.webp';
 import { useInView } from 'framer-motion';
 import FMC_Component from '../../animations/defaults';
 

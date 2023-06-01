@@ -1,13 +1,13 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Box, Button, Flex, Grid, GridItem, Stack } from '@chakra-ui/react';
+import React, { useContext, useEffect } from 'react';
+import { Box, Button, Flex, Grid, Stack } from '@chakra-ui/react';
 import BlogCard from '../BlogCard';
 import { BlogPost } from '../../models/Props';
 import { ShopContext } from '../../context/ShopContext';
 import ProductMenu from '../ProductsMenu';
 
-import heroBackdrop from '../../assets/Products/products-hero-backdrop.png';
-import heroImage from '../../assets/Products/bt-hero-img.png';
-import heroFb from '../../assets/Products/bt-hero-img-fb.jpg';
+import heroBackdrop from '../../assets/Products/products-hero-backdrop.webp';
+import heroImage from '../../assets/Products/bt-hero-img.webp';
+import heroFb from '../../assets/Products/bt-hero-img-fb.webp';
 
 const Blogs: React.FC = () => {
   const { blogPosts, getBlogPostsByCategory } = useContext<any>(ShopContext);

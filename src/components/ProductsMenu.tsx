@@ -3,7 +3,6 @@ import {
   Image,
   Text,
   Flex,
-  Link,
   Menu,
   MenuButton,
   Icon,
@@ -12,14 +11,13 @@ import {
   MenuItem,
   MenuList,
   Tabs,
-  Tab,
-  Box
+  Tab
 } from '@chakra-ui/react';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { ProductMenuProps } from '../models/Props';
 import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
 
-import heroBackdrop from '../assets/Products/products-hero-backdrop.png';
+import heroBackdrop from '../assets/Products/products-hero-backdrop.webp';
 import watermarkTR from '../assets/Products/products-hero-backsplash-tr.png';
 import watermarkBL from '../assets/Products/products-hero-backsplash-bl.png';
 import { ShopContext } from '../context/ShopContext';

@@ -1,11 +1,9 @@
 import {
   Stack,
   Text,
-  Icon,
   Image,
   Button,
   Divider,
-  Box,
   Flex
 } from '@chakra-ui/react';
 import { useState } from 'react';

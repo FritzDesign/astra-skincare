@@ -1,9 +1,7 @@
 import { Stack, Text, Icon } from '@chakra-ui/react';
 import FMC_Component from '../animations/defaults';
-import { AnimatePresence } from 'framer-motion';
 import { BsEmojiHeartEyes, BsBoxSeam } from 'react-icons/bs';
 import { MdOutlineCrueltyFree, MdOutlineWaterDrop } from 'react-icons/md';
-import { useEffect, useState } from 'react';
 
 interface GallerySlideProps {
   delay: number;

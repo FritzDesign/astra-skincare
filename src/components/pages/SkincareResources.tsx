@@ -4,14 +4,13 @@ import {
   Image,
   Text,
   Button,
-  useMediaQuery,
   Grid
 } from '@chakra-ui/react';
 import ProductMenu from '../ProductsMenu';
 import React, { useEffect, useState } from 'react';
 
-import heroBackdrop from '../../assets/Products/products-hero-backdrop.png';
-import heroImage from '../../assets/Lifestyle/skincare-resources-hero.png';
+import heroBackdrop from '../../assets/Products/products-hero-backdrop.webp';
+import heroImage from '../../assets/Lifestyle/skincare-resources-hero.webp';
 import BlogPosts from '../../db/BlogPosts';
 import { useNavigate } from 'react-router';
 import BlogCard from '../BlogCard';

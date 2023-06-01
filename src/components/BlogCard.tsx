@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Badge, Button, Grid, Image, Stack, Text } from '@chakra-ui/react';
+import { Badge, Button, Image, Stack, Text } from '@chakra-ui/react';
 import { useNavigate } from 'react-router';
 import { BlogPost } from '../models/Props';
 import { ShopContext } from '../context/ShopContext';

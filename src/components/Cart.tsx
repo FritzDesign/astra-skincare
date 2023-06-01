@@ -13,9 +13,8 @@ import {
   DrawerFooter,
   Stack
 } from '@chakra-ui/react';
-import * as ReactIcons from 'react-icons/md';
 import { ShopContext } from '../context/ShopContext';
-import { Navigate, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 
 const Cart: React.FC = () => {
   const { isCartOpen, closeCart, checkout, removeLineItem } =

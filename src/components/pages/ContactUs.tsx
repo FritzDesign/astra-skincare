@@ -1,11 +1,8 @@
 import {
   Button,
-  Icon,
   Flex,
   Heading,
   Input,
-  InputGroup,
-  Link,
   Stack,
   Text,
   Box,
@@ -14,9 +11,9 @@ import {
 import ProductMenu from '../ProductsMenu';
 import { useEffect, useState } from 'react';
 
-import heroBackdrop from '../../assets/Products/products-hero-backdrop.png';
-import heroImage from '../../assets/Products/bt-hero-img.png';
-import heroFb from '../../assets/Products/bt-hero-img-fb.jpg';
+import heroBackdrop from '../../assets/Products/products-hero-backdrop.webp';
+import heroImage from '../../assets/Products/bt-hero-img.webp';
+import heroFb from '../../assets/Products/bt-hero-img-fb.webp';
 import { useNavigate } from 'react-router';
 
 const ContactUs: React.FC = () => {

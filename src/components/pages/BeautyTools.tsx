@@ -14,9 +14,9 @@ import { ShopContext } from '../../context/ShopContext';
 
 import { Product as ProductInterface } from '../../models/API';
 
-import heroBackdrop from '../../assets/Products/products-hero-backdrop.png';
-import heroImage from '../../assets/Products/beauty-tools-hero.png';
-import heroFb from '../../assets/Products/bt-hero-img-fb.jpg';
+import heroBackdrop from '../../assets/Products/products-hero-backdrop.webp';
+import heroImage from '../../assets/Products/beauty-tools-hero.webp';
+import heroFb from '../../assets/Products/bt-hero-img-fb.webp';
 import Product from '../Product';
 
 const BeautyTools: React.FC = () => {

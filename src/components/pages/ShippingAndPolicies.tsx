@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react';
 import ProductMenu from '../ProductsMenu';
 
-import heroImage from '../../assets/faq-hero-img.png';
+import heroImage from '../../assets/faq-hero-img.webp';
 import { useNavigate } from 'react-router';
 
 const ShippingAndPolicies: React.FC = () => {
