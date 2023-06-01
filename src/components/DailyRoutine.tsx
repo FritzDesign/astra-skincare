@@ -1,15 +1,18 @@
 import React from 'react';
-import { Stack, Text, Image } from '@chakra-ui/react';
+import { Stack, Text, Image, useMediaQuery } from '@chakra-ui/react';
 import { useInView } from 'framer-motion';
 
 import watermarkTop from '../assets/Lifestyle/daily-routine-watermark-top.webp';
 import watermarkBottom from '../assets/Lifestyle/daily-routine-watermark-bottom.webp';
 import lgImgTop from '../assets/Lifestyle/daily-routine-top-image-lg.webp';
+import lgImgTopMobile from '../assets/Lifestyle/daily-routine-top-image-lg-mobile.webp';
 import smImgTop from '../assets/Lifestyle/daily-routine-top-image-sm.webp';
 import lgImgBot from '../assets/Lifestyle/daily-routine-bottom-image-lg.webp';
+import lgImgBotMobile from '../assets/Lifestyle/daily-routine-bottom-image-lg-mobile.webp';
 import smImgBot from '../assets/Lifestyle/daily-routine-bottom-image-sm.webp';
 
 const DailyRoutine: React.FC = () => {
+  const [isLessThan480] = useMediaQuery('(max-width: 480px)');
   const imageRefTop = React.useRef(null);
   const imageRefBot = React.useRef(null);
   const isInViewTop = useInView(imageRefTop, {
@@ -28,7 +31,13 @@ const DailyRoutine: React.FC = () => {
       mb={['3rem', '3rem', '5rem']}
     >
       <Image pos='absolute' top='0' right='0' src={watermarkTop} zIndex={-1} />
-      <Image pos='absolute' bottom='-5rem' left='0' src={watermarkBottom} zIndex={-1} />
+      <Image
+        pos='absolute'
+        bottom='-5rem'
+        left='0'
+        src={watermarkBottom}
+        zIndex={-1}
+      />
       <Stack
         id='container-top'
         // px={['1.5rem', '0px', '0px', '128px']}
@@ -57,7 +66,7 @@ const DailyRoutine: React.FC = () => {
           h={['80%', '80%', '80%', '80%', '100%']}
         >
           <Image
-            src={lgImgTop}
+            src={isLessThan480 ? lgImgTopMobile : lgImgTop}
             w='100%'
             maxH='400px'
             objectPosition='top center'
@@ -185,7 +194,7 @@ const DailyRoutine: React.FC = () => {
           h={['80%', '80%', '80%', '80%', '100%']}
         >
           <Image
-            src={lgImgBot}
+            src={isLessThan480 ? lgImgBotMobile : lgImgBot}
             w='100%'
             minH='320px'
             maxH='400px'

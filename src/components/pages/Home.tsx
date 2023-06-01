@@ -6,6 +6,7 @@ import ImageWithText from '../ImageWithText';
 import Gallery4x1 from '../galleries/Gallery_4-by-1';
 
 import heroImage from '../../assets/astra-hero.webp';
+import heroImageMobile from '../../assets/astra-hero.webp';
 import imgWithText1 from '../../assets/image-with-text/astra-iwt-1.webp';
 import TextWithIcons from '../TextWithIcons';
 import ScaleableGallery from '../ScaleableGallery';
@@ -13,6 +14,7 @@ import Rewards from '../Rewards';
 import DailyRoutine from '../DailyRoutine';
 
 const Home: React.FC = () => {
+  const [isLessThan440] = Chakra.useMediaQuery('(max-width: 440px)');
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -20,7 +22,7 @@ const Home: React.FC = () => {
     <Chakra.Box>
       <Hero
         bgColor='linear-gradient(91deg, #000000 0%, #00000000 100%)'
-        bgImage={heroImage}
+        bgImage={isLessThan440 ? heroImageMobile : heroImage}
         heading='Unlock 24-7 Hydration with a New Clinically Proven Formula'
       />
       <Gallery4x1 />
