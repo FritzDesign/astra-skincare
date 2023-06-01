@@ -35,6 +35,7 @@ const ScaleableGalleryCard: React.FC<CardProps> = ({
       >
         <Image
           src={image}
+          loading='lazy'
           filter={isHovered ? 'brightness(0.7)' : 'brightness(1)'}
           w='376px'
           h='345px'
