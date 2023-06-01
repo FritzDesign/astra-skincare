@@ -33,6 +33,7 @@ const Ankle: React.FC = () => {
       align='center'
       spacing='56px'
       overflow='hidden'
+      height='224px'
       width='100vw'
       maxWidth='100%'
       background='brand.Lavender'

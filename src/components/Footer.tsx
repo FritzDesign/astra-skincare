@@ -17,6 +17,7 @@ const Footer: React.FC = () => {
     <Stack
       py='49px'
       px='10%'
+      height='434px'
       width='100vw'
       maxWidth='100%'
       justify='center'
