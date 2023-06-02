@@ -30,12 +30,13 @@ const DailyRoutine: React.FC = () => {
       paddingX={['40px', '40px', '80px', '80px', '120px', '240px']}
       mb={['3rem', '3rem', '5rem']}
     >
-      <Image pos='absolute' top='0' right='0' src={watermarkTop} zIndex={-1} />
+      <Image pos='absolute' top='0' right='0' src={watermarkTop} alt='Watermark, design only - Top' zIndex={-1} />
       <Image
         pos='absolute'
         bottom='-5rem'
         left='0'
         src={watermarkBottom}
+        alt='Watermark, design only - Bottom'
         zIndex={-1}
       />
       <Stack
@@ -67,6 +68,7 @@ const DailyRoutine: React.FC = () => {
         >
           <Image
             src={isLessThan480 ? lgImgTopMobile : lgImgTop}
+            alt='Person using exfoliating product'
             h='100%'
             w='100%'
             maxH='400px'
@@ -77,6 +79,7 @@ const DailyRoutine: React.FC = () => {
           <Image
             src={smImgTop}
             pos='absolute'
+            alt='Exfoliating brush'
             bottom='0%'
             right='0%'
             borderRadius='50%'
@@ -196,6 +199,7 @@ const DailyRoutine: React.FC = () => {
         >
           <Image
             src={isLessThan480 ? lgImgBotMobile : lgImgBot}
+            alt='Person using an acne solution product'
             h='100%'
             w='100%'
             minH='320px'
@@ -206,6 +210,7 @@ const DailyRoutine: React.FC = () => {
           />
           <Image
             src={smImgBot}
+            alt='Product palette'
             pos='absolute'
             top='0%'
             right='10%'

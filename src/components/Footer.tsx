@@ -1,11 +1,10 @@
-import { Stack, Tab, Icon, Tabs, Image } from '@chakra-ui/react';
+import { Stack, Tab, Icon, Tabs, Image, TabList } from '@chakra-ui/react';
 import { BsFacebook, BsPinterest, BsInstagram } from 'react-icons/bs';
 import { useNavigate } from 'react-router';
 
 import logo from '../assets/astra-logo.webp';
 
 const Footer: React.FC = () => {
-
   const navigate = useNavigate();
 
   const handleNavigate = (path: string) => {
@@ -47,37 +46,39 @@ const Footer: React.FC = () => {
           spacing='16px'
           overflow='hidden'
         >
-          <Tab
-            _selected={{ color: 'brand.Navy', borderBottom: '4px solid' }}
-            onClick={() => handleNavigate('/skincare-products')}
-          >
-            Skincare Products
-          </Tab>
-          <Tab
-            _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}
-            onClick={() => handleNavigate('/beauty-tools')}
-          >
-            Beauty Tools
-          </Tab>
+          <TabList>
+            <Tab
+              _selected={{ color: 'brand.Navy', borderBottom: '4px solid' }}
+              onClick={() => handleNavigate('/skincare-products')}
+            >
+              Skincare Products
+            </Tab>
+            <Tab
+              _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}
+              onClick={() => handleNavigate('/beauty-tools')}
+            >
+              Beauty Tools
+            </Tab>
 
-          <Tab
-            _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}
-            onClick={() => navigate('/skincare-resources')}
-          >
-            Skincare Resources
-          </Tab>
-          <Tab
-            _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}
-            onClick={() => navigate('/why-astra')}
-          >
-            Why Astra
-          </Tab>
-          <Tab
-            _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}
-            onClick={() => navigate('/contact-us')}
-          >
-            Contact Us
-          </Tab>
+            <Tab
+              _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}
+              onClick={() => navigate('/skincare-resources')}
+            >
+              Skincare Resources
+            </Tab>
+            <Tab
+              _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}
+              onClick={() => navigate('/why-astra')}
+            >
+              Why Astra
+            </Tab>
+            <Tab
+              _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}
+              onClick={() => navigate('/contact-us')}
+            >
+              Contact Us
+            </Tab>
+          </TabList>
         </Stack>
         <Stack
           as={Tabs}
@@ -88,24 +89,26 @@ const Footer: React.FC = () => {
           spacing='16px'
           overflow='hidden'
         >
-          <Tab
-            _selected={{ color: 'brand.Navy', borderBottom: '4px solid' }}
-            onClick={() => navigate('/faq')}
-          >
-            F.A.Q.
-          </Tab>
-          <Tab
-            _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}
-            onClick={() => navigate('/policies')}
-          >
-            Shipping & Policies
-          </Tab>
-          <Tab
-            _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}
-            onClick={() => navigate('/disclaimer')}
-          >
-            Disclaimer
-          </Tab>
+          <TabList>
+            <Tab
+              _selected={{ color: 'brand.Navy', borderBottom: '4px solid' }}
+              onClick={() => navigate('/faq')}
+            >
+              F.A.Q.
+            </Tab>
+            <Tab
+              _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}
+              onClick={() => navigate('/policies')}
+            >
+              Shipping & Policies
+            </Tab>
+            <Tab
+              _selected={{ color: 'brand.Navy', borderBottom: '2px solid' }}
+              onClick={() => navigate('/disclaimer')}
+            >
+              Disclaimer
+            </Tab>
+          </TabList>
         </Stack>
       </Stack>
       <Stack direction='row' justify='center' align='center' spacing='24px'>

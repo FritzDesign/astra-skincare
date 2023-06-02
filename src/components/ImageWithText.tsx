@@ -25,9 +25,16 @@ export const ImageWithText: React.FC<ImageWithTextProps> = ({
       p='4rem'
       overflow='hidden'
     >
-      <Image src={watermarkTR} pos='absolute' top='0px' right='-24px' />
+      <Image
+        src={watermarkTR}
+        alt='Watermark, design only - Top'
+        pos='absolute'
+        top='0px'
+        right='-24px'
+      />
       <Image
         src={watermarkBL}
+        alt='Watermark, design only - Bottom'
         pos='absolute'
         bottom={['-24px', '0px']}
         left={['0px', '-119px']}
@@ -50,7 +57,13 @@ export const ImageWithText: React.FC<ImageWithTextProps> = ({
           pos='relative'
           mb={['32px', '120px']}
         >
-          <Image src={image} loading='lazy' width='100%' height='100%' />
+          <Image
+            src={image}
+            alt='Person using a crystal roller on their cheek'
+            loading='lazy'
+            width='100%'
+            height='100%'
+          />
           <Stack
             borderRadius='50%'
             width={['120px', '220px']}
@@ -64,6 +77,7 @@ export const ImageWithText: React.FC<ImageWithTextProps> = ({
           >
             <Image
               src={overlayImg}
+              alt='Product palette'
               p='0'
               w={['131.3px', '240px']}
               h={['131.3px', '240px']}

@@ -190,6 +190,7 @@ const Navigation: React.FC = () => {
           mixBlendMode='multiply'
           loading='lazy'
           src={logo}
+          alt='Astra Logo'
           h='56px'
           w='156px'
           cursor='pointer'

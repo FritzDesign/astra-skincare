@@ -83,6 +83,7 @@ export interface ScaleableGalleryProps {
 
 export interface ScaleableGalleryCardProps {
   image: string;
+  alt: string;
   title: string;
   isNew: boolean;
   category: string;

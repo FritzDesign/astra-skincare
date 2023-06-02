@@ -33,6 +33,7 @@ const Hero: React.FC<HeroProps> = ({ bgColor, bgImage, heading }) => {
       <Image
         src={bgImage}
         loading='eager'
+        alt='Hero Image - A woman putting lotion on her hand'
         h='100%'
         w='100%'
         bgColor={bgColor}

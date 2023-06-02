@@ -6,6 +6,7 @@ import { encodeQuery } from '../utils/helpers';
 
 const ScaleableGalleryCard: React.FC<CardProps> = ({
   image,
+  alt,
   title,
   isNew,
   category,
@@ -35,6 +36,7 @@ const ScaleableGalleryCard: React.FC<CardProps> = ({
       >
         <Image
           src={image}
+          alt={alt}
           loading='lazy'
           filter={isHovered ? 'brightness(0.7)' : 'brightness(1)'}
           w='376px'

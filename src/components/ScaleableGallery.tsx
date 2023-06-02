@@ -190,6 +190,7 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
       >
         {galleryProducts &&
           galleryProducts.map((product: Product, i) => {
+            console.log(product)
             const handle = product.handle;
             if (
               handle === 'starry-night-serum-sample' ||
@@ -207,6 +208,7 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
 
                 <ScaleableGalleryCard
                   image={product.images[0].src}
+                  alt={product.images[0].altText}
                   isNew={product.isNew ? true : false}
                   title={product.title}
                   category={product.productType}

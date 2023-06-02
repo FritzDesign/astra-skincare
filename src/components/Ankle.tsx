@@ -56,6 +56,7 @@ const Ankle: React.FC = () => {
         <Flex pos='relative'>
           <Input
             _focus={{ borderColor: 'UI.6', boxShadow: 'none' }}
+            aria-label='Newsletter sign up - Email address entry input'
             borderColor='UI.4'
             borderRadius='0px'
             color='UI.6'
@@ -76,7 +77,7 @@ const Ankle: React.FC = () => {
           </Text>
         </Flex>
 
-        <Button bgColor='brand.Cream' borderRadius='0px'>
+        <Button bgColor='brand.Cream' borderRadius='0px' aria-label='submit email address'>
           <Icon as={HiArrowRight} />
         </Button>
       </Stack>

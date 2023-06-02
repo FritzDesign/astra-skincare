@@ -3,6 +3,7 @@ interface ProductImages {
   width: number;
   id: string;
   src: string;
+  altText: string;
 }
 
 interface ProductVariants {

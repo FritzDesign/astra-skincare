@@ -7,6 +7,7 @@ import { encodeQuery } from '../../utils/helpers';
 
 export const GalleryCard: React.FC<GalleryCardProps> = ({ btnText, image }) => {
   const [isHovered, setIsHovered] = React.useState(false);
+  const [altText, setAltText] = React.useState('');
   const { fetchCollectionByHandle } = React.useContext<any>(ShopContext);
   const navigate = useNavigate();
 
@@ -14,6 +15,10 @@ export const GalleryCard: React.FC<GalleryCardProps> = ({ btnText, image }) => {
     fetchCollectionByHandle(encodeQuery(btnText));
     navigate('/skincare-products');
   };
+
+  React.useEffect(() => {
+    setAltText(`Person using a '${btnText}' product`)
+  })
 
   return (
     <Stack h={['272px', '392px']} m='16px !important'>
@@ -34,6 +39,7 @@ export const GalleryCard: React.FC<GalleryCardProps> = ({ btnText, image }) => {
           h={['200px', '320px']}
           w={['260px', '280px']}
           src={image}
+          alt={altText}
           objectFit='cover'
           objectPosition={['bottom center', 'center center']}
         />
