@@ -67,6 +67,7 @@ const DailyRoutine: React.FC = () => {
         >
           <Image
             src={isLessThan480 ? lgImgTopMobile : lgImgTop}
+            h='100%'
             w='100%'
             maxH='400px'
             objectPosition='top center'
@@ -195,6 +196,7 @@ const DailyRoutine: React.FC = () => {
         >
           <Image
             src={isLessThan480 ? lgImgBotMobile : lgImgBot}
+            h='100%'
             w='100%'
             minH='320px'
             maxH='400px'

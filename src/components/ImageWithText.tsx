@@ -50,7 +50,7 @@ export const ImageWithText: React.FC<ImageWithTextProps> = ({
           pos='relative'
           mb={['32px', '120px']}
         >
-          <Image src={image} />
+          <Image src={image} loading='lazy' width='100%' height='100%' />
           <Stack
             borderRadius='50%'
             width={['120px', '220px']}
