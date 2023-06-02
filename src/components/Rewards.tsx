@@ -1,4 +1,4 @@
-import { Stack, Icon, Text, Link } from '@chakra-ui/react';
+import { Stack, Icon, Text } from '@chakra-ui/react';
 import { MdCardGiftcard } from 'react-icons/md';
 
 const Rewards: React.FC = () => {
@@ -50,10 +50,11 @@ const Rewards: React.FC = () => {
           </Text>
         </Stack>
       </Stack>
-      <Link
+      <Text
         _hover={{
           textDecor: 'none'
         }}
+        cursor='pointer'
         borderBottom='1px solid'
         borderColor='UI.6'
         pb='4px'
@@ -65,7 +66,7 @@ const Rewards: React.FC = () => {
         color='white'
       >
         View Details
-      </Link>
+      </Text>
     </Stack>
   );
 };

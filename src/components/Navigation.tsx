@@ -4,7 +4,6 @@ import {
   Image,
   Icon,
   Flex,
-  Link,
   Input,
   useMediaQuery,
   Text,
@@ -204,8 +203,9 @@ const Navigation: React.FC = () => {
           spacing='32px'
           px='1.8rem'
         >
-          <Link
+          <Text
             _hover={{ textDecoration: 'underline' }}
+            cursor='pointer'
             fontFamily='Inter'
             px={['0px', '0px', '0px', '0px', '0px', '1rem']}
             lineHeight='1.5'
@@ -215,9 +215,10 @@ const Navigation: React.FC = () => {
             onClick={() => navigate('/skincare-products')}
           >
             Skincare Products
-          </Link>
-          <Link
+          </Text>
+          <Text
             _hover={{ textDecoration: 'underline' }}
+            cursor='pointer'
             fontFamily='Inter'
             px={['0px', '0px', '0px', '0px', '0px', '1rem']}
             lineHeight='1.5'
@@ -227,9 +228,10 @@ const Navigation: React.FC = () => {
             onClick={() => navigate('/beauty-tools')}
           >
             Beauty Tools
-          </Link>
-          <Link
+          </Text>
+          <Text
             _hover={{ textDecoration: 'underline' }}
+            cursor='pointer'
             fontFamily='Inter'
             px={['0px', '0px', '0px', '0px', '0px', '1rem']}
             lineHeight='1.5'
@@ -239,9 +241,10 @@ const Navigation: React.FC = () => {
             onClick={() => navigate('/skincare-resources')}
           >
             Skincare Resources
-          </Link>
-          <Link
+          </Text>
+          <Text
             _hover={{ textDecoration: 'underline' }}
+            cursor='pointer'
             fontFamily='Inter'
             px={['0px', '0px', '0px', '0px', '0px', '1rem']}
             lineHeight='1.5'
@@ -251,9 +254,10 @@ const Navigation: React.FC = () => {
             onClick={() => navigate('/why-astra')}
           >
             Why Astra
-          </Link>
-          <Link
+          </Text>
+          <Text
             _hover={{ textDecoration: 'underline' }}
+            cursor='pointer'
             fontFamily='Inter'
             px={['0px', '0px', '0px', '0px', '0px', '1rem']}
             lineHeight='1.5'
@@ -263,7 +267,7 @@ const Navigation: React.FC = () => {
             onClick={() => navigate('/contact-us')}
           >
             Contact Us
-          </Link>
+          </Text>
         </Stack>
         {isLessThan1536 ? (
           <Stack

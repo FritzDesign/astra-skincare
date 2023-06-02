@@ -1,4 +1,4 @@
-import { Stack, Text, Icon, Link, Divider, Flex } from '@chakra-ui/react';
+import { Stack, Text, Icon, Divider, Flex } from '@chakra-ui/react';
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import { client, ShopContext } from '../context/ShopContext';
 import React, { useContext, useEffect, useRef, useState } from 'react';
@@ -139,10 +139,11 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
             {title}
           </Text>
           {link && (
-            <Link
+            <Text
               _hover={{
                 textDecor: 'none'
               }}
+              cursor='pointer'
               borderBottom='1px solid'
               borderColor='brand.Charcoal'
               pb='4px'
@@ -154,7 +155,7 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
               onClick={handleNavigate}
             >
               {link.text}
-            </Link>
+            </Text>
           )}
         </Stack>
         <Stack
