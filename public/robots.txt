@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /private/
+Disallow: /admin/
+Disallow: /temp/
+Disallow: /images/
+Disallow: /scripts/
+Disallow: /styles/
+Disallow: /cgi-bin/
+
+Sitemap: https://www.astra-skincare.com/sitemap.xml
