@@ -11,11 +11,6 @@ export const client = Client.buildClient({
   storefrontAccessToken: process.env.REACT_APP_SHOPIFY_API
 });
 
-console.log(
-  process.env.REACT_APP_SHOPIFY_DOMAIN,
-  process.env.REACT_APP_SHOPIFY_API
-);
-
 export class ShopProvider extends React.Component {
   state = {
     product: {},
