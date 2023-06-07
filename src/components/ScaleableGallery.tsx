@@ -191,7 +191,6 @@ const ScaleableGallery: React.FC<GalleryProps> = ({
       >
         {galleryProducts &&
           galleryProducts.map((product: Product, i) => {
-            console.log(product)
             const handle = product.handle;
             if (
               handle === 'starry-night-serum-sample' ||

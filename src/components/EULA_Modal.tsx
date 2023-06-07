@@ -23,7 +23,6 @@ const EULA_Modal: React.FC = () => {
   const initialRef = useRef(null);
 
   const handleClose = () => {
-    console.log(isAgreementChecked);
 
     if (isAgreementChecked) {
       localStorage.setItem('EULA', 'agreed');
