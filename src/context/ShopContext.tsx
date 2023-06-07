@@ -127,8 +127,6 @@ export class ShopProvider extends React.Component {
   fetchCollectionByHandle = (handle: string) => {
     this.setState({ isLoading: true });
     client.collection.fetchByHandle(handle).then((collection) => {
-      console.log(client);
-      console.log(collection);
       this.setState({
         products: collection.products
       });
