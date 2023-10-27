@@ -75,10 +75,12 @@ export class ShopProvider extends React.Component {
   addItemToCheckout = async (variantId, quantity) => {
     const checkout = await client.checkout.addLineItems(
       this.state.checkout.id,
-      {
-        variantId,
-        quantity: +quantity
-      }
+      [
+        {
+          variantId,
+          quantity: +quantity
+        }
+      ]
     );
     this.setState({ itemsInCart: this.state.itemsInCart + +quantity });
     this.setState({ checkout });
